@@ -1,0 +1,5 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game'
+g++ -o main Window.cpp main.cpp -lsfml-graphics -lsfml-window -lsfml-system
+make: Leaving directory '/home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game'
+ 
