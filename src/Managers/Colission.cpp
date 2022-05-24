@@ -1,9 +1,9 @@
-#include "Colission.hpp"
+#include "Managers/Colission.hpp"
 #include <cmath>
 
 using namespace Managers;
 
-Colission::Colission(
+ColissionManager::ColissionManager(
     Lists::EntityList *movingEntities, 
     Lists::EntityList *staticEntities
 ){
@@ -11,14 +11,14 @@ Colission::Colission(
     this->staticEntities = staticEntities;
 }
 
-Colission::Colission(){
+ColissionManager::ColissionManager(){
     movingEntities = nullptr;
     staticEntities = nullptr;
 }
 
-Colission::~Colission(){}
+ColissionManager::~ColissionManager(){}
 
-void Colission::checkColission(){
+void ColissionManager::checkColission(){
 
     if(!movingEntities || !staticEntities){
         return;
@@ -28,9 +28,9 @@ void Colission::checkColission(){
     sf::Vector2f centerDistance, intersect; 
 
     for(int i = 0; i < movingEntities->getSize(); i++){
-        entity1 = movingEntities[i];
+        entity1 = (*movingEntities)[i];
         for(int j = 0; j < staticEntities->getSize(); j++){
-            entity2 = staticEntities[j];
+            entity2 = (*staticEntities)[j];
 
             centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
             centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
@@ -45,9 +45,9 @@ void Colission::checkColission(){
     }
 
     for(int i = 0; i < movingEntities->getSize(); i++){
-        entity1 = movingEntities[i];
+        entity1 = (*movingEntities)[i];
         for(int j = 0; j < movingEntities->getSize(); j++){
-            entity2 = movingEntities[j];
+            entity2 = (*movingEntities)[j];
 
             centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
             centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;

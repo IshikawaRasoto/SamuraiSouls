@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Ent.hpp"
+#include "Ent/Ent.hpp"
 
 Ent::Ent():
     animation(nullptr),

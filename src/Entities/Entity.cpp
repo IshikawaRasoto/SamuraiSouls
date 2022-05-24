@@ -1,4 +1,6 @@
-#include "Entity.hpp"
+#pragma once
+
+#include "Entity/Entity.hpp"
 
 using namespace Entities;
 
@@ -21,15 +23,10 @@ Entity::Entity(Type id, sf::Vector2f position, sf::Vector2f hitbox):
 
 Entity::~Entity(){}
 
-const sf::Vector2f Entity::getPosition() const {return position;}
 const sf::Vector2f Entity::getSpeed() const {return speed;}
 const sf::Vector2f Entity::getHitbox() const {return hitbox;}
 const bool Entity::getIsShowing() const {return showing;}
 const bool Entity::getIsFacingLeft() const {return facingLeft;}
-
-void Entity::setPosition(const sf::Vector2f position){
-    this->position = position;
-}
 
 void Entity::setSpeed(const sf::Vector2f speed){
     this->speed = speed;

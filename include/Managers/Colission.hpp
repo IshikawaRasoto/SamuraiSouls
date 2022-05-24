@@ -1,10 +1,10 @@
 #include <list>
-#include "../Entities/Entity.hpp"
-#include "../Lists/EntityList.hpp"
+#include "Entities/Entity.hpp"
+#include "Lists/EntityList.hpp"
 
 namespace Managers{
 
-class Colission{
+class ColissionManager{
 private:
 
     Lists::EntityList *movingEntities;
@@ -12,13 +12,13 @@ private:
 
 public:
 
-    Colission(
+    ColissionManager(
         Lists::EntityList *movingEntities, 
         Lists::EntityList *staticEntities
     );
 
-    Colission();
-    ~Colission();
+    ColissionManager();
+    ~ColissionManager();
 
     void checkColission();
 };

@@ -1,8 +1,6 @@
 #pragma once
 
-#include <SFML/Window.hpp>
-#include "../Type.hpp"
-#include "../Ent/Ent.hpp"
+#include "Ent/Ent.hpp"
 
 namespace Entities{
 

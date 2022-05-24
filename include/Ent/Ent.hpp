@@ -1,7 +1,6 @@
 #pragma once
 
-#include "../Type.hpp"
-#include <SFML/Window.hpp>
+#include "../../include/standard.hpp"
 #include "../Animation/Animation.hpp"
 
 class Animation;

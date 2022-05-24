@@ -1,5 +1,5 @@
 #include <list>
-#include "../Entities/Entity.hpp"
+#include "Entities/Entity.hpp"
 
 namespace Lists{
 
