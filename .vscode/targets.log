@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 24 10:25:01 2022
+# Make data base, printed on Tue May 24 15:04:13 2022
 
 # Variables
 
@@ -23,45 +23,33 @@ DESKTOP_SESSION = cinnamon
 # environment
 XDG_SESSION_CLASS = user
 # environment
-SNAP_COMMON = /var/snap/code/common
-# environment
 XDG_SESSION_TYPE = x11
 # environment
 VSCODE_LOG_NATIVE = false
 # makefile (from 'Makefile', line 3)
 TARGET = main
-# environment
-GTK3_MODULES = xapp-gtk3-module
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# environment
-PLATFORMIO_IDE = 2.4.3
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-XAUTHORITY = /home/ch4pl1n/.Xauthority
+XAUTHORITY = /home/rasoto/.Xauthority
 # environment
 GDMSESSION = cinnamon
 # default
 MAKE_VERSION := 4.2.1
 # makefile
-CURDIR := /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game
+CURDIR := /home/rasoto/Documents/Trabalhos/TecProg/Jogo/TecProgGame
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/97
+GDM_LANG = en_US
 # environment
-GDM_LANG = pt_BR
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-VTE_VERSION = 6003
-# environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
+_ = /usr/share/code/code
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
-# environment
-SNAP_INSTANCE_NAME = code
-# environment
-SNAP_ARCH = amd64
 # environment
 GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
@@ -70,10 +58,14 @@ MAKEFILE_LIST :=  Makefile
 .PHONY = clean
 # automatic
 @F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/ch4pl1n/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+MANDATORY_PATH = /usr/share/gconf/cinnamon.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/rasoto/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
@@ -81,47 +73,43 @@ VSCODE_VERBOSE_LOGGING = true
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
-VSCODE_CWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game
+LC_NAME = pt_BR.UTF-8
+# environment
+VSCODE_CWD = /home/rasoto
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
-# environment
-GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-NO_PROXY = 127.0.0.1
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ch4pl1n:@/tmp/.ICE-unix/1224,unix/ch4pl1n:/tmp/.ICE-unix/1224
+GJS_DEBUG_OUTPUT = stderr
+# environment
+SESSION_MANAGER = local/Rasoto-VirtualBox:@/tmp/.ICE-unix/989,unix/Rasoto-VirtualBox:/tmp/.ICE-unix/989
+# environment
+CINNAMON_SOFTWARE_RENDERING = 1
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# environment
-GDK_PIXBUF_MODULE_FILE = /home/ch4pl1n/snap/code/common/.cache/gdk-pixbuf-loaders.cache
-# environment
-SNAP = /snap/code/97
 # makefile (from 'Makefile', line 6)
 SUBDIR = Entities
 # environment
-SNAP_VERSION = c3511e6c
-# environment
 VSCODE_LOG_STACK = false
 # environment
-DISABLE_WAYLAND = 1
-# environment
 ELECTRON_RUN_AS_NODE = 1
-# environment
-GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/ch4pl1n
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/rasoto
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1475
 # automatic
 %F = $(notdir $%)
 # environment
@@ -129,9 +117,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-SNAP_INSTANCE_KEY = 
-# environment
-PWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game
+PWD = /home/rasoto/Documents/Trabalhos/TecProg/Jogo/TecProgGame
 # environment
 QT_QPA_PLATFORMTHEME = qt5ct
 # default
@@ -139,35 +125,29 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1320
+SSH_AGENT_PID = 1078
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
-GTK_MODULES = gail:atk-bridge
+GTK_MODULES = xapp-gtk3-module:gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/ch4pl1n
+HOME = /home/rasoto
 # makefile (from 'Makefile', line 5)
 OUTDIR = ./bin
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CLI = 1
+VSCODE_CODE_CACHE_PATH = /home/rasoto/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
-VSCODE_CODE_CACHE_PATH = /home/ch4pl1n/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
-# environment
-LOGNAME = ch4pl1n
+LOGNAME = rasoto
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# automatic
++F = $(notdir $+)
 # environment
-SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
-# environment
-SNAP_CONTEXT = jxyhC23-EohMRPg6s5TXqJNeIMeOq04a1ZdGkB7ccppLXoLBOKT0
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-SNAP_USER_COMMON = /home/ch4pl1n/snap/code/common
+CINNAMON_SLOWDOWN_FACTOR = 0.0001
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -178,54 +158,44 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 XDG_VTNR = 7
 # environment
 MAKELEVEL := 0
-# environment
-SNAP_REAL_HOME = /home/ch4pl1n
-# environment
-PLATFORMIO_PATH = /home/ch4pl1n/.platformio/penv/bin:/home/ch4pl1n/.platformio/penv:/home/ch4pl1n/.platformio/python3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # makefile (from 'Makefile', line 9)
 SRCS = $(wildcard *.cpp $(foreach fd,$(SUBDIR),$(fd)/*.cpp))
 # environment
-SNAP_USER_DATA = /home/ch4pl1n/snap/code/97
-# environment
-SHLVL = 1
+SHLVL = 0
 # makefile (from 'Makefile', line 1)
 CC = g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5b1f0ab1-c051-4264-b487-625c6d0dfbb3.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7ac40d2d-28e3-4dd0-bdf6-28dd06bb70de.sock
 # environment
-XDG_SESSION_ID = c1
+XDG_SESSION_ID = c2
 # environment
-USER = ch4pl1n
+USER = rasoto
 # environment
-SNAP_REVISION = 97
+LC_MONETARY = pt_BR.UTF-8
 # makefile
 .DEFAULT_GOAL := main
 # environment
 XDG_CURRENT_DESKTOP = X-Cinnamon
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = pt_BR.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = pt_BR:pt:en
+LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3b931484-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-7522fabf-1.67.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -236,51 +206,50 @@ MFLAGS = -pqrR
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
-# automatic
-+F = $(notdir $+)
+# environment
+LC_PAPER = pt_BR.UTF-8
+# environment
+CINNAMON_VERSION = 4.8.5
 # environment
 QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/cinnamon.default.path
 # default
 MAKEFILES := 
 # environment
-SNAP_COOKIE = jxyhC23-EohMRPg6s5TXqJNeIMeOq04a1ZdGkB7ccppLXoLBOKT0
+LC_NUMERIC = pt_BR.UTF-8
 # automatic
 <F = $(notdir $<)
 # environment
-PLATFORMIO_CALLER = vscode
-# environment
-SNAP_NAME = code
+LC_MEASUREMENT = pt_BR.UTF-8
 # environment
 LC_ALL = C
+# environment
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # makefile (from 'Makefile', line 7)
 LIBS = sfml-graphics sfml-window sfml-system
-# environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/4c262e31_c81f_472e_9ca7_bc92e9b051fc
 # automatic
 ^F = $(notdir $^)
-# environment
-GNOME_TERMINAL_SERVICE = :1.199
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 10)
 FLAGS = $(foreach lib, $(LIBS),-l$(lib))
 # environment
-SNAP_REEXEC = 
-# environment
 CHROME_DESKTOP = code-url-handler.desktop
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+LC_IDENTIFICATION = pt_BR.UTF-8
 # default
 .RECIPEPREFIX := 
 # environment
+LC_ADDRESS = pt_BR.UTF-8
+# environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 4324
+VSCODE_PID = 1475
 # variable set hash-table stats:
- 
-# Load=133/1024=13%, Rehash=0, Collisions=13/161=8%
+# Load=118/1024=12%, Rehash=0, Collisions=10/146=7%
 
 # Pattern-specific Variable Values
 
@@ -289,9 +258,9 @@ VSCODE_PID = 4324
 # Directories
 
 # Entities: could not be stat'd.
-# . (device 2050, inode 1714372): 10 files, no impossibilities.
+# . (device 2053, inode 792622): 11 files, no impossibilities.
 
-# 10 files, no impossibilities in 2 directories.
+# 11 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -309,9 +278,10 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-24 10:24:58.573643115
+#  Last modified 2022-05-24 13:23:51.292259765
 #  File has been updated.
 #  Successfully updated.
+ 
 
 # Not a target:
 main.cpp:
@@ -353,12 +323,12 @@ main: Window.cpp main.cpp
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 17 / storage = 141 B / avg = 8 B
-# current buf: size = 8162 B / used = 141 B / count = 17 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 18 / storage = 146 B / avg = 8 B
+# current buf: size = 8162 B / used = 146 B / count = 18 / avg = 8 B
 
-# strcache performance: lookups = 26 / hit rate = 34%
+# strcache performance: lookups = 27 / hit rate = 33%
 # hash-table stats:
-# Load=17/8192=0%, Rehash=0, Collisions=1/26=4%
-# Finished Make data base on Tue May 24 10:25:01 2022
+# Load=18/8192=0%, Rehash=0, Collisions=1/27=4%
+# Finished Make data base on Tue May 24 15:04:13 2022
 
  
