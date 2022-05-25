@@ -16,6 +16,9 @@ namespace Entities{
                     Thorns(sf::Vector2f position);
                     ~Thorns();
                     const int getDmg() const;
+
+                    void update(const float dt) = 0;
+                    void intializeSprite();
             };
         }
     }

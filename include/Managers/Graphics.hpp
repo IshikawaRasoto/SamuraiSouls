@@ -26,6 +26,8 @@ public:
     void toggleFullscreen();
     void draw(sf::Drawable &drawable);
 
+    static GraphicsManager* getInstance();
+
 private:
     void setup(const std::string &title, const sf::Vector2u &size);
     void destroy();
@@ -37,6 +39,9 @@ private:
 
     bool done;
     bool fullscreen;
+
+    // SINGLETON
+    static GraphicsManager* instance;
 };
 
 }

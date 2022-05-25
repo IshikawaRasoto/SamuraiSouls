@@ -22,6 +22,9 @@ namespace Entities{
                     const bool isPlayerOne() const;
                     void updatePts(int points);
                     const bool getPts() const;
+
+                    void initializeSprite();
+                    void update(float dt);
                     
             };
         }

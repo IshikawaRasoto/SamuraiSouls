@@ -84,3 +84,11 @@ void GraphicsManager::create(){
     window.setFramerateLimit(60);
     window.create({size.x, size.y, 32}, title, style);
 }
+
+GraphicsManager* GraphicsManager::instance = nullptr;
+
+GraphicsManager* GraphicsManager::getInstance(){
+    if(instance == nullptr)
+        instance = new GraphicsManager;
+    return instance;
+}

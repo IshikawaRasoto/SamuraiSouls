@@ -13,7 +13,7 @@ protected:
 private:
 
     bool showing;
-    bool facingLeft;
+ //   bool facingLeft;
 
 public:
     Entity();
@@ -23,16 +23,14 @@ public:
     const sf::Vector2f getSpeed() const;
     const sf::Vector2f getHitbox() const;
     const bool getIsShowing() const;
-    const bool getIsFacingLeft() const;
+//    const bool getIsFacingLeft() const;
 
     void setSpeed(const sf::Vector2f speed);
     void setHitbox(const sf::Vector2f hitbox);
     void setIsShowing(const bool showing);
-    void setIsFacingLeft(const bool facingLeft);
+//    void setIsFacingLeft(const bool facingLeft);
 
-    virtual void collide(Entity* other, sf::Vector2f intersect);
-
-    virtual void render();
+//    virtual void render();
     virtual void update(const float dt) = 0;
     virtual void initializeSprite() = 0;
 };
