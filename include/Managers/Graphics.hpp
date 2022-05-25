@@ -9,8 +9,6 @@ class GraphicsManager{
 
 public:
 
-    GraphicsManager();
-    GraphicsManager(const std::string &title, const sf::Vector2u &size);
     ~GraphicsManager();
 
     void beginDraw();
@@ -29,6 +27,9 @@ public:
     static GraphicsManager* getInstance();
 
 private:
+
+    GraphicsManager();
+
     void setup(const std::string &title, const sf::Vector2u &size);
     void destroy();
     void create();

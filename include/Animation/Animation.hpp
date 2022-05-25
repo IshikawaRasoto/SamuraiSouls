@@ -9,7 +9,7 @@ class Animation{
         GraphicsManager* pGM;
         sf::RectangleShape body;
     public:
-        Animation();
+        Animation(sf::Vector2f size = sf::Vector2f(0.0f,0.0f));
         ~Animation();
         void render();
         void update(sf::Vector2f position);

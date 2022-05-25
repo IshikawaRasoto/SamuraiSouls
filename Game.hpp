@@ -3,9 +3,13 @@
 #include <SFML/Graphics.hpp>
 
 #include "Window.hpp"
-#include "Managers/Graphics.hpp"
-#include "Managers/Colission.hpp"
-#include "Managers/Event.hpp"
+#include "Managers/Collision.hpp"
+#include "Entities/Characters/Players/Huntress.hpp"
+#include "Lists/EntityList.hpp"
+
+
+using namespace Entities::Characters;
+
 #include "Lists/EntityList.hpp"
 
 class Game{
@@ -19,6 +23,7 @@ public:
     Window* getWindow();
 
     void update();
+    void handleInput();
     void render();
 
     void restartClock();
@@ -26,7 +31,10 @@ private:
     sf::Clock clock;
     sf::Time elapsed;
 
+    Lists::EntityList movingEntities;
+    Lists::EntityList staticEntities;
+
+    Players::Huntress player;
     Managers::GraphicsManager *graphicManager;
-    Managers::EventManager *eventManager;
-    Lists::EntityList *entitiesList;
+    Managers::CollisionManager collisionManager;
 };

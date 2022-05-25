@@ -1,9 +1,9 @@
-#include "Managers/Colission.hpp"
+#include "Managers/Collision.hpp"
 #include <cmath>
 
 using namespace Managers;
 
-ColissionManager::ColissionManager(
+CollisionManager::CollisionManager(
     Lists::EntityList *movingEntities, 
     Lists::EntityList *staticEntities
 ){
@@ -11,14 +11,14 @@ ColissionManager::ColissionManager(
     this->staticEntities = staticEntities;
 }
 
-ColissionManager::ColissionManager(){
+CollisionManager::CollisionManager(){
     movingEntities = nullptr;
     staticEntities = nullptr;
 }
 
-ColissionManager::~ColissionManager(){}
+CollisionManager::~CollisionManager(){}
 
-void ColissionManager::checkColission(){
+void CollisionManager::checkColision(){
 
     if(!movingEntities || !staticEntities){
         return;
@@ -35,8 +35,8 @@ void ColissionManager::checkColission(){
             centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
             centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
 
-            intersect.x = fabs(centerDistance.x) - (entity1->getHitbox().x/2 + entity2->getHitbox().x/2);
-            intersect.y = fabs(centerDistance.y) - (entity1->getHitbox().y/2 + entity2->getHitbox().y/2);
+            intersect.x = fabs(centerDistance.x) - (entity1->getSize().x/2 + entity2->getSize().x/2);
+            intersect.y = fabs(centerDistance.y) - (entity1->getSize().y/2 + entity2->getSize().y/2);
 
             if(intersect.x < 0.0f && intersect.y < 0.0f){
                 entity1->collide(entity2, intersect);
@@ -52,8 +52,8 @@ void ColissionManager::checkColission(){
             centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
             centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
 
-            intersect.x = fabs(centerDistance.x) - (entity1->getHitbox().x/2 + entity2->getHitbox().x/2);
-            intersect.y = fabs(centerDistance.y) - (entity1->getHitbox().y/2 + entity2->getHitbox().y/2);
+            intersect.x = fabs(centerDistance.x) - (entity1->getSize().x/2 + entity2->getSize().x/2);
+            intersect.y = fabs(centerDistance.y) - (entity1->getSize().y/2 + entity2->getSize().y/2);
 
             if(intersect.x < 0.0f && intersect.y < 0.0f){
                 entity1->collide(entity2, intersect);

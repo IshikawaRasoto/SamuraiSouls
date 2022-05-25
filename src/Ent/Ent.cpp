@@ -5,12 +5,16 @@
 Ent::Ent():
     animation(nullptr),
     t(Empty)
-    {position = sf::Vector2f(0.0, 0.0);}
+{
+    position = sf::Vector2f(0.0f, 0.0f);
+    size = sf::Vector2f(0.0f, 0.0f);
+}
 
-Ent::Ent(Type t, sf::Vector2f position):
-    animation(new Animation()),
+Ent::Ent(Type t, sf::Vector2f position, sf::Vector2f size):
+    animation(new Animation(size)),
     t(t),
-    position(position)
+    position(position),
+    size(size)
 {}
 
 Ent::~Ent(){delete(animation);}

@@ -2,9 +2,12 @@
 
 #include "Animation/Animation.hpp"
 
-Animation::Animation():
+Animation::Animation(sf::Vector2f size):
     pGM(GraphicsManager::getInstance())
-{}
+{
+    body.setFillColor(sf::Color::Green);
+    body.setSize(size);
+}
 
 Animation::~Animation(){
     pGM = nullptr;
@@ -18,4 +21,8 @@ void Animation::update(sf::Vector2f position){
 void Animation::setGraphMngr(GraphicsManager* pGraphMngr){
     if(pGraphMngr)
         pGM = pGraphMngr;
+}
+
+void Animation::render(){
+    pGM->draw(body);
 }

@@ -7,10 +7,6 @@ GraphicsManager::GraphicsManager(){
     setup(windowName, sf::Vector2u(windowSize.x,windowSize.y));
 }
 
-GraphicsManager::GraphicsManager(const std::string &title, const sf::Vector2u &size){
-    setup(title, size);
-}
-
 GraphicsManager::~GraphicsManager(){}
 
 void GraphicsManager::beginDraw(){
@@ -89,6 +85,6 @@ GraphicsManager* GraphicsManager::instance = nullptr;
 
 GraphicsManager* GraphicsManager::getInstance(){
     if(instance == nullptr)
-        instance = new GraphicsManager;
+        instance = new GraphicsManager();
     return instance;
 }

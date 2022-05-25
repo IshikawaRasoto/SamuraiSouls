@@ -4,7 +4,7 @@
 
 namespace Managers{
 
-class ColissionManager{
+class CollisionManager{
 private:
 
     Lists::EntityList *movingEntities;
@@ -12,15 +12,15 @@ private:
 
 public:
 
-    ColissionManager(
+    CollisionManager(
         Lists::EntityList *movingEntities, 
         Lists::EntityList *staticEntities
     );
 
-    ColissionManager();
-    ~ColissionManager();
+    CollisionManager();
+    ~CollisionManager();
 
-    void checkColission();
+    void checkColision();
 };
 
 }
