@@ -8,12 +8,12 @@ class Animation;
 class Ent{
     protected:
         Animation* animation;
-        Type type;
+        Type t;
         sf::Vector2f position;
     
     public:
         Ent();
-        Ent(Type type, sf::Vector2f position);
+        Ent(Type t, sf::Vector2f position);
         virtual ~Ent();
 
         const sf::Vector2f getPosition() const;

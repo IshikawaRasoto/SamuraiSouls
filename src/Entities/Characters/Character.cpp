@@ -3,7 +3,7 @@
 #include "Entities/Characters/Character.hpp"
 using namespace Entities::Characters;
 
-Character::Character(Type type, sf::Vector2f position, sf::Vector2f hitbox, int hp):
+Character::Character(Type t, sf::Vector2f position, sf::Vector2f hitbox, int hp):
     Entity(type, position, hitbox),
     hp(hp)
     {}

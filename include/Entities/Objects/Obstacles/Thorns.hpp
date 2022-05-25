@@ -1,0 +1,22 @@
+#pragma once
+
+#include "Entities/Objects/Object.hpp"
+
+#define THORNS_WIDTH 200
+#define THORNS_HEIGHT 200
+
+namespace Entities{
+    namespace Objects{
+        namespace Obstacles{
+            class Thorns : public Object{
+                private:
+                    const int dmg;
+                
+                public:
+                    Thorns(sf::Vector2f position);
+                    ~Thorns();
+                    const int getDmg() const;
+            };
+        }
+    }
+}

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Entity/Entity.hpp"
+#include "Entities/Entity.hpp"
 
 using namespace Entities;
 
@@ -12,8 +12,8 @@ Entity::Entity()
     facingLeft= false;
 }
 
-Entity::Entity(Type id, sf::Vector2f position, sf::Vector2f hitbox):
-    Ent(id , position)
+Entity::Entity(Type t, sf::Vector2f position, sf::Vector2f hitbox):
+    Ent(t , position)
 {
     this->hitbox = hitbox;
     speed = sf::Vector2f(0.0, 0.0);

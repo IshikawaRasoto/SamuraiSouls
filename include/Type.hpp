@@ -9,6 +9,7 @@ enum Type{
     Boss,
     FireBall,
     Arrow,
-    Box 
+    Box,
+    Thorns
 };
 

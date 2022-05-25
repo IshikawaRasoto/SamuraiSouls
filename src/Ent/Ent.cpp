@@ -4,19 +4,19 @@
 
 Ent::Ent():
     animation(nullptr),
-    type(Empty)
+    t(Empty)
     {position = sf::Vector2f(0.0, 0.0);}
 
-Ent::Ent(Type type, sf::Vector2f position):
+Ent::Ent(Type t, sf::Vector2f position):
     animation(new Animation()),
-    type(type),
+    t(t),
     position(position)
 {}
 
 Ent::~Ent(){delete(animation);}
 
 const sf::Vector2f Ent::getPosition() const{return position;}
-const Type Ent::getType() const{return type;}
+const Type Ent::getType() const{return t;}
 
 void Ent::changePosition(sf::Vector2f position){
     this->position = position;
