@@ -26,8 +26,8 @@ public:
 
     virtual void update(const float dt) = 0;
     virtual void collide(Entity* other, sf::Vector2f intersect);
-    virtual void render();
-
+    // virtual void render();
+    
 };
 }
 

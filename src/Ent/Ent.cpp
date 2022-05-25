@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Ent/Ent.hpp"
 
 Ent::Ent():
@@ -21,7 +19,10 @@ Ent::~Ent(){delete(animation);}
 
 const sf::Vector2f Ent::getPosition() const{return position;}
 const Type Ent::getType() const{return t;}
+const sf::Vector2f Ent::getSize() const {return size;}
 
 void Ent::setPosition(sf::Vector2f position){
     this->position = position;
 }
+
+void Ent::render(){}

@@ -11,6 +11,10 @@ Game::Game():
 
 Game::~Game(){}
 
+bool Game::isDone(){
+    return graphicManager->isDone();
+}
+
 sf::Time Game::getElapsed(){
     return elapsed;
 }

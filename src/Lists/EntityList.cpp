@@ -1,4 +1,4 @@
-#include "EntityList.hpp"
+#include "Lists/EntityList.hpp"
 
 using namespace Lists;
 
@@ -27,6 +27,7 @@ bool EntityList::addEntity(Entities::Entity *entity){
 }
 
 bool EntityList::removeEntity(Entities::Entity *entity){
+    return false;
 }
 
 void EntityList::updateAll(float dt){
@@ -53,6 +54,8 @@ Entities::Entity* EntityList::operator[](int id){
             return it;
         }
     }
+
+    return nullptr;
 }
 
 const int EntityList::getSize(){

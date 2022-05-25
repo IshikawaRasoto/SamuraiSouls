@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Entities/Characters/Players/Huntress.hpp"
 using namespace Entities::Characters;
 
@@ -32,9 +30,9 @@ void Players::Huntress::walk(Direction dirX, Direction dirY){
     }
 
     if(dirY == Direction::Up){
-        newSpeed.y = HUNTRESS_SPEED_Y;
-    }else if(dirY == Direction::Down){
         newSpeed.y = - HUNTRESS_SPEED_Y;
+    }else if(dirY == Direction::Down){
+        newSpeed.y = HUNTRESS_SPEED_Y;
     }
 
     speed = newSpeed;
@@ -43,3 +41,5 @@ void Players::Huntress::walk(Direction dirX, Direction dirY){
 void Players::Huntress::render(){
     animation->render();
 }
+
+void Players::Huntress::initializeSprite(){}

@@ -2,15 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "Window.hpp"
+#include "Managers/Graphics.hpp"
 #include "Managers/Collision.hpp"
 #include "Entities/Characters/Players/Huntress.hpp"
 #include "Lists/EntityList.hpp"
 
-
 using namespace Entities::Characters;
-
-#include "Lists/EntityList.hpp"
 
 class Game{
 
@@ -20,7 +17,7 @@ public:
     ~Game();
 
     sf::Time getElapsed();
-    Window* getWindow();
+    bool isDone();
 
     void update();
     void handleInput();

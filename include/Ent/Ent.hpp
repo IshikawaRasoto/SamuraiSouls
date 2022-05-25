@@ -1,5 +1,3 @@
-#pragma once
-
 #include "../../include/standard.hpp"
 #include "../Animation/Animation.hpp"
 
@@ -25,6 +23,6 @@ class Ent{
         
         void setPosition(sf::Vector2f position);
         
-        virtual void update(float dt) = 0;
+        virtual void update(const float dt) = 0;
         virtual void render();
 };

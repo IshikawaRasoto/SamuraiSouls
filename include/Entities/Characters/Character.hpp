@@ -26,7 +26,7 @@ namespace Entities{
                 const int getHP() const;
                 void getDamage(int dmg);
                 virtual void update(float dt) = 0;
-                virtual void render();
+                // virtual void render();
 
             protected:
                 virtual void initializeSprite() = 0;      

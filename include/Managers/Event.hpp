@@ -1,17 +1,17 @@
-#pragma once
+// #pragma once
 
-#include <SFML/Graphics.hpp>
-#include "EventListener.hpp"
-#include "EventType.hpp"
-#include <map>
+// #include <SFML/Graphics.hpp>
+// #include "EventListener.hpp"
+// #include "EventType.hpp"
+// #include <map>
 
-namespace Managers{
+// namespace Managers{
 
-class EventManager{
-private:
+// class EventManager{
+// private:
     
 
 
-};
+// };
 
-}
+// }

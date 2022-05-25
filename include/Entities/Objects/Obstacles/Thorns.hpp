@@ -11,6 +11,7 @@ namespace Entities{
             class Thorns : public Object{
                 private:
                     static const int dmg;
+                    void initializeSprite();
                 
                 public:
                     Thorns(sf::Vector2f position);
@@ -18,7 +19,7 @@ namespace Entities{
                     const int getDmg() const;
 
                     void update(const float dt);
-                    void intializeSprite();
+                    void render();
             };
         }
     }

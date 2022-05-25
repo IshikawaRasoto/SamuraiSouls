@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Entities/Characters/Character.hpp"
 using namespace Entities::Characters;
 

@@ -1,5 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game'
-g++ -o main Window.cpp main.cpp -lsfml-graphics -lsfml-window -lsfml-system
+g++ -o main src/Managers/Collision.cpp src/Managers/Graphics.cpp src/Managers/Event.cpp src/Animation/Animation.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Lists/EntityList.cpp src/Entities/Objects/Object.cpp src/Entities/Characters/Character.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Characters/Player/Huntress.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm -I./include 
 make: Leaving directory '/home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game'
  

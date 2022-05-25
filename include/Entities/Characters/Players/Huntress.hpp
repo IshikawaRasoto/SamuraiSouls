@@ -1,10 +1,10 @@
 #pragma once
 
 #define HUNTRESS_HP 100
-#define HUNTRESS_WIDTH 400
-#define HUNTRESS_HEIGHT 400
-#define HUNTRESS_SPEED_X 10
-#define HUNTRESS_SPEED_Y 10
+#define HUNTRESS_WIDTH 200
+#define HUNTRESS_HEIGHT 200
+#define HUNTRESS_SPEED_X 30
+#define HUNTRESS_SPEED_Y 30
 
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Input.hpp"

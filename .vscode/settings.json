@@ -47,6 +47,8 @@
         "memory": "cpp",
         "memory_resource": "cpp",
         "numeric": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "object.hpp": "c",
+        "entity.hpp": "c"
     }
 }

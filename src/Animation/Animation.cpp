@@ -1,5 +1,3 @@
-#pragma once
-
 #include "Animation/Animation.hpp"
 
 Animation::Animation(sf::Vector2f size):

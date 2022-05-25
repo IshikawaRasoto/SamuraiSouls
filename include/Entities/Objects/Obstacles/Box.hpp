@@ -11,10 +11,11 @@ namespace Entities{
             class Box : public Object{
                 public:
                     Box(sf::Vector2f position);
-                    ~Box(){}
-                    
+                    ~Box();
                     void update(const float dt);
-                    void intializeSprite();
+                    void render();
+                private:
+                    void initializeSprite();
             };
         }
     }
