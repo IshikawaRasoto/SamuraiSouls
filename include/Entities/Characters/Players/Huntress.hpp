@@ -3,8 +3,8 @@
 #define HUNTRESS_HP 100
 #define HUNTRESS_WIDTH 200
 #define HUNTRESS_HEIGHT 200
-#define HUNTRESS_SPEED_X 30
-#define HUNTRESS_SPEED_Y 30
+#define HUNTRESS_SPEED_X 80
+#define HUNTRESS_SPEED_Y 80
 
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Input.hpp"
@@ -30,6 +30,7 @@ namespace Entities{
                     void update(float dt);
                     void walk(Direction dirX, Direction dirY);
                     void render();
+                    void collide(Entity* other, sf::Vector2f intersect);
 
                 private:
                     void initializeSprite();

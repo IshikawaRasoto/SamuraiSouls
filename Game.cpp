@@ -4,9 +4,11 @@
 Game::Game(): 
     graphicManager(GraphicsManager::getInstance()),
     collisionManager(&movingEntities, &staticEntities),
-    player({0.0f, 0.0f})
+    player({0.0f, 0.0f}),
+    box({400.0f,400.0f})
 {
     movingEntities.addEntity(&player);
+    staticEntities.addEntity(&box);
 }
 
 Game::~Game(){}
@@ -26,6 +28,8 @@ void Game::update(){
     if(elapsed.asSeconds() < frametime) return;
 
     player.update(elapsed.asSeconds());
+    box.update(elapsed.asSeconds());
+    
     graphicManager->update();
     collisionManager.checkColision();
 
@@ -47,7 +51,9 @@ void Game::handleInput(){
         dirY = Direction::Up;
     }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
         dirY = Direction::Down;
-    }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
+    }
+    
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
         dirX = Direction::Left;
     }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
         dirX = Direction::Right;

@@ -14,4 +14,5 @@ class Animation{
         void render();
         void update(sf::Vector2f position);
         void setGraphMngr(GraphicsManager* pGraphMngr);
+        sf::RectangleShape* getRectangleShape();
 };

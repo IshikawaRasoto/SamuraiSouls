@@ -3,7 +3,6 @@
 Animation::Animation(sf::Vector2f size):
     pGM(GraphicsManager::getInstance())
 {
-    body.setFillColor(sf::Color::Green);
     body.setSize(size);
 }
 
@@ -23,4 +22,8 @@ void Animation::setGraphMngr(GraphicsManager* pGraphMngr){
 
 void Animation::render(){
     pGM->draw(body);
+}
+
+sf::RectangleShape* Animation::getRectangleShape(){
+    return &body;
 }

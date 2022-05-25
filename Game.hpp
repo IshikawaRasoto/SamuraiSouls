@@ -4,10 +4,12 @@
 
 #include "Managers/Graphics.hpp"
 #include "Managers/Collision.hpp"
+#include "Entities/Objects/Obstacles/Box.hpp"
 #include "Entities/Characters/Players/Huntress.hpp"
 #include "Lists/EntityList.hpp"
 
 using namespace Entities::Characters;
+using namespace Entities::Objects;
 
 class Game{
 
@@ -32,6 +34,8 @@ private:
     Lists::EntityList staticEntities;
 
     Players::Huntress player;
+    Obstacles::Box box;
+    
     Managers::GraphicsManager *graphicManager;
     Managers::CollisionManager collisionManager;
 };
