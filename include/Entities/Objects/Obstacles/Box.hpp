@@ -13,7 +13,7 @@ namespace Entities{
                     Box(sf::Vector2f position);
                     ~Box(){}
                     
-                    void update(const float dt) = 0;
+                    void update(const float dt);
                     void intializeSprite();
             };
         }

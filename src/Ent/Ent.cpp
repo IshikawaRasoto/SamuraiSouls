@@ -18,6 +18,6 @@ Ent::~Ent(){delete(animation);}
 const sf::Vector2f Ent::getPosition() const{return position;}
 const Type Ent::getType() const{return t;}
 
-void Ent::changePosition(sf::Vector2f position){
+void Ent::setPosition(sf::Vector2f position){
     this->position = position;
 }

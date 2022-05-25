@@ -10,7 +10,7 @@ namespace Entities{
 
             public:
                 Character(Type t, sf::Vector2f position, sf::Vector2f hitbox, int hp);
-                ~Character();
+                virtual ~Character();
                 const int getHP() const;
                 void getDamage(int dmg);
                 

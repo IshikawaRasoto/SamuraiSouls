@@ -7,3 +7,5 @@ Obstacles::Box::Box(sf::Vector2f position):
     Object(Type::Box, position, sf::Vector2f(BOX_WIDTH, BOX_HEIGHT))
     {}
 
+Obstacles::Box::~Box(){}
+

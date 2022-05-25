@@ -18,7 +18,7 @@ private:
 public:
     Entity();
     Entity(Type t, sf::Vector2f position, sf::Vector2f hitbox);
-    ~Entity();
+    virtual ~Entity();
     
     const sf::Vector2f getSpeed() const;
     const sf::Vector2f getHitbox() const;

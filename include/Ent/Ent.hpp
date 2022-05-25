@@ -18,7 +18,7 @@ class Ent{
 
         const sf::Vector2f getPosition() const;
         const Type getType() const;
-        void changePosition(sf::Vector2f position);
+        void setPosition(sf::Vector2f position);
         
         virtual void initializeSprite() = 0;
         virtual void update(float dt) = 0;

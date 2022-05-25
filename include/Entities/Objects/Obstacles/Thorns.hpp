@@ -10,14 +10,14 @@ namespace Entities{
         namespace Obstacles{
             class Thorns : public Object{
                 private:
-                    const int dmg;
+                    static const int dmg;
                 
                 public:
                     Thorns(sf::Vector2f position);
                     ~Thorns();
                     const int getDmg() const;
 
-                    void update(const float dt) = 0;
+                    void update(const float dt);
                     void intializeSprite();
             };
         }
