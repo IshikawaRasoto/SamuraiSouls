@@ -19,7 +19,7 @@ public:
 
     CollisionManager();
     ~CollisionManager();
-
+    
     void checkColision();
 };
 
