@@ -22,7 +22,7 @@ namespace Entities{
                     void update(float dt);
                     void attack();
                     void followPlayer();
-                    void updateSprite(float dt);
+                    void updateSprite(float dt); //
             };
         }
     }
