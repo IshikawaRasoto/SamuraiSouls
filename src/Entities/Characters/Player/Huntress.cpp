@@ -1,4 +1,6 @@
 #include "Entities/Characters/Players/Huntress.hpp"
+#include <iostream>
+
 using namespace Entities::Characters;
 
 Players::Huntress::Huntress(sf::Vector2f position, const bool isPlayerOne, InputManager* pIM):
@@ -55,7 +57,20 @@ void Players::Huntress::collide(Entities::Entity* other, sf::Vector2f intersect)
     if(other->getType() == Type::Box){
         setSpeed({0, speed.y});
 
-        position.x += intersect.x;
-        position.y += intersect.y;
+        std::cout << intersect.x << "|" << intersect.y << "\n"; 
+
+        if(intersect.x > intersect.y){
+            if(other->getPosition().x < position.x){
+                position.x -= intersect.x;
+            }else{
+                position.x += intersect.x;
+            }
+        }else{
+            if(other->getPosition().y < position.y){
+                position.y -= intersect.y;
+            }else{
+                position.y += intersect.y;
+            }
+        }
     };
 }

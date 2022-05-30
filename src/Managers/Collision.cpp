@@ -18,7 +18,7 @@ CollisionManager::CollisionManager(){
 
 CollisionManager::~CollisionManager(){}
 
-void CollisionManager::checkColision(){
+void CollisionManager::checkCollision(){
 
     if(!movingEntities || !staticEntities){
         return;
@@ -41,7 +41,7 @@ void CollisionManager::checkColision(){
             if(intersect.x < 0.0f && intersect.y < 0.0f){
                 entity1->collide(entity2, intersect);
             }
-        }
+        } 
     }
 
     for(int i = 0; i < movingEntities->getSize(); i++){

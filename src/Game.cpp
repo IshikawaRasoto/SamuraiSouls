@@ -31,7 +31,7 @@ void Game::update(){
     box.update(elapsed.asSeconds());
     
     graphicManager->update();
-    collisionManager.checkColision();
+    collisionManager.checkCollision();
 
     elapsed -= sf::seconds(frametime);
 }

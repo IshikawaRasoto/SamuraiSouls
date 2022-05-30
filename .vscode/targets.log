@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed May 25 12:57:50 2022
+# Make data base, printed on Mon May 30 10:00:39 2022
 
 # Variables
 
@@ -30,10 +30,12 @@ VSCODE_LOG_NATIVE = false
 GTK3_MODULES = xapp-gtk3-module
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from 'Makefile', line 9)
+# makefile (from 'Makefile', line 13)
 SFML_FLAGS :=  -lsfml-window  -lsfml-graphics  -lsfml-system
 # environment
 PLATFORMIO_IDE = 2.4.3
+# makefile (from 'Makefile', line 11)
+INCLUDES :=  -Iinclude
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -54,6 +56,8 @@ GDM_LANG = pt_BR
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 7)
+CSRCS := ./src/Lists/EntityList.cpp ./src/Game.cpp ./src/Ent/Ent.cpp ./src/Entities/Entity.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Player/Huntress.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Managers/Event.cpp ./src/Animation/Animation.cpp ./main.cpp src/Lists/EntityList.cpp src/Game.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Player/Huntress.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Managers/Event.cpp src/Animation/Animation.cpp
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -64,6 +68,8 @@ SNAP_ARCH = amd64
 GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
+# makefile (from 'Makefile', line 8)
+HSRCS := include/config.hpp include/Lists/EntityList.hpp include/Type.hpp include/Ent/Ent.hpp include/Game.hpp include/Entities/Entity.hpp include/Entities/Characters/Character.hpp include/Entities/Characters/Players/Archer.hpp include/Entities/Characters/Players/Huntress.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Objects/Object.hpp include/Managers/Input.hpp include/Managers/Event.hpp include/Managers/EventType.hpp include/Managers/Graphics.hpp include/Managers/EventListener.hpp include/Managers/Observer.hpp include/Managers/Collision.hpp include/standard.hpp include/Animation/Animation.hpp
 # automatic
 @F = $(notdir $@)
 # 'override' directive
@@ -74,6 +80,8 @@ XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/ch4pl1n/.local/share/
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 9)
+OBJS := ./src/Lists/EntityList.o ./src/Game.o ./src/Ent/Ent.o ./src/Entities/Entity.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Player/Huntress.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Managers/Event.o ./src/Animation/Animation.o ./main.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Player/Huntress.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Event.o src/Animation/Animation.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -89,11 +97,13 @@ NO_PROXY = 127.0.0.1
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ch4pl1n:@/tmp/.ICE-unix/1220,unix/ch4pl1n:/tmp/.ICE-unix/1220
+SESSION_MANAGER = local/ch4pl1n:@/tmp/.ICE-unix/1228,unix/ch4pl1n:/tmp/.ICE-unix/1228
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/ch4pl1n/snap/code/common/.cache/gdk-pixbuf-loaders.cache
+# makefile (from 'Makefile', line 5)
+INCLUDE_DIR := include
 # environment
 SNAP = /snap/code/97
 # environment
@@ -133,7 +143,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1316
+SSH_AGENT_PID = 1325
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -168,14 +178,14 @@ GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XDG_VTNR = 7
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 12)
 SFML_MODULES := window graphics system
 # environment
 MAKELEVEL := 0
 # environment
 SNAP_REAL_HOME = /home/ch4pl1n
 # environment
-PLATFORMIO_PATH = /home/ch4pl1n/.platformio/penv/bin:/home/ch4pl1n/.platformio/penv:/home/ch4pl1n/.platformio/python3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PLATFORMIO_PATH = /home/ch4pl1n/.platformio/python3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 COLORTERM = truecolor
 # default
@@ -184,8 +194,6 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# makefile (from 'Makefile', line 6)
-SRCS := ./src/Managers/Collision.cpp ./src/Managers/Graphics.cpp ./src/Managers/Event.cpp ./src/Animation/Animation.cpp ./src/Ent/Ent.cpp ./src/Entities/Entity.cpp ./src/Lists/EntityList.cpp src/Entities/Objects/Object.cpp src/Entities/Characters/Character.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Characters/Player/Huntress.cpp
 # environment
 SNAP_USER_DATA = /home/ch4pl1n/snap/code/97
 # environment
@@ -193,7 +201,7 @@ SHLVL = 1
 # makefile (from 'Makefile', line 3)
 CC := g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-04d5ca50-badc-4cba-8446-714ea9c8523d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fc07e81e-31f1-46a3-b2c8-10d5a9da58a5.sock
 # environment
 XDG_SESSION_ID = c1
 # environment
@@ -202,8 +210,6 @@ USER = ch4pl1n
 SNAP_REVISION = 97
 # makefile
 .DEFAULT_GOAL := all
-# makefile (from 'Makefile', line 7)
-INCLUDE := -I./include 
 # environment
 XDG_CURRENT_DESKTOP = X-Cinnamon
 # automatic
@@ -211,7 +217,7 @@ XDG_CURRENT_DESKTOP = X-Cinnamon
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/ch4pl1n
+OLDPWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos
 # default
 .VARIABLES := 
 # automatic
@@ -226,7 +232,6 @@ VSCODE_IPC_HOOK = /run/user/1000/vscode-3b931484-1.67.2-main.sock
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
- 
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # automatic
@@ -237,10 +242,14 @@ GDK_BACKEND = x11
 +F = $(notdir $+)
 # environment
 QT_ACCESSIBILITY = 1
+# 'override' directive
+.SHELLSTATUS := 0
 # default
 MAKEFILES := 
 # environment
 SNAP_COOKIE = jxyhC23-EohMRPg6s5TXqJNeIMeOq04a1ZdGkB7ccppLXoLBOKT0
+# makefile (from 'Makefile', line 4)
+SRC_DIR := src
 # automatic
 <F = $(notdir $<)
 # environment
@@ -251,19 +260,18 @@ PROJECT_NAME := main
 SNAP_NAME = code
 # environment
 LC_ALL = C
-# makefile (from 'Makefile', line 4)
-DIR := ./src 
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/85a82b2d_101f_4316_9cd7_588ab2466dcd
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2c79468e_6530_4702_8cf6_0f5d0f624e4f
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.323
+GNOME_TERMINAL_SERVICE = :1.1187
 # default
 SUFFIXES := 
-# makefile (from 'Makefile', line 11)
-FLAGS = $(SFML_FLAGS) -lm
+# makefile (from 'Makefile', line 15)
+FLAGS = $(SFML_FLAGS) -lm $(INCLUDES) -c
 # environment
+ 
 SNAP_REEXEC = 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
@@ -276,9 +284,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 10352
+VSCODE_PID = 17438
 # variable set hash-table stats:
-# Load=133/1024=13%, Rehash=0, Collisions=19/172=11%
+# Load=137/1024=13%, Rehash=0, Collisions=16/177=9%
 
 # Pattern-specific Variable Values
 
@@ -286,76 +294,27 @@ VSCODE_PID = 10352
 
 # Directories
 
-# ./src/Ent (device 2050, inode 4464773): 3 files, no impossibilities.
-# include/Animation (device 2050, inode 4595547): 3 files, no impossibilities.
-# include/Managers/EventListener.hpp (device 2050, inode 1840753): could not be opened.
-# ignore/Window.cpp (device 2050, inode 1715191): could not be opened.
-# src/Animation (device 2050, inode 4463661): 3 files, no impossibilities.
-# include/Managers/Observer.hpp (device 2050, inode 1840737): could not be opened.
-# Makefile (device 2050, inode 1715092): could not be opened.
-# include (device 2050, inode 1715623): 10 files, no impossibilities.
-# UMLRAFAELVICTOR2405.jpg (device 2050, inode 1715633): could not be opened.
-# include/Entities/Characters/Character.hpp (device 2050, inode 1840759): could not be opened.
-# include/Managers (device 2050, inode 1841252): 9 files, no impossibilities.
-# . (device 2050, inode 1714372): 11 files, no impossibilities.
-# src/Entities/Characters/Character.cpp (device 2050, inode 4464777): could not be opened.
-# include/Entities/Objects/Object.hpp (device 2050, inode 6692599): could not be opened.
-# ./src (device 2050, inode 4464828): 8 files, no impossibilities.
-# ignore/a (device 2050, inode 1715626): could not be opened.
-# include/Entities/Objects (device 2050, inode 6693276): 4 files, no impossibilities.
-# ./src/Managers (device 2050, inode 4464788): 5 files, no impossibilities.
-# include/Managers/Graphics.hpp (device 2050, inode 1842239): could not be opened.
-# main (device 2050, inode 1715096): could not be opened.
-# src/Managers/Graphics.cpp (device 2050, inode 4464791): could not be opened.
-# include/Lists (device 2050, inode 1842355): 3 files, no impossibilities.
-# include/Entities/Objects/Obstacles (device 2050, inode 6692558): 4 files, no impossibilities.
-# include/Entities/Characters (device 2050, inode 1840757): 4 files, no impossibilities.
-# src/Entities/Objects/Obstacles (device 2050, inode 4464783): 4 files, no impossibilities.
-# ./src/Lists (device 2050, inode 4464786): 3 files, no impossibilities.
-# src/Managers/Collision.cpp (device 2050, inode 4464789): could not be opened.
-# src/Entities (device 2050, inode 4464775): 5 files, no impossibilities.
-# src/Math (device 2050, inode 4464792): 3 files, no impossibilities.
-# include/Type.hpp (device 2050, inode 4595537): could not be opened.
-# Game.hpp (device 2050, inode 1716817): could not be opened.
-# include/Managers/EventType.hpp (device 2050, inode 1841263): could not be opened.
-# src/Entities/Objects/Object.cpp (device 2050, inode 4464782): could not be opened.
-# include/config.hpp (device 2050, inode 1716815): could not be opened.
-# include/Managers/Event.hpp (device 2050, inode 1841206): could not be opened.
-# include/Ent/Ent.hpp (device 2050, inode 1841203): could not be opened.
-# ./src/Animation (device 2050, inode 4463661): 3 files, no impossibilities.
-# ignore/a.cpp (device 2050, inode 1715625): could not be opened.
-# src/Ent/Ent.cpp (device 2050, inode 4464774): could not be opened.
-# src/Ent (device 2050, inode 4464773): 3 files, no impossibilities.
-# include/Animation/Animation.hpp (device 2050, inode 4593881): could not be opened.
-# src/Animation/Animation.cpp (device 2050, inode 4463774): could not be opened.
-# include/Entities/Characters/Players (device 2050, inode 1842358): 4 files, no impossibilities.
-# ignore/Window.hpp (device 2050, inode 1715213): could not be opened.
-# src/Math/Vector2.hpp (device 2050, inode 4464793): could not be opened.
-# src/Entities/Characters/Player (device 2050, inode 4464778): 3 files, no impossibilities.
-# src (device 2050, inode 4464828): 8 files, no impossibilities.
-# include/Managers/Input.hpp (device 2050, inode 1842362): could not be opened.
-# include/Managers/Collision.hpp (device 2050, inode 1842337): could not be opened.
-# src/Managers (device 2050, inode 4464788): 5 files, no impossibilities.
-# include/Entities (device 2050, inode 1841204): 5 files, no impossibilities.
-# src/Entities/Objects (device 2050, inode 4464781): 4 files, no impossibilities.
-# ./src/Entities (device 2050, inode 4464775): 5 files, no impossibilities.
-# ignore (device 2050, inode 1715638): 6 files, no impossibilities.
-# include/standard.hpp (device 2050, inode 1716813): could not be opened.
-# ./src/Math (device 2050, inode 4464792): 3 files, no impossibilities.
-# src/Lists (device 2050, inode 4464786): 3 files, no impossibilities.
-# include/Lists/EntityList.hpp (device 2050, inode 1842357): could not be opened.
-# src/Lists/EntityList.cpp (device 2050, inode 4464787): could not be opened.
-# include/Entities/Entity.hpp (device 2050, inode 1841224): could not be opened.
-# src/Managers/Event.cpp (device 2050, inode 4464790): could not be opened.
-# src/Entities/Characters (device 2050, inode 4464776): 4 files, no impossibilities.
-# include/Ent (device 2050, inode 1840760): 3 files, no impossibilities.
-# src/Entities/Entity.cpp (device 2050, inode 4464780): could not be opened.
+# src/Animation (device 2050, inode 4463661): 4 files, no impossibilities.
+# . (device 2050, inode 1714372): 13 files, no impossibilities.
+# src/Entities (device 2050, inode 4464775): 1 files, no impossibilities so far.
+# src/Ent (device 2050, inode 4464773): 3 files, no impossibilities so far.
+# src/Entities/Characters/Player (device 2050, inode 4464778): 2 files, no impossibilities so far.
+# src (device 2050, inode 4464828): 2 files, no impossibilities so far.
+# src/Managers (device 2050, inode 4464788): 8 files, no impossibilities so far.
+# src/Entities/Objects (device 2050, inode 4464781): 1 files, no impossibilities so far.
+# src/Lists (device 2050, inode 4464786): 3 files, no impossibilities so far.
+# src/Entities/Objects/Obstacles (device 2050, inode 4464783): 5 files, no impossibilities so far.
+# src/Entities/Characters (device 2050, inode 4464776): 1 files, no impossibilities so far.
 
-# 141 files, no impossibilities in 64 directories.
+# 43 files, no impossibilities in 11 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+%.o: %.cpp
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
@@ -366,58 +325,144 @@ src/Managers/Graphics.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-all: main
-#  Command line target.
+src/Animation/Animation.o: src/Animation/Animation.cpp
 #  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Animation/Animation'
+#  Last modified 2022-05-29 16:29:03.193155619
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+all: main
+#  Phony target (prerequisite of .PHONY).
+#  Command line target.
+#  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  Successfully updated.
 
-.PHONY: clean
+src/Managers/Collision.o: src/Managers/Collision.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Managers/Collision'
+#  Last modified 2022-05-29 17:04:58.123306413
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+.PHONY: clean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+src/Entities/Objects/Obstacles/Box.o: src/Entities/Objects/Obstacles/Box.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Box'
+#  Last modified 2022-05-29 16:29:00.389052699
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+src/Entities/Objects/Object.o: src/Entities/Objects/Object.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Entities/Objects/Object'
+#  Last modified 2022-05-29 16:28:59.753028839
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+src/Entities/Entity.o: src/Entities/Entity.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Entities/Entity'
+#  Last modified 2022-05-29 16:28:57.644948212
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
 src/Managers/Event.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:44.01652615
+#  Last modified 2022-05-25 13:00:29.062453813
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+src/Entities/Objects/Obstacles/Thorns.o: src/Entities/Objects/Obstacles/Thorns.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Thorns'
+#  Last modified 2022-05-29 16:29:01.017076128
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:54:32.993993045
+#  Last modified 2022-05-29 16:28:50.688664143
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/Entities/Characters/Character.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:43.012513774
+#  Last modified 2022-05-25 12:59:20.057672082
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+main.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-29 11:24:40.773081144
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/Ent/Ent.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:42.732510321
+#  Last modified 2022-05-25 13:02:53.852001513
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/Entities/Characters/Player/Huntress.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:43.012513774
+#  Last modified 2022-05-29 17:04:54.40328047
+#  File has been updated.
+#  Successfully updated.
+
+src/Lists/EntityList.o: src/Lists/EntityList.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Lists/EntityList'
+#  Last modified 2022-05-29 16:28:55.776874776
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+# Not a target:
+src/Game.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-29 16:38:14.827141096
+#  File has been updated.
+#  Successfully updated.
+
+src/Managers/Graphics.o: src/Managers/Graphics.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Managers/Graphics'
+#  Last modified 2022-05-29 16:29:01.653099551
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+# Not a target:
+src/Entities/Objects/Obstacles/Box.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-25 13:28:10.761578804
 #  File has been updated.
 #  Successfully updated.
 
@@ -427,10 +472,19 @@ src/Entities/Characters/Player/Huntress.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
+src/Managers/Event.o: src/Managers/Event.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Managers/Event'
+#  Last modified 2022-05-29 16:29:02.449128656
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
 # Not a target:
 src/Animation/Animation.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:42.408506323
+#  Last modified 2022-05-25 13:14:23.731731651
 #  File has been updated.
 #  Successfully updated.
 
@@ -439,101 +493,111 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	rm -rf ./$(PROJECT_NAME)
+#  recipe to execute (from 'Makefile', line 29):
+	rm -rf $(shell find ./ $(SRC_DIR) -name "*.o") ./$(PROJECT_NAME)
 
 # Not a target:
 src/Managers/Collision.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:44.012526101
+#  Last modified 2022-05-29 17:02:34.102596698
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-src/Entities/Objects/Obstacles/Box.cpp:
+src/Entities/Characters/Character.o: src/Entities/Characters/Character.cpp
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:43.020513873
+#  Implicit/static pattern stem: 'src/Entities/Characters/Character'
+#  Last modified 2022-05-29 16:28:58.35297555
 #  File has been updated.
 #  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
 src/Entities/Objects/Object.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:43.016513824
+#  Last modified 2022-05-25 13:06:16.5620068
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/Entities/Entity.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:43.012513774
+#  Last modified 2022-05-25 13:03:24.648316929
 #  File has been updated.
 #  Successfully updated.
 
-main: src/Managers/Collision.cpp src/Managers/Graphics.cpp src/Managers/Event.cpp src/Animation/Animation.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Lists/EntityList.cpp src/Entities/Objects/Object.cpp src/Entities/Characters/Character.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Characters/Player/Huntress.cpp
+main: src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Player/Huntress.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Event.o src/Animation/Animation.o main.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Player/Huntress.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Event.o src/Animation/Animation.o
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  Last modified 2022-05-25 12:52:25.272052063
+#  Last modified 2022-05-29 17:04:58.239307229
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := main
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := src/Managers/Collision.cpp src/Managers/Graphics.cpp src/Managers/Event.cpp src/Animation/Animation.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Lists/EntityList.cpp src/Entities/Objects/Object.cpp src/Entities/Characters/Character.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Characters/Player/Huntress.cpp
-# automatic
-# | := 
-# automatic
-# < := src/Managers/Collision.cpp
-# automatic
-# ^ := src/Managers/Collision.cpp src/Managers/Graphics.cpp src/Managers/Event.cpp src/Animation/Animation.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Lists/EntityList.cpp src/Entities/Objects/Object.cpp src/Entities/Characters/Character.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Characters/Player/Huntress.cpp
-# automatic
-# ? := src/Managers/Collision.cpp src/Managers/Graphics.cpp src/Managers/Event.cpp src/Animation/Animation.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Lists/EntityList.cpp src/Entities/Objects/Object.cpp src/Entities/Characters/Character.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Characters/Player/Huntress.cpp
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/17=12%
-#  recipe to execute (from 'Makefile', line 18):
-	$(CC) -o $@ $^ $(FLAGS) $(INCLUDE)
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 20):
+	$(CC) -o $@ $^ $(SFML_FLAGS)
+
+main.o: main.cpp
+#  Implicit rule search has not been done.
+#  Last modified 2022-05-29 16:29:03.861179599
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 26):
+	$(CC) -o $@ $< $(FLAGS)
+
+src/Ent/Ent.o: src/Ent/Ent.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Ent/Ent'
+#  Last modified 2022-05-29 16:28:57.020923953
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+ 
+	$(CC) -o $@ $< $(FLAGS) 
+
+src/Entities/Characters/Player/Huntress.o: src/Entities/Characters/Player/Huntress.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Entities/Characters/Player/Huntress'
+#  Last modified 2022-05-29 17:04:57.443301646
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+src/Game.o: src/Game.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'src/Game'
+#  Last modified 2022-05-29 17:01:11.406506088
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
+
+# Not a target:
+src/Lists/EntityList.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-25 13:01:41.491242289
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 src/Entities/Objects/Obstacles/Thorns.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 12:57:43.020513873
+#  Last modified 2022-05-25 13:08:08.553215311
 #  File has been updated.
 #  Successfully updated.
- 
-
- 
-# Not a target:
- 
-src/Lists/EntityList.cpp:
- 
-#  Implicit rule search has been done.
- 
-#  Last modified 2022-05-25 12:57:43.448519149
- 
-#  File has been updated.
- 
-#  Successfully updated.
- 
 
 # files hash-table stats:
- 
-# Load=19/1024=2%, Rehash=0, Collisions=0/47=0%
+# Load=35/1024=3%, Rehash=0, Collisions=6/118=5%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 125 / storage = 2023 B / avg = 16 B
-# current buf: size = 8162 B / used = 2023 B / count = 125 / avg = 16 B
+# strcache buffers: 1 (0) / strings = 92 / storage = 1617 B / avg = 17 B
+# current buf: size = 8162 B / used = 1617 B / count = 92 / avg = 17 B
 
-# strcache performance: lookups = 206 / hit rate = 39%
+# strcache performance: lookups = 144 / hit rate = 36%
 # hash-table stats:
-# Load=125/8192=2%, Rehash=0, Collisions=26/206=13%
-# Finished Make data base on Wed May 25 12:57:50 2022
+# Load=92/8192=1%, Rehash=0, Collisions=8/144=6%
+# Finished Make data base on Mon May 30 10:00:39 2022
 
  
