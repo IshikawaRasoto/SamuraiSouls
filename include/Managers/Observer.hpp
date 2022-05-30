@@ -1,4 +1,3 @@
-// class Publisher{
+class Observer{
     
-
-// };
+};

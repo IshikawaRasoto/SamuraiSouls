@@ -1,9 +1,11 @@
 #pragma once
 
-#include "standard.hpp"
+#include <map>
+#include <string>
 
 namespace Managers{
-    class InputManager{
 
+    class InputManager{
+        std::multimap<std::string, >
     };
 }
