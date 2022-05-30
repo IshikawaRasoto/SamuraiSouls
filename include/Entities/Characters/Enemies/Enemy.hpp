@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../Character.hpp"
+#include "Entities/Characters/Character.hpp"
+#include "Entities/Characters/Players/Huntress.hpp"
 #include "Type.hpp"
 
-class Player;
+
 
 namespace Entities{
     namespace Characters{
@@ -16,7 +17,7 @@ namespace Entities{
                     Player *pP2;
 
                 public:
-                    Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp);
+                    Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Player* p1 = nullptr, Player* p2 = nullptr);
                     virtual ~Enemy();
                     virtual void update(float dt) = 0;
                     virtual void attack() = 0;

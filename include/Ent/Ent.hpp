@@ -1,5 +1,7 @@
-#include "../../include/standard.hpp"
-#include "../Animation/Animation.hpp"
+#pragma once
+
+#include "Animation/Animation.hpp"
+
 
 class Animation;
 
