@@ -2,7 +2,6 @@
 
 #include "Entities/Characters/Character.hpp"
 #include "Entities/Characters/Players/Player.hpp"
-using namespace Entities::Characters;
 #include "Type.hpp"
 
 
