@@ -1,42 +1,41 @@
-#include "Entities/Characters/Players/Huntress.hpp"
+#include "Entities/Characters/Players/Player.hpp"
 #include <iostream>
 
 using namespace Entities::Characters;
 
-Players::Huntress::Huntress(sf::Vector2f position, const bool isPlayerOne, InputManager* pIM):
+Players::Player::Player(sf::Vector2f position, const bool isPlayerOne, InputManager* pIM):
         points(0),
         isWalking(false),
-        Character(Type::Huntress, position, sf::Vector2f(HUNTRESS_WIDTH, HUNTRESS_HEIGHT), HUNTRESS_HP)
+        Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
     initializeSprite();
 }
 
-Players::Huntress::~Huntress(){}
+Players::Player::~Player(){}
 
-void Players::Huntress::update(float dt){
+void Players::Player::update(float dt){
     setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
-    
-    animation->update(position);
+    animator->update(position);
 }
 
-void Players::Huntress::walk(Direction dirX, Direction dirY){
+void Players::Player::walk(Direction dirX, Direction dirY){
 
     sf::Vector2f newSpeed = speed;
     this->dirX = dirX;
     this->dirY = dirY; 
 
     if(dirX == Direction::Right){
-        newSpeed.x = HUNTRESS_SPEED_X;
+        newSpeed.x = PLAYER_SPEED_X;
     }else if (dirX == Direction::Left){
-        newSpeed.x = - HUNTRESS_SPEED_X;
+        newSpeed.x = - PLAYER_SPEED_X;
     }else if(dirX == Direction::Idle){
         newSpeed.x = 0;
     }
 
     if(dirY == Direction::Up){
-        newSpeed.y = - HUNTRESS_SPEED_Y;
+        newSpeed.y = - PLAYER_SPEED_Y;
     }else if(dirY == Direction::Down){
-        newSpeed.y = HUNTRESS_SPEED_Y;
+        newSpeed.y = PLAYER_SPEED_Y;
     }else if(dirY == Direction::Idle){
         newSpeed.y = 0;
     }
@@ -44,16 +43,16 @@ void Players::Huntress::walk(Direction dirX, Direction dirY){
     speed = newSpeed;
 }
 
-void Players::Huntress::render(){
-    animation->render();
+void Players::Player::render(){
+    animator->render();
 }
 
-void Players::Huntress::initializeSprite(){
-    sf::RectangleShape *body = animation->getRectangleShape();
+void Players::Player::initializeSprite(){
+    sf::RectangleShape *body = animator->getRectangleShape();
     body->setFillColor(sf::Color::Green);   
 }
 
-void Players::Huntress::collide(Entities::Entity* other, sf::Vector2f intersect){
+void Players::Player::collide(Entities::Entity* other, sf::Vector2f intersect){
     if(other->getType() == Type::Box){
         setSpeed({0, speed.y});
 

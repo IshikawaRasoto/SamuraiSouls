@@ -1,7 +1,7 @@
 #pragma once
 enum Type{
     Empty = -1,
-    Huntress,
+    Player,
     Archer,
     Goblin,
     Skeleton,

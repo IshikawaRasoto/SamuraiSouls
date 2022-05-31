@@ -2,6 +2,7 @@
 
 #include "Entities/Characters/Enemies/Enemy.hpp"
 
+
 #define BOSS_HP 500
 #define BOSS_DMG 30
 #define BOSS_WIDTH 200
@@ -16,13 +17,15 @@ namespace Entities{
                     static const float attackTime;
 
                 public:
-                    Boss(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Player* p1 = nullptr, Player* p2 = nullptr);
+                    Boss(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Players::Player* p1 = nullptr, Players::Player* p2 = nullptr);
                     ~Boss();
-                    void initializeSprite();
                     void update(float dt);
                     void attack();
                     void followPlayer();
-                    void updateSprite(float dt); //
+                    void render();
+
+                private:
+                    void initializeSprite();
             };
         }
     }

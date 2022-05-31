@@ -49,6 +49,10 @@ sf::Vector2u GraphicsManager::getSize(){
     return size;
 }
 
+sf::Window* GraphicsManager::getWindow(){
+    return &window;
+}
+
 void GraphicsManager::toggleFullscreen(){
     fullscreen = !fullscreen;
 

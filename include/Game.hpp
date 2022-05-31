@@ -33,7 +33,7 @@ private:
     Lists::EntityList movingEntities;
     Lists::EntityList staticEntities;
 
-    Players::Huntress player;
+    Players::Player player;
     Obstacles::Box box;
     
     Managers::GraphicsManager *graphicManager;

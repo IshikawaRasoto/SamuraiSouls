@@ -9,7 +9,7 @@ Ent::Ent():
 }
 
 Ent::Ent(Type t, sf::Vector2f position, sf::Vector2f size):
-    animation(new Animation(size)),
+    animation(new Animator(size)),
     t(t),
     position(position),
     size(size)

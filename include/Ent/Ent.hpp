@@ -1,13 +1,10 @@
 #pragma once
 
-#include "Animation/Animation.hpp"
-
-
-class Animation;
+#include "Animation/Animator.hpp"
 
 class Ent{
     protected:
-        Animation* animation;
+        Animator* animator;
         Type t;
         sf::Vector2f position;
         sf::Vector2f size;
