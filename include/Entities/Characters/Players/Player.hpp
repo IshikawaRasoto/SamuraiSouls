@@ -30,7 +30,8 @@ namespace Entities{
                     static void addPts(const int pts);
                     
                     void update(float dt);
-                    void walk(Direction dirX, Direction dirY);
+                    void walk(Direction direction);
+                    void jump();
                     void render();
                     void collide(Entity* other, sf::Vector2f intersect);
                     void save();

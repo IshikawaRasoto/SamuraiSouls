@@ -1,16 +1,20 @@
 #include "Entities/Objects/Obstacles/Thorns.hpp"
-using namespace Entities::Objects;
+using namespace Entities::Objects::Obstacles;
 
-const int Obstacles::Thorns::dmg(20);
+const int Thorns::dmg(20);
 
-Obstacles::Thorns::Thorns(sf::Vector2f position):
+Thorns::Thorns(sf::Vector2f position):
     Object(Type::Thorns, position, sf::Vector2f(THORNS_WIDTH, THORNS_HEIGHT))
 {}
 
-Obstacles::Thorns::~Thorns(){}
+Thorns::~Thorns(){}
 
-const int Obstacles::Thorns::getDmg() const{return dmg;}
+const int Thorns::getDmg() const{return dmg;}
 
-void Obstacles::Thorns::update(const float dt){}
-void Obstacles::Thorns::render(){}
-void Obstacles::Thorns::initializeSprite(){}
+void Thorns::update(const float dt){}
+void Thorns::render(){}
+void Thorns::initializeSprite(){}
+
+void Thorns::save(){
+    //TODO
+}

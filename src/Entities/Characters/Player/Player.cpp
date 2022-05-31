@@ -29,29 +29,19 @@ void Player::update(float dt){
     animator->update(position);
 }
 
-void Player::walk(Direction dirX, Direction dirY){
+void Player::jump(){
+    //TODO
+}
 
-    sf::Vector2f newSpeed = speed;
-    this->dirX = dirX;
-    this->dirY = dirY; 
+void Player::walk(Direction direction){
 
-    if(dirX == Direction::Right){
-        newSpeed.x = PLAYER_SPEED_X;
-    }else if (dirX == Direction::Left){
-        newSpeed.x = - PLAYER_SPEED_X;
+    if(direction == Direction::Right){
+        speed.x = PLAYER_SPEED_X;
+    }else if (direction == Direction::Left){
+        speed.x = -PLAYER_SPEED_X;
     }else if(dirX == Direction::Idle){
-        newSpeed.x = 0;
+        speed.x = 0;
     }
-
-    if(dirY == Direction::Up){
-        newSpeed.y = - PLAYER_SPEED_Y;
-    }else if(dirY == Direction::Down){
-        newSpeed.y = PLAYER_SPEED_Y;
-    }else if(dirY == Direction::Idle){
-        newSpeed.y = 0;
-    }
-
-    speed = newSpeed;
 }
 
 void Player::render(){
@@ -85,3 +75,6 @@ void Player::initializeSprite(){
     body->setFillColor(sf::Color::Green);   
 }
 
+void Player::save(){
+    //TODO
+}

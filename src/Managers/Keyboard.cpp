@@ -13,4 +13,4 @@ std::map<sf::Keyboard::Key, std::string> Keyboard::Key({
     {sf::Keyboard::Down, "Down"},
     {sf::Keyboard::Escape, "Esc"},
     {sf::Keyboard::Enter, "Enter"},
-})
+});

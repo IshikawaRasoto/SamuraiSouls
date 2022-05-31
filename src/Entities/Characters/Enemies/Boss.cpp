@@ -25,3 +25,11 @@ void Boss::update(float dt){
     setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
     animator->update(position);
 }
+
+void Boss::attack(){
+    //TODO
+}
+
+void Boss::save(){
+    //TODO
+}

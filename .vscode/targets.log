@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue May 31 16:17:54 2022
+# Make data base, printed on Tue May 31 17:23:51 2022
 
 # Variables
 
@@ -57,7 +57,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
 # makefile (from 'Makefile', line 7)
-CSRCS := ./src/Lists/EntityList.cpp ./src/Game.cpp ./src/Ent/Ent.cpp ./src/Entities/Entity.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Enemies/Minion.cpp ./src/Entities/Characters/Enemies/Goblin.cpp ./src/Entities/Characters/Enemies/Skeleton.cpp ./src/Entities/Characters/Enemies/Boss.cpp ./src/Entities/Characters/Enemies/Enemy.cpp ./src/Entities/Characters/Player/Player.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Managers/EventType.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Managers/Input.cpp ./src/Managers/Keyboard.cpp ./src/Managers/Event.cpp ./src/Animation/Animator.cpp ./main.cpp ./a.cpp src/Lists/EntityList.cpp src/Game.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Enemies/Minion.cpp src/Entities/Characters/Enemies/Goblin.cpp src/Entities/Characters/Enemies/Skeleton.cpp src/Entities/Characters/Enemies/Boss.cpp src/Entities/Characters/Enemies/Enemy.cpp src/Entities/Characters/Player/Player.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Managers/EventType.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Managers/Input.cpp src/Managers/Keyboard.cpp src/Managers/Event.cpp src/Animation/Animator.cpp
+CSRCS := ./src/Control/PlayerControl.cpp ./src/Control/PlayerKeys.cpp ./src/Lists/EntityList.cpp ./src/Game.cpp ./src/Ent/Ent.cpp ./src/Entities/Entity.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Enemies/Minion.cpp ./src/Entities/Characters/Enemies/Goblin.cpp ./src/Entities/Characters/Enemies/Skeleton.cpp ./src/Entities/Characters/Enemies/Boss.cpp ./src/Entities/Characters/Enemies/Enemy.cpp ./src/Entities/Characters/Player/Player.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Managers/EventType.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Managers/Input.cpp ./src/Managers/Keyboard.cpp ./src/Managers/Event.cpp ./src/Animation/Animator.cpp ./main.cpp ./a.cpp src/Control/PlayerControl.cpp src/Control/PlayerKeys.cpp src/Lists/EntityList.cpp src/Game.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Enemies/Minion.cpp src/Entities/Characters/Enemies/Goblin.cpp src/Entities/Characters/Enemies/Skeleton.cpp src/Entities/Characters/Enemies/Boss.cpp src/Entities/Characters/Enemies/Enemy.cpp src/Entities/Characters/Player/Player.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Managers/EventType.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Managers/Input.cpp src/Managers/Keyboard.cpp src/Managers/Event.cpp src/Animation/Animator.cpp
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -69,7 +69,7 @@ GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from 'Makefile', line 8)
-HSRCS := include/config.hpp include/Lists/EntityList.hpp include/Type.hpp include/Ent/Ent.hpp include/Game.hpp include/Entities/Entity.hpp include/Entities/Characters/Enemies/Boss.hpp include/Entities/Characters/Enemies/Minion.hpp include/Entities/Characters/Enemies/Skeleton.hpp include/Entities/Characters/Enemies/Goblin.hpp include/Entities/Characters/Enemies/Enemy.hpp include/Entities/Characters/Character.hpp include/Entities/Characters/Players/Player.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Objects/Object.hpp include/Managers/Keyboard.hpp include/Managers/Input.hpp include/Managers/Event.hpp include/Managers/EventType.hpp include/Managers/Graphics.hpp include/Managers/Collision.hpp include/Patterns/Subject.hpp include/Patterns/Observer.hpp include/standard.hpp include/Animation/Animator.hpp
+HSRCS := include/Control/PlayerControl.hpp include/Control/PlayerKeys.hpp include/config.hpp include/Lists/EntityList.hpp include/Type.hpp include/Ent/Ent.hpp include/Game.hpp include/Entities/Entity.hpp include/Entities/Characters/Enemies/Boss.hpp include/Entities/Characters/Enemies/Minion.hpp include/Entities/Characters/Enemies/Skeleton.hpp include/Entities/Characters/Enemies/Goblin.hpp include/Entities/Characters/Enemies/Enemy.hpp include/Entities/Characters/Character.hpp include/Entities/Characters/Players/Player.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Objects/Object.hpp include/Managers/Keyboard.hpp include/Managers/Input.hpp include/Managers/Event.hpp include/Managers/EventType.hpp include/Managers/Graphics.hpp include/Managers/Collision.hpp include/Patterns/Subject.hpp include/Patterns/Observer.hpp include/standard.hpp include/Animation/Animator.hpp
 # automatic
 @F = $(notdir $@)
 # 'override' directive
@@ -81,7 +81,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 9)
-OBJS := ./src/Lists/EntityList.o ./src/Game.o ./src/Ent/Ent.o ./src/Entities/Entity.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Enemies/Minion.o ./src/Entities/Characters/Enemies/Goblin.o ./src/Entities/Characters/Enemies/Skeleton.o ./src/Entities/Characters/Enemies/Boss.o ./src/Entities/Characters/Enemies/Enemy.o ./src/Entities/Characters/Player/Player.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Managers/EventType.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Managers/Input.o ./src/Managers/Keyboard.o ./src/Managers/Event.o ./src/Animation/Animator.o ./main.o ./a.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Player/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Animation/Animator.o
+OBJS := ./src/Control/PlayerControl.o ./src/Control/PlayerKeys.o ./src/Lists/EntityList.o ./src/Game.o ./src/Ent/Ent.o ./src/Entities/Entity.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Enemies/Minion.o ./src/Entities/Characters/Enemies/Goblin.o ./src/Entities/Characters/Enemies/Skeleton.o ./src/Entities/Characters/Enemies/Boss.o ./src/Entities/Characters/Enemies/Enemy.o ./src/Entities/Characters/Player/Player.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Managers/EventType.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Managers/Input.o ./src/Managers/Keyboard.o ./src/Managers/Event.o ./src/Animation/Animator.o ./main.o ./a.o src/Control/PlayerControl.o src/Control/PlayerKeys.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Player/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Animation/Animator.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -201,7 +201,7 @@ SHLVL = 1
 # makefile (from 'Makefile', line 3)
 CC := g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-753bcb82-6aab-4837-b598-ec1b4ef170d7.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-28a1136b-cdb8-416d-a84b-45e29c297c75.sock
 # environment
 XDG_SESSION_ID = c1
 # environment
@@ -217,7 +217,7 @@ XDG_CURRENT_DESKTOP = X-Cinnamon
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao
+OLDPWD = /home/ch4pl1n
 # default
 .VARIABLES := 
 # automatic
@@ -261,18 +261,18 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/25144263_f080_4fce_bb5c_b6552553c7bf
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/8b0b290c_b158_4702_b15b_c609298ff77f
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.151
+GNOME_TERMINAL_SERVICE = :1.128
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 15)
 FLAGS = $(SFML_FLAGS) -lm $(INCLUDES) -c
+ 
 # environment
 SNAP_REEXEC = 
- 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # default
@@ -284,7 +284,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 3160
+VSCODE_PID = 1970
 # variable set hash-table stats:
 # Load=137/1024=13%, Rehash=0, Collisions=17/184=9%
 
@@ -295,9 +295,9 @@ VSCODE_PID = 3160
 # Directories
 
 # . (device 2050, inode 1714372): 13 files, no impossibilities.
-# src/Lists (device 2050, inode 4464786): 2 files, no impossibilities so far.
+# src/Control (device 2050, inode 6691085): 1 files, no impossibilities so far.
 
-# 15 files, no impossibilities in 2 directories.
+# 14 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -409,32 +409,11 @@ main.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-src/Lists/EntityList.o: src/Lists/EntityList.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Lists/EntityList'
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := src/Lists/EntityList.o
-# automatic
-# % := 
-# automatic
-# * := src/Lists/EntityList
-# automatic
-# + := src/Lists/EntityList.cpp
-# automatic
-# | := 
-# automatic
-# < := src/Lists/EntityList.cpp
-# automatic
-# ^ := src/Lists/EntityList.cpp
-# automatic
-# ? := src/Lists/EntityList.cpp
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Lists/EntityList.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Entities/Characters/Enemies/Minion.o:
@@ -453,6 +432,13 @@ src/Animation/Animator.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+src/Control/PlayerControl.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-31 17:23:51.557185244
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -481,12 +467,18 @@ clean:
 	rm -rf $(shell find ./ $(SRC_DIR) -name "*.o") ./$(PROJECT_NAME)
 
 # Not a target:
+src/Control/PlayerKeys.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/Entities/Characters/Character.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-main: src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Player/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Animation/Animator.o main.o a.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Player/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Animation/Animator.o
+main: src/Control/PlayerControl.o src/Control/PlayerKeys.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Player/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Animation/Animator.o main.o a.o src/Control/PlayerControl.o src/Control/PlayerKeys.o src/Lists/EntityList.o src/Game.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Player/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Animation/Animator.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -521,27 +513,48 @@ src/Entities/Characters/Enemies/Boss.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/Lists/EntityList.cpp:
+src/Control/PlayerControl.o: src/Control/PlayerControl.cpp
 #  Implicit rule search has been done.
-#  Last modified 2022-05-25 13:01:41.491242289
+#  Implicit/static pattern stem: 'src/Control/PlayerControl'
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := src/Control/PlayerControl.o
+# automatic
+# % := 
+# automatic
+# * := src/Control/PlayerControl
+# automatic
+# + := src/Control/PlayerControl.cpp
+# automatic
+# | := 
+# automatic
+# < := src/Control/PlayerControl.cpp
+# automatic
+# ^ := src/Control/PlayerControl.cpp
+# automatic
+# ? := src/Control/PlayerControl.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
 
 # files hash-table stats:
-# Load=32/1024=3%, Rehash=0, Collisions=1/96=1%
+# Load=34/1024=3%, Rehash=0, Collisions=1/102=1%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 50 / storage = 870 B / avg = 17 B
-# current buf: size = 8162 B / used = 870 B / count = 50 / avg = 17 B
+# strcache buffers: 1 (0) / strings = 52 / storage = 938 B / avg = 18 B
+# current buf: size = 8162 B / used = 938 B / count = 52 / avg = 18 B
+ 
 
-# strcache performance: lookups = 88 / hit rate = 43%
+# strcache performance: lookups = 91 / hit rate = 42%
 # hash-table stats:
-# Load=50/8192=1%, Rehash=0, Collisions=3/88=3%
-# Finished Make data base on Tue May 31 16:17:54 2022
+# Load=52/8192=1%, Rehash=0, Collisions=3/91=3%
+# Finished Make data base on Tue May 31 17:23:52 2022
 
  

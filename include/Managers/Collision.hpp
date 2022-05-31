@@ -1,3 +1,5 @@
+#pragma once
+
 #include <list>
 #include "Entities/Entity.hpp"
 #include "Lists/EntityList.hpp"

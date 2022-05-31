@@ -2,7 +2,6 @@
 
 #include "Entities/Characters/Enemies/Enemy.hpp"
 
-
 #define BOSS_HP 500
 #define BOSS_DMG 30
 #define BOSS_WIDTH 200

@@ -3,6 +3,8 @@
 
 using namespace Managers;
 
+EventManager* EventManager::instance = nullptr;
+
 EventManager::EventManager(sf::Window* window)
 {
     currentEvent = UNKNOWN;
@@ -62,4 +64,12 @@ std::string EventManager::getCurrentEvent(){
 
 std::string EventManager::getCurrentKey(){
     return currentKey;
+}
+
+void GraphicsManager::update(EventManager* subject){
+    std::string event = subject->getCurrentEvent();
+
+    if(event == "closed"){
+        done = true;
+    }
 }

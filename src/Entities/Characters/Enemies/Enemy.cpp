@@ -2,7 +2,7 @@
 
 using namespace Entities::Characters::Enemies;
 
-Enemy::Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Players::Player* p1 = nullptr, Players::Player* p2 = nullptr):
+Enemy::Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Players::Player* p1, Players::Player* p2):
     Character(t, position, size, hp, dmg),
     pP1(p1),
     pP2(p2),
@@ -24,4 +24,12 @@ const Entities::Characters::Players::Player* Enemy::getNearestPlayer() const{
     if(x1<x2)
         return pP1;
     return pP2;
+}
+
+void Enemy::attack(){
+    //TODO
+}
+
+void Enemy::save(){
+    //TODO
 }

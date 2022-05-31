@@ -1,6 +1,9 @@
 #include "Managers/Input.hpp"
+#include "config.hpp"
 
 using namespace Managers;
+
+InputManager* InputManager::instance = nullptr;
 
 InputManager::InputManager(){
     currentEvent = UNKNOWN;

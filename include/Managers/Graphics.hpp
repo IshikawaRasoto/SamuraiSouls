@@ -2,10 +2,13 @@
 
 #include <string>
 #include <SFML/Graphics.hpp>
+#include "Patterns/Observer.hpp"
 
 namespace Managers{
 
-class GraphicsManager{
+class EventManager;
+
+class GraphicsManager : public Patterns::Observer<EventManager>{
 
 public:
 
@@ -42,8 +45,10 @@ private:
     bool done;
     bool fullscreen;
 
+    void update(EventManager *subject);
+
     // SINGLETON
-    static GraphicsManager* instance;
+    static GraphicsManager *instance;
 };
 
 }

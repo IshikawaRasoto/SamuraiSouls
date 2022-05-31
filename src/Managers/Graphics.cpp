@@ -4,7 +4,7 @@
 using namespace Managers;
 
 GraphicsManager::GraphicsManager(){
-    setup(windowName, sf::Vector2u(windowSize.x,windowSize.y));
+    setup(WINDOW_NAME, sf::Vector2u(WINDOW_SIZE_X,WINDOW_SIZE_Y));
 }
 
 GraphicsManager::~GraphicsManager(){}
@@ -20,7 +20,6 @@ void GraphicsManager::endDraw(){
 void GraphicsManager::update(){
 
     sf::Event event;
-
     while(window.pollEvent(event)){
         switch(event.type){
             case sf::Event::Closed:

@@ -24,3 +24,11 @@ void Goblin::update(float dt){
     setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
     animator->update(position);
 }
+
+void Goblin::attack(){
+    //TODO
+}
+
+void Goblin::save(){
+    //TODO
+}

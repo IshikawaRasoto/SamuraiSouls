@@ -24,3 +24,11 @@ void Minion::update(float dt){
     setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
     animator->update(position);
 }
+
+void Minion::attack(){
+    //TODO
+}
+
+void Minion::save(){
+    //TODO
+}

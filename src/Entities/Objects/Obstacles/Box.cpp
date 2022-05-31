@@ -1,22 +1,26 @@
 #include "Entities/Objects/Obstacles/Box.hpp"
-using namespace Entities::Objects;
+using namespace Entities::Objects::Obstacles;
 
-Obstacles::Box::Box(sf::Vector2f position):
+Box::Box(sf::Vector2f position):
     Object(Type::Box, position, sf::Vector2f(BOX_WIDTH, BOX_HEIGHT))
     {
             initializeSprite();
 
     }
 
-Obstacles::Box::~Box(){}
+Box::~Box(){}
 
-void Obstacles::Box::update(const float dt){
-    animation->update(position);
+void Box::update(const float dt){
+    animator->update(position);
 }
-void Obstacles::Box::render(){
-    animation->render();
+void Box::render(){
+    animator->render();
 }
-void Obstacles::Box::initializeSprite(){
-    sf::RectangleShape* body = animation->getRectangleShape();
+void Box::initializeSprite(){
+    sf::RectangleShape* body = animator->getRectangleShape();
     body->setFillColor(sf::Color::White);
+}
+
+void Box::save(){
+    //TODO
 }

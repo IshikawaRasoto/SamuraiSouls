@@ -2,13 +2,23 @@
 #include <iostream>
 
 Game::Game(): 
-    graphicManager(GraphicsManager::getInstance()),
+    graphicManager(Managers::GraphicsManager::getInstance()),
     collisionManager(&movingEntities, &staticEntities),
+    eventManager(Managers::EventManager::getInstance()),
+    inputManager(Managers::InputManager::getInstance()),
     player({0.0f, 0.0f}),
-    box({400.0f,400.0f})
+    box({400.0f,400.0f}),
+    playerControl1(&player)
 {
     movingEntities.addEntity(&player);
     staticEntities.addEntity(&box);
+
+    eventManager->subscribe("pressed", inputManager);
+    eventManager->subscribe("released", inputManager);
+    eventManager->subscribe("closed", graphicManager);
+
+    inputManager->subscribe("pressed", &playerControl1);
+    inputManager->subscribe("released", &playerControl1);
 }
 
 Game::~Game(){}
@@ -29,8 +39,9 @@ void Game::update(){
 
     player.update(elapsed.asSeconds());
     box.update(elapsed.asSeconds());
-    
-    graphicManager->update();
+
+    // graphicManager->update(); 
+    eventManager->pollEvents();
     collisionManager.checkCollision();
 
     elapsed -= sf::seconds(frametime);
@@ -44,22 +55,6 @@ void Game::render(){
 }
 
 void Game::handleInput(){
-    
-    Direction dirX = Direction::Idle, dirY = Direction::Idle;
-
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
-        dirY = Direction::Up;
-    }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){
-        dirY = Direction::Down;
-    }
-    
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)){
-        dirX = Direction::Left;
-    }else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)){
-        dirX = Direction::Right;
-    }
-
-    player.walk(dirX, dirY);
 }
 
 void Game::restartClock(){

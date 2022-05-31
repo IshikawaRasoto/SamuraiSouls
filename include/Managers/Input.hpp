@@ -5,8 +5,6 @@
 #include <map>
 #include <string>
 
-#include "config.hpp"
-
 #include "Patterns/Observer.hpp"
 #include "Patterns/Subject.hpp"
 #include "Event.hpp"

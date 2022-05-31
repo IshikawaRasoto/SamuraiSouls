@@ -1,7 +1,6 @@
 #pragma once
 
-#include <SFML/System/Vector2.hpp>
-
-const char *windowName = "Spear::Adventure";
-const sf::Vector2u windowSize(1280,720);
-const char* UNKNOWN = "Unknown";
+#define WINDOW_NAME "Spear::Adventure"
+#define WINDOW_SIZE_X 1280
+#define WINDOW_SIZE_Y 720
+#define UNKNOWN "Unknown"

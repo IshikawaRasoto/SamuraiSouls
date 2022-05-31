@@ -7,8 +7,6 @@ namespace Entities{
 
        enum class Direction{
             Idle = -1,
-            Up,
-            Down,
             Left,
             Right
         };

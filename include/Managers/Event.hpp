@@ -8,8 +8,7 @@
 #include "config.hpp"
 
 #include "EventType.hpp"
-
-#include "Managers/Graphics.hpp"
+#include "Graphics.hpp"
 
 #include "Patterns/Subject.hpp"
 #include "Patterns/Observer.hpp"
