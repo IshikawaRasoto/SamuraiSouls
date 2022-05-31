@@ -10,7 +10,8 @@ namespace Entities{
                 virtual ~Object();
 
                 virtual void update(const float dt) = 0;
-                //virtual void render
+                virtual void save() = 0;
+
             protected:
                 virtual void initializeSprite() = 0;
         };

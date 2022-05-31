@@ -3,9 +3,10 @@
 
 using namespace Managers;
 
-EventManager::EventManager(sf::Window* window):
-    Patterns::Subject()
+EventManager::EventManager(sf::Window* window)
 {
+    currentEvent = UNKNOWN;
+    currentKey = UNKNOWN;
     this->window = window;
 }
 
@@ -19,26 +20,20 @@ EventManager* EventManager::getInstance(){
     return instance;
 }
 
-void EventManager::subscribe(std::string type, Observer* listener){
-    observers.insert(EventListenerPair(type, listener));
+void EventManager::subscribe(std::string type, Observer<EventManager>* listener){
+    observers.insert(EventObserverPair(type, listener));
 }
 
-void EventManager::unsubscribe(std::string type, Observer* listener){
+void EventManager::unsubscribe(std::string type, Observer<EventManager>* listener){
     //TODO
 }
 
-void EventManager::notify(std::string type){
-    for(auto &it : listeners){
-        if(it.first == type){
-            it.second->update(type);
-        }
-    }
-}
+void EventManager::notify(){
+    if(currentEvent == UNKNOWN) return;
 
-void EventManager::notify(std::string type, std::string key){
-    for(auto &it : listeners){
-        if(it.first == type){
-            it.second->update(type, key);
+    for(auto &it : observers){
+        if(it.first == currentEvent){
+            it.second->update(this);
         }
     }
 }
@@ -49,17 +44,22 @@ void EventManager::pollEvents(){
     std::string eventType, key;
 
     while(window->pollEvent(event)){
-        eventType = Event::Types.find(event.type) != Event::Types.end() 
-                    ? Event::Types[event.type] : "Unknown";
-
+        currentEvent = Event::Types.find(event.type) != Event::Types.end() 
+                    ? Event::Types[event.type] : UNKNOWN;
 
         if(event.type == sf::Event::KeyPressed || event.type == sf::Event::KeyReleased){
-            key = Keyboard::Key.find(event.key.code) != Keyboard::Key.end() 
-                  ? Keyboard::Key[event.key.code] : "Unknown";
-
-            notify(eventType, key);
-        }else{
-            notify(eventType);
+            currentKey = Keyboard::Key.find(event.key.code) != Keyboard::Key.end() 
+                  ? Keyboard::Key[event.key.code] : UNKNOWN;
         }
+
+        notify();
     }
+}
+
+std::string EventManager::getCurrentEvent(){
+    return currentEvent;
+}
+
+std::string EventManager::getCurrentKey(){
+    return currentKey;
 }

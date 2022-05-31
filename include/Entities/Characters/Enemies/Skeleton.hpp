@@ -13,16 +13,19 @@ namespace Entities{
             class Skeleton : public Enemy{
                 private:
                     static const float attackTime;
+
                 public:
 
-                           Skeleton(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Players::Player* p1 = nullptr, Players::Player* p2 = nullptr);
+                    Skeleton(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Players::Player* p1 = nullptr, Players::Player* p2 = nullptr);
                     ~Skeleton();
                     void update(float dt);
-                    void atayer();
+                    void attack();
                     void render();
+                    void save();
 
                 private:
-                    void initializeSprite();     };
+                    void initializeSprite();     
+            };
         }
     }
 }

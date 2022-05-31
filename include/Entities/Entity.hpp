@@ -4,28 +4,36 @@
 
 namespace Entities{
 
-class Entity : public Ent{
-protected:
-    sf::Vector2f speed;
-    virtual void initializeSprite() = 0;
+    class Entity : public Ent{
+        protected:
+            sf::Vector2f speed; 
 
-private:
+        private:
 
-    bool showing;
+            bool showing;
+            bool facingLeft;
 
-public:
-    Entity();
-    Entity(Type t, sf::Vector2f position, sf::Vector2f size);
-    virtual ~Entity();
-    
-    const sf::Vector2f getSpeed() const;
-    const bool getIsShowing() const;
+        public:
+            Entity();
+            Entity(Type t, sf::Vector2f position, sf::Vector2f size);
+            virtual ~Entity();
+            
+            const sf::Vector2f getSpeed() const;
+            const bool getIsShowing() const;
+            const bool getFacingLeft() const;
 
-    void setSpeed(const sf::Vector2f speed);
-    void setIsShowing(const bool showing);
+            void setSpeed(const sf::Vector2f speed);
+            void setIsShowing(const bool showing);
+            void setFacingLeft(const bool facingLeft);
 
-    virtual void update(const float dt) = 0;
-    virtual void collide(Entity* other, sf::Vector2f intersect);    
-};
+            void move(sf::Vector2f v);
+
+            virtual void update(const float dt) = 0;
+            virtual void collide(Entity* other, sf::Vector2f intersect);
+            virtual void save() = 0;
+
+        protected:
+            virtual void initializeSprite() = 0;   
+
+    };
 }
-

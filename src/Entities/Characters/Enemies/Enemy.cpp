@@ -15,7 +15,7 @@ Enemy::~Enemy(){
     pP2 = nullptr;
 }
 
-const Player* Enemy::getNearestPlayer() const{
+const Entities::Characters::Players::Player* Enemy::getNearestPlayer() const{
     int x1, x2;
     if(!pP2)
         return pP1;

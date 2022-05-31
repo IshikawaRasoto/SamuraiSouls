@@ -21,6 +21,7 @@ namespace Entities{
                     void update(float dt);
                     void attack();
                     void render();
+                    void save();
 
                 private:
                     void initializeSprite();

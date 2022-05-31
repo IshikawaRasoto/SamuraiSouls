@@ -20,6 +20,7 @@ namespace Entities{
 
                     void update(const float dt);
                     void render();
+                    void save();
             };
         }
     }

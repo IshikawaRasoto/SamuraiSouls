@@ -5,8 +5,9 @@ const float attackTime(0.4);
 
 Boss::Boss(sf::Vector2f pos, Players::Player* p1, Players::Player* p2):
     Enemy(Type::Boss, pos, sf::Vector2f(BOSS_WIDTH, BOSSH_HEIGHT), BOSS_HP, BOSS_DMG, p1, p2)
-    
-{}
+{
+    initializeSprite();
+}
 
 Boss::~Boss(){//
 }

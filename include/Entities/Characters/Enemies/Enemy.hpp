@@ -23,6 +23,7 @@ namespace Entities{
                     virtual void attack() = 0;
                     const Players::Player* getNearestPlayer() const;
                     virtual void render() = 0;
+                    virtual void save() = 0;
                     
                 protected:
                     virtual void initializeSprite() = 0;

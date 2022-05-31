@@ -1,7 +1,7 @@
 #include "Ent/Ent.hpp"
 
 Ent::Ent():
-    animation(nullptr),
+    animator(nullptr),
     t(Empty)
 {
     position = sf::Vector2f(0.0f, 0.0f);
@@ -9,13 +9,13 @@ Ent::Ent():
 }
 
 Ent::Ent(Type t, sf::Vector2f position, sf::Vector2f size):
-    animation(new Animator(size)),
+    animator(new Animator(size)),
     t(t),
     position(position),
     size(size)
 {}
 
-Ent::~Ent(){delete(animation);}
+Ent::~Ent(){delete(animator);}
 
 const sf::Vector2f Ent::getPosition() const{return position;}
 const Type Ent::getType() const{return t;}
@@ -25,4 +25,10 @@ void Ent::setPosition(sf::Vector2f position){
     this->position = position;
 }
 
-void Ent::render(){}
+void Ent::moveBody(const sf::Vector2f v){
+    position = sf::Vector2f(position.x + v.x, position.y + v.y);
+}
+
+void Ent::render(){
+    animator->render();
+}

@@ -14,6 +14,8 @@ namespace Entities{
                     ~Box();
                     void update(const float dt);
                     void render();
+                    void save();
+
                 private:
                     void initializeSprite();
             };

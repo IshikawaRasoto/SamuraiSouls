@@ -23,6 +23,7 @@ namespace Entities{
                     void attack();
                     void followPlayer();
                     void render();
+                    void save();
 
                 private:
                     void initializeSprite();

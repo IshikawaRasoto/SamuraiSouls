@@ -5,6 +5,7 @@ Character::Character(Type t, sf::Vector2f position, sf::Vector2f size, int hp, i
     Entity(t, position, size),
     hp(hp),
     damage(dmg),
+    isAttacking(false),
     dirX(Direction::Idle),
     dirY(Direction::Idle)
     {}
@@ -12,8 +13,12 @@ Character::Character(Type t, sf::Vector2f position, sf::Vector2f size, int hp, i
 Character::~Character(){}
 
 const int Character::getHP() const {return hp;}
+const int Character::getDamage() const {return damage;}
+const bool Character::getIsAttacking() const{return isAttacking;}
 
-const int Character::getDMG() const {return damage;}
+void Character::setIsAttacking(bool isAttacking){
+    this->isAttacking = isAttacking;
+}
 
 void Character::receiveDMG(int dmg){
     hp -= dmg;

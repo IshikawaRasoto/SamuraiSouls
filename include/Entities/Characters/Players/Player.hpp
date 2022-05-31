@@ -16,7 +16,9 @@ namespace Entities{
         namespace Players{
             class Player : public Character{
                 private:
-                    int points;
+                    const bool playerOne;
+                    static int points;
+                    static int lifes;
                     bool isWalking;
 
                 public:
@@ -24,15 +26,15 @@ namespace Entities{
                     ~Player();
 
                     const bool isPlayerOne() const;
-                    void updatePts(int points);
-                    const bool getPts() const;
-
+                    static const int getPts();
+                    static void addPts(const int pts);
                     
                     void update(float dt);
                     void walk(Direction dirX, Direction dirY);
                     void render();
                     void collide(Entity* other, sf::Vector2f intersect);
-
+                    void save();
+                    
                 private:
                     void initializeSprite();
             };

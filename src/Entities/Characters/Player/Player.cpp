@@ -1,24 +1,35 @@
 #include "Entities/Characters/Players/Player.hpp"
 #include <iostream>
 
-using namespace Entities::Characters;
+using namespace Entities::Characters::Players;
 
-Players::Player::Player(sf::Vector2f position, const bool isPlayerOne, InputManager* pIM):
-        points(0),
+int Player::points(0);
+int Player::lifes(3);
+
+Player::Player(sf::Vector2f position, const bool p1, InputManager* pIM):
         isWalking(false),
+        playerOne(p1),
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
     initializeSprite();
 }
 
-Players::Player::~Player(){}
+Player::~Player(){}
 
-void Players::Player::update(float dt){
+const bool Player::isPlayerOne() const {return playerOne;}
+
+const int Player::getPts(){return points;}
+
+void Player::addPts(const int pts){
+    points += pts;
+}
+
+void Player::update(float dt){
     setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
     animator->update(position);
 }
 
-void Players::Player::walk(Direction dirX, Direction dirY){
+void Player::walk(Direction dirX, Direction dirY){
 
     sf::Vector2f newSpeed = speed;
     this->dirX = dirX;
@@ -43,16 +54,11 @@ void Players::Player::walk(Direction dirX, Direction dirY){
     speed = newSpeed;
 }
 
-void Players::Player::render(){
+void Player::render(){
     animator->render();
 }
 
-void Players::Player::initializeSprite(){
-    sf::RectangleShape *body = animator->getRectangleShape();
-    body->setFillColor(sf::Color::Green);   
-}
-
-void Players::Player::collide(Entities::Entity* other, sf::Vector2f intersect){
+void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
     if(other->getType() == Type::Box){
         setSpeed({0, speed.y});
 
@@ -73,3 +79,9 @@ void Players::Player::collide(Entities::Entity* other, sf::Vector2f intersect){
         }
     };
 }
+
+void Player::initializeSprite(){
+    sf::RectangleShape *body = animator->getRectangleShape();
+    body->setFillColor(sf::Color::Green);   
+}
+
