@@ -1,6 +1,6 @@
 #pragma once
 
-#include <list>
+#include "List.hpp"
 #include "Entities/Entity.hpp"
 
 namespace Lists{
@@ -8,7 +8,7 @@ namespace Lists{
 class EntityList{
 
 private:
-    std::list<Entities::Entity*> list;
+    List<Entities::Entity> list;
 public:
     EntityList();
     ~EntityList();
@@ -21,7 +21,7 @@ public:
 
     const int getSize();
 
-    Entities::Entity* operator[](int id);
+    Entities::Entity* operator[](unsigned int size);
 };
 
 }

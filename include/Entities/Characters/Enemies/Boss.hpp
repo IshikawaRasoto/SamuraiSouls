@@ -1,6 +1,9 @@
 #pragma once
 
 #include "Entities/Characters/Enemies/Enemy.hpp"
+#include "Entities/Characters/Player.hpp"
+
+#include <SFML/System/Vector2.hpp>
 
 #define BOSS_HP 500
 #define BOSS_DMG 30
@@ -16,7 +19,7 @@ namespace Entities{
                     static const float attackTime;
 
                 public:
-                    Boss(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Players::Player* p1 = nullptr, Players::Player* p2 = nullptr);
+                    Boss(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Characters::Player* p1 = nullptr, Characters::Player* p2 = nullptr);
                     ~Boss();
                     void update(float dt);
                     void attack();

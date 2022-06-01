@@ -2,18 +2,9 @@
 
 using namespace Lists;
 
-EntityList::EntityList(){
-    list.clear();
-}
+EntityList::EntityList(){}
 
-EntityList::~EntityList(){
-    std::list<Entities::Entity*>::iterator it = list.begin();
-
-    while(it != list.end()){
-        delete *it;
-        it++;
-    }
-}
+EntityList::~EntityList(){}
 
 bool EntityList::addEntity(Entities::Entity *entity){
 
@@ -21,7 +12,7 @@ bool EntityList::addEntity(Entities::Entity *entity){
         return false;
     }
 
-    list.push_back(entity);
+    list.add(entity);
 
     return true;
 }
@@ -31,33 +22,21 @@ bool EntityList::removeEntity(Entities::Entity *entity){
 }
 
 void EntityList::updateAll(float dt){
-    for(auto it : list){
-        it->update(dt);
+    for(int i = 0; i < list.getSize(); i++){
+        list[i]->update(dt);
     }
 }
 
 void EntityList::renderAll(){
-    for(auto it : list){
-        it->render();
+    for(int i = 0; i < list.getSize(); i++){
+        list[i]->render();
     }
 }
 
-Entities::Entity* EntityList::operator[](int id){
-    if(id < 0 || id >= list.size()){
-        return nullptr;
-    }
-
-    int i = 0;
-
-    for(auto it : list){
-        if(i == id){
-            return it;
-        }
-    }
-
-    return nullptr;
+Entities::Entity* EntityList::operator[](unsigned int index){
+    return list[index];
 }
 
 const int EntityList::getSize(){
-    return list.size();
+    return list.getSize();
 }

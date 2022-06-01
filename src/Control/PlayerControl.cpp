@@ -3,7 +3,7 @@
 using namespace Control;
 
 PlayerControl::PlayerControl(
-    Players::Player *player, 
+    Characters::Player *player, 
     std::string jump, 
     std::string left, 
     std::string right, 
@@ -22,9 +22,9 @@ void PlayerControl::update(Managers::InputManager *subject){
 
     if(event == "pressed"){
         if(key == keys.left){
-            player->walk(Direction::Left);
+            player->walk(Characters::Direction::Left);
         }else if(key == keys.right){
-            player->walk(Direction::Right);
+            player->walk(Characters::Direction::Right);
         }else if(key == keys.jump){
             player->jump();
         }else if(key == keys.attack){
@@ -32,15 +32,15 @@ void PlayerControl::update(Managers::InputManager *subject){
         }
     }else if(event == "released"){
         if(key == keys.left || key == keys.right){
-            player->walk(Direction::Idle);
+            player->walk(Characters::Direction::Idle);
         }
     }
 }
 
-Players::Player* PlayerControl::getPlayer(){
+Characters::Player* PlayerControl::getPlayer(){
     return player;
 }
 
-void PlayerControl::setPlayer(Players::Player* player){
+void PlayerControl::setPlayer(Characters::Player* player){
     this->player = player;
 }

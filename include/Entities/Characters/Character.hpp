@@ -27,8 +27,8 @@ namespace Entities{
                 const int getDamage() const;
                 const bool getIsAttacking() const;
 
-                void setIsAttacking(bool atk = false);
-                void receiveDMG(int dmg);
+                void setIsAttacking(const bool atk = false);
+                void receiveDMG(const int dmg);
 
                 virtual void update(float dt) = 0;
                 virtual void save() = 0;

@@ -2,7 +2,7 @@
 
 using namespace Entities::Characters::Enemies;
 
-Enemy::Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Players::Player* p1, Players::Player* p2):
+Enemy::Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Characters::Player* p1, Characters::Player* p2):
     Character(t, position, size, hp, dmg),
     pP1(p1),
     pP2(p2),
@@ -15,7 +15,7 @@ Enemy::~Enemy(){
     pP2 = nullptr;
 }
 
-const Entities::Characters::Players::Player* Enemy::getNearestPlayer() const{
+const Entities::Characters::Player* Enemy::getNearestPlayer() const{
     int x1, x2;
     if(!pP2)
         return pP1;

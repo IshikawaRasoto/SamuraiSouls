@@ -9,7 +9,7 @@
 #include "Control/PlayerControl.hpp"
 
 #include "Entities/Objects/Obstacles/Box.hpp"
-#include "Entities/Characters/Players/Player.hpp"
+#include "Entities/Characters/Player.hpp"
 #include "Lists/EntityList.hpp"
 
 using namespace Entities::Characters;
@@ -37,8 +37,8 @@ private:
     Lists::EntityList movingEntities;
     Lists::EntityList staticEntities;
 
-    Players::Player player;
-    Obstacles::Box box;
+    Characters::Player *player;
+    Obstacles::Box *box;
     
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;

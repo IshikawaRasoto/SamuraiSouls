@@ -1,10 +1,11 @@
 #pragma once
 
 #include "Entities/Characters/Character.hpp"
-#include "Entities/Characters/Players/Player.hpp"
+#include "Entities/Characters/Player.hpp"
+
+#include <SFML/System/Vector2.hpp>
+
 #include "Type.hpp"
-
-
 
 namespace Entities{
     namespace Characters{
@@ -13,15 +14,15 @@ namespace Entities{
                 protected:
                     float atkCD;
                     float timeFromAtk;
-                    Players::Player *pP1;
-                    Players::Player *pP2;
+                    Entities::Characters::Player *pP1;
+                    Entities::Characters::Player *pP2;
 
                 public:
-                    Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Players::Player* p1 = nullptr, Players::Player* p2 = nullptr);
+                    Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Entities::Characters::Player* p1 = nullptr, Entities::Characters::Player* p2 = nullptr);
                     virtual ~Enemy();
+                    const Entities::Characters::Player* getNearestPlayer() const;
                     virtual void update(float dt) = 0;
                     virtual void attack() = 0;
-                    const Players::Player* getNearestPlayer() const;
                     virtual void render() = 0;
                     virtual void save() = 0;
                     

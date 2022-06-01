@@ -6,12 +6,12 @@ Game::Game():
     collisionManager(&movingEntities, &staticEntities),
     eventManager(Managers::EventManager::getInstance()),
     inputManager(Managers::InputManager::getInstance()),
-    player({0.0f, 0.0f}),
-    box({400.0f,400.0f}),
-    playerControl1(&player)
+    player(new Characters::Player({0.0f, 0.0f})),
+    box(new Entities::Objects::Obstacles::Box({400.0f, 400.0f})),
+    playerControl1(player)
 {
-    movingEntities.addEntity(&player);
-    staticEntities.addEntity(&box);
+    movingEntities.addEntity(player);
+    staticEntities.addEntity(box);
 
     eventManager->subscribe("pressed", inputManager);
     eventManager->subscribe("released", inputManager);
@@ -37,10 +37,9 @@ void Game::update(){
 
     if(elapsed.asSeconds() < frametime) return;
 
-    player.update(elapsed.asSeconds());
-    box.update(elapsed.asSeconds());
+    movingEntities.updateAll(elapsed.asSeconds());
+    staticEntities.updateAll(elapsed.asSeconds());
 
-    // graphicManager->update(); 
     eventManager->pollEvents();
     collisionManager.checkCollision();
 

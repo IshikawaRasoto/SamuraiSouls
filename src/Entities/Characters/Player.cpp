@@ -1,7 +1,6 @@
-#include "Entities/Characters/Players/Player.hpp"
+#include "Entities/Characters/Player.hpp"
 #include <iostream>
-
-using namespace Entities::Characters::Players;
+using namespace Entities::Characters;
 
 int Player::points(0);
 int Player::lifes(3);
@@ -16,7 +15,7 @@ Player::Player(sf::Vector2f position, const bool p1, InputManager* pIM):
 
 Player::~Player(){}
 
-const bool Player::isPlayerOne() const {return playerOne;}
+const bool Player::getIsPlayerOne() const {return playerOne;}
 
 const int Player::getPts(){return points;}
 
