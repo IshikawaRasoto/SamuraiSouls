@@ -11,6 +11,7 @@ GraphicsManager::~GraphicsManager(){}
 
 void GraphicsManager::beginDraw(){
     window.clear(sf::Color::Black);
+    window.setView(view);
 }
 
 void GraphicsManager::endDraw(){
@@ -61,6 +62,10 @@ void GraphicsManager::toggleFullscreen(){
 
 void GraphicsManager::draw(sf::Drawable &drawable){
     window.draw(drawable);
+}
+
+void GraphicsManager::centerView(sf::Vector2f position){
+    view.setCenter(position);
 }
 
 void GraphicsManager::setup(const std::string &title, const sf::Vector2u &size){

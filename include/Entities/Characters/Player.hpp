@@ -2,10 +2,10 @@
 
 #define PLAYER_HP 100
 #define PLAYER_DMG 25
-#define PLAYER_WIDTH 200
+#define PLAYER_WIDTH 100
 #define PLAYER_HEIGHT 200
-#define PLAYER_SPEED_X 80
-#define PLAYER_SPEED_Y 80
+#define PLAYER_SPEED_X 150
+#define PLAYER_SPEED_Y 150
 
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Input.hpp"
@@ -19,6 +19,7 @@ namespace Entities{
                 static int points;
                 static int lifes;
                 bool isWalking;
+                bool canJump;
 
             public:
                 Player(sf::Vector2f position, const bool isPlayerOne = true, InputManager* pIM = nullptr);

@@ -6,8 +6,8 @@ Game::Game():
     collisionManager(&movingEntities, &staticEntities),
     eventManager(Managers::EventManager::getInstance()),
     inputManager(Managers::InputManager::getInstance()),
-    player(new Characters::Player({0.0f, 0.0f})),
-    box(new Entities::Objects::Obstacles::Box({400.0f, 400.0f})),
+    player(new Characters::Player({400.0f, 400.0f})),
+    box(new Entities::Objects::Obstacles::Box({400.0f, 1000.0f})),
     playerControl1(player)
 {
     movingEntities.addEntity(player);
@@ -37,11 +37,14 @@ void Game::update(){
 
     if(elapsed.asSeconds() < frametime) return;
 
-    movingEntities.updateAll(elapsed.asSeconds());
-    staticEntities.updateAll(elapsed.asSeconds());
-
     eventManager->pollEvents();
+
+    staticEntities.updateAll(elapsed.asSeconds());
+    movingEntities.updateAll(elapsed.asSeconds());
+
     collisionManager.checkCollision();
+
+    graphicManager->centerView(player->getPosition());
 
     elapsed -= sf::seconds(frametime);
 }

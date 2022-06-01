@@ -39,3 +39,22 @@ void Entity::move(sf::Vector2f v){
 }
 
 void Entity::collide(Entity *other, sf::Vector2f intersect){}
+
+void Entity::moveOnCollision(Entity *other, sf::Vector2f intersect){
+    if(intersect.x > intersect.y){
+        if(other->getPosition().x < position.x){
+            position.x -= intersect.x;
+        }else{
+            position.x += intersect.x;
+        }
+        
+        speed.x = 0.0f;
+    }else{
+        if(other->getPosition().y < position.y){
+            position.y -= intersect.y;
+        }else{
+            position.y += intersect.y;
+        }
+        speed.y = 0.0f;
+    }
+}

@@ -7,6 +7,7 @@ int Player::lifes(3);
 
 Player::Player(sf::Vector2f position, const bool p1, InputManager* pIM):
         isWalking(false),
+        canJump(false),
         playerOne(p1),
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
@@ -24,12 +25,19 @@ void Player::addPts(const int pts){
 }
 
 void Player::update(float dt){
-    setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
-    animator->update(position);
+    speed.y += GRAVITY * dt;
+    position.y += speed.y * dt;
+
+    position.x += speed.x * dt;
+
+    std::cout << position.y << "\n";
 }
 
 void Player::jump(){
-    //TODO
+    if(canJump){
+        speed.y = -PLAYER_SPEED_Y;
+        canJump = false;
+    }
 }
 
 void Player::walk(Direction direction){
@@ -44,28 +52,14 @@ void Player::walk(Direction direction){
 }
 
 void Player::render(){
+    animator->update(position);
     animator->render();
 }
 
 void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
     if(other->getType() == Type::Box){
-        setSpeed({0, speed.y});
-
-        std::cout << intersect.x << "|" << intersect.y << "\n"; 
-
-        if(intersect.x > intersect.y){
-            if(other->getPosition().x < position.x){
-                position.x -= intersect.x;
-            }else{
-                position.x += intersect.x;
-            }
-        }else{
-            if(other->getPosition().y < position.y){
-                position.y -= intersect.y;
-            }else{
-                position.y += intersect.y;
-            }
-        }
+        moveOnCollision(other, intersect);
+        canJump = true;
     };
 }
 

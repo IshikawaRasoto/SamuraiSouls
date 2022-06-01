@@ -2,6 +2,8 @@
 
 #include "Entities/Entity.hpp"
 
+#define GRAVITY 150.0f
+
 namespace Entities{
     namespace Characters{
 

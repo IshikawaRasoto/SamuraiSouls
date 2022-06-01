@@ -33,7 +33,8 @@ namespace Entities{
             virtual void save() = 0;
 
         protected:
-            virtual void initializeSprite() = 0;   
+            virtual void initializeSprite() = 0; 
+            void moveOnCollision(Entity* other, sf::Vector2f intersect);  
 
     };
 }
