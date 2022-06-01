@@ -4,6 +4,8 @@
 
 #define GRAVITY 150.0f
 
+#define MAX_SPEED_Y 800
+
 namespace Entities{
     namespace Characters{
 

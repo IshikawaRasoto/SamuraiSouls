@@ -10,6 +10,7 @@ enum Type{
     FireBall,
     Arrow,
     Box,
-    Thorns
+    Thorns,
+    Platform
 };
 

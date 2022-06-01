@@ -21,6 +21,9 @@ namespace Entities{
                 public:
                     Boss(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Characters::Player* p1 = nullptr, Characters::Player* p2 = nullptr);
                     ~Boss();
+
+                    void movement(); //TODO
+
                     void update(float dt);
                     void attack();
                     void followPlayer();

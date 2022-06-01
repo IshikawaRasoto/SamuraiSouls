@@ -3,17 +3,10 @@
 #include <SFML/Graphics.hpp>
 
 #include "Managers/Graphics.hpp"
-#include "Managers/Collision.hpp"
 #include "Managers/Input.hpp"
 #include "Managers/Event.hpp"
-#include "Control/PlayerControl.hpp"
 
-#include "Entities/Objects/Obstacles/Box.hpp"
-#include "Entities/Characters/Player.hpp"
-#include "Lists/EntityList.hpp"
-
-using namespace Entities::Characters;
-using namespace Entities::Objects;
+#include "Level.hpp"
 
 class Game{
 
@@ -26,23 +19,15 @@ public:
     bool isDone();
 
     void update();
-    void handleInput();
-    void render();
 
     void restartClock();
 private:
     sf::Clock clock;
     sf::Time elapsed;
 
-    Lists::EntityList movingEntities;
-    Lists::EntityList staticEntities;
-
-    Characters::Player *player;
-    Obstacles::Box *box;
+    Level level;
     
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;
     Managers::EventManager *eventManager;
-    Managers::CollisionManager collisionManager;
-    Control::PlayerControl playerControl1;
 };

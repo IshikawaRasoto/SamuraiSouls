@@ -22,8 +22,10 @@ namespace Entities{
 
                     Skeleton(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Characters::Player* p1 = nullptr, Characters::Player* p2 = nullptr);
                     ~Skeleton();
+                    
+                    //void movement();
+
                     void update(float dt);
-                    void attack();
                     void render();
                     void save();
 

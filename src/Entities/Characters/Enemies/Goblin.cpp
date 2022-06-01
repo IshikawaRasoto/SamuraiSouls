@@ -17,16 +17,28 @@ void Goblin::initializeSprite(){
 }
 
 void Goblin::render(){
+    animator->update(position);
     animator->render();
 }
 
 void Goblin::update(float dt){
-    setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
-    animator->update(position);
-}
+    if(hp<0){
+        setIsShowing(false);
+        return;
+    }
 
-void Goblin::attack(){
-    //TODO
+    movement(GOBLIN_SPEED_X);
+
+    speed = sf::Vector2f(speed.x, speed.y + GRAVITY * dt);
+
+    if(speed.y > MAX_SPEED_Y)
+        speed = sf::Vector2f(speed.x, MAX_SPEED_Y);
+
+    atkCD += dt;
+    if((atkCD >= attackTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
+            attack(GOBLIN_DMG);
+    
+    move({speed.x * dt, speed.y * dt});
 }
 
 void Goblin::save(){

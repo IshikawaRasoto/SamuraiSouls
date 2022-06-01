@@ -8,25 +8,34 @@
 #define PLAYER_SPEED_Y 150
 
 #include "Entities/Characters/Character.hpp"
-#include "Managers/Input.hpp"
+#include "Control/PlayerControl.hpp"
+
 using namespace Managers;
 
 namespace Entities{
     namespace Characters{
         class Player : public Character{
             private:
+                static const float attackTime;
                 const bool playerOne;
                 static int points;
                 static int lifes;
                 bool isWalking;
                 bool canJump;
+                Control::PlayerControl* playerControl;
 
             public:
-                Player(sf::Vector2f position, const bool isPlayerOne = true, InputManager* pIM = nullptr);
+                Player(
+                    sf::Vector2f position,
+                    const bool isPlayerOne = true,
+                    Control::PlayerControl* playerControl = nullptr
+                );
                 ~Player();
 
                 const bool getIsPlayerOne() const;
                 static const int getPts();
+                Control::PlayerControl* getPlayerControl() const;
+
                 static void addPts(const int pts);
                 
                 void update(float dt);

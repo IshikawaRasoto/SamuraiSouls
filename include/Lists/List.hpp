@@ -78,17 +78,19 @@ List<T>::List(){
 
 template<typename T>
 List<T>::~List(){
-    List::Node<T> *currentNode = begin;
+
+    Lists::List<T>::Node<T> *currentNode = begin;
     List::Node<T> *aux;
 
     while(currentNode){
         aux = currentNode->getNext();
-        if(currentNode->getValue()){
-            delete currentNode->getValue();
-        }
         delete currentNode;
         currentNode = aux;
     }
+
+    begin = nullptr;
+    end = nullptr;
+    size = 0;
 }
 
 template<typename T>

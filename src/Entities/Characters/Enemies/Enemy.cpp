@@ -7,7 +7,8 @@ Enemy::Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, 
     pP1(p1),
     pP2(p2),
     atkCD(0.0),
-    timeFromAtk(0.0)
+    timeFromAtk(0.0),
+    dx(0.0)
 {}
 
 Enemy::~Enemy(){
@@ -15,7 +16,7 @@ Enemy::~Enemy(){
     pP2 = nullptr;
 }
 
-const Entities::Characters::Player* Enemy::getNearestPlayer() const{
+Entities::Characters::Player* Enemy::getNearestPlayer(){
     int x1, x2;
     if(!pP2)
         return pP1;
@@ -26,10 +27,30 @@ const Entities::Characters::Player* Enemy::getNearestPlayer() const{
     return pP2;
 }
 
-void Enemy::attack(){
-    //TODO
+void Enemy::attack(const int dmg){
+    getNearestPlayer()->receiveDMG(dmg);
+    setIsAttacking(true);
+    timeFromAtk = 0.0; //Utilizado na animacao
+    atkCD = 0.0;
 }
 
-void Enemy::save(){
-    //TODO
+void Enemy::movement(const float spX){
+
+    dx += speed.x;
+
+    if(dx >= MAX_DX){
+        setFacingLeft(true);
+        speed = {-spX, speed.y};
+    }else if(dx <= 0){
+        setFacingLeft(false);
+        speed = {spX, speed.y};
+    }
+}
+
+void Enemy::collide(Entity* other, sf::Vector2f intersect){
+    Type type = other->getType();
+
+    if(type == Type::Box || type == Type::Platform){
+        moveOnCollision(other, intersect);
+    };
 }

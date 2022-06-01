@@ -2,8 +2,8 @@
 
 #include "Entities/Objects/Object.hpp"
 
-#define BOX_WIDTH 200
-#define BOX_HEIGHT 200
+#define BOX_WIDTH 100
+#define BOX_HEIGHT 100
 
 namespace Entities{
     namespace Objects{

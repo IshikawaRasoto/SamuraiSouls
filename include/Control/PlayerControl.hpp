@@ -1,11 +1,16 @@
 #pragma once
 
-#include "Entities/Characters/Player.hpp"
 #include "Patterns/Observer.hpp"
 #include "Managers/Input.hpp"
 #include "PlayerKeys.hpp"
 
 #include <string>
+
+namespace Entities{
+    namespace Characters{
+        class Player;
+    }
+}
 
 using namespace Entities;
 

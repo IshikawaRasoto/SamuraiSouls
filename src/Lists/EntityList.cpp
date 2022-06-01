@@ -23,13 +23,13 @@ bool EntityList::removeEntity(Entities::Entity *entity){
 
 void EntityList::updateAll(float dt){
     for(int i = 0; i < list.getSize(); i++){
-        list[i]->update(dt);
+        if(list[i]->getIsShowing()) list[i]->update(dt);
     }
 }
 
 void EntityList::renderAll(){
     for(int i = 0; i < list.getSize(); i++){
-        list[i]->render();
+        if(list[i]->getIsShowing()) list[i]->render();
     }
 }
 
