@@ -4,10 +4,11 @@
 #include "Lists/EntityList.hpp"
 
 #include "Entities/Characters/Player.hpp"
+#include "Patterns/State.hpp"
 
 #define LEVEL_Y 400
 
-class Level{
+class Level : public Patterns::State{
 private:
     Managers::CollisionManager collisionManager;
     Managers::InputManager *inputManager;
@@ -17,6 +18,7 @@ private:
 
 public:
     Level(
+        Patterns::StateMachine *stateMachine,
         Managers::InputManager *inputManager = Managers::InputManager::getInstance(), 
         Managers::GraphicsManager *graphicsManager = Managers::GraphicsManager::getInstance()
     );
@@ -24,4 +26,5 @@ public:
 
     void update(float dt);
     void render();
+    void reset();
 };

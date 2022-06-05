@@ -1,4 +1,5 @@
 #include "Entities/Characters/Enemies/Goblin.hpp"
+#include <iostream>
 using namespace Entities::Characters::Enemies;
 
 const float Goblin::attackTime(0.4);

@@ -5,9 +5,12 @@
 #include "Entities/Characters/Enemies/Goblin.hpp"
 
 Level::Level(
+    Patterns::StateMachine *stateMachine,
     Managers::InputManager *inputManager, 
     Managers::GraphicsManager *graphicsManager
-){
+):
+    State(Patterns::StateId::Play, stateMachine)
+{
     this->inputManager = inputManager;
     this->graphicsManager = graphicsManager;
 
@@ -52,10 +55,16 @@ void Level::update(float dt){
     collisionManager.checkCollision();
 
     graphicsManager->centerView({player->getPosition().x, player->getPosition().y});
+
+    render();
 }
 
 void Level::render(){
     graphicsManager->beginDraw();
     entityList.renderAll();
     graphicsManager->endDraw();
+}
+
+void Level::reset(){
+    //TODO
 }

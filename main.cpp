@@ -5,10 +5,7 @@ int main(){
     
     Game game;
 
-    while(!game.isDone()){
-        game.update();
-        game.restartClock();
-    }
+    game.execute();
 
     return 0;
 }

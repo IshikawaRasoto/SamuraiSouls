@@ -7,25 +7,27 @@
 #include "Managers/Event.hpp"
 
 #include "Level.hpp"
+#include "Patterns/StateMachine.hpp"
 
-class Game{
+class Game : public Patterns::StateMachine{
 
 public:
 
     Game();
     ~Game();
+    void execute();
+
+private:
 
     sf::Time getElapsed();
+    
     bool isDone();
-
     void update();
 
     void restartClock();
-private:
+
     sf::Clock clock;
     sf::Time elapsed;
-
-    Level level;
     
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;
