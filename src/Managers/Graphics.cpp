@@ -1,5 +1,6 @@
 #include "Managers/Graphics.hpp"
 #include "config.hpp"
+#include <iostream>
 
 using namespace Managers;
 
@@ -7,7 +8,50 @@ GraphicsManager::GraphicsManager(){
     setup(WINDOW_NAME, sf::Vector2u(WINDOW_SIZE_X,WINDOW_SIZE_Y));
 }
 
-GraphicsManager::~GraphicsManager(){}
+GraphicsManager::~GraphicsManager(){
+    clearTextures();
+    clearFonts();
+}
+
+//Funcao para retornar a textura do path fornecido.
+sf::Texture* GraphicsManager::getTexture(std::string path){
+    std::map<std::string, sf::Texture*>::iterator it = textures.find(path);
+
+    //Se a textura não existe no map de textures, criamos uma nova textura a partir do path.
+    if(it == textures.end()){
+        sf::Texture *newTexture = new sf::Texture();
+
+        //Caso não seja possível carregar a textura, retornamos apenas um ponteiro vazio.
+        if(!newTexture->loadFromFile(path)){
+            std::cout << "[GraphicsManager] Falha ao carregar uma textura a partir de \"" << path << "\".\n";
+            return nullptr;
+        };
+
+        textures[path] = newTexture;
+    }
+
+    return textures[path];
+}
+
+//Funcao para retornar a fonte do path fornecido.
+sf::Font* GraphicsManager::getFont(std::string path){
+    std::map<std::string, sf::Font*>::iterator it = fonts.find(path);
+
+    //Se a fonte não existe no map de fonte, criamos uma nova Font a partir do path.
+    if(it == fonts.end()){
+        sf::Font *newFont = new sf::Font();
+
+        //Caso não seja possível carregar a font a partir do path, retornamos apenas um ponteiro vazio
+        if(!newFont->loadFromFile(path)){
+            std::cout << "[GraphicsManager] Falha ao carregar uma fonte a partir de \"" << path << "\".\n";
+            return nullptr;
+        };
+
+        fonts[path] = newFont;
+    }
+
+    return fonts[path];
+}
 
 void GraphicsManager::beginDraw(){
     window.clear(sf::Color::Black);
@@ -16,25 +60,6 @@ void GraphicsManager::beginDraw(){
 
 void GraphicsManager::endDraw(){
     window.display();
-}
-
-void GraphicsManager::update(){
-
-    sf::Event event;
-    while(window.pollEvent(event)){
-        switch(event.type){
-            case sf::Event::Closed:
-                done = true;
-                break;
-            case sf::Event::KeyPressed:
-                switch(event.key.code){
-                    case sf::Keyboard::F5:
-                        toggleFullscreen();
-                        break;
-                }
-                break;
-        }
-    }
 }
 
 bool GraphicsManager::isDone(){
@@ -95,4 +120,18 @@ GraphicsManager* GraphicsManager::getInstance(){
     if(instance == nullptr)
         instance = new GraphicsManager();
     return instance;
+}
+
+void GraphicsManager::clearTextures(){
+    for(auto &it : textures){
+        if(it.second)
+            delete it.second;
+    }
+}
+
+void GraphicsManager::clearFonts(){
+    for(auto &it : fonts){
+        if(it.second)
+            delete it.second;
+    }
 }

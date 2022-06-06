@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace Entities::Characters;
 
+int Player::playerAtkTime(0.2);
 int Player::points(0);
 int Player::lifes(3);
 

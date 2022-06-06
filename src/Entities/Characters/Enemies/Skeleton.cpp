@@ -3,7 +3,7 @@
 
 using namespace Entities::Characters::Enemies;
 
-const float Skeleton::attackTime(0.4);
+const float Skeleton::skeletonAtkTime(0.4);
 
 Skeleton::Skeleton(sf::Vector2f pos, Characters::Player* p1, Characters::Player* p2):
     Enemy(Type::Skeleton, pos, sf::Vector2f(SKELETON_WIDTH, SKELETON_HEIGHT), SKELETON_HP, SKELETON_DMG, p1, p2)
@@ -36,7 +36,7 @@ void Skeleton::update(float dt){
         speed = sf::Vector2f(speed.x, MAX_SPEED_Y);
 
     atkCD += dt;
-    if((atkCD >= attackTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
+    if((atkCD >= skeletonAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
             attack(SKELETON_DMG);
     
 

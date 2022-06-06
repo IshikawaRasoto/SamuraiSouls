@@ -1,7 +1,10 @@
 #pragma once
 
 #include <string>
+#include <map>
+
 #include <SFML/Graphics.hpp>
+
 #include "Patterns/Observer.hpp"
 
 namespace Managers{
@@ -16,6 +19,8 @@ private:
     void setup(const std::string &title, const sf::Vector2u &size);
     void destroy();
     void create();
+    void clearTextures();
+    void clearFonts();
 
     sf::RenderWindow window;
     sf::Vector2u size;
@@ -29,15 +34,17 @@ private:
 
     // SINGLETON
     static GraphicsManager *instance;
-
+    std::map<std::string, sf::Texture*> textures;
+    std::map<std::string, sf::Font*> fonts;
 public:
 
     ~GraphicsManager();
 
+    sf::Texture* getTexture(std::string path);
+    sf::Font* getFont(std::string path);
+
     void beginDraw();
     void endDraw();
-
-    void update();
 
     bool isDone();
     bool isFullscreen();

@@ -8,7 +8,7 @@ Game::Game():
     StateMachine()
 {
 
-    states[Patterns::StateId::Play] = new Level(this);
+    states[Patterns::StateId::Play] = new States::Level(this);
 
     currentState = Patterns::StateId::Play;
 

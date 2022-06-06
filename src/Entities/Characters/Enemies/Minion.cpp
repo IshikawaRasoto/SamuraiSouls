@@ -1,7 +1,7 @@
 #include "Entities/Characters/Enemies/Minion.hpp"
 using namespace Entities::Characters::Enemies;
 
-const float Minion::attackTime(0.4);
+const float Minion::minionAtkTime(0.4);
 
 Minion::Minion(sf::Vector2f pos, Characters::Player *p1, Characters::Player *p2):
     Enemy(Type::Minion, pos, sf::Vector2f(MINION_WIDTH, MINION_HEIGHT), MINION_HP, MINION_DMG, p1, p2)

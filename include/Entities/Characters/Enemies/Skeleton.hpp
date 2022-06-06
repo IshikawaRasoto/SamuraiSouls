@@ -16,7 +16,7 @@ namespace Entities{
         namespace Enemies{
             class Skeleton : public Enemy{
                 private:
-                    static const float attackTime;
+                    static const float skeletonAtkTime;
 
                 public:
 

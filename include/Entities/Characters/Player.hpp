@@ -8,15 +8,15 @@
 #define PLAYER_SPEED_Y 150
 
 #include "Entities/Characters/Character.hpp"
-#include "Control/PlayerControl.hpp"
+#include "Managers/Control/PlayerControl.hpp"
 
-using namespace Managers;
+using namespace Managers::Control;
 
 namespace Entities{
     namespace Characters{
         class Player : public Character{
             private:
-                static const float attackTime;
+                static const float playerAtkTime                                                                                                                                                                                                                                                                                                            ; //bom dia
                 const bool playerOne;
                 static int points;
                 static int lifes;

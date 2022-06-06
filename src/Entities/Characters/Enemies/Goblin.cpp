@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace Entities::Characters::Enemies;
 
-const float Goblin::attackTime(0.4);
+const float Goblin::goblinAtkTime(0.4);
 
 Goblin::Goblin(sf::Vector2f pos, Characters::Player* p1, Characters::Player* p2):
     Enemy(Type::Goblin, pos, sf::Vector2f(GOBLIN_WIDTH, GOBLIN_HEIGHT), GOBLIN_HP, GOBLIN_DMG, p1, p2)
@@ -36,7 +36,7 @@ void Goblin::update(float dt){
         speed = sf::Vector2f(speed.x, MAX_SPEED_Y);
 
     atkCD += dt;
-    if((atkCD >= attackTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
+    if((atkCD >= goblinAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
             attack(GOBLIN_DMG);
     
     move({speed.x * dt, speed.y * dt});
