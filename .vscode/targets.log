@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Jun  6 21:35:11 2022
+# Make data base, printed on Mon Jun  6 22:40:18 2022
 
 # Variables
 
@@ -91,7 +91,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-SESSION_MANAGER = local/Rasoto-VirtualBox:@/tmp/.ICE-unix/1015,unix/Rasoto-VirtualBox:/tmp/.ICE-unix/1015
+SESSION_MANAGER = local/Rasoto-VirtualBox:@/tmp/.ICE-unix/1024,unix/Rasoto-VirtualBox:/tmp/.ICE-unix/1024
 # environment
 CINNAMON_SOFTWARE_RENDERING = 1
 # environment
@@ -113,7 +113,7 @@ XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1651
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3574
 # automatic
 %F = $(notdir $%)
 # environment
@@ -129,7 +129,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1104
+SSH_AGENT_PID = 1113
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # makefile (from 'Makefile', line 4)
@@ -147,7 +147,7 @@ VSCODE_CODE_CACHE_PATH = /home/rasoto/.config/Code/CachedData/c3511e6c69bb39013c
 # environment
 LOGNAME = rasoto
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # automatic
 +F = $(notdir $+)
 # environment
@@ -173,7 +173,7 @@ SHLVL = 0
 # makefile (from 'Makefile', line 3)
 CC := g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0aa47646-5f59-46ae-a63a-f4bbf11c4a51.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-860c490a-220b-486e-a196-467c029f9872.sock
 # environment
 XDG_SESSION_ID = c2
 # environment
@@ -253,7 +253,7 @@ LC_ADDRESS = pt_BR.UTF-8
 # environment
 LANG = C
 # environment
-VSCODE_PID = 1651
+VSCODE_PID = 3574
 # variable set hash-table stats:
 # Load=122/1024=12%, Rehash=0, Collisions=18/169=11%
 
@@ -263,7 +263,7 @@ VSCODE_PID = 1651
 
 # Directories
 
-# . (device 2053, inode 794642): 11 files, no impossibilities.
+# . (device 2053, inode 794326): 11 files, no impossibilities.
 
 # 11 files, no impossibilities in 1 directories.
 
@@ -271,8 +271,8 @@ VSCODE_PID = 1651
 
 %.o: %.cpp
 #  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
  
+	$(CC) -o $@ $< $(FLAGS) 
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
@@ -356,7 +356,7 @@ src/Entities/Characters/Enemies/Goblin.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 21:35:04.3685535
+#  Last modified 2022-06-06 22:40:12.937575175
 #  File has been updated.
 #  Successfully updated.
 
@@ -375,7 +375,7 @@ src/Managers/Input.o:
 # Not a target:
 main.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-06 21:35:04.372553537
+#  Last modified 2022-06-06 22:40:12.941575216
 #  File has been updated.
 #  Successfully updated.
 
@@ -546,6 +546,6 @@ src/Graphics/Text.o:
 # strcache performance: lookups = 94 / hit rate = 46%
 # hash-table stats:
 # Load=50/8192=1%, Rehash=0, Collisions=1/94=1%
-# Finished Make data base on Mon Jun  6 21:35:11 2022
+# Finished Make data base on Mon Jun  6 22:40:18 2022
 
  

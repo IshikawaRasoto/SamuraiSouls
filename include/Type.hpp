@@ -11,6 +11,6 @@ enum Type{
     Arrow,
     Box,
     Thorns,
-    Platform
+    Pavement
 };
 

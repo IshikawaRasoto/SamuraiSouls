@@ -50,7 +50,7 @@ void Enemy::movement(const float spX){
 void Enemy::collide(Entity* other, sf::Vector2f intersect){
     Type type = other->getType();
 
-    if(type == Type::Box || type == Type::Platform){
+    if(type == Type::Box || type == Type::Pavement){
         moveOnCollision(other, intersect);
     };
 }

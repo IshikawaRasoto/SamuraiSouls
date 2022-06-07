@@ -72,7 +72,7 @@ void Player::render(){
 void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
     Type type = other->getType();
 
-    if(type == Type::Box || type == Type::Platform){
+    if(type == Type::Box || type == Type::Pavement){
         canJump = true;
         moveOnCollision(other, intersect);
     }
