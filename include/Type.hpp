@@ -11,6 +11,12 @@ enum Type{
     Arrow,
     Box,
     Thorns,
-    Pavement
+    Barrel,
+    Wagon,
+    Pavement,
+    Ground,
+    Button,
+    Menu,
+    Background
 };
 

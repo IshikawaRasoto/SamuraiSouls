@@ -16,7 +16,7 @@ namespace Entities{
     namespace Characters{
         class Player : public Character{
             private:
-                static const float playerAtkTime                                                                                                                                                                                                                                                                                                            ; //bom dia
+                static const float playerAtkTime; 
                 const bool playerOne;
                 static int points;
                 static int lifes;

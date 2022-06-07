@@ -4,8 +4,8 @@
 #include "Entities/Objects/Object.hpp"
 #include "Type.hpp"
 
-#define PAVEMENT_WIDTH 2000
-#define PAVEMENT_HEIGHT 100
+#define PAVEMENT_WIDTH 96
+#define PAVEMENT_HEIGHT 48 
 
 namespace Entities{
     namespace Objects{

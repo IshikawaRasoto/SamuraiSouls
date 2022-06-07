@@ -9,15 +9,15 @@ Box::Box(sf::Vector2f position):
 
 Box::~Box(){}
 
-void Box::update(const float dt){
+/*void Box::update(const float dt){
     animator->update(position);
-}
+}*/
+
 void Box::render(){
     animator->render();
 }
 void Box::initializeSprite(){
-    sf::RectangleShape* body = animator->getRectangleShape();
-    body->setFillColor(sf::Color::White);
+    animator->initializeTexture(BOX_DIR, sf::Vector2u(1,1));
 }
 
 void Box::save(){

@@ -27,3 +27,7 @@ void Animator::render(){
 sf::RectangleShape* Animator::getRectangleShape(){
     return &body;
 }
+
+void Animator::initializeTexture(std::string path, sf::Vector2u imageCount){
+    //TODO
+}

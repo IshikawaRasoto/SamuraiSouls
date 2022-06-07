@@ -3,7 +3,7 @@
 using namespace Entities::Objects::Surfaces;
 
 Ground::Ground(sf::Vector2f position):
-    Object(Type::Pavement, position, {PLATFORM_WIDTH, PLATFORM_HEIGHT})
+    Object(Type::Pavement, position, {GROUND_WIDTH, GROUND_HEIGHT})
 {
     initializeSprite();
 }

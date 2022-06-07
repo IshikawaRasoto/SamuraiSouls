@@ -3,8 +3,8 @@
 #include "Entities/Objects/Object.hpp"
 #include "Type.hpp"
 
-#define GROUND_WIDTH
-#define GROUND_HEIGHT
+#define GROUND_WIDTH 192
+#define GROUND_HEIGHT 41
 
 namespace Entities{
     namespace Objects{

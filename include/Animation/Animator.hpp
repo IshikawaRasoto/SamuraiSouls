@@ -2,6 +2,7 @@
 
 #include "standard.hpp"
 #include "Managers/Graphics.hpp"
+#include <string>
 using namespace Managers;
 
 class Animator{
@@ -14,5 +15,6 @@ class Animator{
         void render();
         void update(sf::Vector2f position);
         void setGraphMngr(GraphicsManager* pGraphMngr);
+        void initializeTexture(std::string path, sf::Vector2u imageCount);
         sf::RectangleShape* getRectangleShape();
 };

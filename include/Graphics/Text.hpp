@@ -44,6 +44,7 @@ public:
     void setColor(sf::Color color);
     void setFontSize(const unsigned int size);
     void setTextAlignment(TextAlignment alignment);
+    void setValue(std::string value);
 
     void render();
 };
