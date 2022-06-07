@@ -46,6 +46,8 @@ namespace Entities{
                 void render();
                 void collide(Entity* other, sf::Vector2f intersect);
                 void save();
+
+                bool canAtk(float dt);
                 
             private:
                 void initializeSprite();

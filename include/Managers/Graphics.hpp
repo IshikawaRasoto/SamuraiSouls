@@ -55,6 +55,7 @@ public:
     void toggleFullscreen();
     void draw(sf::Drawable &drawable);
     void centerView(sf::Vector2f position);
+    void handleWindowResize();
 
     static GraphicsManager* getInstance();
 };

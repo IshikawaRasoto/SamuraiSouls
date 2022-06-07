@@ -15,8 +15,7 @@ namespace Entities{
                 public:
                     Box(sf::Vector2f position);
                     ~Box();
-                    void update(const float dt);
-                    void render();
+
                     void save();
 
                 private:

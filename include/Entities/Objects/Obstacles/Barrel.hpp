@@ -18,9 +18,7 @@ namespace Entities{
                 Barrel(sf::Vector2f position);
                 ~Barrel();
 
-                void update(float dt);
                 //void save();
-                void render();
             };
         }
     }

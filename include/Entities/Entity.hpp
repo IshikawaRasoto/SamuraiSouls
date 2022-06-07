@@ -28,7 +28,6 @@ namespace Entities{
 
             void move(sf::Vector2f v);
 
-            virtual void update(const float dt) = 0;
             virtual void collide(Entity* other, sf::Vector2f intersect);
             virtual void save() = 0;
 

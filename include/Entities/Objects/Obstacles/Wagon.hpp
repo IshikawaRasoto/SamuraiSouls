@@ -15,7 +15,6 @@ namespace Entities{
                     Wagon();
                     ~Wagon();
 
-                    void update(const float dt);
                     void save();
             };
         }

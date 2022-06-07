@@ -71,5 +71,7 @@ void GraphicsManager::update(EventManager* subject){
 
     if(event == "closed"){
         done = true;
+    }else if(event == "resize"){
+        handleWindowResize();
     }
 }

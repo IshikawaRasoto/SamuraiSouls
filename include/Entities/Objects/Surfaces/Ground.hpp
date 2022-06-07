@@ -4,7 +4,7 @@
 #include "Type.hpp"
 
 #define GROUND_WIDTH 192
-#define GROUND_HEIGHT 39
+#define GROUND_HEIGHT 111
 
 namespace Entities{
     namespace Objects{
@@ -16,7 +16,6 @@ namespace Entities{
                 Ground(sf::Vector2f position);
                 ~Ground();
 
-                void update(float dt);
                 void save();
             };
         }

@@ -5,10 +5,12 @@
 
 #include <SFML/System/Vector2.hpp>
 
+#define GOBLIN_DIR
+
 #define GOBLIN_HP 20
 #define GOBLIN_DMG 15
-#define GOBLIN_WIDTH 100
-#define GOBLIN_HEIGHT 200
+#define GOBLIN_WIDTH 33
+#define GOBLIN_HEIGHT 36
 #define GOBLIN_SPEED_X 50
 
 namespace Entities{

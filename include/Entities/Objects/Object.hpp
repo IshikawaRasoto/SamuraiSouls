@@ -9,7 +9,6 @@ namespace Entities{
                 Object(Type t, sf::Vector2f position, sf::Vector2f size);
                 virtual ~Object();
 
-                virtual void update(const float dt) = 0;
                 virtual void save() = 0;
 
             protected:

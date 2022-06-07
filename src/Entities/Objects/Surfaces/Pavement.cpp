@@ -10,12 +10,9 @@ Pavement::Pavement(sf::Vector2f position):
 
 Pavement::~Pavement(){}
 
-void Pavement::update(float dt){
-    animator->update(position);
-}
-
 void Pavement::initializeSprite(){
-    animator->initializeTexture(PAVEMENT_DIR, sf::Vector2u(1,1));;
+    animator->initializeTexture(PAVEMENT_DIR, sf::Vector2u(1,1));
+    animator->update(position);
 }
 
 void Pavement::save(){}

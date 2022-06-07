@@ -30,5 +30,8 @@ void Ent::moveBody(const sf::Vector2f v){
 }
 
 void Ent::render(){
+    animator->update(position);
     animator->render();
 }
+
+void Ent::update(const float dt){}

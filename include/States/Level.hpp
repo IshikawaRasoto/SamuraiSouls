@@ -6,7 +6,10 @@
 #include "Entities/Characters/Player.hpp"
 #include "Patterns/State.hpp"
 
-#define LEVEL_Y 400
+#include "Graphics/Background.hpp"
+
+#define LEVEL_Y 0
+#define LEVEL_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
 
 namespace States{
 
@@ -17,6 +20,7 @@ private:
     Managers::GraphicsManager *graphicsManager;
     Lists::EntityList entityList;
     Entities::Characters::Player *player;
+    Graphics::Background background;
 
 public:
     Level(
@@ -29,6 +33,8 @@ public:
     void update(float dt);
     void render();
     void reset();
+
+    void centerView();
 };
 
 }

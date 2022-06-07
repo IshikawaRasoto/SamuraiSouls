@@ -9,15 +9,10 @@ Box::Box(sf::Vector2f position):
 
 Box::~Box(){}
 
-void Box::update(const float dt){
-    animator->update(position);
-}
 
-void Box::render(){
-    animator->render();
-}
 void Box::initializeSprite(){
     animator->initializeTexture(BOX_DIR, sf::Vector2u(1,1));
+    animator->update(position);
 }
 
 void Box::save(){

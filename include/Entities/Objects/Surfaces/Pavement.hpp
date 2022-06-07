@@ -5,7 +5,7 @@
 #include "Type.hpp"
 
 #define PAVEMENT_WIDTH 192
-#define PAVEMENT_HEIGHT 39 
+#define PAVEMENT_HEIGHT 111
 
 #define PAVEMENT_DIR "./Textures/Scenario/Village/Pavement.png"
 
@@ -19,7 +19,6 @@ namespace Entities{
                 Pavement(sf::Vector2f position);
                 ~Pavement();
 
-                void update(float dt);
                 void save();
             };
         }

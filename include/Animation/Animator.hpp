@@ -7,7 +7,7 @@ using namespace Managers;
 
 class Animator{
     private:
-        GraphicsManager* pGM;
+        static GraphicsManager* pGM;
         sf::RectangleShape body;
         sf::Vector2u imgCount;
         sf::Texture* texture;

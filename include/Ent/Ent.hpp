@@ -22,7 +22,7 @@ class Ent{
         void setPosition(sf::Vector2f position);
         void moveBody(const sf::Vector2f v);
         
-        virtual void update(const float dt) = 0;
+        virtual void update(const float dt);
         virtual void render();
 
     protected:

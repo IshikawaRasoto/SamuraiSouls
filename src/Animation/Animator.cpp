@@ -1,10 +1,10 @@
 #include "Animation/Animator.hpp"
 
-Animator::Animator(sf::Vector2f size):
-    pGM(GraphicsManager::getInstance())
-{
+GraphicsManager *Animator::pGM = GraphicsManager::getInstance();
+
+Animator::Animator(sf::Vector2f size){
     body.setSize(size);
-    body.setOrigin(size.x/2, size.y/2);
+    body.setOrigin(size.x/2.f, size.y/2.f);
 }
 
 Animator::~Animator(){
@@ -35,7 +35,7 @@ sf::RectangleShape* Animator::getRectangleShape(){
 void Animator::initializeTexture(std::string path, sf::Vector2u imageCount){
     imgCount = imageCount;
     texture = pGM->getTexture(path);
-    if(texture == NULL){
+    if(texture == nullptr){
         std::cout << "ERROR: Failed to load texture in Animator::initializeTexture" << std::endl;
         exit(1);
     }

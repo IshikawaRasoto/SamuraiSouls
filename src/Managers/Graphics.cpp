@@ -55,7 +55,6 @@ sf::Font* GraphicsManager::getFont(std::string path){
 
 void GraphicsManager::beginDraw(){
     window.clear(sf::Color::Black);
-    window.setView(view);
 }
 
 void GraphicsManager::endDraw(){
@@ -91,6 +90,13 @@ void GraphicsManager::draw(sf::Drawable &drawable){
 
 void GraphicsManager::centerView(sf::Vector2f position){
     view.setCenter(position);
+    window.setView(view);
+}
+
+void GraphicsManager::handleWindowResize(){
+    float aspectRatio = float(window.getSize().x) / window.getSize().y;
+    view.setSize(sf::Vector2f(WINDOW_SIZE_Y * aspectRatio, WINDOW_SIZE_Y));
+    window.setView(view);
 }
 
 void GraphicsManager::setup(const std::string &title, const sf::Vector2u &size){

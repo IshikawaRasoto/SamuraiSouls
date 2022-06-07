@@ -11,7 +11,6 @@ Thorns::~Thorns(){}
 
 const int Thorns::getDmg() const{return dmg;}
 
-void Thorns::update(const float dt){}
 void Thorns::render(){}
 void Thorns::initializeSprite(){}
 

@@ -2,8 +2,8 @@
 
 #include "Entities/Objects/Object.hpp"
 
-#define THORNS_WIDTH 200
-#define THORNS_HEIGHT 200
+#define THORNS_WIDTH 32
+#define THORNS_HEIGHT 94
 
 namespace Entities{
     namespace Objects{
@@ -18,7 +18,6 @@ namespace Entities{
                     ~Thorns();
                     const int getDmg() const;
 
-                    void update(const float dt);
                     void render();
                     void save();
             };

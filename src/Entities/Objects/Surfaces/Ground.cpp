@@ -10,12 +10,10 @@ Ground::Ground(sf::Vector2f position):
 
 Ground::~Ground(){}
 
-void Ground::update(float dt){
+void Ground::initializeSprite(){
+    animator->getRectangleShape()->setFillColor(sf::Color::Cyan);
     animator->update(position);
 }
 
-void Ground::initializeSprite(){
-    animator->getRectangleShape()->setFillColor(sf::Color::Cyan);
-}
 
 void Ground::save(){}

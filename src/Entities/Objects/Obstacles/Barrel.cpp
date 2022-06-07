@@ -11,10 +11,4 @@ void Barrel::initializeSprite(){
     sf::RectangleShape* body = animator->getRectangleShape();
 }
 
-void Barrel::render(){
-    animator->render();
-}
 
-void Barrel::update(const float dt){
-    animator->update(position);
-}

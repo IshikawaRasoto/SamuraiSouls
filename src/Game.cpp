@@ -15,6 +15,7 @@ Game::Game():
     eventManager->subscribe("pressed", inputManager);
     eventManager->subscribe("released", inputManager);
     eventManager->subscribe("closed", graphicManager);
+    eventManager->subscribe("resize", graphicManager);
 }   
 
 Game::~Game(){}

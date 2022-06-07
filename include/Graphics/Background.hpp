@@ -5,17 +5,12 @@
 namespace Graphics{
 
 class Background : public Ent{
-    Background(
-        sf::Vector2f position = sf::Vector2f(0.0f,0.0f), 
-        std::string path = "",
-        sf::Vector2f size = sf::Vector2f(0.0f, 0.0f)
-    );
-
-    ~Background();
-
+private:
+    std::string path;
     void initializeSprite();
-    void render();
-    void update();
+public:
+    Background(std::string path);
+    ~Background();
 };
 
 

@@ -44,6 +44,10 @@ void Player::update(float dt){
 
     speed.y += GRAVITY * dt;
     move({speed.x * dt, speed.y * dt});
+
+    if(){
+        
+    }
 }
 
 void Player::jump(){
@@ -57,8 +61,10 @@ void Player::walk(Direction direction){
 
     if(direction == Direction::Right){
         speed.x = PLAYER_SPEED_X;
+        setFacingLeft(false);
     }else if (direction == Direction::Left){
         speed.x = -PLAYER_SPEED_X;
+        setFacingLeft(true);
     }else if(dirX == Direction::Idle){
         speed.x = 0;
     }
@@ -80,10 +86,12 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
 
 void Player::initializeSprite(){
     if(playerOne){
-        //animator->initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
-        //Teste
         animator->initializeTexture(MASTER_DIR, sf::Vector2u(1, 1));
     }  
+}
+
+bool Player::canAtk(const float dt){
+    
 }
 
 void Player::save(){

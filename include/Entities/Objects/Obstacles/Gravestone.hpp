@@ -14,7 +14,6 @@ namespace Entities{
                     Gravestone();
                     ~Gravestone();
 
-                    void update(float dt);
                     void save();
             };
         }
