@@ -11,6 +11,12 @@ Ent(Type::Background, {0.0f, 0.0f}, {WINDOW_SIZE_X, WINDOW_SIZE_Y})
     initializeSprite();    
 }
 
+Background::Background():
+Ent(Type::Background, {0.0f, 0.0f}, {WINDOW_SIZE_X, WINDOW_SIZE_Y})
+{
+    path = "";
+}
+
 Background::~Background(){}
 
 void Background::initializeSprite(){

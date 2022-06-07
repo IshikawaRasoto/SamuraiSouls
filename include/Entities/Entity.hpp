@@ -10,7 +10,6 @@ namespace Entities{
 
         private:
 
-            bool showing;
             bool facingLeft;
 
         public:
@@ -19,11 +18,9 @@ namespace Entities{
             virtual ~Entity();
             
             const sf::Vector2f getSpeed() const;
-            const bool getIsShowing() const;
             const bool getFacingLeft() const;
 
             void setSpeed(const sf::Vector2f speed);
-            void setIsShowing(const bool showing);
             void setFacingLeft(const bool facingLeft);
 
             void move(sf::Vector2f v);

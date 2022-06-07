@@ -3,13 +3,14 @@
 
 using namespace Graphics;
 
-Button::Button(sf::Vector2f position):
+Button::Button(std::string content, sf::Vector2f position):
 Ent(Type::Button, position, {BUTTON_SIZE_X, BUTTON_SIZE_Y})
 {
-    content.setPosition(position);
-    content.setFontSize(BUTTON_FONT_SIZE);
-    content.setColor(BUTTON_FONT_COLOR);
+    this->content.setPosition(position);
+    this->content.setFontSize(BUTTON_FONT_SIZE);
+    this->content.setColor(BUTTON_FONT_COLOR);
 
+    setContent(content);
     initializeSprite();
 }
 

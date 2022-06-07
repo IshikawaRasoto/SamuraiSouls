@@ -10,6 +10,7 @@ private:
     void initializeSprite();
 public:
     Background(std::string path);
+    Background();
     ~Background();
 };
 

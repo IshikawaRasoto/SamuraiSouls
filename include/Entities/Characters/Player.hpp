@@ -6,6 +6,17 @@
 #define PLAYER_HEIGHT 52
 #define PLAYER_SPEED_X 150
 #define PLAYER_SPEED_Y 150
+#define PLAYER_ATK_RANGE_X 105
+#define PLAYER_ATK_RANGE_Y 68
+
+enum sprite{
+    Idle = 0,
+    Run,
+    Attack,
+    Jump,
+    Fall,
+    Die
+};
 
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Control/PlayerControl.hpp"
@@ -24,7 +35,10 @@ namespace Entities{
                 static int lifes;
                 bool isWalking;
                 bool canJump;
+                bool isAtking;
+                float timeFromAtk;
                 Control::PlayerControl* playerControl;
+
 
             public:
                 Player(
@@ -47,7 +61,7 @@ namespace Entities{
                 void collide(Entity* other, sf::Vector2f intersect);
                 void save();
 
-                bool canAtk(float dt);
+                bool statusAtk(const float dt);
                 
             private:
                 void initializeSprite();

@@ -20,9 +20,14 @@ Ent::~Ent(){delete(animator);}
 const sf::Vector2f Ent::getPosition() const{return position;}
 const Type Ent::getType() const{return t;}
 const sf::Vector2f Ent::getSize() const {return size;}
+const bool Ent::getIsShowing() const {return showing;}
 
 void Ent::setPosition(sf::Vector2f position){
     this->position = position;
+}
+
+void Ent::setIsShowing(const bool showing){
+    this->showing = showing;
 }
 
 void Ent::moveBody(const sf::Vector2f v){

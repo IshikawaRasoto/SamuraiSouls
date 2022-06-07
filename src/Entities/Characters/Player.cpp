@@ -9,7 +9,9 @@ int Player::lifes(3);
 Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerControl* playerControl):
         isWalking(false),
         canJump(false),
+        isAtking(false),
         playerOne(isPlayerOne),
+        timeFromAtk(0.f),
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
     if(!playerControl){
@@ -45,8 +47,9 @@ void Player::update(float dt){
     speed.y += GRAVITY * dt;
     move({speed.x * dt, speed.y * dt});
 
-    if(){
-        
+    if(statusAtk){
+        speed.x = 0;
+        animator->update(position, sprite::Attack, 1, dt, getFacingLeft());
     }
 }
 
@@ -90,8 +93,16 @@ void Player::initializeSprite(){
     }  
 }
 
-bool Player::canAtk(const float dt){
-    
+bool Player::statusAtk(const float dt){
+    if(isAtking){
+        timeFromAtk += dt;
+        if(timeFromAtk > playerAtkTime){
+            return 1;
+        }
+        timeFromAtk -= playerAtkTime;
+        isAtking = false;
+    }
+    return 0;
 }
 
 void Player::save(){

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Managers/Collision.hpp"
 #include "Managers/Input.hpp"
 #include "Managers/Graphics.hpp"
@@ -14,7 +16,7 @@
 namespace States{
 
 class Level : public Patterns::State{
-private:
+protected:
     Managers::CollisionManager collisionManager;
     Managers::InputManager *inputManager;
     Managers::GraphicsManager *graphicsManager;
@@ -30,11 +32,11 @@ public:
     );
     ~Level();
 
-    void update(float dt);
+    virtual void update(float dt) = 0;
     void render();
     void reset();
 
-    void centerView();
+    virtual void centerView();
 };
 
 }

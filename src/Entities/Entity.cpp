@@ -19,15 +19,10 @@ Entity::Entity(Type t, sf::Vector2f position, sf::Vector2f size):
 Entity::~Entity(){}
 
 const sf::Vector2f Entity::getSpeed() const {return speed;}
-const bool Entity::getIsShowing() const {return showing;}
 const bool Entity::getFacingLeft() const {return facingLeft;}
 
 void Entity::setSpeed(const sf::Vector2f speed){
     this->speed = speed;
-}
-
-void Entity::setIsShowing(const bool showing){
-    this->showing = showing;
 }
 
 void Entity::setFacingLeft(const bool facingLeft){

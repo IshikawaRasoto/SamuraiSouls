@@ -21,7 +21,7 @@ private:
     bool selected;
 
 public:
-    Button(sf::Vector2f position = sf::Vector2f(0.0f, 0.0f));
+    Button(std::string content = "", sf::Vector2f position = sf::Vector2f(0.0f, 0.0f));
     ~Button();
 
     std::string getContent();
