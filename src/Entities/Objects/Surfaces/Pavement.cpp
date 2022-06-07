@@ -15,7 +15,7 @@ void Pavement::update(float dt){
 }
 
 void Pavement::initializeSprite(){
-    animator->getRectangleShape()->setFillColor(sf::Color::Cyan);
+    animator->initializeTexture(PAVEMENT_DIR, sf::Vector2u(1,1));;
 }
 
 void Pavement::save(){}

@@ -19,7 +19,7 @@ namespace Entities{
                 ~Barrel();
 
                 void update(float dt);
-                void save();
+                //void save();
                 void render();
             };
         }

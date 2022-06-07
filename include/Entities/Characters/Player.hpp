@@ -2,13 +2,15 @@
 
 #define PLAYER_HP 100
 #define PLAYER_DMG 25
-#define PLAYER_WIDTH 100
-#define PLAYER_HEIGHT 200
+#define PLAYER_WIDTH 37
+#define PLAYER_HEIGHT 52
 #define PLAYER_SPEED_X 150
 #define PLAYER_SPEED_Y 150
 
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Control/PlayerControl.hpp"
+
+#define MASTER_DIR "./Textures/Characters/MasterTest.png"
 
 using namespace Managers::Control;
 

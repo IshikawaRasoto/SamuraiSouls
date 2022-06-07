@@ -9,6 +9,10 @@ class Animator{
     private:
         GraphicsManager* pGM;
         sf::RectangleShape body;
+        sf::Vector2u imgCount;
+        sf::Texture* texture;
+        sf::IntRect uvRect;
+
     public:
         Animator(sf::Vector2f size = sf::Vector2f(0.0,0.0));
         ~Animator();

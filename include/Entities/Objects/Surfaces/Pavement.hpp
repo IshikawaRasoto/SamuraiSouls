@@ -4,8 +4,10 @@
 #include "Entities/Objects/Object.hpp"
 #include "Type.hpp"
 
-#define PAVEMENT_WIDTH 96
-#define PAVEMENT_HEIGHT 48 
+#define PAVEMENT_WIDTH 192
+#define PAVEMENT_HEIGHT 39 
+
+#define PAVEMENT_DIR "./Textures/Scenario/Village/Pavement.png"
 
 namespace Entities{
     namespace Objects{

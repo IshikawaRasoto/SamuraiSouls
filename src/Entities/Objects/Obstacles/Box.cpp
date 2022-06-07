@@ -9,9 +9,9 @@ Box::Box(sf::Vector2f position):
 
 Box::~Box(){}
 
-/*void Box::update(const float dt){
+void Box::update(const float dt){
     animator->update(position);
-}*/
+}
 
 void Box::render(){
     animator->render();

@@ -79,8 +79,11 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
 }
 
 void Player::initializeSprite(){
-    sf::RectangleShape *body = animator->getRectangleShape();
-    body->setFillColor(sf::Color::Green);   
+    if(playerOne){
+        //animator->initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
+        //Teste
+        animator->initializeTexture(MASTER_DIR, sf::Vector2u(1, 1));
+    }  
 }
 
 void Player::save(){

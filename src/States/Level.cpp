@@ -16,27 +16,33 @@ Level::Level(
     this->inputManager = inputManager;
     this->graphicsManager = graphicsManager;
 
+    Lists::EntityList *movingEntities = new Lists::EntityList();
+    Lists::EntityList *staticEntites = new Lists::EntityList();
+
     Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, LEVEL_Y-PAVEMENT_HEIGHT*2});
     Entities::Objects::Obstacles::Box *box = new Entities::Objects::Obstacles::Box({50.0f, LEVEL_Y-PAVEMENT_HEIGHT});
-    Entities::Objects::Surfaces::Pavement *pavement = new Entities::Objects::Surfaces::Pavement({0.0f,LEVEL_Y});
+    for(int i = 0; i < 5; i++){
+       Entities::Objects::Surfaces::Pavement *pavement = new Entities::Objects::Surfaces::Pavement({i*PAVEMENT_WIDTH,LEVEL_Y});
+       staticEntites->addEntity(pavement);
+       entityList.addEntity(pavement);
+    }
     Entities::Characters::Enemies::Goblin *goblin = new Entities::Characters::Enemies::Goblin({500.0f, LEVEL_Y-GOBLIN_HEIGHT-PAVEMENT_HEIGHT},player);
 
     this->player = player;
 
-    Lists::EntityList *movingEntities = new Lists::EntityList();
-    Lists::EntityList *staticEntites = new Lists::EntityList();
+
         
     movingEntities->addEntity(player);
     movingEntities->addEntity(goblin);
     staticEntites->addEntity(box);
-    staticEntites->addEntity(pavement);
+    
 
     collisionManager = Managers::CollisionManager(movingEntities, staticEntites);
 
     entityList.addEntity(player);
     entityList.addEntity(goblin);
     entityList.addEntity(box);
-    entityList.addEntity(pavement);
+    
 
     inputManager->subscribe("pressed", player->getPlayerControl());
     inputManager->subscribe("released", player->getPlayerControl());

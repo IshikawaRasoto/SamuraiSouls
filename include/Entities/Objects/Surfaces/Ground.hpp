@@ -4,7 +4,7 @@
 #include "Type.hpp"
 
 #define GROUND_WIDTH 192
-#define GROUND_HEIGHT 41
+#define GROUND_HEIGHT 39
 
 namespace Entities{
     namespace Objects{

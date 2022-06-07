@@ -1,5 +1,6 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/rasoto/Documents/Trabalhos/TecProg/SamuraiSouls/TecProgGame'
+ 
 g++ -o main.o main.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c
 g++ -o src/Entities/Characters/Character.o src/Entities/Characters/Character.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Minion.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
@@ -9,7 +10,8 @@ g++ -o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemie
 g++ -o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Boss.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Characters/Player.o src/Entities/Characters/Player.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Objects/Object.o src/Entities/Objects/Object.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Surfaces/Platform.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/Ground.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Pavement.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Thorns.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Box.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Entity.o src/Entities/Entity.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
@@ -29,6 +31,6 @@ g++ -o src/Graphics/Text.o src/Graphics/Text.cpp  -lsfml-window  -lsfml-graphics
 g++ -o src/Lists/EntityList.o src/Lists/EntityList.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Ent/Ent.o src/Ent/Ent.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Game.o src/Game.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o main main.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Box.o src/Entities/Entity.o src/Patterns/State.o src/Patterns/StateMachine.o src/States/Level.o src/Animation/Animator.o src/Managers/Input.o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerControl.o src/Managers/Keyboard.o src/Managers/EventType.o src/Managers/Event.o src/Managers/Graphics.o src/Managers/Collision.o src/Graphics/Text.o src/Lists/EntityList.o src/Ent/Ent.o src/Game.o  -lsfml-window  -lsfml-graphics  -lsfml-system
+g++ -o main main.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Box.o src/Entities/Entity.o src/Patterns/State.o src/Patterns/StateMachine.o src/States/Level.o src/Animation/Animator.o src/Managers/Input.o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerControl.o src/Managers/Keyboard.o src/Managers/EventType.o src/Managers/Event.o src/Managers/Graphics.o src/Managers/Collision.o src/Graphics/Text.o src/Lists/EntityList.o src/Ent/Ent.o src/Game.o  -lsfml-window  -lsfml-graphics  -lsfml-system
 make: Leaving directory '/home/rasoto/Documents/Trabalhos/TecProg/SamuraiSouls/TecProgGame'
  
