@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Mon Jun  6 00:09:18 2022
+# Make data base, printed on Mon Jun  6 21:35:11 2022
 
 # Variables
 
@@ -21,112 +20,100 @@ DESKTOP_SESSION = cinnamon
 .SHELLFLAGS := -c
 # environment
 XDG_SESSION_CLASS = user
-# environment
-SNAP_COMMON = /var/snap/code/common
+# makefile (from 'Makefile', line 13)
+SFML_FLAGS :=  -lsfml-window  -lsfml-graphics  -lsfml-system
 # environment
 XDG_SESSION_TYPE = x11
 # environment
 VSCODE_LOG_NATIVE = false
-# environment
-GTK3_MODULES = xapp-gtk3-module
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from 'Makefile', line 13)
-SFML_FLAGS :=  -lsfml-window  -lsfml-graphics  -lsfml-system
-# environment
-PLATFORMIO_IDE = 2.4.3
 # makefile (from 'Makefile', line 11)
 INCLUDES :=  -Iinclude
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
-XAUTHORITY = /home/ch4pl1n/.Xauthority
+XAUTHORITY = /home/rasoto/.Xauthority
 # environment
 GDMSESSION = cinnamon
 # default
 MAKE_VERSION := 4.2.1
 # makefile
-CURDIR := /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game
+CURDIR := /home/rasoto/Documents/Trabalhos/TecProg/SamuraiSouls/TecProgGame
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/97
+GDM_LANG = en_US
 # environment
-GDM_LANG = pt_BR
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-VTE_VERSION = 6003
-# environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
-# makefile (from 'Makefile', line 7)
-CSRCS := ./src/Lists/EntityList.cpp ./src/Game.cpp ./src/Graphics/Text.cpp ./src/Ent/Ent.cpp ./src/Entities/Entity.cpp ./src/Entities/Characters/Player.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Enemies/Minion.cpp ./src/Entities/Characters/Enemies/Goblin.cpp ./src/Entities/Characters/Enemies/Skeleton.cpp ./src/Entities/Characters/Enemies/Boss.cpp ./src/Entities/Characters/Enemies/Enemy.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Surfaces/Platform.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Managers/Control/PlayerControl.cpp ./src/Managers/Control/PlayerKeys.cpp ./src/Managers/EventType.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Managers/Input.cpp ./src/Managers/Keyboard.cpp ./src/Managers/Event.cpp ./src/States/Level.cpp ./src/Patterns/StateMachine.cpp ./src/Patterns/State.cpp ./src/Animation/Animator.cpp ./main.cpp src/Lists/EntityList.cpp src/Game.cpp src/Graphics/Text.cpp src/Ent/Ent.cpp src/Entities/Entity.cpp src/Entities/Characters/Player.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Enemies/Minion.cpp src/Entities/Characters/Enemies/Goblin.cpp src/Entities/Characters/Enemies/Skeleton.cpp src/Entities/Characters/Enemies/Boss.cpp src/Entities/Characters/Enemies/Enemy.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Surfaces/Platform.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Managers/Control/PlayerControl.cpp src/Managers/Control/PlayerKeys.cpp src/Managers/EventType.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Managers/Input.cpp src/Managers/Keyboard.cpp src/Managers/Event.cpp src/States/Level.cpp src/Patterns/StateMachine.cpp src/Patterns/State.cpp src/Animation/Animator.cpp
+_ = /usr/share/code/code
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
-# environment
-SNAP_INSTANCE_NAME = code
-# environment
-SNAP_ARCH = amd64
 # environment
 GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from 'Makefile', line 8)
-HSRCS := include/config.hpp include/Lists/EntityList.hpp include/Lists/List.hpp include/Type.hpp include/Graphics/Text.hpp include/Ent/Ent.hpp include/Game.hpp include/Entities/Entity.hpp include/Entities/Characters/Enemies/Boss.hpp include/Entities/Characters/Enemies/Minion.hpp include/Entities/Characters/Enemies/Skeleton.hpp include/Entities/Characters/Enemies/Goblin.hpp include/Entities/Characters/Enemies/Enemy.hpp include/Entities/Characters/Character.hpp include/Entities/Characters/Player.hpp include/Entities/Objects/Surfaces/Platform.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Objects/Object.hpp include/Managers/Control/PlayerControl.hpp include/Managers/Control/PlayerKeys.hpp include/Managers/Keyboard.hpp include/Managers/Input.hpp include/Managers/Event.hpp include/Managers/EventType.hpp include/Managers/Graphics.hpp include/Managers/Collision.hpp include/States/Level.hpp include/States/SecondLevel.hpp include/States/FirstLevel.hpp include/Patterns/Subject.hpp include/Patterns/StateMachine.hpp include/Patterns/State.hpp include/Patterns/Observer.hpp include/standard.hpp include/Animation/Animator.hpp
+HSRCS := include/Entities/Characters/Character.hpp include/Entities/Characters/Enemies/Boss.hpp include/Entities/Characters/Enemies/Minion.hpp include/Entities/Characters/Enemies/Skeleton.hpp include/Entities/Characters/Enemies/Enemy.hpp include/Entities/Characters/Enemies/Goblin.hpp include/Entities/Characters/Player.hpp include/Entities/Objects/Surfaces/Platform.hpp include/Entities/Objects/Object.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Entity.hpp include/Patterns/Subject.hpp include/Patterns/State.hpp include/Patterns/Observer.hpp include/Patterns/StateMachine.hpp include/Game.hpp include/States/FirstLevel.hpp include/States/SecondLevel.hpp include/States/Level.hpp include/standard.hpp include/Type.hpp include/Animation/Animator.hpp include/Managers/EventType.hpp include/Managers/Keyboard.hpp include/Managers/Event.hpp include/Managers/Collision.hpp include/Managers/Control/PlayerKeys.hpp include/Managers/Control/PlayerControl.hpp include/Managers/Graphics.hpp include/Managers/Input.hpp include/config.hpp include/Graphics/Text.hpp include/Lists/List.hpp include/Lists/EntityList.hpp include/Ent/Ent.hpp
 # automatic
 @F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/ch4pl1n/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+MANDATORY_PATH = /usr/share/gconf/cinnamon.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/cinnamon:/usr/share/gnome:/home/rasoto/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
+# makefile (from 'Makefile', line 7)
+CSRCS := ./main.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Enemies/Minion.cpp ./src/Entities/Characters/Enemies/Goblin.cpp ./src/Entities/Characters/Enemies/Enemy.cpp ./src/Entities/Characters/Enemies/Skeleton.cpp ./src/Entities/Characters/Enemies/Boss.cpp ./src/Entities/Characters/Player.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Surfaces/Platform.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Entity.cpp ./src/Patterns/State.cpp ./src/Patterns/StateMachine.cpp ./src/States/Level.cpp ./src/Animation/Animator.cpp ./src/Managers/Input.cpp ./src/Managers/Control/PlayerKeys.cpp ./src/Managers/Control/PlayerControl.cpp ./src/Managers/Keyboard.cpp ./src/Managers/EventType.cpp ./src/Managers/Event.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Graphics/Text.cpp ./src/Lists/EntityList.cpp ./src/Ent/Ent.cpp ./src/Game.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Enemies/Minion.cpp src/Entities/Characters/Enemies/Goblin.cpp src/Entities/Characters/Enemies/Enemy.cpp src/Entities/Characters/Enemies/Skeleton.cpp src/Entities/Characters/Enemies/Boss.cpp src/Entities/Characters/Player.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Surfaces/Platform.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Entity.cpp src/Patterns/State.cpp src/Patterns/StateMachine.cpp src/States/Level.cpp src/Animation/Animator.cpp src/Managers/Input.cpp src/Managers/Control/PlayerKeys.cpp src/Managers/Control/PlayerControl.cpp src/Managers/Keyboard.cpp src/Managers/EventType.cpp src/Managers/Event.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Graphics/Text.cpp src/Lists/EntityList.cpp src/Ent/Ent.cpp src/Game.cpp
 # makefile (from 'Makefile', line 9)
-OBJS := ./src/Lists/EntityList.o ./src/Game.o ./src/Graphics/Text.o ./src/Ent/Ent.o ./src/Entities/Entity.o ./src/Entities/Characters/Player.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Enemies/Minion.o ./src/Entities/Characters/Enemies/Goblin.o ./src/Entities/Characters/Enemies/Skeleton.o ./src/Entities/Characters/Enemies/Boss.o ./src/Entities/Characters/Enemies/Enemy.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Surfaces/Platform.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Managers/Control/PlayerControl.o ./src/Managers/Control/PlayerKeys.o ./src/Managers/EventType.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Managers/Input.o ./src/Managers/Keyboard.o ./src/Managers/Event.o ./src/States/Level.o ./src/Patterns/StateMachine.o ./src/Patterns/State.o ./src/Animation/Animator.o ./main.o src/Lists/EntityList.o src/Game.o src/Graphics/Text.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Control/PlayerControl.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/States/Level.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o
+OBJS := ./main.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Enemies/Minion.o ./src/Entities/Characters/Enemies/Goblin.o ./src/Entities/Characters/Enemies/Enemy.o ./src/Entities/Characters/Enemies/Skeleton.o ./src/Entities/Characters/Enemies/Boss.o ./src/Entities/Characters/Player.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Surfaces/Platform.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Entity.o ./src/Patterns/State.o ./src/Patterns/StateMachine.o ./src/States/Level.o ./src/Animation/Animator.o ./src/Managers/Input.o ./src/Managers/Control/PlayerKeys.o ./src/Managers/Control/PlayerControl.o ./src/Managers/Keyboard.o ./src/Managers/EventType.o ./src/Managers/Event.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Graphics/Text.o ./src/Lists/EntityList.o ./src/Ent/Ent.o ./src/Game.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Box.o src/Entities/Entity.o src/Patterns/State.o src/Patterns/StateMachine.o src/States/Level.o src/Animation/Animator.o src/Managers/Input.o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerControl.o src/Managers/Keyboard.o src/Managers/EventType.o src/Managers/Event.o src/Managers/Graphics.o src/Managers/Collision.o src/Graphics/Text.o src/Lists/EntityList.o src/Ent/Ent.o src/Game.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
-VSCODE_CWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game
+LC_NAME = pt_BR.UTF-8
+# environment
+VSCODE_CWD = /home/rasoto
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
-# environment
-GSETTINGS_SCHEMA_DIR = /snap/code/97/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-NO_PROXY = 127.0.0.1
+PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ch4pl1n:@/tmp/.ICE-unix/1222,unix/ch4pl1n:/tmp/.ICE-unix/1222
+GJS_DEBUG_OUTPUT = stderr
+# environment
+SESSION_MANAGER = local/Rasoto-VirtualBox:@/tmp/.ICE-unix/1015,unix/Rasoto-VirtualBox:/tmp/.ICE-unix/1015
+# environment
+CINNAMON_SOFTWARE_RENDERING = 1
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
-# environment
-GDK_PIXBUF_MODULE_FILE = /home/ch4pl1n/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # makefile (from 'Makefile', line 5)
 INCLUDE_DIR := include
 # environment
-SNAP = /snap/code/97
-# environment
-SNAP_VERSION = c3511e6c
-# environment
 VSCODE_LOG_STACK = false
 # environment
-DISABLE_WAYLAND = 1
-# environment
 ELECTRON_RUN_AS_NODE = 1
-# environment
-GDK_PIXBUF_MODULEDIR = /snap/code/97/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/ch4pl1n
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/rasoto
 # environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+LS_COLORS = 
 # environment
 XDG_SESSION_DESKTOP = cinnamon
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1651
 # automatic
 %F = $(notdir $%)
 # environment
@@ -134,9 +121,7 @@ DISPLAY = :0
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-SNAP_INSTANCE_KEY = 
-# environment
-PWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game
+PWD = /home/rasoto/Documents/Trabalhos/TecProg/SamuraiSouls/TecProgGame
 # environment
 QT_QPA_PLATFORMTHEME = qt5ct
 # default
@@ -144,33 +129,29 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1318
+SSH_AGENT_PID = 1104
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
+# makefile (from 'Makefile', line 4)
+SRC_DIR := src
 # environment
-GTK_MODULES = gail:atk-bridge
+GTK_MODULES = xapp-gtk3-module:gail:atk-bridge
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/ch4pl1n
+HOME = /home/rasoto
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CLI = 1
+VSCODE_CODE_CACHE_PATH = /home/rasoto/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # environment
-VSCODE_CODE_CACHE_PATH = /home/ch4pl1n/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+LOGNAME = rasoto
 # environment
-LOGNAME = ch4pl1n
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
++F = $(notdir $+)
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
-# environment
-SNAP_CONTEXT = jxyhC23-EohMRPg6s5TXqJNeIMeOq04a1ZdGkB7ccppLXoLBOKT0
-# environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# environment
-SNAP_USER_COMMON = /home/ch4pl1n/snap/code/common
+CINNAMON_SLOWDOWN_FACTOR = 0.0001
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # environment
@@ -183,52 +164,42 @@ XDG_VTNR = 7
 SFML_MODULES := window graphics system
 # environment
 MAKELEVEL := 0
-# environment
-SNAP_REAL_HOME = /home/ch4pl1n
-# environment
-PLATFORMIO_PATH = /home/ch4pl1n/.platformio/python3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# environment
-COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
-# environment
-SNAP_USER_DATA = /home/ch4pl1n/snap/code/97
-# environment
-SHLVL = 1
+SHLVL = 0
 # makefile (from 'Makefile', line 3)
 CC := g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-86f5f3bc-78fa-4381-add5-8c935391abe0.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0aa47646-5f59-46ae-a63a-f4bbf11c4a51.sock
 # environment
-XDG_SESSION_ID = c1
+XDG_SESSION_ID = c2
 # environment
-USER = ch4pl1n
+USER = rasoto
 # environment
-SNAP_REVISION = 97
+LC_MONETARY = pt_BR.UTF-8
 # makefile
 .DEFAULT_GOAL := all
 # environment
 XDG_CURRENT_DESKTOP = X-Cinnamon
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# environment
+LC_TELEPHONE = pt_BR.UTF-8
 # default
 MAKE_COMMAND := make
-# environment
-OLDPWD = /home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
-LANGUAGE = pt_BR:pt:en
+LANGUAGE = en_US
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-3b931484-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-7522fabf-1.67.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -239,55 +210,52 @@ MFLAGS = -pqrR
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
-# automatic
-+F = $(notdir $+)
+# environment
+LC_PAPER = pt_BR.UTF-8
+# environment
+CINNAMON_VERSION = 4.8.5
 # environment
 QT_ACCESSIBILITY = 1
+# environment
+DEFAULTS_PATH = /usr/share/gconf/cinnamon.default.path
 # 'override' directive
 .SHELLSTATUS := 0
 # default
 MAKEFILES := 
 # environment
-SNAP_COOKIE = jxyhC23-EohMRPg6s5TXqJNeIMeOq04a1ZdGkB7ccppLXoLBOKT0
-# makefile (from 'Makefile', line 4)
-SRC_DIR := src
+LC_NUMERIC = pt_BR.UTF-8
 # automatic
 <F = $(notdir $<)
-# environment
-PLATFORMIO_CALLER = vscode
 # makefile (from 'Makefile', line 1)
 PROJECT_NAME := main
 # environment
-SNAP_NAME = code
+LC_MEASUREMENT = pt_BR.UTF-8
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d3729b4b_d503_4123_b5ac_3f394f93e21e
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # automatic
 ^F = $(notdir $^)
-# environment
-GNOME_TERMINAL_SERVICE = :1.155
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 15)
 FLAGS = $(SFML_FLAGS) -lm $(INCLUDES) -c
 # environment
-SNAP_REEXEC = 
-# environment
- 
 CHROME_DESKTOP = code-url-handler.desktop
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+LC_IDENTIFICATION = pt_BR.UTF-8
 # default
 .RECIPEPREFIX := 
 # environment
+LC_ADDRESS = pt_BR.UTF-8
+# environment
 LANG = C
 # environment
-TERM = xterm-256color
-# environment
-VSCODE_PID = 26472
+VSCODE_PID = 1651
 # variable set hash-table stats:
-# Load=137/1024=13%, Rehash=0, Collisions=17/184=9%
+# Load=122/1024=12%, Rehash=0, Collisions=18/169=11%
 
 # Pattern-specific Variable Values
 
@@ -295,18 +263,16 @@ VSCODE_PID = 26472
 
 # Directories
 
-# src/Graphics (device 2050, inode 4464807): 3 files, no impossibilities so far.
-# . (device 2050, inode 1714372): 12 files, no impossibilities.
-# src (device 2050, inode 4464828): 2 files, no impossibilities so far.
-# src/Lists (device 2050, inode 4464786): 3 files, no impossibilities so far.
+# . (device 2053, inode 794642): 11 files, no impossibilities.
 
-# 20 files, no impossibilities in 4 directories.
+# 11 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.cpp
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
+ 
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
@@ -376,6 +342,12 @@ src/Entities/Objects/Obstacles/Thorns.o:
 #  File has not been updated.
 
 # Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/Entities/Characters/Enemies/Goblin.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -384,7 +356,7 @@ src/Entities/Characters/Enemies/Goblin.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-29 16:28:50.688664143
+#  Last modified 2022-06-06 21:35:04.3685535
 #  File has been updated.
 #  Successfully updated.
 
@@ -402,9 +374,10 @@ src/Managers/Input.o:
 
 # Not a target:
 main.cpp:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-06-06 21:35:04.372553537
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 src/Entities/Characters/Player.o:
@@ -412,21 +385,11 @@ src/Entities/Characters/Player.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-src/Lists/EntityList.o: src/Lists/EntityList.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Lists/EntityList'
-#  Last modified 2022-06-05 22:04:31.21666769
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
 # Not a target:
-src/Game.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-05 20:56:26.476439248
-#  File has been updated.
-#  Successfully updated.
+src/Lists/EntityList.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Entities/Characters/Enemies/Minion.o:
@@ -445,13 +408,6 @@ src/Animation/Animator.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-src/Graphics/Text.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-05 22:06:20.319469067
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -497,7 +453,7 @@ src/Entities/Characters/Character.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-main: src/Lists/EntityList.o src/Game.o src/Graphics/Text.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Control/PlayerControl.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/States/Level.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o main.o src/Lists/EntityList.o src/Game.o src/Graphics/Text.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Control/PlayerControl.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/States/Level.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o
+main: main.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Box.o src/Entities/Entity.o src/Patterns/State.o src/Patterns/StateMachine.o src/States/Level.o src/Animation/Animator.o src/Managers/Input.o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerControl.o src/Managers/Keyboard.o src/Managers/EventType.o src/Managers/Event.o src/Managers/Graphics.o src/Managers/Collision.o src/Graphics/Text.o src/Lists/EntityList.o src/Ent/Ent.o src/Game.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Box.o src/Entities/Entity.o src/Patterns/State.o src/Patterns/StateMachine.o src/States/Level.o src/Animation/Animator.o src/Managers/Input.o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerControl.o src/Managers/Keyboard.o src/Managers/EventType.o src/Managers/Event.o src/Managers/Graphics.o src/Managers/Collision.o src/Graphics/Text.o src/Lists/EntityList.o src/Ent/Ent.o src/Game.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
@@ -509,8 +465,28 @@ main: src/Lists/EntityList.o src/Game.o src/Graphics/Text.o src/Ent/Ent.o src/En
 
 main.o: main.cpp
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := main.o
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := main.cpp
+# automatic
+# | := 
+# automatic
+# < := main.cpp
+# automatic
+# ^ := main.cpp
+# automatic
+# ? := main.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
 #  recipe to execute (from 'Makefile', line 26):
 	$(CC) -o $@ $< $(FLAGS)
 
@@ -520,14 +496,11 @@ src/Ent/Ent.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-src/Game.o: src/Game.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Game'
-#  Last modified 2022-06-05 22:04:32.08469035
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Game.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Patterns/State.o:
@@ -548,60 +521,31 @@ src/Managers/Control/PlayerControl.o:
 #  File has not been updated.
 
 # Not a target:
-src/Lists/EntityList.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-01 13:26:10.412201705
-#  File has been updated.
- 
-#  Successfully updated.
-
-# Not a target:
 src/Patterns/StateMachine.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-src/Graphics/Text.o: src/Graphics/Text.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Graphics/Text'
-#  Last modified 2022-06-05 22:04:32.856710496
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := src/Graphics/Text.o
-# automatic
-# % := 
-# automatic
-# * := src/Graphics/Text
-# automatic
-# + := src/Graphics/Text.cpp
-# automatic
-# | := 
-# automatic
-# < := src/Graphics/Text.cpp
-# automatic
-# ^ := src/Graphics/Text.cpp
-# automatic
-# ? := src/Graphics/Text.cpp
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Graphics/Text.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=40/1024=4%, Rehash=0, Collisions=0/123=0%
+# Load=37/1024=4%, Rehash=0, Collisions=0/112=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 65 / storage = 1179 B / avg = 18 B
-# current buf: size = 8162 B / used = 1179 B / count = 65 / avg = 18 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 981 B / avg = 19 B
+# current buf: size = 8162 B / used = 981 B / count = 50 / avg = 19 B
 
-# strcache performance: lookups = 114 / hit rate = 42%
+# strcache performance: lookups = 94 / hit rate = 46%
 # hash-table stats:
-# Load=65/8192=1%, Rehash=0, Collisions=1/114=1%
-# Finished Make data base on Mon Jun  6 00:09:18 2022
+# Load=50/8192=1%, Rehash=0, Collisions=1/94=1%
+# Finished Make data base on Mon Jun  6 21:35:11 2022
 
  

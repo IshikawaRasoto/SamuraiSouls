@@ -1,35 +1,34 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game'
- 
-g++ -o src/Lists/EntityList.o src/Lists/EntityList.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Game.o src/Game.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Graphics/Text.o src/Graphics/Text.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Ent/Ent.o src/Ent/Ent.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Entities/Entity.o src/Entities/Entity.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Entities/Characters/Player.o src/Entities/Characters/Player.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+make: Entering directory '/home/rasoto/Documents/Trabalhos/TecProg/SamuraiSouls/TecProgGame'
+g++ -o main.o main.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c
 g++ -o src/Entities/Characters/Character.o src/Entities/Characters/Character.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Minion.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Goblin.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Enemy.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Skeleton.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Boss.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Enemy.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Entities/Characters/Player.o src/Entities/Characters/Player.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Objects/Object.o src/Entities/Objects/Object.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Surfaces/Platform.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Box.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Thorns.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Managers/Control/PlayerControl.o src/Managers/Control/PlayerControl.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Box.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Entities/Entity.o src/Entities/Entity.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Patterns/State.o src/Patterns/State.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Patterns/StateMachine.o src/Patterns/StateMachine.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/States/Level.o src/States/Level.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Animation/Animator.o src/Animation/Animator.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Managers/Input.o src/Managers/Input.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerKeys.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Managers/Control/PlayerControl.o src/Managers/Control/PlayerControl.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Managers/Keyboard.o src/Managers/Keyboard.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Managers/EventType.o src/Managers/EventType.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Managers/Event.o src/Managers/Event.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Managers/Graphics.o src/Managers/Graphics.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
 g++ -o src/Managers/Collision.o src/Managers/Collision.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Managers/Input.o src/Managers/Input.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Managers/Keyboard.o src/Managers/Keyboard.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Managers/Event.o src/Managers/Event.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/States/Level.o src/States/Level.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Patterns/StateMachine.o src/Patterns/StateMachine.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Patterns/State.o src/Patterns/State.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o src/Animation/Animator.o src/Animation/Animator.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
-g++ -o main.o main.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c
-g++ -o main src/Lists/EntityList.o src/Game.o src/Graphics/Text.o src/Ent/Ent.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Managers/Control/PlayerControl.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/States/Level.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o main.o  -lsfml-window  -lsfml-graphics  -lsfml-system
-make: Leaving directory '/home/ch4pl1n/Documentos/UTFPR/2_periodo/tecnicas_de_programacao/trabalhos/game'
+g++ -o src/Graphics/Text.o src/Graphics/Text.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Lists/EntityList.o src/Lists/EntityList.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Ent/Ent.o src/Ent/Ent.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o src/Game.o src/Game.cpp  -lsfml-window  -lsfml-graphics  -lsfml-system -lm  -Iinclude -c 
+g++ -o main main.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Minion.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Enemy.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Player.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Platform.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Box.o src/Entities/Entity.o src/Patterns/State.o src/Patterns/StateMachine.o src/States/Level.o src/Animation/Animator.o src/Managers/Input.o src/Managers/Control/PlayerKeys.o src/Managers/Control/PlayerControl.o src/Managers/Keyboard.o src/Managers/EventType.o src/Managers/Event.o src/Managers/Graphics.o src/Managers/Collision.o src/Graphics/Text.o src/Lists/EntityList.o src/Ent/Ent.o src/Game.o  -lsfml-window  -lsfml-graphics  -lsfml-system
+make: Leaving directory '/home/rasoto/Documents/Trabalhos/TecProg/SamuraiSouls/TecProgGame'
  
