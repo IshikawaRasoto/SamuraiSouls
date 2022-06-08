@@ -37,7 +37,7 @@ void Enemy::tryAttack(const int dmg){
     atkCD = 0.0;
 }
 
-void Enemy::tryAttack(const int dmg, const float timeOfAtk){
+/*void Enemy::tryAttack(const int dmg, const float timeOfAtk){
     
     if((getNearestPlayer()->getPosition().x - position.x) >= 0 && !getFacingLeft())
         getNearestPlayer()->receiveDMG(dmg);
@@ -46,7 +46,7 @@ void Enemy::tryAttack(const int dmg, const float timeOfAtk){
     setIsAttacking(true);
     timeFromAtk = 0.0; //Utilizado na animacao
     atkCD = 0.0;
-}
+}*/
 
 
 

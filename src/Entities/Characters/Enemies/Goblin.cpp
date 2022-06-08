@@ -41,10 +41,10 @@ void Goblin::update(float dt){
     movementGoblin();
     
     //Attack
-    if(isAttacking && timeFromAtk<=0.4){ //&
+    if(isAttacking && timeFromAtk<=0.56){ //Tempo da animacao difere do tempo do CD de ataque
         timeFromAtk += dt;
         speed.x = 0;
-        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.05);
+        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.07);
     
     //Run
     }else if(abs(speed.x)>0.f){
@@ -70,7 +70,7 @@ void Goblin::save(){
 
 void Goblin::movementGoblin(){
     float deltaX = getNearestPlayer()->getPosition().x - position.x;
-    if(abs(deltaX)<GOBLIN_DX_MAX){
+    if(abs(deltaX)<GOBLIN_DX_MAX && abs(deltaX)>GOBLIN_DX_MIN){
         if(deltaX>0){
             setSpeed(sf::Vector2f(GOBLIN_SPEED_X, getSpeed().y));
             setFacingLeft(false);
