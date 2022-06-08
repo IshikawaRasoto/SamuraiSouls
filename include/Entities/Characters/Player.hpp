@@ -1,7 +1,7 @@
 #pragma once
 
 #define PLAYER_HP 100
-#define PLAYER_DMG 25
+#define PLAYER_DMG 50
 #define PLAYER_WIDTH 37
 #define PLAYER_HEIGHT 44
 #define PLAYER_SPEED_X 150
@@ -35,7 +35,6 @@ namespace Entities{
                 static int lifes;
                 bool isWalking;
                 bool canJump;
-                bool isAtking;
                 float timeFromAtk;
                 Control::PlayerControl* playerControl;
 

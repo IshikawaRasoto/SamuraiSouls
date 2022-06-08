@@ -43,16 +43,16 @@ void Goblin::update(float dt){
     //Attack
     if(isAttacking && timeFromAtk<=0.4){ //&
         timeFromAtk += dt;
-        
-        animator->update(position, 2, 8, dt, getFacingLeft(), 0.05);
+        speed.x = 0;
+        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.05);
     
     //Run
     }else if(abs(speed.x)>0.f){
-        animator->update(position, 1, 8, dt, getFacingLeft(), 0.2);
+        animator->update(position, (int) EnemySprite::Run, 8, dt, getFacingLeft(), 0.2);
 
     //Idle
     }else{
-        animator->update(position, 0, 4, dt, getFacingLeft(), 0.3);
+        animator->update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft(), 0.3);
     }
 
     atkCD += dt;
@@ -60,8 +60,8 @@ void Goblin::update(float dt){
     if(atkCD >= goblinAtkTime && abs(getNearestPlayer()->getPosition().x - position.x) <= GOBLIN_ATK_RANGE){
         std::cout << "TRYATTACK" << std::endl;
         tryAttack(GOBLIN_DMG);
-    }else if(atkCD < goblinAtkTime)
-        speed.x = 0;
+    }//else if(atkCD < goblinAtkTime)
+        
 }
     //timeFromAtk+=dt;
 void Goblin::save(){

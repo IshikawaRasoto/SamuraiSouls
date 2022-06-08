@@ -29,7 +29,7 @@ public:
         std::string jump = "W", 
         std::string left = "A", 
         std::string right = "D", 
-        std::string attack = "Enter"
+        std::string attack = "Space"
     );
     
     ~PlayerControl();
