@@ -27,14 +27,30 @@ Entities::Characters::Player* Enemy::getNearestPlayer(){
     return pP2;
 }
 
-void Enemy::attack(const int dmg){
-    getNearestPlayer()->receiveDMG(dmg);
+void Enemy::tryAttack(const int dmg){
+    if((getNearestPlayer()->getPosition().x - position.x) >= 0 && !getFacingLeft())
+        getNearestPlayer()->receiveDMG(dmg);
+    else if((getNearestPlayer()->getPosition().x - position.x) <= 0 && getFacingLeft())
+        getNearestPlayer()->receiveDMG(dmg);
     setIsAttacking(true);
     timeFromAtk = 0.0; //Utilizado na animacao
     atkCD = 0.0;
 }
 
-void Enemy::movement(const float spX){
+/*void Enemy::tryAttack(const int dmg, const float timeOfAtk){
+    
+    if((getNearestPlayer()->getPosition().x - position.x) >= 0 && !getFacingLeft())
+        getNearestPlayer()->receiveDMG(dmg);
+    else if((getNearestPlayer()->getPosition().x - position.x) <= 0 && getFacingLeft())
+        getNearestPlayer()->receiveDMG(dmg);
+    setIsAttacking(true);
+    timeFromAtk = 0.0; //Utilizado na animacao
+    atkCD = 0.0;
+}*/
+
+
+
+/*void Enemy::movement(const float spX){
 
     dx += speed.x;
 
@@ -45,7 +61,7 @@ void Enemy::movement(const float spX){
         setFacingLeft(false);
         speed = {spX, speed.y};
     }
-}
+}*/
 
 void Enemy::collide(Entity* other, sf::Vector2f intersect){
     Type type = other->getType();

@@ -1,6 +1,6 @@
-#include "States/Level.hpp"
+#include "Levels/Level.hpp"
 
-using namespace States;
+using namespace Levels;
 
 Level::Level(
     Patterns::StateMachine *stateMachine,

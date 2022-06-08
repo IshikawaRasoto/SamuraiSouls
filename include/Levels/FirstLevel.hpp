@@ -1,6 +1,6 @@
 #pragma once
 
-#include "States/Level.hpp"
+#include "Levels/Level.hpp"
 #include "Patterns/StateMachine.hpp"
 
 #include <string>
@@ -8,9 +8,9 @@
 #define FIRST_LEVEL_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
 
 
-namespace States{
+namespace Levels{
 
-class FirstLevel : public States::Level{
+class FirstLevel : public Levels::Level{
 public:
 
     FirstLevel(Patterns::StateMachine* stateMachine);
@@ -21,4 +21,4 @@ public:
 };
 
 
-} // namespace States
+} // namespace Levels

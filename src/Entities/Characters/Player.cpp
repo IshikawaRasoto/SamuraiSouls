@@ -2,14 +2,13 @@
 #include <iostream>
 using namespace Entities::Characters;
 
-const float Player::playerAtkTime(0.2); //opa
+const float Player::playerAtkTime(0.42); 
 int Player::points(0);
 int Player::lifes(3);
 
 Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerControl* playerControl):
         isWalking(false),
         canJump(false),
-        isAtking(false),
         playerOne(isPlayerOne),
         timeFromAtk(0.f),
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
@@ -47,12 +46,24 @@ void Player::update(float dt){
     speed.y += GRAVITY * dt;
     move({speed.x * dt, speed.y * dt});
 
+    //Attack
     if(statusAtk(dt)){
-        std::cout <<"TA ATACANDO CARALHO" << "\n";
-        speed.x = 0;
-        animator->update(position, (int) PlayerSprite::Attack, 8, dt, getFacingLeft());
+        animator->update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.07);
+    
+    //Fall
+    }else if(speed.y > 150.f){
+        animator->update(position, (int) PlayerSprite::Fall, 2, dt, getFacingLeft(), 0.3);
+    
+    //Jump
+    }else if(speed.y < -100.f && !canJump){
+        animator->update(position, (int) PlayerSprite::Jump, 2, dt, getFacingLeft(), 0.3);
+
+    //Run
+    }else if(abs(speed.x)>0){
+        animator->update(position, (int) PlayerSprite::Run, 8, dt, getFacingLeft(), 0.2);
+
     }else{
-        animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft());
+        animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft(), 0.3);
     }
 }
 
@@ -82,11 +93,51 @@ void Player::render(){
 }
 
 void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
+    
     Type type = other->getType();
 
-    if(type == Type::Box || type == Type::Pavement){
-        canJump = true;
-        moveOnCollision(other, intersect);
+    switch (type){
+        case Type::Pavement:
+            canJump = true;
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Box:
+            canJump = true;
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Barrel:
+            canJump = true;
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Goblin:
+            if(isAttacking)
+                playerAtk(other, type);
+    }
+}
+
+void Player::playerAtk(Entities::Entity *other, Type t){
+    
+
+    float deltaX = other->getPosition().x - position.x;
+    float deltaY = other->getPosition().y - position.y;
+
+    if(abs(deltaY)<PLAYER_ATK_RANGE_Y && abs(deltaX)<PLAYER_ATK_RANGE_X && isAttacking){ //69 é altura da sprite de ataque
+        (static_cast<Character*>(other))->receiveDMG(PLAYER_DMG);
+        if((static_cast<Character*>(other))->getHP()<=0){
+            switch(t){
+                case Type::Goblin:
+                    points += 50;
+                    break;
+                case Type::Skeleton:
+                    points += 100;
+                    break;
+                case Type::Boss:
+                    points += 500;
+                    break;
+            }
+            std::cout << "Points: " << points << std::endl;
+        }
+        
     }
 }
 
@@ -97,15 +148,17 @@ void Player::initializeSprite(){
 }
 
 bool Player::statusAtk(const float dt){
-    if(isAtking){
+    if(isAttacking){
+        std::cout << "Definitely Atking" << std::endl;
+        //speed.x = 0.f;
         timeFromAtk += dt;
-        if(timeFromAtk > playerAtkTime){
-            return 1;
+        if(timeFromAtk < playerAtkTime){
+            return true;
         }
-        timeFromAtk -= playerAtkTime;
-        isAtking = false;
+        timeFromAtk = 0;
+        isAttacking = false;
     }
-    return 0;
+    return false;
 }
 
 void Player::save(){
@@ -126,6 +179,7 @@ void Control::PlayerControl::update(Managers::InputManager *subject){
         }else if(key == keys.jump){
             player->jump();
         }else if(key == keys.attack){
+            std::cout << "ATK" << std::endl;
             player->setIsAttacking(true);
         }
     }else if(event == "released"){

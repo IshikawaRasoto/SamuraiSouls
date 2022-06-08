@@ -1,10 +1,11 @@
-#include "States/FirstLevel.hpp"
+#include "Levels/FirstLevel.hpp"
 
 #include "Entities/Objects/Obstacles/Box.hpp"
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"
+#include "Entities/Characters/Enemies/Skeleton.hpp"
 
-using namespace States;
+using namespace Levels;
 
 FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
     Level(stateMachine, FIRST_LEVEL_BACKGROUND_DIR, Patterns::StateId::FirstLevel)
@@ -43,17 +44,26 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
 
 
     Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2});
+    movingEntities->addEntity(player);
+    entityList.addEntity(player);
+    
     Entities::Characters::Enemies::Goblin *goblin = new Entities::Characters::Enemies::Goblin({500.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player);
+    movingEntities->addEntity(goblin);
+    entityList.addEntity(goblin);
+
+    Entities::Characters::Enemies::Skeleton *skeleton = new Entities::Characters::Enemies::Skeleton({700.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player);
+    movingEntities->addEntity(skeleton);
+    entityList.addEntity(skeleton);
 
     this->player = player;
         
-    movingEntities->addEntity(player);
-    movingEntities->addEntity(goblin);
+    
+    
 
     collisionManager = Managers::CollisionManager(movingEntities, staticEntites);
 
-    entityList.addEntity(player);
-    entityList.addEntity(goblin);
+    
+    
 
     inputManager->subscribe("pressed", player->getPlayerControl());
     inputManager->subscribe("released", player->getPlayerControl());      

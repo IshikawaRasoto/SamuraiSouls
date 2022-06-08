@@ -1,7 +1,7 @@
 #include "Game.hpp"
 
-#include "States/FirstLevel.hpp"
-#include "States/MainMenu.hpp"
+#include "Levels/FirstLevel.hpp"
+#include "Levels/MainMenu.hpp"
 
 #include <iostream>
 
@@ -9,11 +9,12 @@ Game::Game():
     graphicManager(Managers::GraphicsManager::getInstance()),
     eventManager(Managers::EventManager::getInstance()),
     inputManager(Managers::InputManager::getInstance()),
-    StateMachine()
+    StateMachine(),
+    deltaTime(0.f)
 {
 
-    states[Patterns::StateId::FirstLevel] = new States::FirstLevel(this);
-    states[Patterns::StateId::MainMenu] = new States::MainMenuState(this);
+    states[Patterns::StateId::FirstLevel] = new Levels::FirstLevel(this);
+    states[Patterns::StateId::MainMenu] = new Levels::MainMenuState(this);
 
     currentState = Patterns::StateId::MainMenu;
 
@@ -29,28 +30,30 @@ bool Game::isDone(){
     return graphicManager->isDone();
 }
 
-sf::Time Game::getElapsed(){
+/*sf::Time Game::getElapsed(){
     return elapsed;
-}
+}*/
 
 void Game::execute(){
     while(!isDone()){
         update();
-        restartClock();
+        //restartClock();
     }
 }
 
 void Game::update(){
-    float frametime = 1.f / 60.f;
+    //float frametime = 1.f / 60.f;
 
-    if(elapsed.asSeconds() < frametime) return;
+    //if(elapsed.asSeconds() < frametime) return;
+
+    deltaTime = clock.restart().asSeconds();
 
     eventManager->pollEvents();
-    updateCurrentState(elapsed.asSeconds());
+    updateCurrentState(deltaTime);
 
-    elapsed -= sf::seconds(frametime);
+    //elapsed -= sf::seconds(frametime);
 }
 
-void Game::restartClock(){
+/*void Game::restartClock(){
     elapsed += clock.restart();
-}
+}*/

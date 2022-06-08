@@ -1,8 +1,8 @@
-#include "States/MainMenu.hpp"
+#include "Levels/MainMenu.hpp"
 #include <vector>
 #include "Graphics/Button.hpp"
 
-using namespace States;
+using namespace Levels;
 
 MainMenuState::MainMenuState(Game* stateMachine):
     State(Patterns::StateId::MainMenu,stateMachine),
