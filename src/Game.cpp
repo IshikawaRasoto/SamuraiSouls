@@ -1,7 +1,7 @@
 #include "Game.hpp"
 
-#include "States/FirstLevel.hpp"
-#include "States/MainMenu.hpp"
+#include "Levels/FirstLevel.hpp"
+#include "Levels/MainMenu.hpp"
 
 #include <iostream>
 
@@ -13,8 +13,8 @@ Game::Game():
     deltaTime(0.f)
 {
 
-    states[Patterns::StateId::FirstLevel] = new States::FirstLevel(this);
-    states[Patterns::StateId::MainMenu] = new States::MainMenuState(this);
+    states[Patterns::StateId::FirstLevel] = new Levels::FirstLevel(this);
+    states[Patterns::StateId::MainMenu] = new Levels::MainMenuState(this);
 
     currentState = Patterns::StateId::MainMenu;
 

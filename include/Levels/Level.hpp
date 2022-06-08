@@ -14,7 +14,7 @@
 
 #define LEVEL_Y 0
 
-namespace States{
+namespace Levels{
 
 class Level : public Patterns::State{
 protected:
