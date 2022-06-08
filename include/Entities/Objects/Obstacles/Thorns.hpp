@@ -4,6 +4,7 @@
 
 #define THORNS_WIDTH 32
 #define THORNS_HEIGHT 94
+#define THORNS_DIR "./Textures/Scenario/Cemetery/Thorns.png"
 
 namespace Entities{
     namespace Objects{
