@@ -1,11 +1,11 @@
-#include "States/FirstLevel.hpp"
+#include "Levels/FirstLevel.hpp"
 
 #include "Entities/Objects/Obstacles/Box.hpp"
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
 
-using namespace States;
+using namespace Levels;
 
 FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
     Level(stateMachine, FIRST_LEVEL_BACKGROUND_DIR, Patterns::StateId::FirstLevel)

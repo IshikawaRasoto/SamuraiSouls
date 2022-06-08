@@ -6,7 +6,7 @@
 
 #define MAIN_MENU_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
 
-namespace States{
+namespace Levels{
 
 class MainMenuState : public Patterns::State, public Menus::Menu{
 private:
