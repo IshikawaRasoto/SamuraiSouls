@@ -14,7 +14,7 @@
 #define SKELETON_DX_MAX 200
 #define SKELETON_DX_MIN 30
 
-#define SKELETON_DIR "./Textures/Characters/Skeleton.cpp"
+#define SKELETON_DIR "./Textures/Characters/Skeleton.png"
 
 namespace Entities{
     namespace Characters{

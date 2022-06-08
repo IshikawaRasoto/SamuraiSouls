@@ -93,11 +93,51 @@ void Player::render(){
 }
 
 void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
+    
     Type type = other->getType();
 
-    if(type == Type::Box || type == Type::Pavement){
-        canJump = true;
-        moveOnCollision(other, intersect);
+    switch (type){
+        case Type::Pavement:
+            canJump = true;
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Box:
+            canJump = true;
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Barrel:
+            canJump = true;
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Goblin:
+            if(isAttacking)
+                playerAtk(other, type);
+    }
+}
+
+void Player::playerAtk(Entities::Entity *other, Type t){
+    
+
+    float deltaX = other->getPosition().x - position.x;
+    float deltaY = other->getPosition().y - position.y;
+
+    if(abs(deltaY)<PLAYER_ATK_RANGE_Y && abs(deltaX)<PLAYER_ATK_RANGE_X && isAttacking){ //69 é altura da sprite de ataque
+        (static_cast<Character*>(other))->receiveDMG(PLAYER_DMG);
+        if((static_cast<Character*>(other))->getHP()<=0){
+            switch(t){
+                case Type::Goblin:
+                    points += 50;
+                    break;
+                case Type::Skeleton:
+                    points += 100;
+                    break;
+                case Type::Boss:
+                    points += 500;
+                    break;
+            }
+            std::cout << "Points: " << points << std::endl;
+        }
+        
     }
 }
 

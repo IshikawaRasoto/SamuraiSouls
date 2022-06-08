@@ -29,35 +29,41 @@ void CollisionManager::checkCollision(){
 
     for(int i = 0; i < movingEntities->getSize(); i++){
         entity1 = (*movingEntities)[i];
-        for(int j = 0; j < staticEntities->getSize(); j++){
+        for(int j = i + 1; j < staticEntities->getSize(); j++){
             entity2 = (*staticEntities)[j];
 
-            centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
-            centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
+            if(entity1->getIsShowing() && entity2->getIsShowing()){
 
-            intersect.x = fabs(centerDistance.x) - (entity1->getSize().x/2 + entity2->getSize().x/2);
-            intersect.y = fabs(centerDistance.y) - (entity1->getSize().y/2 + entity2->getSize().y/2);
+                centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
+                centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
 
-            if(intersect.x < 0.0f && intersect.y < 0.0f){
-                entity1->collide(entity2, intersect);
+                intersect.x = fabs(centerDistance.x) - (entity1->getSize().x/2 + entity2->getSize().x/2);
+                intersect.y = fabs(centerDistance.y) - (entity1->getSize().y/2 + entity2->getSize().y/2);
+
+                if(intersect.x < 0.0f && intersect.y < 0.0f){
+                    entity1->collide(entity2, intersect);
+                }
             }
         } 
     }
 
     for(int i = 0; i < movingEntities->getSize(); i++){
         entity1 = (*movingEntities)[i];
-        for(int j = 0; j < movingEntities->getSize(); j++){
+        for(int j = i + 1; j < movingEntities->getSize(); j++){
             entity2 = (*movingEntities)[j];
 
-            centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
-            centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
+            if(entity1->getIsShowing() && entity2->getIsShowing()){
 
-            intersect.x = fabs(centerDistance.x) - (entity1->getSize().x/2 + entity2->getSize().x/2);
-            intersect.y = fabs(centerDistance.y) - (entity1->getSize().y/2 + entity2->getSize().y/2);
+                centerDistance.x = entity1->getPosition().x - entity2->getPosition().x;
+                centerDistance.y = entity1->getPosition().y - entity2->getPosition().y;
 
-            if(intersect.x < 0.0f && intersect.y < 0.0f){
-                entity1->collide(entity2, intersect);
-                entity2->collide(entity1, intersect);
+                intersect.x = fabs(centerDistance.x) - (entity1->getSize().x/2 + entity2->getSize().x/2);
+                intersect.y = fabs(centerDistance.y) - (entity1->getSize().y/2 + entity2->getSize().y/2);
+
+                if(intersect.x < 0.0f && intersect.y < 0.0f){
+                    entity1->collide(entity2, intersect);
+                    entity2->collide(entity1, intersect);
+                }
             }
         }
     }

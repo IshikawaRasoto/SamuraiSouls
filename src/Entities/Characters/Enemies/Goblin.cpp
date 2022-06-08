@@ -58,7 +58,7 @@ void Goblin::update(float dt){
     atkCD += dt;
     
     if(atkCD >= goblinAtkTime && abs(getNearestPlayer()->getPosition().x - position.x) <= GOBLIN_ATK_RANGE){
-        std::cout << "TRYATTACK" << std::endl;
+        //std::cout << "TRYATTACK" << std::endl;
         tryAttack(GOBLIN_DMG);
     }//else if(atkCD < goblinAtkTime)
         

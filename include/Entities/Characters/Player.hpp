@@ -7,7 +7,7 @@
 #define PLAYER_SPEED_X 150
 #define PLAYER_SPEED_Y 400
 #define PLAYER_ATK_RANGE_X 105
-#define PLAYER_ATK_RANGE_Y 68
+#define PLAYER_ATK_RANGE_Y 69
 
 enum class PlayerSprite{
     Idle = 0,
@@ -59,6 +59,7 @@ namespace Entities{
                 void render();
                 void collide(Entity* other, sf::Vector2f intersect);
                 void save();
+                void playerAtk(Entities::Entity* other, Type t);
 
                 bool statusAtk(const float dt);
                 
