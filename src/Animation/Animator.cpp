@@ -46,6 +46,7 @@ void Animator::update(sf::Vector2f position, int row, int qnt_img_x, float dt, b
 
     if(!facingLeft){
         uvRect.left = currentImg.x* abs(uvRect.width);
+        uvRect.width = abs(uvRect.width);
     }else{
         uvRect.left = (currentImg.x+1) * abs(uvRect.width);
         uvRect.width = -abs(uvRect.width);

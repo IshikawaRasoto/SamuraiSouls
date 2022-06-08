@@ -5,7 +5,7 @@
 
 #include <SFML/System/Vector2.hpp>
 
-#define GOBLIN_DIR
+#define GOBLIN_DIR "./Textures/Characters/Goblin.png"
 
 #define GOBLIN_HP 20
 #define GOBLIN_DMG 15

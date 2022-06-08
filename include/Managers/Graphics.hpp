@@ -47,6 +47,7 @@ public:
     void endDraw();
 
     bool isDone();
+    void setDone(bool done);
     bool isFullscreen();
 
     sf::Vector2u getSize();

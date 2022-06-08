@@ -8,7 +8,14 @@
 #include "Type.hpp"
 
 #define MAX_DX 5000.0
-#define ATK_RANGE 200
+#define ATK_RANGE 100
+
+enum class EnemySprite{
+    Idle = 0,
+    Run,
+    Attack,
+    Die
+};
 
 namespace Entities{
     namespace Characters{

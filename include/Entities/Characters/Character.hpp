@@ -2,9 +2,9 @@
 
 #include "Entities/Entity.hpp"
 
-#define GRAVITY 150.0f
+#define GRAVITY 1000.f
 
-#define MAX_SPEED_Y 800
+#define MAX_SPEED_Y 300
 
 namespace Entities{
     namespace Characters{

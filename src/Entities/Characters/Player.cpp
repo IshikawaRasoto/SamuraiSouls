@@ -48,8 +48,11 @@ void Player::update(float dt){
     move({speed.x * dt, speed.y * dt});
 
     if(statusAtk(dt)){
+        std::cout <<"TA ATACANDO CARALHO" << "\n";
         speed.x = 0;
-        animator->update(position, sprite::Attack, 1, dt, getFacingLeft());
+        animator->update(position, (int) PlayerSprite::Attack, 8, dt, getFacingLeft());
+    }else{
+        animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft());
     }
 }
 
@@ -89,7 +92,7 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
 
 void Player::initializeSprite(){
     if(playerOne){
-        animator->initializeTexture(MASTER_DIR, sf::Vector2u(1, 1));
+        animator->initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
     }  
 }
 

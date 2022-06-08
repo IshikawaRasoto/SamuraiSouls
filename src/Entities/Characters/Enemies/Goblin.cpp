@@ -13,8 +13,7 @@ Goblin::Goblin(sf::Vector2f pos, Characters::Player* p1, Characters::Player* p2)
 Goblin::~Goblin(){}
 
 void Goblin::initializeSprite(){
-    sf::RectangleShape *body = animator->getRectangleShape();
-    body->setFillColor(sf::Color::Red);
+    animator->initializeTexture(GOBLIN_DIR, sf::Vector2u(8, 4));
 }
 
 void Goblin::render(){
@@ -36,10 +35,18 @@ void Goblin::update(float dt){
         speed = sf::Vector2f(speed.x, MAX_SPEED_Y);
 
     atkCD += dt;
+    timeFromAtk+=dt;
     if((atkCD >= goblinAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
-            attack(GOBLIN_DMG);
+        attack(GOBLIN_DMG);
     
     move({speed.x * dt, speed.y * dt});
+
+    if(timeFromAtk<=goblinAtkTime){
+        speed.x = 0;
+        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft());
+    }else{
+        animator->update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft());
+    }
 }
 
 void Goblin::save(){

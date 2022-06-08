@@ -25,6 +25,10 @@ void MainMenuState::execute(){
     case 0:
         getStateMachine()->changeCurrentState(Patterns::StateId::FirstLevel);
         break;
+    case 1:
+        break;
+    case 2:
+        graphicsManager->setDone(true);
     default:
         break;
     }
