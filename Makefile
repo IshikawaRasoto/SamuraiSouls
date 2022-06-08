@@ -1,20 +1,31 @@
-CC = g++
+PROJECT_NAME := main
 
-TARGET = main
+CC := g++
+SRC_DIR := src
+INCLUDE_DIR := include
 
-OUTDIR = ./bin
-SUBDIR = Entities
-LIBS = sfml-graphics sfml-window sfml-system
+CSRCS := $(shell find ./ $(SRC_DIR) -name "*.cpp")
+HSRCS := $(shell find $(INCLUDE_DIR) -name "*.hpp")
+OBJS := $(CSRCS:.cpp=.o)
 
-SRCS = $(wildcard *.cpp $(foreach fd,$(SUBDIR),$(fd)/*.cpp))
-FLAGS = $(foreach lib, $(LIBS),-l$(lib))
+INCLUDES := $(foreach dir, $(INCLUDE_DIR), -I$(dir))
+SFML_MODULES := window graphics system
+SFML_FLAGS := $(foreach module, $(SFML_MODULES), -lsfml-$(module))
 
-.PHONY = clean
+FLAGS = $(SFML_FLAGS) -lm $(INCLUDES) -c
 
-$(TARGET): $(SRCS)
-	$(CC) -o $@ $^ $(FLAGS)
+all: $(PROJECT_NAME)
+
+$(PROJECT_NAME): $(OBJS) 
+	$(CC) -o $@ $^ $(SFML_FLAGS)
+
+%.o: %.cpp
+	$(CC) -o $@ $< $(FLAGS) 
+
+main.o: main.cpp
+	$(CC) -o $@ $< $(FLAGS)
 
 clean:
-	rm -rf ./$(TARGET)
+	rm -rf $(shell find ./ $(SRC_DIR) -name "*.o") ./$(PROJECT_NAME)
 
-#add biblioteca de math (-lm)
+.PHONY: clean all

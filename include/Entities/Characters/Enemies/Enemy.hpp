@@ -1,0 +1,44 @@
+#pragma once
+
+#include "Entities/Characters/Character.hpp"
+#include "Entities/Characters/Player.hpp"
+
+#include <SFML/System/Vector2.hpp>
+
+#include "Type.hpp"
+
+#define MAX_DX 5000.0
+#define ATK_RANGE 200
+
+namespace Entities{
+    namespace Characters{
+        namespace Enemies{
+            class Enemy : public Character{
+                protected:
+                    float atkCD;
+                    float timeFromAtk;
+                    Entities::Characters::Player *pP1;
+                    Entities::Characters::Player *pP2;
+                    float dx;
+
+                public:
+                    Enemy(Type t, sf::Vector2f position, sf::Vector2f size, int hp, int dmg, Entities::Characters::Player* p1 = nullptr, Entities::Characters::Player* p2 = nullptr);
+                    virtual ~Enemy();
+                    Entities::Characters::Player* getNearestPlayer();
+
+                    virtual void movement(const float spX);
+                    virtual void attack(const int dmg);
+
+                    virtual void collide(Entity* other, sf::Vector2f intersect);
+
+                    virtual void update(float dt) = 0;
+                    virtual void render() = 0;
+                    virtual void save() = 0;
+                    
+                protected:
+                    virtual void initializeSprite() = 0;
+
+            };
+        }
+    }
+}
