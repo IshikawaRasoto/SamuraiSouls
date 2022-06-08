@@ -1,7 +1,7 @@
 #include "Animation/Animator.hpp"
 
 GraphicsManager *Animator::pGM = GraphicsManager::getInstance();
-const float Animator::switchTime(0.3);
+//const float Animator::switchTime(0.3);
 
 Animator::Animator(sf::Vector2f size):
     imgCount(sf::Vector2u(0,0)),
@@ -21,13 +21,15 @@ Animator::~Animator(){
 //nao esquecer de colocar as ROles depois
 void Animator::update(sf::Vector2f position){
 
-    uvRect.top =  0;
+    //uvRect.top =  0 PROBLEMA COM AS SPRITES
     body.setPosition(position);
     body.setTextureRect(uvRect);
 }
 
 //TODO
-void Animator::update(sf::Vector2f position, int row, int qnt_img_x, float dt, bool facingLeft){
+void Animator::update(sf::Vector2f position, int row, int qnt_img_x, float dt, bool facingLeft, float switchTime){
+
+   // std::cout << "Row: " << row << std::endl;
 
     if(currentImg.y != row)
         currentImg.x = 0;
@@ -38,7 +40,7 @@ void Animator::update(sf::Vector2f position, int row, int qnt_img_x, float dt, b
     if(deltaTime >= switchTime){
         deltaTime -= switchTime;
         currentImg.x++;
-        if(currentImg.x >= qnt_img_x)
+        if(currentImg.x >= qnt_img_x-1)
             currentImg.x = 0;
     }
 

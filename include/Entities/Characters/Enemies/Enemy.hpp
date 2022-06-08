@@ -33,8 +33,9 @@ namespace Entities{
                     virtual ~Enemy();
                     Entities::Characters::Player* getNearestPlayer();
 
-                    virtual void movement(const float spX);
-                    virtual void attack(const int dmg);
+                    //virtual void movement(const float spX);
+                    virtual void tryAttack(const int dmg);
+                    virtual void tryAttack(const int dmg, const float timeOfAtk);
 
                     virtual void collide(Entity* other, sf::Vector2f intersect);
 

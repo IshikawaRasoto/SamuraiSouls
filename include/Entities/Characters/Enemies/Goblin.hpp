@@ -12,6 +12,8 @@
 #define GOBLIN_WIDTH 33
 #define GOBLIN_HEIGHT 36
 #define GOBLIN_SPEED_X 50
+#define GOBLIN_ATK_RANGE 30
+#define GOBLIN_DX_MAX 300
 
 namespace Entities{
     namespace Characters{
@@ -26,6 +28,7 @@ namespace Entities{
                     void update(float dt);
                     void render();
                     void save();
+                    void movementGoblin();
 
                 private:
                     void initializeSprite();

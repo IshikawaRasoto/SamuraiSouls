@@ -28,7 +28,7 @@ void Skeleton::update(float dt){
         return;
     }
 
-    movement(SKELETON_SPEED_X);
+    //movement(SKELETON_SPEED_X);
 
     speed = sf::Vector2f(speed.x, speed.y + GRAVITY * dt);
 
@@ -37,7 +37,7 @@ void Skeleton::update(float dt){
 
     atkCD += dt;
     if((atkCD >= skeletonAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
-            attack(SKELETON_DMG);
+            tryAttack(SKELETON_DMG);
     
 
     move({speed.x * dt, speed.y * dt});

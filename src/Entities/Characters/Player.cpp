@@ -50,9 +50,9 @@ void Player::update(float dt){
     if(statusAtk(dt)){
         std::cout <<"TA ATACANDO CARALHO" << "\n";
         speed.x = 0;
-        animator->update(position, (int) PlayerSprite::Attack, 8, dt, getFacingLeft());
+        animator->update(position, (int) PlayerSprite::Attack, 8, dt, getFacingLeft(), 0.3);
     }else{
-        animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft());
+        animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft(), 0.3);
     }
 }
 
