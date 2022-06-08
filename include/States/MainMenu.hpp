@@ -4,7 +4,7 @@
 #include "Menus/Menu.hpp"
 #include "Game.hpp"
 
-#define MAIN_MENU_BACKGROUND_DIR ""
+#define MAIN_MENU_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
 
 namespace States{
 

@@ -47,7 +47,7 @@ void Player::update(float dt){
     speed.y += GRAVITY * dt;
     move({speed.x * dt, speed.y * dt});
 
-    if(statusAtk){
+    if(statusAtk(dt)){
         speed.x = 0;
         animator->update(position, sprite::Attack, 1, dt, getFacingLeft());
     }

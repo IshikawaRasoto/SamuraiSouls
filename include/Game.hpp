@@ -6,7 +6,6 @@
 #include "Managers/Input.hpp"
 #include "Managers/Event.hpp"
 
-#include "States/Level.hpp"
 #include "Patterns/StateMachine.hpp"
 
 class Game : public Patterns::StateMachine{

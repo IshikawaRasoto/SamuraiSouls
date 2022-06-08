@@ -5,12 +5,14 @@
 using namespace States;
 
 MainMenuState::MainMenuState(Game* stateMachine):
-State(Patterns::StateId::MainMenu,stateMachine),
-Menu(MAIN_MENU_BACKGROUND_DIR)
+    State(Patterns::StateId::MainMenu,stateMachine),
+    Menu(MAIN_MENU_BACKGROUND_DIR)
 {
-    addButton(new Graphics::Button("teste 1"));
-    addButton(new Graphics::Button("teste 2"));
-    addButton(new Graphics::Button("teste 3"));
+    std::vector<std::string> buttonNames = {"Jogar", "Sobre", "Sair"};
+
+    for(float i = 0; i < buttonNames.size(); i++){
+        addButton(new Graphics::Button(buttonNames[i], {0.0f, i*80}));
+    }
 }
 
 MainMenuState::~MainMenuState(){}
@@ -21,7 +23,7 @@ void MainMenuState::execute(){
     switch (buttonSelected)
     {
     case 0:
-        std::cout << "Selected 0";
+        getStateMachine()->changeCurrentState(Patterns::StateId::FirstLevel);
         break;
     default:
         break;
@@ -30,16 +32,23 @@ void MainMenuState::execute(){
 }
 
 void MainMenuState::render(){
+    graphicsManager->beginDraw();
     centerView();
     background.render();
 
     for(auto button : buttons){
         button->render();
     }
+
+    graphicsManager->endDraw();
 }
 
 void MainMenuState::update(const float dt){
     setIsShowing(true);
+
+    for(auto button : buttons){
+        button->update(dt);
+    }
 }
 
 void MainMenuState::reset(){

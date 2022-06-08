@@ -10,8 +10,9 @@
 
 #include "Graphics/Background.hpp"
 
+#include <string>
+
 #define LEVEL_Y 0
-#define LEVEL_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
 
 namespace States{
 
@@ -27,16 +28,18 @@ protected:
 public:
     Level(
         Patterns::StateMachine *stateMachine,
+        std::string backgroundDir,
+        Patterns::StateId state,
         Managers::InputManager *inputManager = Managers::InputManager::getInstance(), 
         Managers::GraphicsManager *graphicsManager = Managers::GraphicsManager::getInstance()
     );
-    ~Level();
+    virtual ~Level();
 
-    virtual void update(float dt) = 0;
+    void update(float dt);
     void render();
-    void reset();
 
-    virtual void centerView();
+    virtual void reset() = 0; 
+    virtual void centerView() = 0;
 };
 
 }

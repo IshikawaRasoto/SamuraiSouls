@@ -1,4 +1,8 @@
 #include "Game.hpp"
+
+#include "States/FirstLevel.hpp"
+#include "States/MainMenu.hpp"
+
 #include <iostream>
 
 Game::Game(): 
@@ -8,9 +12,10 @@ Game::Game():
     StateMachine()
 {
 
-    states[Patterns::StateId::Play] = new States::Level(this);
+    states[Patterns::StateId::FirstLevel] = new States::FirstLevel(this);
+    states[Patterns::StateId::MainMenu] = new States::MainMenuState(this);
 
-    currentState = Patterns::StateId::Play;
+    currentState = Patterns::StateId::MainMenu;
 
     eventManager->subscribe("pressed", inputManager);
     eventManager->subscribe("released", inputManager);

@@ -6,6 +6,14 @@
 #include "Graphics/Background.hpp"
 
 #include "Managers/Graphics.hpp"
+#include "Managers/Input.hpp"
+#include "Managers/Control/MenuControl.hpp"
+
+namespace Managers{
+namespace Control{
+    class MenuControl;
+}
+}
 
 namespace Menus{
 
@@ -16,16 +24,18 @@ protected:
     Graphics::Background background;
 
     static Managers::GraphicsManager* graphicsManager;
+    static Managers::InputManager* inputManager;
 
-    //Control::MenuControl control;
+    Managers::Control::MenuControl control;
 
 public:
     Menu(std::string backgroundDir);
     Menu();
+
     ~Menu();
 
     int getButtonSelected();
-    //Control::MenuControl getMenuControl();
+    Managers::Control::MenuControl* getMenuControl();
 
     void selectUp();
     void selectDown();
@@ -35,7 +45,7 @@ public:
     void centerView();
 
     virtual void execute() = 0;
-
+    
     void initializeSprite();
 };
 

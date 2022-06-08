@@ -4,17 +4,22 @@
 using namespace Menus;
 
 Managers::GraphicsManager* Menu::graphicsManager = GraphicsManager::getInstance();
+Managers::InputManager* Menu::inputManager = InputManager::getInstance();
 
 Menu::Menu(std::string backgroundDir):
 Ent(Type::Menu, {0.0f,0.0f}, {WINDOW_SIZE_X, WINDOW_SIZE_Y}),
-background(backgroundDir)
+background(backgroundDir),
+control(this)
 {
     buttons.clear();
     buttonSelected = -1;
+
+    inputManager->subscribe("pressed", &control);
 }
 
 Menu::Menu():
-Ent(Type::Menu, {0.0f, 0.0f}, {WINDOW_SIZE_X, WINDOW_SIZE_Y})
+Ent(Type::Menu, {0.0f, 0.0f}, {WINDOW_SIZE_X, WINDOW_SIZE_Y}),
+control(this)
 {
     buttons.clear();
     buttonSelected = -1;
@@ -26,6 +31,10 @@ Menu::~Menu(){
     }
 
     buttons.clear();
+}
+
+Managers::Control::MenuControl* Menu::getMenuControl(){
+    return &control;
 }
 
 void Menu::selectUp(){
@@ -57,7 +66,7 @@ void Menu::selectDown(){
 }
 
 void Menu::centerView(){
-    graphicsManager->centerView({WINDOW_SIZE_X/2, WINDOW_SIZE_Y/2});
+    graphicsManager->centerView({0, 0});
 }
 
 void Menu::addButton(Graphics::Button *button){
@@ -65,9 +74,30 @@ void Menu::addButton(Graphics::Button *button){
 
     if(buttonSelected == -1){
         buttonSelected = 0;
+        button->select(true);
     }
 
     buttons.push_back(button);
 }
 
 void Menu::initializeSprite(){}
+
+void Managers::Control::MenuControl::update(Managers::InputManager *subject){
+    if(!menu){
+        std::cout << "[MenuControl] Falha ao atualizar. Menu é um ponteiro nulo.\n";
+        return;
+    }
+
+    std::string event = subject->getCurrentEvent();
+    std::string key = subject->getCurrentKey();
+
+    if(event != "pressed") return;
+
+    if(key == keys.up){
+        menu->selectUp();
+    }else if(key == keys.down){
+        menu->selectDown();
+    }else if(key == keys.execute){
+        menu->execute();
+    }
+}

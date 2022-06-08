@@ -11,7 +11,7 @@ Text::Text(std::string value, sf::Vector2f position, std::string path){
     text.setFont(*graphicsManager->getFont(path));
     text.setFillColor(TEXT_COLOR);
     text.setCharacterSize(TEXT_SIZE);
-    text.setString(value);
+    setValue(value);
 }
 
 Text::~Text(){}
@@ -65,6 +65,7 @@ void Text::setTextAlignment(TextAlignment textAlignment){
 void Text::setValue(std::string value){
     this->value = value;
     text.setString(value);
+    text.setOrigin({getSize().x/2.f, getSize().y/2.f});
 }
 
 void Text::render(){

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Text.hpp"
 #include "Ent/Ent.hpp"
 
@@ -6,7 +8,7 @@
 #include <string>
 
 #define BUTTON_FONT_SIZE 18
-#define BUTTON_FONT_COLOR sf::Color::White
+#define BUTTON_FONT_COLOR sf::Color::Black
 
 #define BUTTON_TEXTURE_PATH "path"
 
