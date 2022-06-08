@@ -9,7 +9,8 @@ Game::Game():
     graphicManager(Managers::GraphicsManager::getInstance()),
     eventManager(Managers::EventManager::getInstance()),
     inputManager(Managers::InputManager::getInstance()),
-    StateMachine()
+    StateMachine(),
+    deltaTime(0.f)
 {
 
     states[Patterns::StateId::FirstLevel] = new States::FirstLevel(this);
@@ -29,28 +30,30 @@ bool Game::isDone(){
     return graphicManager->isDone();
 }
 
-sf::Time Game::getElapsed(){
+/*sf::Time Game::getElapsed(){
     return elapsed;
-}
+}*/
 
 void Game::execute(){
     while(!isDone()){
         update();
-        restartClock();
+        //restartClock();
     }
 }
 
 void Game::update(){
-    float frametime = 1.f / 60.f;
+    //float frametime = 1.f / 60.f;
 
-    if(elapsed.asSeconds() < frametime) return;
+    //if(elapsed.asSeconds() < frametime) return;
+
+    deltaTime = clock.restart().asSeconds();
 
     eventManager->pollEvents();
-    updateCurrentState(elapsed.asSeconds());
+    updateCurrentState(deltaTime);
 
-    elapsed -= sf::seconds(frametime);
+    //elapsed -= sf::seconds(frametime);
 }
 
-void Game::restartClock(){
+/*void Game::restartClock(){
     elapsed += clock.restart();
-}
+}*/

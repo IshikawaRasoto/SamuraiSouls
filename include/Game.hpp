@@ -18,7 +18,9 @@ public:
 
 private:
 
-    sf::Time getElapsed();
+
+
+    //sf::Time getElapsed();
     
     bool isDone();
     void update();
@@ -26,7 +28,8 @@ private:
     void restartClock();
 
     sf::Clock clock;
-    sf::Time elapsed;
+    //sf::Time elapsed;
+    float deltaTime;
     
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;
