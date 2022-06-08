@@ -3,14 +3,15 @@
 
 using namespace Graphics;
 
-Button::Button(std::string content, sf::Vector2f position):
-    Ent(Type::Button, position, {BUTTON_SIZE_X, BUTTON_SIZE_Y})
+Button::Button(std::string content, sf::Vector2f position, std::string fontDir):
+    Ent(Type::Button, position, {BUTTON_SIZE_X, BUTTON_SIZE_Y}),
+    content(content, position, fontDir)
 {
-    this->content.setPosition(position);
     this->content.setFontSize(BUTTON_FONT_SIZE);
     this->content.setColor(BUTTON_FONT_COLOR);
 
-    setContent(content);
+    this->content.setTextAlignment(TextAlignment::Center);
+
     initializeSprite();
     selected = false;
 }
@@ -33,7 +34,7 @@ void Button::setContent(std::string content){
 void Button::update(float dt){
     if(selected){
         //Mudar textura para selecionado
-        content.setColor(sf::Color(100,100,100));
+        content.setColor(sf::Color::Black);
     }else{
         content.setColor(BUTTON_FONT_COLOR);
     }    

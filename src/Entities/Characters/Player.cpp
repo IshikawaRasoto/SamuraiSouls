@@ -4,7 +4,6 @@ using namespace Entities::Characters;
 
 const float Player::playerAtkTime(0.42); 
 int Player::points(0);
-int Player::lifes(3);
 
 Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerControl* playerControl):
         isWalking(false),
@@ -38,7 +37,7 @@ void Player::addPts(const int pts){
 }
 
 void Player::update(float dt){
-    if(hp<0){
+    if(hp<=0){
         setIsShowing(false);
         return;
     } 
@@ -62,6 +61,7 @@ void Player::update(float dt){
     }else if(abs(speed.x)>0){
         animator->update(position, (int) PlayerSprite::Run, 8, dt, getFacingLeft(), 0.2);
 
+    //Idle
     }else{
         animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft(), 0.3);
     }
@@ -109,15 +109,22 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
             canJump = true;
             moveOnCollision(other, intersect);
             break;
-        case Type::Goblin:
+        case Type::InvisibleBlock:
+            moveOnCollision(other, intersect);
+            break;
+        /*case Type::Goblin:
             if(isAttacking)
                 playerAtk(other, type);
+            break;
+        case Type::Skeleton:
+            if(isAttacking)
+                playerAtk(other, type);
+            break;*/
     }
 }
 
 void Player::playerAtk(Entities::Entity *other, Type t){
     
-
     float deltaX = other->getPosition().x - position.x;
     float deltaY = other->getPosition().y - position.y;
 
@@ -149,7 +156,7 @@ void Player::initializeSprite(){
 
 bool Player::statusAtk(const float dt){
     if(isAttacking){
-        std::cout << "Definitely Atking" << std::endl;
+        //std::cout << "Definitely Atking" << std::endl;
         //speed.x = 0.f;
         timeFromAtk += dt;
         if(timeFromAtk < playerAtkTime){
@@ -179,7 +186,7 @@ void Control::PlayerControl::update(Managers::InputManager *subject){
         }else if(key == keys.jump){
             player->jump();
         }else if(key == keys.attack){
-            std::cout << "ATK" << std::endl;
+            //std::cout << "ATK" << std::endl;
             player->setIsAttacking(true);
         }
     }else if(event == "released"){

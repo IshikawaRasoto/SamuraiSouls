@@ -17,6 +17,7 @@ enum Type{
     Ground,
     Button,
     Menu,
-    Background
+    Background,
+    InvisibleBlock
 };
 

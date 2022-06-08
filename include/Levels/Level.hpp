@@ -10,6 +10,8 @@
 
 #include "Graphics/Background.hpp"
 
+#include <time.h>
+
 #include <string>
 
 #define LEVEL_Y 0
@@ -35,7 +37,7 @@ public:
     );
     virtual ~Level();
 
-    void update(float dt);
+    virtual void update(float dt);
     void render();
 
     virtual void reset() = 0; 

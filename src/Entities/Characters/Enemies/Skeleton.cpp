@@ -22,20 +22,15 @@ void Skeleton::render(){
 }
 
 void Skeleton::update(float dt){
-    if(hp<0){
+    if(hp<=0){
         setIsShowing(false);
         return;
     }
-
-    
 
     speed = sf::Vector2f(speed.x, speed.y + GRAVITY * dt);
 
     if(speed.y > MAX_SPEED_Y)
         speed = sf::Vector2f(speed.x, MAX_SPEED_Y);
-
-   
-    
 
     move({speed.x * dt, speed.y * dt});
 
@@ -57,7 +52,7 @@ void Skeleton::update(float dt){
     }
 
     atkCD += dt;
-    if((atkCD >= skeletonAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= ATK_RANGE))
+    if((atkCD >= skeletonAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= SKELETON_ATK_RANGE && abs(getNearestPlayer()->getPosition().y - position.y)) <= ATK_RANGE_Y)
             tryAttack(SKELETON_DMG);
 }
 

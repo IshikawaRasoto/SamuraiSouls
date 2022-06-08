@@ -6,7 +6,7 @@
 #define PLAYER_HEIGHT 44
 #define PLAYER_SPEED_X 150
 #define PLAYER_SPEED_Y 400
-#define PLAYER_ATK_RANGE_X 105
+#define PLAYER_ATK_RANGE_X 110
 #define PLAYER_ATK_RANGE_Y 69
 
 enum class PlayerSprite{
@@ -32,7 +32,6 @@ namespace Entities{
                 static const float playerAtkTime; 
                 const bool playerOne;
                 static int points;
-                static int lifes;
                 bool isWalking;
                 bool canJump;
                 float timeFromAtk;

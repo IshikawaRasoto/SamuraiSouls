@@ -12,7 +12,7 @@ background(backgroundDir),
 control(this)
 {
     buttons.clear();
-    buttonSelected = -1;
+    selectedButton = -1;
 
     inputManager->subscribe("pressed", &control);
 }
@@ -22,7 +22,7 @@ Ent(Type::Menu, {0.0f, 0.0f}, {WINDOW_SIZE_X, WINDOW_SIZE_Y}),
 control(this)
 {
     buttons.clear();
-    buttonSelected = -1;
+    selectedButton = -1;
 }
 
 Menu::~Menu(){
@@ -38,31 +38,31 @@ Managers::Control::MenuControl* Menu::getMenuControl(){
 }
 
 void Menu::selectUp(){
-    if(buttonSelected == -1) return;
+    if(selectedButton == -1) return;
     if(!getIsShowing()) return;
 
-    buttons[buttonSelected]->select(false);
-    buttonSelected--;
+    buttons[selectedButton]->select(false);
+    selectedButton--;
 
-    if(buttonSelected < 0){
-        buttonSelected = buttons.size()-1;
+    if(selectedButton < 0){
+        selectedButton = buttons.size()-1;
     }
 
-    buttons[buttonSelected]->select(true);
+    buttons[selectedButton]->select(true);
 }
 
 void Menu::selectDown(){
-    if(buttonSelected == -1) return;
+    if(selectedButton == -1) return;
     if(!getIsShowing()) return;
 
-    buttons[buttonSelected]->select(false);
-    buttonSelected++;
+    buttons[selectedButton]->select(false);
+    selectedButton++;
 
-    if(buttonSelected >= buttons.size()){
-        buttonSelected = 0;
+    if(selectedButton >= buttons.size()){
+        selectedButton = 0;
     }
 
-    buttons[buttonSelected]->select(true);
+    buttons[selectedButton]->select(true);
 }
 
 void Menu::centerView(){
@@ -72,12 +72,16 @@ void Menu::centerView(){
 void Menu::addButton(Graphics::Button *button){
     if(button == nullptr) return;
 
-    if(buttonSelected == -1){
-        buttonSelected = 0;
+    if(selectedButton == -1){
+        selectedButton = 0;
         button->select(true);
     }
 
     buttons.push_back(button);
+}
+
+int Menu::getSelectedButton(){
+    return selectedButton;
 }
 
 void Menu::initializeSprite(){}

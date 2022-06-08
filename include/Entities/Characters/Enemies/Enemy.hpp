@@ -7,8 +7,8 @@
 
 #include "Type.hpp"
 
-#define MAX_DX 5000.0
-#define ATK_RANGE 100
+#define MAX_DX 5000.00
+#define ATK_RANGE_Y 60
 
 enum class EnemySprite{
     Idle = 0,

@@ -22,7 +22,8 @@ private:
 
     sf::Text text;
     std::string value;
-
+    TextAlignment textAlignment;
+    
     static Managers::GraphicsManager *graphicsManager;
 
 public:

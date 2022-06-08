@@ -1,26 +1,34 @@
-#include "Levels/MainMenu.hpp"
-#include <vector>
+#include "Menus/MainMenu.hpp"
 #include "Graphics/Button.hpp"
 
-using namespace Levels;
+#include "config.hpp"
 
-MainMenuState::MainMenuState(Game* stateMachine):
+#include <vector>
+
+using namespace Menus;
+
+MainMenu::MainMenu(StateMachine* stateMachine):
     State(Patterns::StateId::MainMenu,stateMachine),
-    Menu(MAIN_MENU_BACKGROUND_DIR)
+    Menu(MAIN_MENU_BACKGROUND_DIR),
+    title(WINDOW_NAME, {0.0f, -150.0f}, MAIN_MENU_TITLE_FONT_DIR)
 {
     std::vector<std::string> buttonNames = {"Jogar", "Sobre", "Sair"};
 
     for(float i = 0; i < buttonNames.size(); i++){
-        addButton(new Graphics::Button(buttonNames[i], {0.0f, i*80}));
+        addButton(new Graphics::Button(buttonNames[i], {0.0f, i*80}, MAIN_MENU_TITLE_FONT_DIR));
     }
+
+    title.setFontSize(80);
+    title.setTextAlignment(Graphics::TextAlignment::Center);
+    title.setColor(sf::Color::White);
 }
 
-MainMenuState::~MainMenuState(){}
+MainMenu::~MainMenu(){}
 
-void MainMenuState::execute(){
+void MainMenu::execute(){
     if(!getIsShowing()) return;
 
-    switch (buttonSelected)
+    switch (selectedButton)
     {
     case 0:
         getStateMachine()->changeCurrentState(Patterns::StateId::FirstLevel);
@@ -33,9 +41,10 @@ void MainMenuState::execute(){
         break;
     }
 
+    setIsShowing(true);
 }
 
-void MainMenuState::render(){
+void MainMenu::render(){
     graphicsManager->beginDraw();
     centerView();
     background.render();
@@ -44,10 +53,11 @@ void MainMenuState::render(){
         button->render();
     }
 
+    title.render();
     graphicsManager->endDraw();
 }
 
-void MainMenuState::update(const float dt){
+void MainMenu::update(const float dt){
     setIsShowing(true);
 
     for(auto button : buttons){
@@ -55,6 +65,6 @@ void MainMenuState::update(const float dt){
     }
 }
 
-void MainMenuState::reset(){
+void MainMenu::reset(){
     //TODO
 }

@@ -5,7 +5,7 @@
 
 #include <SFML/System/Vector2.hpp>
 
-#define SKELETON_HP 50
+#define SKELETON_HP 75
 #define SKELETON_DMG 15
 #define SKELETON_WIDTH 35 
 #define SKELETON_HEIGHT 51
@@ -24,7 +24,6 @@ namespace Entities{
                     static const float skeletonAtkTime;
 
                 public:
-
                     Skeleton(sf::Vector2f pos = sf::Vector2f(0.0, 0.0), Characters::Player* p1 = nullptr, Characters::Player* p2 = nullptr);
                     ~Skeleton();
                     

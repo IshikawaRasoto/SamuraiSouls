@@ -24,7 +24,7 @@ void Goblin::render(){
 
 void Goblin::update(float dt){
 
-    if(hp<0){
+    if(hp<=0){
         setIsShowing(false);
         return;
     }
@@ -57,7 +57,7 @@ void Goblin::update(float dt){
 
     atkCD += dt;
     
-    if(atkCD >= goblinAtkTime && abs(getNearestPlayer()->getPosition().x - position.x) <= GOBLIN_ATK_RANGE){
+    if(atkCD >= goblinAtkTime && abs(getNearestPlayer()->getPosition().x - position.x) <= GOBLIN_ATK_RANGE && abs(getNearestPlayer()->getPosition().y - position.y) <= ATK_RANGE_Y){
         //std::cout << "TRYATTACK" << std::endl;
         tryAttack(GOBLIN_DMG);
     }//else if(atkCD < goblinAtkTime)

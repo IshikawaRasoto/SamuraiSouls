@@ -18,8 +18,6 @@ public:
 
 private:
 
-
-
     //sf::Time getElapsed();
     
     bool isDone();

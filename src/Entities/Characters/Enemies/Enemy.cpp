@@ -66,7 +66,15 @@ void Enemy::tryAttack(const int dmg){
 void Enemy::collide(Entity* other, sf::Vector2f intersect){
     Type type = other->getType();
 
-    if(type == Type::Box || type == Type::Pavement){
-        moveOnCollision(other, intersect);
-    };
+    switch (type){
+        case Type::Pavement:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Box:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Barrel:
+            moveOnCollision(other, intersect);
+            break;
+    }
 }

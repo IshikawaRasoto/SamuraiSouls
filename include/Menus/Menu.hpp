@@ -8,7 +8,7 @@
 #include "Managers/Graphics.hpp"
 #include "Managers/Input.hpp"
 #include "Managers/Control/MenuControl.hpp"
-
+ 
 namespace Managers{
 namespace Control{
     class MenuControl;
@@ -20,7 +20,7 @@ namespace Menus{
 class Menu : public Ent{
 protected:
     std::vector<Graphics::Button*> buttons;
-    int buttonSelected;
+    int selectedButton;
     Graphics::Background background;
 
     static Managers::GraphicsManager* graphicsManager;
@@ -34,7 +34,7 @@ public:
 
     ~Menu();
 
-    int getButtonSelected();
+    int getSelectedButton();
     Managers::Control::MenuControl* getMenuControl();
 
     void selectUp();
