@@ -1,18 +1,18 @@
 #pragma once
 
 #define PLAYER_HP 100
-#define PLAYER_DMG 25
+#define PLAYER_DMG 50
 #define PLAYER_WIDTH 37
-#define PLAYER_HEIGHT 52
+#define PLAYER_HEIGHT 44
 #define PLAYER_SPEED_X 150
-#define PLAYER_SPEED_Y 150
-#define PLAYER_ATK_RANGE_X 105
-#define PLAYER_ATK_RANGE_Y 68
+#define PLAYER_SPEED_Y 400
+#define PLAYER_ATK_RANGE_X 110
+#define PLAYER_ATK_RANGE_Y 69
 
-enum sprite{
+enum class PlayerSprite{
     Idle = 0,
     Run,
-    Attack,
+    Attack, 
     Jump,
     Fall,
     Die
@@ -21,7 +21,7 @@ enum sprite{
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Control/PlayerControl.hpp"
 
-#define MASTER_DIR "./Textures/Characters/MasterTest.png"
+#define MASTER_DIR "./Textures/Characters/Master.png"
 
 using namespace Managers::Control;
 
@@ -32,11 +32,10 @@ namespace Entities{
                 static const float playerAtkTime; 
                 const bool playerOne;
                 static int points;
-                static int lifes;
                 bool isWalking;
                 bool canJump;
-                bool isAtking;
                 float timeFromAtk;
+                bool atkCollision;//Controle de uma colisão de ataque por ataque
                 Control::PlayerControl* playerControl;
 
 
@@ -49,10 +48,12 @@ namespace Entities{
                 ~Player();
 
                 const bool getIsPlayerOne() const;
+                const bool getIsAtkCollision() const;
                 static const int getPts();
                 Control::PlayerControl* getPlayerControl() const;
 
                 static void addPts(const int pts);
+                void setAtkCollision(const bool atkCollision);
                 
                 void update(float dt);
                 void walk(Direction direction);
@@ -60,6 +61,7 @@ namespace Entities{
                 void render();
                 void collide(Entity* other, sf::Vector2f intersect);
                 void save();
+                void playerAtk(Entities::Entity* other, Type t);
 
                 bool statusAtk(const float dt);
                 

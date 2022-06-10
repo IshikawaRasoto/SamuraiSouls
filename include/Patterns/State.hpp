@@ -7,7 +7,8 @@ enum StateId{
     MainMenu,
     Leaderboard,
     Settings,
-    Play,
+    FirstLevel,
+    SecondLevel,
     Pause,
     GameOver
 };

@@ -1,5 +1,7 @@
 #include "Patterns/StateMachine.hpp"
 
+#include <iostream>
+
 using namespace Patterns;
 
 StateMachine::StateMachine(){
@@ -23,6 +25,8 @@ StateId StateMachine::getLastState(){
 void StateMachine::changeCurrentState(const StateId state){
     lastState = currentState;
     currentState = state;
+
+    std::cout << currentState << "\n";
 }
 
 void StateMachine::updateCurrentState(const float dt){

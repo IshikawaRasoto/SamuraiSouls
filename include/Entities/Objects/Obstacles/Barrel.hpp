@@ -6,6 +6,8 @@
 #define BARREL_WIDTH 24
 #define BARREL_HEIGHT 30
 
+#define BARREL_DIR "./Textures/Scenario/Village/barrel.png"
+
 namespace Entities{
     namespace Objects{ 
         namespace Obstacles{
@@ -18,7 +20,7 @@ namespace Entities{
                 Barrel(sf::Vector2f position);
                 ~Barrel();
 
-                //void save();
+                void save();
             };
         }
     }

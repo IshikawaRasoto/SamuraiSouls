@@ -11,15 +11,12 @@ namespace Entities{
         namespace Obstacles{
             class Thorns : public Object{
                 private:
-                    static const int dmg;
                     void initializeSprite();
                 
                 public:
                     Thorns(sf::Vector2f position);
                     ~Thorns();
-                    const int getDmg() const;
 
-                    void render();
                     void save();
             };
         }

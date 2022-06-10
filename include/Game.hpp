@@ -6,7 +6,6 @@
 #include "Managers/Input.hpp"
 #include "Managers/Event.hpp"
 
-#include "States/Level.hpp"
 #include "Patterns/StateMachine.hpp"
 
 class Game : public Patterns::StateMachine{
@@ -19,7 +18,7 @@ public:
 
 private:
 
-    sf::Time getElapsed();
+    //sf::Time getElapsed();
     
     bool isDone();
     void update();
@@ -27,7 +26,8 @@ private:
     void restartClock();
 
     sf::Clock clock;
-    sf::Time elapsed;
+    //sf::Time elapsed;
+    float deltaTime;
     
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;

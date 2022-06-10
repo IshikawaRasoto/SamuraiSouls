@@ -65,6 +65,10 @@ bool GraphicsManager::isDone(){
     return done;
 }
 
+void GraphicsManager::setDone(bool done){
+    this->done = done;
+}
+
 bool GraphicsManager::isFullscreen(){
     return fullscreen;
 }

@@ -7,8 +7,15 @@
 
 #include "Type.hpp"
 
-#define MAX_DX 5000.0
-#define ATK_RANGE 200
+#define MAX_DX 5000.00
+#define ATK_RANGE_Y 60
+
+enum class EnemySprite{
+    Idle = 0,
+    Run,
+    Attack,
+    Die
+};
 
 namespace Entities{
     namespace Characters{
@@ -26,8 +33,9 @@ namespace Entities{
                     virtual ~Enemy();
                     Entities::Characters::Player* getNearestPlayer();
 
-                    virtual void movement(const float spX);
-                    virtual void attack(const int dmg);
+                    //virtual void movement(const float spX);
+                    virtual void tryAttack(const int dmg);
+                    //virtual void tryAttack(const int dmg, const float timeOfAtk);
 
                     virtual void collide(Entity* other, sf::Vector2f intersect);
 

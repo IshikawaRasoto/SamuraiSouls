@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Ent/Ent.hpp"
 #include <SFML/System/Vector2.hpp>
 #include <string>

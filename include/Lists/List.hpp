@@ -176,8 +176,3 @@ T* List<T>::operator[](unsigned int index){
 }
 
 }
-
-
-
-
-

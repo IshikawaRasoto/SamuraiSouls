@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Text.hpp"
 #include "Ent/Ent.hpp"
 
@@ -5,13 +7,15 @@
 #include <SFML/Graphics/Color.hpp>
 #include <string>
 
-#define BUTTON_FONT_SIZE 18
+#define BUTTON_FONT_SIZE 24
 #define BUTTON_FONT_COLOR sf::Color::White
 
 #define BUTTON_TEXTURE_PATH "path"
 
-#define BUTTON_SIZE_X 100
-#define BUTTON_SIZE_Y 50
+#define BUTTON_SIZE_X 0
+#define BUTTON_SIZE_Y 0
+
+#define BUTTON_FONT_DIR "./fonts/Arial.ttf"
 
 namespace Graphics{
 
@@ -21,7 +25,7 @@ private:
     bool selected;
 
 public:
-    Button(std::string content = "", sf::Vector2f position = sf::Vector2f(0.0f, 0.0f));
+    Button(std::string content = "", sf::Vector2f position = sf::Vector2f(0.0f, 0.0f), std::string fontDir = BUTTON_FONT_DIR);
     ~Button();
 
     std::string getContent();

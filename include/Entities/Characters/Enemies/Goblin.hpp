@@ -5,13 +5,16 @@
 
 #include <SFML/System/Vector2.hpp>
 
-#define GOBLIN_DIR
+#define GOBLIN_DIR "./Textures/Characters/Goblin.png"
 
-#define GOBLIN_HP 20
+#define GOBLIN_HP 25
 #define GOBLIN_DMG 15
 #define GOBLIN_WIDTH 33
 #define GOBLIN_HEIGHT 36
-#define GOBLIN_SPEED_X 50
+#define GOBLIN_SPEED_X 200
+#define GOBLIN_ATK_RANGE 30
+#define GOBLIN_DX_MAX 400
+#define GOBLIN_DX_MIN 30
 
 namespace Entities{
     namespace Characters{
@@ -26,6 +29,7 @@ namespace Entities{
                     void update(float dt);
                     void render();
                     void save();
+                    void movementGoblin();
 
                 private:
                     void initializeSprite();

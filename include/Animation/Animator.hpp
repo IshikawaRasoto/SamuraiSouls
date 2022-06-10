@@ -14,14 +14,14 @@ class Animator{
         sf::Texture* texture;
         sf::IntRect uvRect;
         float deltaTime;
-        static const float switchTime;
+        //static const float switchTime;
 
     public:
         Animator(sf::Vector2f size = sf::Vector2f(0.0,0.0));
         ~Animator();
         void render();
         void update(sf::Vector2f position);
-        void update(sf::Vector2f position, int row, int qnt_img, float dt, bool facingLeft);
+        void update(sf::Vector2f position, int row, int qnt_img, float dt, bool facingLeft, float switchTime);
         void setGraphMngr(GraphicsManager* pGraphMngr);
         void initializeTexture(std::string path, sf::Vector2u imageCount);
         sf::RectangleShape* getRectangleShape();

@@ -9,7 +9,6 @@ namespace Entities{
             sf::Vector2f speed; 
 
         private:
-
             bool facingLeft;
 
         public:

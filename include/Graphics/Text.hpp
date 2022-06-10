@@ -5,9 +5,9 @@
 
 #include "Managers/Graphics.hpp"
 
-#define FONT_PATH ""
+#define FONT_PATH "./fonts/Arial.ttf"
 #define TEXT_SIZE 24
-#define TEXT_COLOR sf::Color::White
+#define TEXT_COLOR sf::Color::Black
 
 namespace Graphics{
     
@@ -22,7 +22,8 @@ private:
 
     sf::Text text;
     std::string value;
-
+    TextAlignment textAlignment;
+    
     static Managers::GraphicsManager *graphicsManager;
 
 public:
