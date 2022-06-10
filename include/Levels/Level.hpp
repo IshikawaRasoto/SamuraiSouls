@@ -25,15 +25,19 @@ protected:
     Managers::GraphicsManager *graphicsManager;
     Lists::EntityList entityList;
     Entities::Characters::Player *player;
+    Entities::Characters::Player *player2;
     Graphics::Background background;
+    bool singlePlayer;
 
 public:
     Level(
         Patterns::StateMachine *stateMachine,
         std::string backgroundDir,
         Patterns::StateId state,
+        const bool singlePlayer,
         Managers::InputManager *inputManager = Managers::InputManager::getInstance(), 
         Managers::GraphicsManager *graphicsManager = Managers::GraphicsManager::getInstance()
+        
     );
     virtual ~Level();
 

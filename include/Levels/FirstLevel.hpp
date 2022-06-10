@@ -18,7 +18,7 @@ class FirstLevel : public Levels::Level{
 
 public:
 
-    FirstLevel(Patterns::StateMachine* stateMachine);
+    FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer);
     ~FirstLevel();
     
     void reset();
