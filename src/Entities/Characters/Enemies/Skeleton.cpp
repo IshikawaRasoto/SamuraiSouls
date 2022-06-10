@@ -22,6 +22,7 @@ void Skeleton::render(){
 }
 
 void Skeleton::update(float dt){
+    
     if(hp<=0){
         setIsShowing(false);
         return;
@@ -52,7 +53,7 @@ void Skeleton::update(float dt){
     }
 
     atkCD += dt;
-    if((atkCD >= skeletonAtkTime) && (abs(getNearestPlayer()->getPosition().x - position.x) <= SKELETON_ATK_RANGE && abs(getNearestPlayer()->getPosition().y - position.y)) <= ATK_RANGE_Y)
+    if((atkCD >= skeletonAtkTime) && abs(getNearestPlayer()->getPosition().x - position.x) <= SKELETON_ATK_RANGE && abs(getNearestPlayer()->getPosition().y - position.y) <= ATK_RANGE_Y)
             tryAttack(SKELETON_DMG);
 }
 

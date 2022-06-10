@@ -10,6 +10,7 @@ Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerCon
         canJump(false),
         playerOne(isPlayerOne),
         timeFromAtk(0.f),
+        atkCollision(false),
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
     if(!playerControl){
@@ -28,8 +29,14 @@ const bool Player::getIsPlayerOne() const {return playerOne;}
 
 const int Player::getPts(){return points;}
 
+const bool Player::getIsAtkCollision() const {return atkCollision;}
+
 Control::PlayerControl* Player::getPlayerControl() const{
     return playerControl;
+}
+
+void Player::setAtkCollision(const bool atkCollision){
+    this->atkCollision = atkCollision;
 }
 
 void Player::addPts(const int pts){
@@ -124,12 +131,18 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
 }
 
 void Player::playerAtk(Entities::Entity *other, Type t){
+    if(!isAttacking || !atkCollision)
+        return;
     
     float deltaX = other->getPosition().x - position.x;
     float deltaY = other->getPosition().y - position.y;
 
     if(abs(deltaY)<PLAYER_ATK_RANGE_Y && abs(deltaX)<PLAYER_ATK_RANGE_X && isAttacking){ //69 é altura da sprite de ataque
+        std::cout << "ATK PLAYER" << std::endl;
+        atkCollision = false;
+        std::cout << (static_cast<Character*>(other))->getHP() << std::endl;
         (static_cast<Character*>(other))->receiveDMG(PLAYER_DMG);
+        std::cout << (static_cast<Character*>(other))->getHP() << std::endl;
         if((static_cast<Character*>(other))->getHP()<=0){
             switch(t){
                 case Type::Goblin:
@@ -162,6 +175,9 @@ bool Player::statusAtk(const float dt){
         if(timeFromAtk < playerAtkTime){
             return true;
         }
+
+        atkCollision = true;
+
         timeFromAtk = 0;
         isAttacking = false;
     }
@@ -188,6 +204,7 @@ void Control::PlayerControl::update(Managers::InputManager *subject){
         }else if(key == keys.attack){
             //std::cout << "ATK" << std::endl;
             player->setIsAttacking(true);
+            player->setAtkCollision(true);
         }
     }else if(event == "released"){
         if(key == keys.left || key == keys.right){

@@ -12,7 +12,7 @@
 enum class PlayerSprite{
     Idle = 0,
     Run,
-    Attack,
+    Attack, 
     Jump,
     Fall,
     Die
@@ -35,6 +35,7 @@ namespace Entities{
                 bool isWalking;
                 bool canJump;
                 float timeFromAtk;
+                bool atkCollision;//Controle de uma colisão de ataque por ataque
                 Control::PlayerControl* playerControl;
 
 
@@ -47,10 +48,12 @@ namespace Entities{
                 ~Player();
 
                 const bool getIsPlayerOne() const;
+                const bool getIsAtkCollision() const;
                 static const int getPts();
                 Control::PlayerControl* getPlayerControl() const;
 
                 static void addPts(const int pts);
+                void setAtkCollision(const bool atkCollision);
                 
                 void update(float dt);
                 void walk(Direction direction);
