@@ -162,9 +162,10 @@ void Player::playerAtk(Entities::Entity *other, Type t){
 }
 
 void Player::initializeSprite(){
-    if(playerOne){
+    if(playerOne)
         animator->initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
-    }  
+    else
+        animator->initializeTexture(APPRENTICE_DIR, sf::Vector2u(8, 6));
 }
 
 bool Player::statusAtk(const float dt){

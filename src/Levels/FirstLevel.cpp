@@ -60,7 +60,7 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
     createStairs<Entities::Objects::Obstacles::Box>(2, 150.0f, {BOX_WIDTH, BOX_HEIGHT}, staticEntities);
     
 
-    Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2});
+    Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
     movingEntities->addEntity(player);
     entityList.addEntity(player);
     
@@ -106,6 +106,7 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
     skeleton = new Entities::Characters::Enemies::Skeleton({2200.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player);
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);  
+
         
 
     this->player = player;

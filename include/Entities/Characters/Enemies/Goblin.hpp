@@ -7,7 +7,7 @@
 
 #define GOBLIN_DIR "./Textures/Characters/Goblin.png"
 
-#define GOBLIN_HP 25
+#define GOBLIN_HP 50
 #define GOBLIN_DMG 15
 #define GOBLIN_WIDTH 33
 #define GOBLIN_HEIGHT 36

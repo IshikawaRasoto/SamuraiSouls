@@ -22,6 +22,7 @@ enum class PlayerSprite{
 #include "Managers/Control/PlayerControl.hpp"
 
 #define MASTER_DIR "./Textures/Characters/Master.png"
+#define APPRENTICE_DIR "./Textures/Characters/Apprentice.png"
 
 using namespace Managers::Control;
 
