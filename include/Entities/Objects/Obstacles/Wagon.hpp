@@ -3,6 +3,8 @@
 #include "Entities/Objects/Object.hpp"
 #include "Type.hpp"
 
+#define WAGON_WIDTH 100
+#define WAGON_HEIGHT 100
 
 namespace Entities{
     namespace Objects{
@@ -12,7 +14,7 @@ namespace Entities{
                     void initializeSprite();
                 
                 public:
-                    Wagon();
+                    Wagon(sf::Vector2f position);
                     ~Wagon();
 
                     void save();

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace Entities::Characters;
 
-const float Player::playerAtkTime(0.42); 
+const float Player::playerAtkTime(0.48); 
 int Player::points(0);
 
 Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerControl* playerControl):
@@ -54,7 +54,7 @@ void Player::update(float dt){
 
     //Attack
     if(statusAtk(dt)){
-        animator->update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.07);
+        animator->update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.08);
     
     //Fall
     }else if(speed.y > 150.f){
@@ -162,9 +162,10 @@ void Player::playerAtk(Entities::Entity *other, Type t){
 }
 
 void Player::initializeSprite(){
-    if(playerOne){
+    if(playerOne)
         animator->initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
-    }  
+    else
+        animator->initializeTexture(APPRENTICE_DIR, sf::Vector2u(8, 6));
 }
 
 bool Player::statusAtk(const float dt){
