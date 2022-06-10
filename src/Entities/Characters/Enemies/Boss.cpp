@@ -1,10 +1,11 @@
 #include "Entities/Characters/Enemies/Boss.hpp"
 using namespace Entities::Characters::Enemies;
 
-const float bossAtkTime(0.4);
+const float bossAtkTime(4.0);
 
-Boss::Boss(sf::Vector2f pos, Characters::Player* p1, Characters::Player* p2):
-    Enemy(Type::Boss, pos, sf::Vector2f(BOSS_WIDTH, BOSSH_HEIGHT), BOSS_HP, BOSS_DMG, p1, p2)
+Boss::Boss(sf::Vector2f pos, FireBall *fireball ,Characters::Player* p1, Characters::Player* p2):
+    Enemy(Type::Boss, pos, sf::Vector2f(BOSS_WIDTH, BOSSH_HEIGHT), BOSS_HP, BOSS_DMG, p1, p2),
+    fireball(fireball)
 {
     initializeSprite();
 }
@@ -13,8 +14,7 @@ Boss::~Boss(){//
 }
 
 void Boss::initializeSprite(){
-    sf::RectangleShape *body = animator->getRectangleShape();
-    body->setFillColor(sf::Color::Red);
+    animator->initializeTexture(BOSS_DIR, sf::Vector2u(16,4));
 }
 
 void Boss::render(){
@@ -22,14 +22,49 @@ void Boss::render(){
 }
 
 void Boss::update(float dt){
-    setPosition({position.x + speed.x * dt, position.y + speed.y * dt});
-    animator->update(position);
+
+    if(hp<=0){
+        setIsShowing(false);
+        return;
+    }
+
+    speed = sf::Vector2f(speed.x, speed.y + GRAVITY * dt);
+
+    if(speed.y > MAX_SPEED_Y)
+        speed = sf::Vector2f(speed.x, MAX_SPEED_Y);
+
+    move({speed.x * dt, speed.y * dt});
+
+    movementBoss();
+
+    //Attack
+    if(isAttacking && timeFromAtk<=0.56){ //Tempo da animacao difere do tempo do CD de ataque
+        timeFromAtk += dt;
+        speed.x = 0;
+        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.07);
+    
+    //Run
+    }else if(abs(speed.x)>0.f){
+        animator->update(position, (int) EnemySprite::Run, 4, dt, getFacingLeft(), 0.2);
+
+    //Idle
+    }else{
+        animator->update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft(), 0.3);
+    }
+
+    atkCD += dt;
+    if((atkCD >= bossAtkTime) && abs(getNearestPlayer()->getPosition().x - position.x) <= BOSS_ATK_RANGE && abs(getNearestPlayer()->getPosition().y - position.y) <= ATK_RANGE_Y)
+        fire();
 }
 
-void Boss::attack(){
-    //TODO
+void Boss::fire(){
+    
 }
 
 void Boss::save(){
     //TODO
+}
+
+void Boss::movementBoss(){
+
 }
