@@ -2,7 +2,7 @@
 
 #include "Entities/Entity.hpp"
 
-#define GRAVITY 1000.f
+
 
 #define MAX_SPEED_Y 300
 

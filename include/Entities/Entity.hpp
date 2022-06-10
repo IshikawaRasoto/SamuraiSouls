@@ -2,6 +2,8 @@
 
 #include "Ent/Ent.hpp"
 
+#define GRAVITY 1000.f
+
 namespace Entities{
 
     class Entity : public Ent{
