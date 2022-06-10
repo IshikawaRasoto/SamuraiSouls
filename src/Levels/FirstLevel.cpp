@@ -9,26 +9,6 @@
 
 using namespace Levels;
 
-template<class T>
-void FirstLevel::createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
-    for(float i = 0; i < size; i++){
-        for(float j = i; j < size; j++){
-            T *object = new T({x+j*objectSize.x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
-            staticEntities->addEntity(object);
-            entityList.addEntity(object);
-        }
-    }
-}
-
-template<class T>
-void FirstLevel::createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
-    for(float i = 0; i < size; i++){
-        T *object = new T({x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
-        staticEntities->addEntity(object);
-        entityList.addEntity(object);
-    }
-}
-
 FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
     Level(stateMachine, FIRST_LEVEL_BACKGROUND_DIR, Patterns::StateId::FirstLevel)
     // points("Points: 0")
@@ -149,4 +129,24 @@ void FirstLevel::update(float dt){
     // life.setValue("HP: " + player->getHP());
 
     render();
+}
+
+template<class T>
+void FirstLevel::createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
+    for(float i = 0; i < size; i++){
+        for(float j = i; j < size; j++){
+            T *object = new T({x+j*objectSize.x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
+            staticEntities->addEntity(object);
+            entityList.addEntity(object);
+        }
+    }
+}
+
+template<class T>
+void FirstLevel::createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
+    for(float i = 0; i < size; i++){
+        T *object = new T({x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
+        staticEntities->addEntity(object);
+        entityList.addEntity(object);
+    }
 }

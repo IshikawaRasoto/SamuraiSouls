@@ -7,11 +7,11 @@ MiniGround::MiniGround(sf::Vector2f position):
     initializeSprite();
 }
 
-Ground::~Ground(){}
+MiniGround::~MiniGround(){}
 
-void Ground::initializeSprite(){
+void MiniGround::initializeSprite(){
     animator->initializeTexture(MINIGROUND_DIR, {1, 1});
 }
 
 
-void Ground::save(){}
+void MiniGround::save(){}

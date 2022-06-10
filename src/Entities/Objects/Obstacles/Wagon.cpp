@@ -8,7 +8,7 @@ Wagon::Wagon(sf::Vector2f position):
 Wagon::~Wagon(){}
 
 void Wagon::initializeSprite(){
-
+    animator->initializeTexture(WAGON_DIR, {1,1});
 }
 
 void Wagon::save(){

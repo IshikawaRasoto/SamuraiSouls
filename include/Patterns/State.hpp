@@ -9,6 +9,7 @@ enum StateId{
     Settings,
     FirstLevel,
     SecondLevel,
+    ThirdLevel,
     Pause,
     GameOver
 };

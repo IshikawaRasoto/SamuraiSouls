@@ -3,20 +3,21 @@
 #include "Entities/Objects/Object.hpp"
 #include "Type.hpp"
 
-#define WAGON_WIDTH 93
-#define WAGON_HEIGHT 75
-#define WAGON_DIR "./Textures/Scenario/Village/wagon.png"
+#define STATUE_WIDTH 100
+#define STATUE_HEIGHT 100
+
+#define STATUE_DIR "./Textures/Scenario/Cemetery/statue.png"
 
 namespace Entities{
     namespace Objects{
         namespace Obstacles{
-            class Wagon : public Object{
+            class Statue : public Object{
                 private:
                     void initializeSprite();
                 
                 public:
-                    Wagon(sf::Vector2f position);
-                    ~Wagon();
+                    Statue(sf::Vector2f position);
+                    ~Statue();
 
                     void save();
             };

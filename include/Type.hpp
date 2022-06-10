@@ -13,6 +13,7 @@ enum Type{
     Thorns,
     Barrel,
     Wagon,
+    Statue,
     Pavement,
     Ground,
     Button,
