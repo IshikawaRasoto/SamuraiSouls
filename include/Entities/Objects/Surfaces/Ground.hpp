@@ -6,6 +6,8 @@
 #define GROUND_WIDTH 192
 #define GROUND_HEIGHT 111
 
+#define GROUND_DIR "./Texture/Scenario/Cemetery/Ground.png"
+
 namespace Entities{
     namespace Objects{
         namespace Surfaces{

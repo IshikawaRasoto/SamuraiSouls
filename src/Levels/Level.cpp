@@ -6,11 +6,14 @@ Level::Level(
     Patterns::StateMachine *stateMachine,
     std::string backgroundDir,
     Patterns::StateId state,
+    const bool singlePlayer,
     Managers::InputManager *inputManager,
     Managers::GraphicsManager *graphicsManager
+    
 ):
     State(state, stateMachine),
-    background(backgroundDir)
+    background(backgroundDir),
+    singlePlayer(singlePlayer)
 {
     this->inputManager = inputManager;
     this->graphicsManager = graphicsManager;

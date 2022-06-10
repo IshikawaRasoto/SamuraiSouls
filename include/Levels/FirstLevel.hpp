@@ -18,19 +18,19 @@ class FirstLevel : public Levels::Level{
 
 public:
 
-    FirstLevel(Patterns::StateMachine* stateMachine);
+    FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer);
     ~FirstLevel();
     
     void reset();
     void centerView();
-
-    void update(float dt);
 
     template<class T>
     void createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
 
     template<class T>
     void createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
+
+    void update(float dt);
 };
 
 

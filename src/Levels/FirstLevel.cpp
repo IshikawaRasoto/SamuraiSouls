@@ -9,28 +9,8 @@
 
 using namespace Levels;
 
-template<class T>
-void FirstLevel::createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
-    for(float i = 0; i < size; i++){
-        for(float j = i; j < size; j++){
-            T *object = new T({x+j*objectSize.x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
-            staticEntities->addEntity(object);
-            entityList.addEntity(object);
-        }
-    }
-}
-
-template<class T>
-void FirstLevel::createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
-    for(float i = 0; i < size; i++){
-        T *object = new T({x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
-        staticEntities->addEntity(object);
-        entityList.addEntity(object);
-    }
-}
-
-FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
-    Level(stateMachine, FIRST_LEVEL_BACKGROUND_DIR, Patterns::StateId::FirstLevel)
+FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer):
+    Level(stateMachine, FIRST_LEVEL_BACKGROUND_DIR, Patterns::StateId::FirstLevel, singlePlayer)
     // points("Points: 0")
 {
     Lists::EntityList *movingEntities = new Lists::EntityList();
@@ -63,12 +43,20 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
     Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, true);
     movingEntities->addEntity(player);
     entityList.addEntity(player);
+
+
+    Entities::Characters::Player *player2 = nullptr;
+    if(!singlePlayer){
+        player2 = new Entities::Characters::Player({50.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
+        movingEntities->addEntity(player2);
+        entityList.addEntity(player2);
+    }
     
-    Entities::Characters::Enemies::Goblin *goblin = new Entities::Characters::Enemies::Goblin({250.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player);
+    Entities::Characters::Enemies::Goblin *goblin = new Entities::Characters::Enemies::Goblin({250.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player, player2);
     movingEntities->addEntity(goblin);
     entityList.addEntity(goblin);
 
-    Entities::Characters::Enemies::Skeleton *skeleton = new Entities::Characters::Enemies::Skeleton({700.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player);
+    Entities::Characters::Enemies::Skeleton *skeleton = new Entities::Characters::Enemies::Skeleton({700.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player, player2);
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);
 
@@ -79,22 +67,22 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
         createStairs<Entities::Objects::Obstacles::Barrel>(rand()%5, 1000.0f, {BARREL_WIDTH, BARREL_HEIGHT},staticEntities);
     }
 
-    goblin = new Entities::Characters::Enemies::Goblin({1400.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player);
+    goblin = new Entities::Characters::Enemies::Goblin({1400.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player, player2);
     movingEntities->addEntity(goblin);
     entityList.addEntity(goblin);
 
-    goblin = new Entities::Characters::Enemies::Goblin({1500.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player);
+    goblin = new Entities::Characters::Enemies::Goblin({1500.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player, player2);
     movingEntities->addEntity(goblin);
     entityList.addEntity(goblin);
 
     createWall<Entities::Objects::Obstacles::Barrel>(2,1575.0f, {BARREL_WIDTH, BARREL_HEIGHT}, staticEntities);
 
-    skeleton = new Entities::Characters::Enemies::Skeleton({1650.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player);
+    skeleton = new Entities::Characters::Enemies::Skeleton({1650.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player, player2);
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);    
 
     if(rand()%2){
-        goblin = new Entities::Characters::Enemies::Goblin({2000.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player);
+        goblin = new Entities::Characters::Enemies::Goblin({2000.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player, player2);
         movingEntities->addEntity(goblin);
         entityList.addEntity(goblin);
     }else{
@@ -103,19 +91,22 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine):
         entityList.addEntity(barrel);
     }
 
-    skeleton = new Entities::Characters::Enemies::Skeleton({2200.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player);
+    skeleton = new Entities::Characters::Enemies::Skeleton({2200.0f, -PAVEMENT_HEIGHT/2-SKELETON_HEIGHT/2},player, player2);
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);  
 
         
 
     this->player = player;
+    this->player2 = player2;
         
     collisionManager = Managers::CollisionManager(movingEntities, staticEntities);
 
     
     inputManager->subscribe("pressed", player->getPlayerControl());
-    inputManager->subscribe("released", player->getPlayerControl());      
+    inputManager->subscribe("released", player->getPlayerControl());   
+    inputManager->subscribe("pressed", player2->getPlayerControl());
+    inputManager->subscribe("released", player2->getPlayerControl());   
     
 }
 
@@ -123,8 +114,13 @@ FirstLevel::~FirstLevel(){}
 
 void FirstLevel::centerView(){
     sf::Vector2f viewPosition;
-    viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
+    if(singlePlayer)
+        viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
+    else
+        viewPosition.x = (player->getPosition().x + player2->getPosition().x)/2;
+    
     viewPosition.y = -WINDOW_SIZE_Y/2 + PAVEMENT_HEIGHT/2;
+    
 
     graphicsManager->centerView(viewPosition);
     // points.setPosition(viewPosition);
@@ -149,4 +145,24 @@ void FirstLevel::update(float dt){
     // life.setValue("HP: " + player->getHP());
 
     render();
+}
+
+template<class T>
+void FirstLevel::createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
+    for(float i = 0; i < size; i++){
+        for(float j = i; j < size; j++){
+            T *object = new T({x+j*objectSize.x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
+            staticEntities->addEntity(object);
+            entityList.addEntity(object);
+        }
+    }
+}
+
+template<class T>
+void FirstLevel::createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities){
+    for(float i = 0; i < size; i++){
+        T *object = new T({x, -PAVEMENT_HEIGHT/2 - (objectSize.y*i + objectSize.y/2)});
+        staticEntities->addEntity(object);
+        entityList.addEntity(object);
+    }
 }
