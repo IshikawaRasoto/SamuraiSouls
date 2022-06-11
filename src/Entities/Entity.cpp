@@ -33,7 +33,27 @@ void Entity::move(sf::Vector2f v){
     moveBody(v);
 }
 
-void Entity::collide(Entity *other, sf::Vector2f intersect){}
+void Entity::collide(Entity *other, sf::Vector2f intersect){
+    Type type = other->getType();
+
+    switch (type){
+        case Type::Pavement:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Box:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Barrel:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::InvisibleBlock:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Player:
+            moveOnCollision(other, intersect);
+            break;
+    }
+}
 
 void Entity::moveOnCollision(Entity *other, sf::Vector2f intersect){
     if(intersect.x > intersect.y){
@@ -52,4 +72,9 @@ void Entity::moveOnCollision(Entity *other, sf::Vector2f intersect){
         }
         speed.y = 0.0f;
     }
+}
+
+void Entity::update(const float dt){
+    speed.y += GRAVITY * dt;
+    move({speed.x * dt, speed.y * dt});
 }

@@ -20,6 +20,7 @@ namespace Entities{
                 ~Pavement();
 
                 void save();
+                void update(const float dt);
             };
         }
     }

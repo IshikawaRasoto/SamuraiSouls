@@ -18,6 +18,7 @@ namespace Entities{
                     ~InvisibleBlock();
 
                     void save();
+                    void update(const float dt);
             };
         }
     }

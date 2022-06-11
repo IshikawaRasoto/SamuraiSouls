@@ -9,12 +9,12 @@ Level::Level(
     const bool singlePlayer,
     Managers::InputManager *inputManager,
     Managers::GraphicsManager *graphicsManager
-    
 ):
     State(state, stateMachine),
     background(backgroundDir),
     singlePlayer(singlePlayer),
-    control(this)
+    control(this),
+    hud()
 {
     this->inputManager = inputManager;
     this->graphicsManager = graphicsManager;
@@ -43,6 +43,7 @@ void Level::render(){
     graphicsManager->beginDraw();
     centerView();
     background.render();
+    hud.render();
     entityList.renderAll();
     graphicsManager->endDraw();
 }

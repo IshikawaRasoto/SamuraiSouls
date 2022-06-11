@@ -17,7 +17,6 @@ namespace Entities{
                     ~Box();
 
                     void save();
-
                 private:
                     void initializeSprite();
             };

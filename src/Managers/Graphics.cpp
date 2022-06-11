@@ -120,8 +120,15 @@ void GraphicsManager::create(){
 
     auto style = fullscreen ? sf::Style::Fullscreen : sf::Style::Default;
 
-    window.setFramerateLimit(60);
+    // window.setFramerateLimit(60);
     window.create({size.x, size.y, 32}, title, style);
+}
+
+sf::Vector2f GraphicsManager::getTopLeftPosition(){
+    return sf::Vector2f(
+        window.getView().getCenter().x - size.x/2.0f, 
+        window.getView().getCenter().y - size.y/2.0f
+    );
 }
 
 GraphicsManager* GraphicsManager::instance = nullptr;

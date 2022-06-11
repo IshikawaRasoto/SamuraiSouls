@@ -70,6 +70,7 @@ void Text::setValue(std::string value){
     this->value = value;
     text.setString(value);
     text.setOrigin({getSize().x/2.f, getSize().y/2.f});
+    setTextAlignment(textAlignment);
 }
 
 void Text::render(){

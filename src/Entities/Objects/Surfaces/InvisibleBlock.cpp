@@ -15,3 +15,5 @@ void InvisibleBlock::initializeSprite(){
 }
 
 void InvisibleBlock::save(){}
+
+void InvisibleBlock::update(const float dt){}

@@ -16,3 +16,5 @@ void Pavement::initializeSprite(){
 }
 
 void Pavement::save(){}
+
+void Pavement::update(const float dt){}

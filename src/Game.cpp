@@ -15,7 +15,7 @@ Game::Game():
     deltaTime(0.f)
 {
 
-    states[Patterns::StateId::FirstLevel] = new Levels::FirstLevel(this, false);
+    states[Patterns::StateId::FirstLevel] = new Levels::FirstLevel(this, true);
     states[Patterns::StateId::MainMenu] = new Menus::MainMenu(this);
     states[Patterns::StateId::GameOver] = new Menus::GameOver(this);
     states[Patterns::StateId::Pause] = new Menus::Pause(this);

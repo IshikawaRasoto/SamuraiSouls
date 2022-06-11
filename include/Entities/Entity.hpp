@@ -28,6 +28,7 @@ namespace Entities{
 
             virtual void collide(Entity* other, sf::Vector2f intersect);
             virtual void save() = 0;
+            virtual void update(const float dt);
 
         protected:
             virtual void initializeSprite() = 0; 

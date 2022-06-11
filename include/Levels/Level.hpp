@@ -10,6 +10,8 @@
 #include "Entities/Characters/Player.hpp"
 #include "Patterns/State.hpp"
 
+#include "Graphics/Hud.hpp"
+
 #include "Graphics/Background.hpp"
 
 #include <time.h>
@@ -30,6 +32,8 @@ protected:
     Entities::Characters::Player *player;
     Entities::Characters::Player *player2;
     Graphics::Background background;
+    Graphics::Hud hud;
+    
     bool singlePlayer;
 
 public:

@@ -58,6 +58,8 @@ public:
     void centerView(sf::Vector2f position);
     void handleWindowResize();
 
+    sf::Vector2f getTopLeftPosition();
+
     static GraphicsManager* getInstance();
 };
 

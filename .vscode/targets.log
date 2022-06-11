@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Sat Jun 11 11:22:06 2022
+# Make data base, printed on Sat Jun 11 18:01:35 2022
 
 # Variables
 
@@ -57,7 +58,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{},"_languagePackSupport":true}
 # makefile (from 'Makefile', line 7)
-CSRCS := ./src/Lists/EntityList.cpp ./src/Game.cpp ./src/Graphics/Background.cpp ./src/Graphics/Text.cpp ./src/Graphics/Button.cpp ./src/Ent/Ent.cpp ./src/Menus/Pause.cpp ./src/Menus/MainMenu.cpp ./src/Menus/GameOver.cpp ./src/Menus/Menu.cpp ./src/Levels/FirstLevel.cpp ./src/Levels/SecondLevel.cpp ./src/Levels/Level.cpp ./src/Entities/Entity.cpp ./src/Entities/Characters/Player.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Enemies/Goblin.cpp ./src/Entities/Characters/Enemies/Skeleton.cpp ./src/Entities/Characters/Enemies/Boss.cpp ./src/Entities/Characters/Enemies/Enemy.cpp ./src/Entities/FireBall.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Surfaces/Pavement.cpp ./src/Entities/Objects/Surfaces/Ground.cpp ./src/Entities/Objects/Surfaces/MiniGround.cpp ./src/Entities/Objects/Surfaces/InvisibleBlock.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Entities/Objects/Obstacles/Statue.cpp ./src/Entities/Objects/Obstacles/Wagon.cpp ./src/Entities/Objects/Obstacles/Barrel.cpp ./src/Managers/Control/PlayerControl.cpp ./src/Managers/Control/LevelKeys.cpp ./src/Managers/Control/MenuControl.cpp ./src/Managers/Control/LevelControl.cpp ./src/Managers/Control/MenuKeys.cpp ./src/Managers/Control/PlayerKeys.cpp ./src/Managers/EventType.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Managers/Input.cpp ./src/Managers/Keyboard.cpp ./src/Managers/Event.cpp ./src/Patterns/StateMachine.cpp ./src/Patterns/State.cpp ./src/Animation/Animator.cpp ./main.cpp src/Lists/EntityList.cpp src/Game.cpp src/Graphics/Background.cpp src/Graphics/Text.cpp src/Graphics/Button.cpp src/Ent/Ent.cpp src/Menus/Pause.cpp src/Menus/MainMenu.cpp src/Menus/GameOver.cpp src/Menus/Menu.cpp src/Levels/FirstLevel.cpp src/Levels/SecondLevel.cpp src/Levels/Level.cpp src/Entities/Entity.cpp src/Entities/Characters/Player.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Enemies/Goblin.cpp src/Entities/Characters/Enemies/Skeleton.cpp src/Entities/Characters/Enemies/Boss.cpp src/Entities/Characters/Enemies/Enemy.cpp src/Entities/FireBall.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Surfaces/Pavement.cpp src/Entities/Objects/Surfaces/Ground.cpp src/Entities/Objects/Surfaces/MiniGround.cpp src/Entities/Objects/Surfaces/InvisibleBlock.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Statue.cpp src/Entities/Objects/Obstacles/Wagon.cpp src/Entities/Objects/Obstacles/Barrel.cpp src/Managers/Control/PlayerControl.cpp src/Managers/Control/LevelKeys.cpp src/Managers/Control/MenuControl.cpp src/Managers/Control/LevelControl.cpp src/Managers/Control/MenuKeys.cpp src/Managers/Control/PlayerKeys.cpp src/Managers/EventType.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Managers/Input.cpp src/Managers/Keyboard.cpp src/Managers/Event.cpp src/Patterns/StateMachine.cpp src/Patterns/State.cpp src/Animation/Animator.cpp
+CSRCS := ./src/Lists/EntityList.cpp ./src/Game.cpp ./src/Graphics/Background.cpp ./src/Graphics/Text.cpp ./src/Graphics/Button.cpp ./src/Graphics/Hud.cpp ./src/Ent/Ent.cpp ./src/Menus/Pause.cpp ./src/Menus/MainMenu.cpp ./src/Menus/GameOver.cpp ./src/Menus/Menu.cpp ./src/Levels/FirstLevel.cpp ./src/Levels/SecondLevel.cpp ./src/Levels/Level.cpp ./src/Entities/Entity.cpp ./src/Entities/Characters/Player.cpp ./src/Entities/Characters/Character.cpp ./src/Entities/Characters/Enemies/Goblin.cpp ./src/Entities/Characters/Enemies/Skeleton.cpp ./src/Entities/Characters/Enemies/Boss.cpp ./src/Entities/Characters/Enemies/Enemy.cpp ./src/Entities/FireBall.cpp ./src/Entities/Objects/Object.cpp ./src/Entities/Objects/Surfaces/Pavement.cpp ./src/Entities/Objects/Surfaces/Ground.cpp ./src/Entities/Objects/Surfaces/MiniGround.cpp ./src/Entities/Objects/Surfaces/InvisibleBlock.cpp ./src/Entities/Objects/Obstacles/Box.cpp ./src/Entities/Objects/Obstacles/Thorns.cpp ./src/Entities/Objects/Obstacles/Statue.cpp ./src/Entities/Objects/Obstacles/Wagon.cpp ./src/Entities/Objects/Obstacles/Barrel.cpp ./src/Managers/Control/PlayerControl.cpp ./src/Managers/Control/LevelKeys.cpp ./src/Managers/Control/MenuControl.cpp ./src/Managers/Control/LevelControl.cpp ./src/Managers/Control/MenuKeys.cpp ./src/Managers/Control/PlayerKeys.cpp ./src/Managers/EventType.cpp ./src/Managers/Graphics.cpp ./src/Managers/Collision.cpp ./src/Managers/Input.cpp ./src/Managers/Keyboard.cpp ./src/Managers/Event.cpp ./src/Patterns/StateMachine.cpp ./src/Patterns/State.cpp ./src/Animation/Animator.cpp ./main.cpp src/Lists/EntityList.cpp src/Game.cpp src/Graphics/Background.cpp src/Graphics/Text.cpp src/Graphics/Button.cpp src/Graphics/Hud.cpp src/Ent/Ent.cpp src/Menus/Pause.cpp src/Menus/MainMenu.cpp src/Menus/GameOver.cpp src/Menus/Menu.cpp src/Levels/FirstLevel.cpp src/Levels/SecondLevel.cpp src/Levels/Level.cpp src/Entities/Entity.cpp src/Entities/Characters/Player.cpp src/Entities/Characters/Character.cpp src/Entities/Characters/Enemies/Goblin.cpp src/Entities/Characters/Enemies/Skeleton.cpp src/Entities/Characters/Enemies/Boss.cpp src/Entities/Characters/Enemies/Enemy.cpp src/Entities/FireBall.cpp src/Entities/Objects/Object.cpp src/Entities/Objects/Surfaces/Pavement.cpp src/Entities/Objects/Surfaces/Ground.cpp src/Entities/Objects/Surfaces/MiniGround.cpp src/Entities/Objects/Surfaces/InvisibleBlock.cpp src/Entities/Objects/Obstacles/Box.cpp src/Entities/Objects/Obstacles/Thorns.cpp src/Entities/Objects/Obstacles/Statue.cpp src/Entities/Objects/Obstacles/Wagon.cpp src/Entities/Objects/Obstacles/Barrel.cpp src/Managers/Control/PlayerControl.cpp src/Managers/Control/LevelKeys.cpp src/Managers/Control/MenuControl.cpp src/Managers/Control/LevelControl.cpp src/Managers/Control/MenuKeys.cpp src/Managers/Control/PlayerKeys.cpp src/Managers/EventType.cpp src/Managers/Graphics.cpp src/Managers/Collision.cpp src/Managers/Input.cpp src/Managers/Keyboard.cpp src/Managers/Event.cpp src/Patterns/StateMachine.cpp src/Patterns/State.cpp src/Animation/Animator.cpp
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-cinnamon:/etc/xdg
 # environment
@@ -69,7 +70,7 @@ GTK_OVERLAY_SCROLLING = 1
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # makefile (from 'Makefile', line 8)
-HSRCS := include/config.hpp include/Lists/EntityList.hpp include/Lists/List.hpp include/Type.hpp include/Graphics/Button.hpp include/Graphics/Text.hpp include/Graphics/Background.hpp include/Ent/Ent.hpp include/Menus/Menu.hpp include/Menus/GameOver.hpp include/Menus/MainMenu.hpp include/Menus/Pause.hpp include/Game.hpp include/Levels/Level.hpp include/Levels/SecondLevel.hpp include/Levels/FirstLevel.hpp include/Levels/Hud.hpp include/Entities/Entity.hpp include/Entities/Characters/Enemies/Boss.hpp include/Entities/Characters/Enemies/Skeleton.hpp include/Entities/Characters/Enemies/Goblin.hpp include/Entities/Characters/Enemies/Enemy.hpp include/Entities/Characters/Character.hpp include/Entities/Characters/Player.hpp include/Entities/FireBall.hpp include/Entities/Objects/Surfaces/Ground.hpp include/Entities/Objects/Surfaces/InvisibleBlock.hpp include/Entities/Objects/Surfaces/MiniGround.hpp include/Entities/Objects/Surfaces/Pavement.hpp include/Entities/Objects/Obstacles/Wagon.hpp include/Entities/Objects/Obstacles/Statue.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Barrel.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Objects/Obstacles/Gravestone.hpp include/Entities/Objects/Object.hpp include/Managers/Control/LevelControl.hpp include/Managers/Control/MenuKeys.hpp include/Managers/Control/PlayerControl.hpp include/Managers/Control/MenuControl.hpp include/Managers/Control/PlayerKeys.hpp include/Managers/Control/LevelKeys.hpp include/Managers/Keyboard.hpp include/Managers/Input.hpp include/Managers/Event.hpp include/Managers/EventType.hpp include/Managers/Graphics.hpp include/Managers/Collision.hpp include/Patterns/Subject.hpp include/Patterns/StateMachine.hpp include/Patterns/State.hpp include/Patterns/Observer.hpp include/standard.hpp include/Animation/Animator.hpp
+HSRCS := include/config.hpp include/Lists/EntityList.hpp include/Lists/List.hpp include/Type.hpp include/Graphics/Button.hpp include/Graphics/Text.hpp include/Graphics/Hud.hpp include/Graphics/Background.hpp include/Ent/Ent.hpp include/Menus/Menu.hpp include/Menus/GameOver.hpp include/Menus/MainMenu.hpp include/Menus/Pause.hpp include/Game.hpp include/Levels/StructuresFactory.hpp include/Levels/Level.hpp include/Levels/SecondLevel.hpp include/Levels/FirstLevel.hpp include/Entities/Entity.hpp include/Entities/Characters/Enemies/Boss.hpp include/Entities/Characters/Enemies/Skeleton.hpp include/Entities/Characters/Enemies/Goblin.hpp include/Entities/Characters/Enemies/Enemy.hpp include/Entities/Characters/Character.hpp include/Entities/Characters/Player.hpp include/Entities/FireBall.hpp include/Entities/Objects/Surfaces/Ground.hpp include/Entities/Objects/Surfaces/InvisibleBlock.hpp include/Entities/Objects/Surfaces/MiniGround.hpp include/Entities/Objects/Surfaces/Pavement.hpp include/Entities/Objects/Obstacles/Wagon.hpp include/Entities/Objects/Obstacles/Statue.hpp include/Entities/Objects/Obstacles/Box.hpp include/Entities/Objects/Obstacles/Barrel.hpp include/Entities/Objects/Obstacles/Thorns.hpp include/Entities/Objects/Obstacles/Gravestone.hpp include/Entities/Objects/Object.hpp include/Managers/Control/LevelControl.hpp include/Managers/Control/MenuKeys.hpp include/Managers/Control/PlayerControl.hpp include/Managers/Control/MenuControl.hpp include/Managers/Control/PlayerKeys.hpp include/Managers/Control/LevelKeys.hpp include/Managers/Keyboard.hpp include/Managers/Input.hpp include/Managers/Event.hpp include/Managers/EventType.hpp include/Managers/Graphics.hpp include/Managers/Collision.hpp include/Patterns/Subject.hpp include/Patterns/StateMachine.hpp include/Patterns/State.hpp include/Patterns/Observer.hpp include/standard.hpp include/Animation/Animator.hpp
 # automatic
 @F = $(notdir $@)
 # 'override' directive
@@ -81,7 +82,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 9)
-OBJS := ./src/Lists/EntityList.o ./src/Game.o ./src/Graphics/Background.o ./src/Graphics/Text.o ./src/Graphics/Button.o ./src/Ent/Ent.o ./src/Menus/Pause.o ./src/Menus/MainMenu.o ./src/Menus/GameOver.o ./src/Menus/Menu.o ./src/Levels/FirstLevel.o ./src/Levels/SecondLevel.o ./src/Levels/Level.o ./src/Entities/Entity.o ./src/Entities/Characters/Player.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Enemies/Goblin.o ./src/Entities/Characters/Enemies/Skeleton.o ./src/Entities/Characters/Enemies/Boss.o ./src/Entities/Characters/Enemies/Enemy.o ./src/Entities/FireBall.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Surfaces/Pavement.o ./src/Entities/Objects/Surfaces/Ground.o ./src/Entities/Objects/Surfaces/MiniGround.o ./src/Entities/Objects/Surfaces/InvisibleBlock.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Entities/Objects/Obstacles/Statue.o ./src/Entities/Objects/Obstacles/Wagon.o ./src/Entities/Objects/Obstacles/Barrel.o ./src/Managers/Control/PlayerControl.o ./src/Managers/Control/LevelKeys.o ./src/Managers/Control/MenuControl.o ./src/Managers/Control/LevelControl.o ./src/Managers/Control/MenuKeys.o ./src/Managers/Control/PlayerKeys.o ./src/Managers/EventType.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Managers/Input.o ./src/Managers/Keyboard.o ./src/Managers/Event.o ./src/Patterns/StateMachine.o ./src/Patterns/State.o ./src/Animation/Animator.o ./main.o src/Lists/EntityList.o src/Game.o src/Graphics/Background.o src/Graphics/Text.o src/Graphics/Button.o src/Ent/Ent.o src/Menus/Pause.o src/Menus/MainMenu.o src/Menus/GameOver.o src/Menus/Menu.o src/Levels/FirstLevel.o src/Levels/SecondLevel.o src/Levels/Level.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/FireBall.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/MiniGround.o src/Entities/Objects/Surfaces/InvisibleBlock.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Statue.o src/Entities/Objects/Obstacles/Wagon.o src/Entities/Objects/Obstacles/Barrel.o src/Managers/Control/PlayerControl.o src/Managers/Control/LevelKeys.o src/Managers/Control/MenuControl.o src/Managers/Control/LevelControl.o src/Managers/Control/MenuKeys.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o
+OBJS := ./src/Lists/EntityList.o ./src/Game.o ./src/Graphics/Background.o ./src/Graphics/Text.o ./src/Graphics/Button.o ./src/Graphics/Hud.o ./src/Ent/Ent.o ./src/Menus/Pause.o ./src/Menus/MainMenu.o ./src/Menus/GameOver.o ./src/Menus/Menu.o ./src/Levels/FirstLevel.o ./src/Levels/SecondLevel.o ./src/Levels/Level.o ./src/Entities/Entity.o ./src/Entities/Characters/Player.o ./src/Entities/Characters/Character.o ./src/Entities/Characters/Enemies/Goblin.o ./src/Entities/Characters/Enemies/Skeleton.o ./src/Entities/Characters/Enemies/Boss.o ./src/Entities/Characters/Enemies/Enemy.o ./src/Entities/FireBall.o ./src/Entities/Objects/Object.o ./src/Entities/Objects/Surfaces/Pavement.o ./src/Entities/Objects/Surfaces/Ground.o ./src/Entities/Objects/Surfaces/MiniGround.o ./src/Entities/Objects/Surfaces/InvisibleBlock.o ./src/Entities/Objects/Obstacles/Box.o ./src/Entities/Objects/Obstacles/Thorns.o ./src/Entities/Objects/Obstacles/Statue.o ./src/Entities/Objects/Obstacles/Wagon.o ./src/Entities/Objects/Obstacles/Barrel.o ./src/Managers/Control/PlayerControl.o ./src/Managers/Control/LevelKeys.o ./src/Managers/Control/MenuControl.o ./src/Managers/Control/LevelControl.o ./src/Managers/Control/MenuKeys.o ./src/Managers/Control/PlayerKeys.o ./src/Managers/EventType.o ./src/Managers/Graphics.o ./src/Managers/Collision.o ./src/Managers/Input.o ./src/Managers/Keyboard.o ./src/Managers/Event.o ./src/Patterns/StateMachine.o ./src/Patterns/State.o ./src/Animation/Animator.o ./main.o src/Lists/EntityList.o src/Game.o src/Graphics/Background.o src/Graphics/Text.o src/Graphics/Button.o src/Graphics/Hud.o src/Ent/Ent.o src/Menus/Pause.o src/Menus/MainMenu.o src/Menus/GameOver.o src/Menus/Menu.o src/Levels/FirstLevel.o src/Levels/SecondLevel.o src/Levels/Level.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/FireBall.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/MiniGround.o src/Entities/Objects/Surfaces/InvisibleBlock.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Statue.o src/Entities/Objects/Obstacles/Wagon.o src/Entities/Objects/Obstacles/Barrel.o src/Managers/Control/PlayerControl.o src/Managers/Control/LevelKeys.o src/Managers/Control/MenuControl.o src/Managers/Control/LevelControl.o src/Managers/Control/MenuKeys.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -97,7 +98,7 @@ NO_PROXY = 127.0.0.1
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/ch4pl1n:@/tmp/.ICE-unix/1225,unix/ch4pl1n:/tmp/.ICE-unix/1225
+SESSION_MANAGER = local/ch4pl1n:@/tmp/.ICE-unix/1217,unix/ch4pl1n:/tmp/.ICE-unix/1217
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -143,7 +144,7 @@ QT_QPA_PLATFORMTHEME = qt5ct
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1321
+SSH_AGENT_PID = 1313
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = X-Cinnamon
 # environment
@@ -201,7 +202,7 @@ SHLVL = 1
 # makefile (from 'Makefile', line 3)
 CC := g++
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-60f2fe80-fdee-48a0-affa-aaa69e6f591b.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-e6513806-ab35-4d87-932b-0fde47222925.sock
 # environment
 XDG_SESSION_ID = c1
 # environment
@@ -216,7 +217,6 @@ XDG_CURRENT_DESKTOP = X-Cinnamon
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := make
- 
 # environment
 OLDPWD = /home/ch4pl1n
 # default
@@ -253,6 +253,7 @@ SNAP_COOKIE = jxyhC23-EohMRPg6s5TXqJNeIMeOq04a1ZdGkB7ccppLXoLBOKT0
 SRC_DIR := src
 # automatic
 <F = $(notdir $<)
+ 
 # environment
 PLATFORMIO_CALLER = vscode
 # makefile (from 'Makefile', line 1)
@@ -262,11 +263,11 @@ SNAP_NAME = code
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a84bdc80_2159_4e61_8d10_efcb77148c1c
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/d26f4184_2e54_49b1_8c12_818314124c61
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.138
+GNOME_TERMINAL_SERVICE = :1.133
 # default
 SUFFIXES := 
 # makefile (from 'Makefile', line 15)
@@ -284,9 +285,9 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 6930
+VSCODE_PID = 2450
 # variable set hash-table stats:
-# Load=137/1024=13%, Rehash=0, Collisions=16/177=9%
+# Load=137/1024=13%, Rehash=0, Collisions=17/184=9%
 
 # Pattern-specific Variable Values
 
@@ -294,25 +295,15 @@ VSCODE_PID = 6930
 
 # Directories
 
-# src/Graphics (device 2050, inode 5382581): 8 files, no impossibilities so far.
-# src/Animation (device 2050, inode 5128676): 4 files, no impossibilities.
+# src/Graphics (device 2050, inode 5382581): 10 files, no impossibilities so far.
 # . (device 2050, inode 1714372): 16 files, no impossibilities.
-# src/Entities/Objects/Surfaces (device 2050, inode 5251629): 10 files, no impossibilities.
-# src/Entities (device 2050, inode 5250440): 5 files, no impossibilities so far.
-# src/Patterns (device 2050, inode 5128671): 6 files, no impossibilities.
 # src/Ent (device 2050, inode 5249974): 3 files, no impossibilities so far.
-# src/Levels (device 2050, inode 5128683): 5 files, no impossibilities so far.
+# src/Levels (device 2050, inode 5128683): 1 files, no impossibilities so far.
 # src (device 2050, inode 5128670): 2 files, no impossibilities so far.
-# src/Managers (device 2050, inode 5382143): 15 files, no impossibilities.
-# src/Entities/Objects (device 2050, inode 5251527): 6 files, no impossibilities.
 # src/Menus (device 2050, inode 5382588): 10 files, no impossibilities so far.
-# src/Entities/Characters/Enemies (device 2050, inode 5250826): 8 files, no impossibilities so far.
 # src/Lists (device 2050, inode 5251650): 3 files, no impossibilities so far.
-# src/Managers/Control (device 2050, inode 5382434): 14 files, no impossibilities.
-# src/Entities/Objects/Obstacles (device 2050, inode 5251621): 12 files, no impossibilities.
-# src/Entities/Characters (device 2050, inode 5250687): 2 files, no impossibilities so far.
 
-# 129 files, no impossibilities in 17 directories.
+# 45 files, no impossibilities in 7 directories.
 
 # Implicit Rules
 
@@ -324,55 +315,53 @@ VSCODE_PID = 6930
 
 # Files
 
-src/Levels/Level.o: src/Levels/Level.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Levels/Level'
-#  Last modified 2022-06-11 02:27:18.118249991
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Levels/Level.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 src/Menus/Menu.o: src/Menus/Menu.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Menus/Menu'
-#  Last modified 2022-06-11 02:22:02.040148127
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Managers/EventType.o: src/Managers/EventType.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/EventType'
-#  Last modified 2022-06-11 02:22:19.228480193
+#  Last modified 2022-06-11 17:43:24.666699353
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Managers/Graphics.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 23:54:45.15684955
-#  File has been updated.
-#  Successfully updated.
+src/Managers/EventType.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 src/Levels/FirstLevel.o: src/Levels/FirstLevel.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Levels/FirstLevel'
-#  Last modified 2022-06-11 02:27:17.42623664
+#  Last modified 2022-06-11 17:43:26.486734425
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := src/Levels/FirstLevel.o
+# automatic
+# % := 
+# automatic
+# * := src/Levels/FirstLevel
+# automatic
+# + := src/Levels/FirstLevel.cpp
+# automatic
+# | := 
+# automatic
+# < := src/Levels/FirstLevel.cpp
+# automatic
+# ^ := src/Levels/FirstLevel.cpp
+# automatic
+# ? := src/Levels/FirstLevel.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/17=6%
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
-
-# Not a target:
-src/Animation/Animator.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-08 08:12:06.289075995
-#  File has been updated.
-#  Successfully updated.
 
 all: main
 #  Phony target (prerequisite of .PHONY).
@@ -380,95 +369,58 @@ all: main
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
 # Not a target:
 src/Graphics/Background.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-07 11:56:44.998508
+#  Last modified 2022-06-11 12:55:42.955730656
 #  File has been updated.
 #  Successfully updated.
 
-src/Managers/Collision.o: src/Managers/Collision.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Collision'
-#  Last modified 2022-06-11 02:22:20.96451373
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Managers/Collision.o:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: clean all
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-src/Managers/Keyboard.o: src/Managers/Keyboard.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Keyboard'
-#  Last modified 2022-06-11 02:22:22.564544639
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Managers/Control/LevelKeys.o: src/Managers/Control/LevelKeys.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Control/LevelKeys'
-#  Last modified 2022-06-11 02:22:16.648430351
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Objects/Obstacles/Box.o: src/Entities/Objects/Obstacles/Box.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Box'
-#  Last modified 2022-06-11 02:22:13.332366287
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Objects/Object.o: src/Entities/Objects/Object.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Object'
-#  Last modified 2022-06-11 02:22:10.148304773
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Entity.o: src/Entities/Entity.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Entity'
-#  Last modified 2022-06-11 02:22:04.37619326
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
- 
+# Not a target:
+src/Managers/Keyboard.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/Managers/Control/MenuKeys.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 23:15:23.14144059
-#  File has been updated.
-#  Successfully updated.
+src/Managers/Control/LevelKeys.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/Entities/Characters/Enemies/Skeleton.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
-#  File has been updated.
-#  Successfully updated.
+src/Entities/Objects/Obstacles/Box.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/Managers/Event.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 09:08:57.79219
-#  File has been updated.
-#  Successfully updated.
+src/Entities/Objects/Object.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/Entity.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Menus/GameOver.cpp:
@@ -478,27 +430,10 @@ src/Menus/GameOver.cpp:
 #  Successfully updated.
 
 # Not a target:
-src/Entities/Objects/Surfaces/Pavement.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 10:09:43.595658
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/Entities/Objects/Surfaces/MiniGround.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
-#  File has been updated.
-#  Successfully updated.
-
-src/Entities/Objects/Obstacles/Thorns.o: src/Entities/Objects/Obstacles/Thorns.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Thorns'
-#  Last modified 2022-06-11 02:22:13.928377801
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+src/Entities/Objects/Obstacles/Thorns.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Menus/MainMenu.cpp:
@@ -507,22 +442,11 @@ src/Menus/MainMenu.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-src/Entities/Characters/Enemies/Goblin.o: src/Entities/Characters/Enemies/Goblin.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Characters/Enemies/Goblin'
-#  Last modified 2022-06-11 02:22:06.5522353
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
 # Not a target:
-src/Managers/Control/PlayerKeys.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-05 22:04:28.140587
-#  File has been updated.
- 
-#  Successfully updated.
+src/Entities/Characters/Enemies/Goblin.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -532,76 +456,44 @@ Makefile:
 #  Successfully updated.
 
 # Not a target:
-src/Entities/Characters/Character.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 23:39:58.809366794
-#  File has been updated.
-#  Successfully updated.
+src/Entities/Objects/Surfaces/InvisibleBlock.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# Not a target:
-src/Entities/Objects/Obstacles/Box.cpp:
+src/Graphics/Hud.o: src/Graphics/Hud.cpp
 #  Implicit rule search has been done.
-#  Last modified 2022-06-07 09:27:12.693731
-#  File has been updated.
-#  Successfully updated.
-
-src/Entities/Objects/Surfaces/InvisibleBlock.o: src/Entities/Objects/Surfaces/InvisibleBlock.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Surfaces/InvisibleBlock'
-#  Last modified 2022-06-11 02:22:12.716354386
+#  Implicit/static pattern stem: 'src/Graphics/Hud'
+#  Last modified 2022-06-11 17:43:15.854529535
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Entities/FireBall.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:06:33.92147304
-#  File has been updated.
-#  Successfully updated.
+src/Entities/Characters/Enemies/Enemy.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-src/Entities/Characters/Enemies/Enemy.o: src/Entities/Characters/Enemies/Enemy.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Characters/Enemies/Enemy'
-#  Last modified 2022-06-11 02:22:08.748277726
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Managers/Control/LevelControl.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-src/Managers/Control/LevelControl.o: src/Managers/Control/LevelControl.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Control/LevelControl'
-#  Last modified 2022-06-11 02:23:29.61383964
-#  File has been updated.
-#  Successfully updated.
+# Not a target:
+src/Managers/Input.o:
  
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-# Not a target:
-src/Entities/Characters/Enemies/Enemy.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:40:17.262543785
-#  File has been updated.
-#  Successfully updated.
-
-src/Managers/Input.o: src/Managers/Input.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Input'
-#  Last modified 2022-06-11 02:22:21.78452957
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 main.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-05 16:46:27.525075
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Ent/Ent.cpp:
@@ -613,46 +505,32 @@ src/Ent/Ent.cpp:
 src/Graphics/Button.o: src/Graphics/Button.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Graphics/Button'
-#  Last modified 2022-06-11 02:21:58.200073936
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Objects/Obstacles/Wagon.o: src/Entities/Objects/Obstacles/Wagon.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Wagon'
-#  Last modified 2022-06-11 02:22:15.204402452
-#  File has been updated.
-#  Successfully updated.
- 
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Characters/Player.o: src/Entities/Characters/Player.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Characters/Player'
-#  Last modified 2022-06-11 02:22:05.108207402
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Lists/EntityList.o: src/Lists/EntityList.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Lists/EntityList'
-#  Last modified 2022-06-11 02:21:55.180015586
+#  Last modified 2022-06-11 17:43:14.56250464
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Levels/SecondLevel.cpp:
+src/Entities/Objects/Obstacles/Wagon.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/Characters/Player.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/Lists/EntityList.o: src/Lists/EntityList.cpp
 #  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
+#  Implicit/static pattern stem: 'src/Lists/EntityList'
+#  Last modified 2022-06-11 17:43:09.030398044
 #  File has been updated.
 #  Successfully updated.
+#  recipe to execute (from 'Makefile', line 23):
+	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
 src/Game.cpp:
@@ -662,66 +540,16 @@ src/Game.cpp:
 #  Successfully updated.
 
 # Not a target:
-src/Patterns/State.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 02:10:37.230872275
-#  File has been updated.
-#  Successfully updated.
+src/Managers/Graphics.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/Entities/Characters/Enemies/Boss.cpp:
-#  Implicit rule search has been done.
- 
-#  Last modified 2022-06-11 00:09:42.572950154
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/Managers/Control/MenuControl.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 23:15:23.14144059
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/Entities/Objects/Obstacles/Statue.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/Entities/Objects/Obstacles/Barrel.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-08 10:17:03.939813684
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/Entities/Objects/Surfaces/Ground.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
-#  File has been updated.
-#  Successfully updated.
-
-src/Managers/Graphics.o: src/Managers/Graphics.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Graphics'
-#  Last modified 2022-06-11 02:22:20.168498353
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Levels/SecondLevel.o: src/Levels/SecondLevel.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Levels/SecondLevel'
-#  Last modified 2022-06-11 02:22:02.876164279
-#  File has been updated.
-#  Successfully updated.
- 
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+src/Levels/SecondLevel.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Menus/Pause.cpp:
@@ -730,43 +558,25 @@ src/Menus/Pause.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-src/Animation/Animator.o: src/Animation/Animator.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Animation/Animator'
-#  Last modified 2022-06-11 02:22:25.21659587
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
 # Not a target:
-src/Managers/Control/PlayerControl.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 02:20:46.750693177
-#  File has been updated.
-#  Successfully updated.
+src/Animation/Animator.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 src/Graphics/Background.o: src/Graphics/Background.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Graphics/Background'
-#  Last modified 2022-06-11 02:21:56.688044722
+#  Last modified 2022-06-11 17:43:11.706449607
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Patterns/StateMachine.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 02:05:31.896895966
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
- 
 src/Graphics/Text.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-08 13:10:20.84914362
+#  Last modified 2022-06-11 14:54:17.043046052
 #  File has been updated.
 #  Successfully updated.
 
@@ -777,20 +587,10 @@ src/Graphics/Text.cpp:
 #  File has not been updated.
 
 # Not a target:
-src/Levels/Level.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 02:26:38.817491731
-#  File has been updated.
-#  Successfully updated.
-
-src/Managers/Control/MenuKeys.o: src/Managers/Control/MenuKeys.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Control/MenuKeys'
-#  Last modified 2022-06-11 02:22:18.304462343
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+src/Managers/Control/MenuKeys.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Menus/Menu.cpp:
@@ -799,56 +599,40 @@ src/Menus/Menu.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-src/Entities/Characters/Enemies/Skeleton.o: src/Entities/Characters/Enemies/Skeleton.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Characters/Enemies/Skeleton'
- 
-#  Last modified 2022-06-11 02:22:07.344250601
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Entities/Characters/Enemies/Skeleton.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/Managers/EventType.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 09:07:59.007463
-#  File has been updated.
-#  Successfully updated.
-
-src/Managers/Event.o: src/Managers/Event.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Event'
-#  Last modified 2022-06-11 02:22:23.560563879
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+src/Managers/Event.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Levels/FirstLevel.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-11 02:26:56.245828003
+#  Last modified 2022-06-11 17:59:28.635179104
 #  File has been updated.
 #  Successfully updated.
 
 src/Menus/GameOver.o: src/Menus/GameOver.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Menus/GameOver'
-#  Last modified 2022-06-11 02:22:01.248132825
+ 
+#  Last modified 2022-06-11 17:43:22.690661272
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
-src/Entities/Objects/Surfaces/Pavement.o: src/Entities/Objects/Surfaces/Pavement.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Surfaces/Pavement'
-#  Last modified 2022-06-11 02:22:10.812317602
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+# Not a target:
+src/Entities/Objects/Surfaces/Pavement.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -858,209 +642,122 @@ clean:
 #  recipe to execute (from 'Makefile', line 29):
 	rm -rf $(shell find ./ $(SRC_DIR) -name "*.o") ./$(PROJECT_NAME)
 
-src/Entities/Objects/Surfaces/MiniGround.o: src/Entities/Objects/Surfaces/MiniGround.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Surfaces/MiniGround'
-#  Last modified 2022-06-11 02:22:12.124342949
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
 # Not a target:
-src/Managers/Collision.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.137476749
-#  File has been updated.
-#  Successfully updated.
+src/Entities/Objects/Surfaces/MiniGround.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 src/Menus/MainMenu.o: src/Menus/MainMenu.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Menus/MainMenu'
-#  Last modified 2022-06-11 02:25:58.096705961
+#  Last modified 2022-06-11 17:43:20.83862558
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Managers/Keyboard.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:22:35.592080459
-#  File has been updated.
-#  Successfully updated.
-
-src/Managers/Control/PlayerKeys.o: src/Managers/Control/PlayerKeys.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Control/PlayerKeys'
-#  Last modified 2022-06-11 02:22:18.556467211
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-# Not a target:
-src/Managers/Control/LevelKeys.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 01:49:01.053885849
-#  File has been updated.
-#  Successfully updated.
-
- 
-src/Entities/Characters/Character.o: src/Entities/Characters/Character.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Characters/Character'
-#  Last modified 2022-06-11 02:22:05.760219998
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-# Not a target:
-src/Entities/Objects/Object.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-25 13:06:16.562006
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-src/Entities/Entity.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-07 10:57:58.17002
-#  File has been updated.
-#  Successfully updated.
-
-src/Entities/FireBall.o: src/Entities/FireBall.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/FireBall'
-#  Last modified 2022-06-11 02:22:09.472291713
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
- 
-
-main: src/Lists/EntityList.o src/Game.o src/Graphics/Background.o src/Graphics/Text.o src/Graphics/Button.o src/Ent/Ent.o src/Menus/Pause.o src/Menus/MainMenu.o src/Menus/GameOver.o src/Menus/Menu.o src/Levels/FirstLevel.o src/Levels/SecondLevel.o src/Levels/Level.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/FireBall.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/MiniGround.o src/Entities/Objects/Surfaces/InvisibleBlock.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Statue.o src/Entities/Objects/Obstacles/Wagon.o src/Entities/Objects/Obstacles/Barrel.o src/Managers/Control/PlayerControl.o src/Managers/Control/LevelKeys.o src/Managers/Control/MenuControl.o src/Managers/Control/LevelControl.o src/Managers/Control/MenuKeys.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o main.o src/Lists/EntityList.o src/Game.o src/Graphics/Background.o src/Graphics/Text.o src/Graphics/Button.o src/Ent/Ent.o src/Menus/Pause.o src/Menus/MainMenu.o src/Menus/GameOver.o src/Menus/Menu.o src/Levels/FirstLevel.o src/Levels/SecondLevel.o src/Levels/Level.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/FireBall.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/MiniGround.o src/Entities/Objects/Surfaces/InvisibleBlock.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Statue.o src/Entities/Objects/Obstacles/Wagon.o src/Entities/Objects/Obstacles/Barrel.o src/Managers/Control/PlayerControl.o src/Managers/Control/LevelKeys.o src/Managers/Control/MenuControl.o src/Managers/Control/LevelControl.o src/Managers/Control/MenuKeys.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o
+src/Managers/Control/PlayerKeys.o:
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-11 02:27:18.318253851
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/Characters/Character.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/FireBall.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+main: src/Lists/EntityList.o src/Game.o src/Graphics/Background.o src/Graphics/Text.o src/Graphics/Button.o src/Graphics/Hud.o src/Ent/Ent.o src/Menus/Pause.o src/Menus/MainMenu.o src/Menus/GameOver.o src/Menus/Menu.o src/Levels/FirstLevel.o src/Levels/SecondLevel.o src/Levels/Level.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/FireBall.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/MiniGround.o src/Entities/Objects/Surfaces/InvisibleBlock.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Statue.o src/Entities/Objects/Obstacles/Wagon.o src/Entities/Objects/Obstacles/Barrel.o src/Managers/Control/PlayerControl.o src/Managers/Control/LevelKeys.o src/Managers/Control/MenuControl.o src/Managers/Control/LevelControl.o src/Managers/Control/MenuKeys.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o main.o src/Lists/EntityList.o src/Game.o src/Graphics/Background.o src/Graphics/Text.o src/Graphics/Button.o src/Graphics/Hud.o src/Ent/Ent.o src/Menus/Pause.o src/Menus/MainMenu.o src/Menus/GameOver.o src/Menus/Menu.o src/Levels/FirstLevel.o src/Levels/SecondLevel.o src/Levels/Level.o src/Entities/Entity.o src/Entities/Characters/Player.o src/Entities/Characters/Character.o src/Entities/Characters/Enemies/Goblin.o src/Entities/Characters/Enemies/Skeleton.o src/Entities/Characters/Enemies/Boss.o src/Entities/Characters/Enemies/Enemy.o src/Entities/FireBall.o src/Entities/Objects/Object.o src/Entities/Objects/Surfaces/Pavement.o src/Entities/Objects/Surfaces/Ground.o src/Entities/Objects/Surfaces/MiniGround.o src/Entities/Objects/Surfaces/InvisibleBlock.o src/Entities/Objects/Obstacles/Box.o src/Entities/Objects/Obstacles/Thorns.o src/Entities/Objects/Obstacles/Statue.o src/Entities/Objects/Obstacles/Wagon.o src/Entities/Objects/Obstacles/Barrel.o src/Managers/Control/PlayerControl.o src/Managers/Control/LevelKeys.o src/Managers/Control/MenuControl.o src/Managers/Control/LevelControl.o src/Managers/Control/MenuKeys.o src/Managers/Control/PlayerKeys.o src/Managers/EventType.o src/Managers/Graphics.o src/Managers/Collision.o src/Managers/Input.o src/Managers/Keyboard.o src/Managers/Event.o src/Patterns/StateMachine.o src/Patterns/State.o src/Animation/Animator.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-11 17:52:43.470001339
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 #  recipe to execute (from 'Makefile', line 20):
 	$(CC) -o $@ $^ $(SFML_FLAGS)
 
 main.o: main.cpp
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-11 02:22:25.892608928
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 26):
 	$(CC) -o $@ $< $(FLAGS)
 
 src/Ent/Ent.o: src/Ent/Ent.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Ent/Ent'
-#  Last modified 2022-06-11 02:21:58.896087383
+#  Last modified 2022-06-11 17:43:17.254556514
 #  File has been updated.
- 
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
-
-# Not a target:
-src/Entities/Characters/Enemies/Goblin.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-08 13:22:10.80342199
-#  File has been updated.
-#  Successfully updated.
 
 src/Game.o: src/Game.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Game'
-#  Last modified 2022-06-11 02:21:56.032032048
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Patterns/State.o: src/Patterns/State.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Patterns/State'
-#  Last modified 2022-06-11 02:22:24.520582425
+ 
+#  Last modified 2022-06-11 17:43:10.514426639
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Entities/Objects/Surfaces/InvisibleBlock.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-08 11:20:55.626815946
-#  File has been updated.
-#  Successfully updated.
-
-src/Entities/Characters/Enemies/Boss.o: src/Entities/Characters/Enemies/Boss.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Characters/Enemies/Boss'
-#  Last modified 2022-06-11 02:22:08.060264434
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Managers/Control/MenuControl.o: src/Managers/Control/MenuControl.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Control/MenuControl'
-#  Last modified 2022-06-11 02:22:17.316443255
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Objects/Obstacles/Statue.o: src/Entities/Objects/Obstacles/Statue.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Statue'
-#  Last modified 2022-06-11 02:22:14.596390707
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Objects/Obstacles/Barrel.o: src/Entities/Objects/Obstacles/Barrel.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Obstacles/Barrel'
-#  Last modified 2022-06-11 02:22:15.808414121
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-src/Entities/Objects/Surfaces/Ground.o: src/Entities/Objects/Surfaces/Ground.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Entities/Objects/Surfaces/Ground'
-#  Last modified 2022-06-11 02:22:11.528331435
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
+src/Patterns/State.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
-src/Managers/Control/LevelControl.cpp:
+src/Graphics/Hud.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-11 02:23:11.221484456
+#  Last modified 2022-06-11 14:42:24.809089162
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-src/Managers/Input.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-31 20:31:38.504666
-#  File has been updated.
-#  Successfully updated.
+src/Entities/Characters/Enemies/Boss.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Managers/Control/MenuControl.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/Objects/Obstacles/Statue.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/Objects/Obstacles/Barrel.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Entities/Objects/Surfaces/Ground.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 src/Menus/Pause.o: src/Menus/Pause.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Menus/Pause'
-#  Last modified 2022-06-11 02:25:57.424692992
+#  Last modified 2022-06-11 17:43:18.906588348
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
@@ -1069,80 +766,52 @@ src/Menus/Pause.o: src/Menus/Pause.cpp
 # Not a target:
 src/Graphics/Button.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-06-11 01:20:01.549709745
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-src/Entities/Objects/Obstacles/Wagon.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
-#  File has been updated.
-#  Successfully updated.
-
-src/Managers/Control/PlayerControl.o: src/Managers/Control/PlayerControl.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Managers/Control/PlayerControl'
-#  Last modified 2022-06-11 02:22:16.416425869
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
-
-# Not a target:
-src/Entities/Characters/Player.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:38:06.771929777
-#  File has been updated.
-#  Successfully updated.
+src/Managers/Control/PlayerControl.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/Lists/EntityList.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 13:26:10.412201
+#  Last modified 2022-06-11 17:28:46.69789125
 #  File has been updated.
 #  Successfully updated.
-
-src/Patterns/StateMachine.o: src/Patterns/StateMachine.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'src/Patterns/StateMachine'
-#  Last modified 2022-06-11 02:22:24.104574388
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 23):
-	$(CC) -o $@ $< $(FLAGS) 
 
 # Not a target:
-src/Entities/Objects/Obstacles/Thorns.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-10 23:41:08.133476679
-#  File has been updated.
-#  Successfully updated.
+src/Patterns/StateMachine.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 src/Graphics/Text.o: src/Graphics/Text.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'src/Graphics/Text'
-#  Last modified 2022-06-11 02:21:57.420058866
+#  Last modified 2022-06-11 17:43:13.286480051
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 	$(CC) -o $@ $< $(FLAGS) 
 
 # files hash-table stats:
-# Load=101/1024=10%, Rehash=0, Collisions=15/349=4%
+# Load=68/1024=7%, Rehash=0, Collisions=0/216=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 268 / storage = 5546 B / avg = 20 B
-# current buf: size = 8162 B / used = 5546 B / count = 268 / avg = 20 B
+# strcache buffers: 1 (0) / strings = 124 / storage = 2321 B / avg = 18 B
+# current buf: size = 8162 B / used = 2321 B / count = 124 / avg = 18 B
 
-# strcache performance: lookups = 401 / hit rate = 33%
+# strcache performance: lookups = 207 / hit rate = 40%
 # hash-table stats:
-# Load=268/8192=3%, Rehash=0, Collisions=18/401=4%
-# Finished Make data base on Sat Jun 11 11:22:06 2022
+# Load=124/8192=2%, Rehash=0, Collisions=3/207=1%
+# Finished Make data base on Sat Jun 11 18:01:35 2022
 
  

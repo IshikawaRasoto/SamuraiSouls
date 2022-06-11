@@ -16,6 +16,7 @@ enum Type{
     Button,
     Menu,
     Background,
-    InvisibleBlock
+    InvisibleBlock,
+    Hud
 };
 

@@ -33,17 +33,22 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
     movingEntities->addEntity(player);
     entityList.addEntity(player);
 
+    hud.setPlayer1(player);
+
     Entities::Characters::Player *player2 = nullptr;
     if(!singlePlayer){
         player2 = new Entities::Characters::Player({50.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
         movingEntities->addEntity(player2);
         entityList.addEntity(player2);
+
+        hud.setPlayer2(player2);
     }
     
     this->player = player;
     this->player2 = player2;
 
-    buildObjects(staticEntities);
+    buildStaticEntites(staticEntities);
+    buildObjects(movingEntities);
     buildCharacters(movingEntities);
     buildRandomEntities(staticEntities, movingEntities);
         
@@ -52,8 +57,10 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
     inputManager->subscribe("pressed", player->getPlayerControl());
     inputManager->subscribe("released", player->getPlayerControl()); 
 
-    inputManager->subscribe("pressed", player2->getPlayerControl());
-    inputManager->subscribe("released", player2->getPlayerControl());   
+    if(player2){
+        inputManager->subscribe("pressed", player2->getPlayerControl());
+        inputManager->subscribe("released", player2->getPlayerControl());   
+    }
 
     inputManager->subscribe("pressed", &control);
 }
@@ -62,6 +69,7 @@ FirstLevel::~FirstLevel(){}
 
 void FirstLevel::centerView(){
     sf::Vector2f viewPosition;
+
     if(singlePlayer)
         viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
     else
@@ -69,10 +77,7 @@ void FirstLevel::centerView(){
     
     viewPosition.y = -WINDOW_SIZE_Y/2 + PAVEMENT_HEIGHT/2;
     
-
     graphicsManager->centerView(viewPosition);
-    // points.setPosition(viewPosition);
-    // life.setPosition({viewPosition.x, viewPosition.y + 30});
     background.setPosition(viewPosition);
 }
 
@@ -88,14 +93,31 @@ void FirstLevel::update(float dt){
     }
 
     collisionManager.checkCollision();
-
-    // points.setValue("Points: " + player->getPts());
-    // life.setValue("HP: " + player->getHP());
-
-    render();
+    hud.update(dt);
 }
 
-void FirstLevel::buildObjects(Lists::EntityList *staticEntities){
+void FirstLevel::buildObjects(Lists::EntityList *movingEntities){
+    std::vector<Entities::Entity*> structure;
+
+    //Escada de caixas
+    structure = 
+        StructuresFactory<Obstacles::Box>::createStairs(2, 150.0f, {BOX_WIDTH, BOX_HEIGHT});
+
+    movingEntities->addEntity(structure);
+    entityList.addEntity(structure);
+
+    structure = 
+        StructuresFactory<Obstacles::Barrel>::createWall(2,1575.0f, {BARREL_WIDTH, BARREL_HEIGHT});
+
+    movingEntities->addEntity(structure);
+    entityList.addEntity(structure);
+
+    Entities::Objects::Obstacles::Barrel *barrel = new Obstacles::Barrel({50.f, -PAVEMENT_HEIGHT/2.f - BARREL_HEIGHT/2.f});
+    movingEntities->addEntity(barrel);
+    entityList.addEntity(barrel);
+}
+
+void FirstLevel::buildStaticEntites(Lists::EntityList *staticEntities){
     std::vector<Entities::Entity*> structure;
 
     structure = 
@@ -110,24 +132,6 @@ void FirstLevel::buildObjects(Lists::EntityList *staticEntities){
 
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
-
-    //Escada de caixas
-    structure = 
-        StructuresFactory<Obstacles::Box>::createStairs(2, 150.0f, {BOX_WIDTH, BOX_HEIGHT});
-
-    staticEntities->addEntity(structure);
-    entityList.addEntity(structure);
-
-    structure = 
-        StructuresFactory<Obstacles::Barrel>::createWall(2,1575.0f, {BARREL_WIDTH, BARREL_HEIGHT});
-
-    staticEntities->addEntity(structure);
-    entityList.addEntity(structure);
-
-    Entities::Objects::Obstacles::Barrel *barrel = new Obstacles::Barrel({50.f, -PAVEMENT_HEIGHT/2.f - BARREL_HEIGHT/2.f});
-    staticEntities->addEntity(barrel);
-    entityList.addEntity(barrel);
-
 }
 
 void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
@@ -139,7 +143,10 @@ void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::E
         de barris. Além disso, cada escada também tem seu tamanho definido aleatoriamente.
     */
 
-    int stairsSize = rand()%10;
+
+    int stairsSize = rand()%10+1;
+
+    std::cout << stairsSize << "\n";
 
     if(rand()%2){
         structure = 
@@ -149,7 +156,7 @@ void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::E
             StructuresFactory<Obstacles::Barrel>::createStairs(stairsSize, 1000.0f, {BARREL_WIDTH, BARREL_HEIGHT});
     }
 
-    staticEntities->addEntity(structure);
+    movingEntities->addEntity(structure);
     entityList.addEntity(structure);
 
     /*
@@ -158,12 +165,11 @@ void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::E
 
     if(rand()%2){
         entity = new Enemies::Goblin({2000.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2}, player, player2);
-        movingEntities->addEntity(entity);
     }else{
         entity = new Obstacles::Barrel({2000.f, -PAVEMENT_HEIGHT/2.f - BARREL_HEIGHT/2.f});
-        staticEntities->addEntity(entity);
     }
 
+    movingEntities->addEntity(entity);
     entityList.addEntity(entity);
 }
 

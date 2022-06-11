@@ -23,7 +23,8 @@ public:
     void reset();
     void centerView();
     
-    void buildObjects(Lists::EntityList *staticEntities);
+    void buildObjects(Lists::EntityList *movingEntities);
+    void buildStaticEntites(Lists::EntityList *staticEntities);
     void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
     void buildCharacters(Lists::EntityList *movingEntities);
 

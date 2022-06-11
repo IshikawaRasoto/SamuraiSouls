@@ -33,7 +33,7 @@ void CollisionManager::checkCollision(){
 
     for(int i = 0; i < movingEntities->getSize(); i++){
         entity1 = (*movingEntities)[i];
-        for(int j = i + 1; j < staticEntities->getSize(); j++){
+        for(int j = 0; j < staticEntities->getSize(); j++){
             entity2 = (*staticEntities)[j];
 
             if(entity1->getIsShowing() && entity2->getIsShowing()){
