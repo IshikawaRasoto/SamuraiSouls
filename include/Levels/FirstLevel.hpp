@@ -24,13 +24,13 @@ public:
     void reset();
     void centerView();
 
+    void update(float dt);
+
     template<class T>
     void createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
 
     template<class T>
     void createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
-
-    void update(float dt);
 };
 
 

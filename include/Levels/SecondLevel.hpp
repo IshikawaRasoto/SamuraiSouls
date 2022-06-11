@@ -25,12 +25,12 @@ namespace Levels{
 
         void update(float dt);
 
-        /*template<class T>
+        template<class T>
         void createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
 
         template<class T>
         void createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
-        */
+        
     };
 
 

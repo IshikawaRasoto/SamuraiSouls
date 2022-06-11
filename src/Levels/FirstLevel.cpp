@@ -2,11 +2,12 @@
 
 #include "Entities/Objects/Obstacles/Box.hpp"
 #include "Entities/Objects/Obstacles/Barrel.hpp"
+#include "Entities/Objects/Obstacles/Wagon.hpp"
 #include "Entities/Objects/Surfaces/InvisibleBlock.hpp"
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
-#include "Entities/Characters/Enemies/Boss.hpp"
+
 
 using namespace Levels;
 
@@ -96,13 +97,11 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);  
 
-    Entities::FireBall *fireball = new Entities::FireBall({2500.f, -PAVEMENT_HEIGHT/2-BOSS_HEIGHT/2});
-    movingEntities->addEntity(fireball);
-    entityList.addEntity(fireball);  
+    Entities::Objects::Obstacles::Wagon *wagon = new Entities::Objects::Obstacles::Wagon({2400.f, -PAVEMENT_HEIGHT/2 - WAGON_HEIGHT/2});
+    staticEntities->addEntity(wagon);
+    entityList.addEntity(wagon);
 
-    Entities::Characters::Enemies::Boss *boss = new Entities::Characters::Enemies::Boss({2500.f, -PAVEMENT_HEIGHT/2-BOSS_HEIGHT/2}, fireball, player, player2);
-    movingEntities->addEntity(boss);
-    entityList.addEntity(boss);  
+    createWall<Entities::Objects::Surfaces::InvisibleBlock>(10, 2500.f, {BLOCK_WIDTH, BLOCK_HEIGHT}, staticEntities);
         
 
     this->player = player;

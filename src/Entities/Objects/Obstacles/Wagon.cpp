@@ -3,7 +3,9 @@ using namespace Entities::Objects::Obstacles;
 
 Wagon::Wagon(sf::Vector2f position):
     Object(Type::Wagon, position, sf::Vector2f(WAGON_WIDTH, WAGON_HEIGHT))
-{}
+{
+    initializeSprite();
+}
 
 Wagon::~Wagon(){}
 
