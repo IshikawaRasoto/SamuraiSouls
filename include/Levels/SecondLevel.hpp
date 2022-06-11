@@ -17,7 +17,7 @@ namespace Levels{
     //     Graphics::Text points;
     public:
 
-        SecondLevel(Patterns::StateMachine* stateMachine);
+        SecondLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer = true);
         ~SecondLevel();
         
         void reset();
@@ -25,12 +25,12 @@ namespace Levels{
 
         void update(float dt);
 
-        /*template<class T>
+        template<class T>
         void createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
 
         template<class T>
         void createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
-        */
+        
     };
 
 

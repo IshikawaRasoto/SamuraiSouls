@@ -19,6 +19,9 @@ namespace Entities{
                 Pavement(sf::Vector2f position);
                 ~Pavement();
 
+                void update(float dt);
+                void collide(Entities::Entity* other, sf::Vector2f intersect);
+
                 void save();
             };
         }

@@ -8,10 +8,12 @@
 
 #define BOSS_HP 500
 #define BOSS_DMG 30
-#define BOSS_WIDTH 200
-#define BOSSH_HEIGHT 200
+#define BOSS_WIDTH 49
+#define BOSS_HEIGHT 30
 #define BOSS_SPEED_X 50
 #define BOSS_ATK_RANGE 400
+#define BOSS_DX_MAX 500
+#define BOSS_DX_MIN 400
 
 #define BOSS_DIR "./Textures/Characters/Boss.png"
 

@@ -30,7 +30,7 @@ void CollisionManager::checkCollision(){
 
     for(int i = 0; i < movingEntities->getSize(); i++){
         entity1 = (*movingEntities)[i];
-        for(int j = i + 1; j < staticEntities->getSize(); j++){
+        for(int j = 0; j < staticEntities->getSize(); j++){
             entity2 = (*staticEntities)[j];
 
             if(entity1->getIsShowing() && entity2->getIsShowing()){
@@ -68,11 +68,19 @@ void CollisionManager::checkCollision(){
                 }
 
                 if(intersect.x < 0.0f && intersect.y < 0.0f){
-                    entity1->collide(entity2, intersect);
-                    entity2->collide(entity1, intersect);
+                    if(intersect.y >= 0){
+                        entity1->collide(entity2, intersect);
+                        entity2->collide(entity1, intersect);
+                    }else{
+                        entity1->collide(entity2, intersect);
+                        entity2->collide(entity1, intersect);
+                    }
+                    
                 }
             }
         }
     }
+
+    
 
 }

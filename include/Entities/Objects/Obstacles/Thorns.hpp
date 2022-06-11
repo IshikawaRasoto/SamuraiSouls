@@ -18,6 +18,7 @@ namespace Entities{
                     ~Thorns();
 
                     void save();
+                    void update(float dt);
             };
         }
     }

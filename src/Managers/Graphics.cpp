@@ -120,7 +120,7 @@ void GraphicsManager::create(){
 
     auto style = fullscreen ? sf::Style::Fullscreen : sf::Style::Default;
 
-    window.setFramerateLimit(60);
+    //window.setFramerateLimit(60);
     window.create({size.x, size.y, 32}, title, style);
 }
 

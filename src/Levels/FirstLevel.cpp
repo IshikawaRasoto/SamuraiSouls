@@ -2,10 +2,12 @@
 
 #include "Entities/Objects/Obstacles/Box.hpp"
 #include "Entities/Objects/Obstacles/Barrel.hpp"
+#include "Entities/Objects/Obstacles/Wagon.hpp"
 #include "Entities/Objects/Surfaces/InvisibleBlock.hpp"
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
+
 
 using namespace Levels;
 
@@ -23,7 +25,7 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
         é necessário sempre trabalhar com a metade do tamanho dos sprites na hora de posicioná-los
     */
 
-    for(int i = -2; i < 30; i++){
+    for(int i = -3; i < 30; i++){
         Entities::Objects::Surfaces::Pavement *pavement = new Entities::Objects::Surfaces::Pavement({float(i)*PAVEMENT_WIDTH, 0});
         staticEntities->addEntity(pavement);
         entityList.addEntity(pavement);
@@ -95,6 +97,11 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);  
 
+    Entities::Objects::Obstacles::Wagon *wagon = new Entities::Objects::Obstacles::Wagon({2400.f, -PAVEMENT_HEIGHT/2 - WAGON_HEIGHT/2});
+    staticEntities->addEntity(wagon);
+    entityList.addEntity(wagon);
+
+    createWall<Entities::Objects::Surfaces::InvisibleBlock>(10, 2500.f, {BLOCK_WIDTH, BLOCK_HEIGHT}, staticEntities);
         
 
     this->player = player;
