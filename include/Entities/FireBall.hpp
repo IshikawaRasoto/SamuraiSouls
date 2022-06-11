@@ -12,13 +12,14 @@
 namespace Entities{
     class FireBall : public Entity{
         public:
-            FireBall(sf::Vector2f position, const bool direction);
+            FireBall(sf::Vector2f position);
             ~FireBall();
 
             void update(float dt);
             void collide(Entity* other, sf::Vector2f intersect = {0.f, 0.f});
             void render();
             void save();
+            void shoot(sf::Vector2f position, sf::Vector2f speed);
         
         private:
             void initializeSprite();

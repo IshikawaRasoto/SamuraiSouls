@@ -25,6 +25,7 @@ void Boss::update(float dt){
 
     if(hp<=0){
         setIsShowing(false);
+        fireball->setIsShowing(false);
         return;
     }
 
@@ -58,7 +59,10 @@ void Boss::update(float dt){
 }
 
 void Boss::fire(){
-    
+    if(getFacingLeft())
+        fireball->shoot(position, {- FIREBALL_SPEED_X, 0});
+    else
+        fireball->shoot(position, {FIREBALL_SPEED_X, 0});
 }
 
 void Boss::save(){
