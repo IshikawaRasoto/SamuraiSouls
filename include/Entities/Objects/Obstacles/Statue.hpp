@@ -20,6 +20,7 @@ namespace Entities{
                     ~Statue();
 
                     void save();
+                    void update(float dt);
             };
         }
     }

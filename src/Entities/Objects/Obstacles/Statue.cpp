@@ -15,3 +15,5 @@ void Statue::initializeSprite(){
 }
 
 void Statue::save(){}
+
+void Statue::update(float dt){}

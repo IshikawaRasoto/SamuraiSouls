@@ -16,3 +16,29 @@ void Barrel::initializeSprite(){
 void Barrel::save(){
     //TODO
 }
+
+void Barrel::update(float dt){
+    if(!getIsShowing())
+        return;
+    speed = sf::Vector2f(0, speed.y + GRAVITY * dt);
+    move({speed.x * dt, speed.y * dt});
+    animator->update(position);
+}
+
+void Barrel::collide(Entities::Entity* other, sf::Vector2f intersect){
+    Type t = other->getType();
+    switch(t){
+        case Type::Pavement:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Ground:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::MiniGround:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Box:
+            moveOnCollision(other, intersect);
+            break;
+    }
+}

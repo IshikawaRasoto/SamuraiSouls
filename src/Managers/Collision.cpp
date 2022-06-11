@@ -71,11 +71,19 @@ void CollisionManager::checkCollision(){
                 }
 
                 if(intersect.x < 0.0f && intersect.y < 0.0f){
-                    entity1->collide(entity2, intersect);
-                    entity2->collide(entity1, intersect);
+                    if(intersect.y >= 0){
+                        entity1->collide(entity2, intersect);
+                        entity2->collide(entity1, intersect);
+                    }else{
+                        entity1->collide(entity2, intersect);
+                        entity2->collide(entity1, intersect);
+                    }
+                    
                 }
             }
         }
     }
+
+    
 
 }

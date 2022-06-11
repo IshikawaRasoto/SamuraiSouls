@@ -19,6 +19,8 @@ namespace Entities{
                     ~Wagon();
 
                     void save();
+                    void update(float dt);
+                    void collide(Entities::Entity* other, sf::Vector2f intersect);
             };
         }
     }

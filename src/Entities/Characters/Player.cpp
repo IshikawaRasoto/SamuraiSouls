@@ -100,9 +100,10 @@ void Player::render(){
     animator->render();
 }
 
-void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
+void Player::collide(Entity* other, sf::Vector2f intersect){
     
     Type type = other->getType();
+    //std::cout << type << "Collided with player" << std::endl;
 
     switch (type){
         case Type::Pavement:
@@ -120,7 +121,10 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
         case Type::InvisibleBlock:
             moveOnCollision(other, intersect);
             break;
-        case Type::Player:
+        case Type::Thorns:
+            receiveDMG(100);
+            break;
+        /*case Type::Player:
             moveOnCollision(other, intersect);
             break;
         /*case Type::Goblin:

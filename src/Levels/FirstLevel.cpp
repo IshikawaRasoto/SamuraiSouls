@@ -2,6 +2,7 @@
 
 #include "Entities/Objects/Obstacles/Box.hpp"
 #include "Entities/Objects/Obstacles/Barrel.hpp"
+#include "Entities/Objects/Obstacles/Wagon.hpp"
 #include "Entities/Objects/Surfaces/InvisibleBlock.hpp"
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"

@@ -66,6 +66,7 @@ void Enemy::tryAttack(const int dmg){
 
 void Enemy::collide(Entity* other, sf::Vector2f intersect){
     Type type = other->getType();
+    //std::cout<<"Collision Enemy"<<type<<std::endl;
 
     switch (type){
         case Type::Pavement:

@@ -2,7 +2,7 @@
 using namespace Entities::Objects::Surfaces;
 
 MiniGround::MiniGround(sf::Vector2f position):
-    Object(Type::Pavement, position, {MINIGROUND_WIDTH, MINIGROUND_HEIGHT})
+    Object(Type::MiniGround, position, {MINIGROUND_WIDTH, MINIGROUND_HEIGHT})
 {
     initializeSprite();
 }

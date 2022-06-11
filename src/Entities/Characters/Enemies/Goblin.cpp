@@ -8,6 +8,7 @@ Goblin::Goblin(sf::Vector2f pos, Characters::Player* p1, Characters::Player* p2)
     Enemy(Type::Goblin, pos, sf::Vector2f(GOBLIN_WIDTH, GOBLIN_HEIGHT), GOBLIN_HP, GOBLIN_DMG, p1, p2)
 {
     initializeSprite();
+    setFacingLeft(true);
 }
 
 Goblin::~Goblin(){}

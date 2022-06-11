@@ -22,9 +22,18 @@ void FireBall::update(float dt){
     if(!getIsShowing())
         return;
     //MUDAR PARA ALGUM CALCULO DE ATRITO COM O AR
-    speed = sf::Vector2f(speed.x, speed.y + (GRAVITY-AIR_RESISTANCE) * dt);
-    if(speed.y > 50)
-        speed.y = 50;
+    if(getFacingLeft()){
+        speed = sf::Vector2f(speed.x + AIR_RESISTANCE*dt, speed.y + (GRAVITY-AIR_RESISTANCE) * dt);
+        if(speed.x >-10)
+            speed.x = -10;
+    }else{
+        speed = sf::Vector2f(speed.x - AIR_RESISTANCE*dt, speed.y + (GRAVITY-AIR_RESISTANCE) * dt);
+        if(speed.x < 10)
+            speed.x = 10;
+    }
+    
+    if(speed.y > 6)
+        speed.y = 6;
 
     move({speed.x * dt , speed.y * dt});
     animator->update(position, 0, 6, dt, getFacingLeft(), 0.3);
