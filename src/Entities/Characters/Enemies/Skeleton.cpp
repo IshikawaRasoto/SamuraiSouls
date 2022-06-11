@@ -9,6 +9,7 @@ Skeleton::Skeleton(sf::Vector2f pos, Characters::Player* p1, Characters::Player*
     Enemy(Type::Skeleton, pos, sf::Vector2f(SKELETON_WIDTH, SKELETON_HEIGHT), SKELETON_HP, SKELETON_DMG, p1, p2)
 {
     initializeSprite();
+    setFacingLeft(true);
 }
 
 Skeleton::~Skeleton(){}

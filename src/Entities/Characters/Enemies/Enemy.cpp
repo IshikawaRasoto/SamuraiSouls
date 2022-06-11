@@ -22,7 +22,7 @@ Entities::Characters::Player* Enemy::getNearestPlayer(){
         return pP1;
     x1 = abs(pP1->getPosition().x - position.x);
     x2 = abs(pP2->getPosition().x - position.x);
-    if(x1<x2 && pP1->getHP()>0 || pP2->getHP()<=0)
+    if(x1<=x2 && pP1->getHP()>0 || pP2->getHP()<=0)
         return pP1;
     else if(x1>x2 && pP2->getHP()>0 || pP1->getHP()<=0)
         return pP2;

@@ -6,6 +6,7 @@
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
+#include "Entities/Characters/Enemies/Boss.hpp"
 
 using namespace Levels;
 
@@ -23,7 +24,7 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
         é necessário sempre trabalhar com a metade do tamanho dos sprites na hora de posicioná-los
     */
 
-    for(int i = -2; i < 30; i++){
+    for(int i = -3; i < 30; i++){
         Entities::Objects::Surfaces::Pavement *pavement = new Entities::Objects::Surfaces::Pavement({float(i)*PAVEMENT_WIDTH, 0});
         staticEntities->addEntity(pavement);
         entityList.addEntity(pavement);
@@ -95,6 +96,13 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);  
 
+    Entities::FireBall *fireball = new Entities::FireBall({2500.f, -PAVEMENT_HEIGHT/2-BOSS_HEIGHT/2});
+    movingEntities->addEntity(fireball);
+    entityList.addEntity(fireball);  
+
+    Entities::Characters::Enemies::Boss *boss = new Entities::Characters::Enemies::Boss({2500.f, -PAVEMENT_HEIGHT/2-BOSS_HEIGHT/2}, fireball, player, player2);
+    movingEntities->addEntity(boss);
+    entityList.addEntity(boss);  
         
 
     this->player = player;

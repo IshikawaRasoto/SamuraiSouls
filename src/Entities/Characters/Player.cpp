@@ -119,6 +119,9 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
         case Type::InvisibleBlock:
             moveOnCollision(other, intersect);
             break;
+        /*case Type::Player:
+            moveOnCollision(other, intersect);
+            break;
         /*case Type::Goblin:
             if(isAttacking)
                 playerAtk(other, type);
