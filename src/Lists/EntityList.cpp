@@ -17,6 +17,19 @@ bool EntityList::addEntity(Entities::Entity *entity){
     return true;
 }
 
+
+bool EntityList::addEntity(std::vector<Entities::Entity*> entities){
+    for(auto entity : entities){
+        if(!entity){
+            return false;
+        }
+
+        list.add(entity);
+    }
+
+    return true;
+}
+
 bool EntityList::removeEntity(Entities::Entity *entity){
     return false;
 }

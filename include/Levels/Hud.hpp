@@ -1,0 +1,7 @@
+namespace Levels{
+
+class Hud{
+
+};
+
+};

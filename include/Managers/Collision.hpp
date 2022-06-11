@@ -15,12 +15,14 @@ private:
 public:
 
     CollisionManager(
-        Lists::EntityList *movingEntities, 
-        Lists::EntityList *staticEntities
+        Lists::EntityList *movingEntities = nullptr, 
+        Lists::EntityList *staticEntities = nullptr
     );
 
-    CollisionManager();
     ~CollisionManager();
+
+    void setMovingEntities(Lists::EntityList *entities);
+    void setStaticEntities(Lists::EntityList *entities);
     
     void checkCollision();
 };

@@ -12,9 +12,12 @@ CollisionManager::CollisionManager(
     this->staticEntities = staticEntities;
 }
 
-CollisionManager::CollisionManager(){
-    movingEntities = nullptr;
-    staticEntities = nullptr;
+void CollisionManager::setMovingEntities(Lists::EntityList *entities){
+    this->movingEntities = entities;
+}
+
+void CollisionManager::setStaticEntities(Lists::EntityList *entities){
+    this->movingEntities = entities;
 }
 
 CollisionManager::~CollisionManager(){}

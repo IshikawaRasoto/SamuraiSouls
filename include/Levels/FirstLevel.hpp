@@ -11,9 +11,9 @@
 namespace Levels{
 
 class FirstLevel : public Levels::Level{
-// private:
-//     Graphics::Text life;
-//     Graphics::Text points;
+private:
+    Graphics::Text life;
+    Graphics::Text points;
 
 public:
 
@@ -22,12 +22,10 @@ public:
     
     void reset();
     void centerView();
-
-    template<class T>
-    void createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
-
-    template<class T>
-    void createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
+    
+    void buildObjects(Lists::EntityList *staticEntities);
+    void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
+    void buildCharacters(Lists::EntityList *movingEntities);
 
     void update(float dt);
 };

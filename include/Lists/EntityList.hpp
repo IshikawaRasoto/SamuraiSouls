@@ -1,5 +1,7 @@
 #pragma once
 
+#include <vector>
+
 #include "List.hpp"
 #include "Entities/Entity.hpp"
 
@@ -17,6 +19,7 @@ public:
     void renderAll();
 
     bool addEntity(Entities::Entity* entity);
+    bool addEntity(std::vector<Entities::Entity*> entities);
     bool removeEntity(Entities::Entity* entity);
 
     const int getSize();
