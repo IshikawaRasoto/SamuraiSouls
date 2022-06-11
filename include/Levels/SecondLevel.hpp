@@ -17,7 +17,7 @@ namespace Levels{
     //     Graphics::Text points;
     public:
 
-        SecondLevel(Patterns::StateMachine* stateMachine);
+        SecondLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer = true);
         ~SecondLevel();
         
         void reset();

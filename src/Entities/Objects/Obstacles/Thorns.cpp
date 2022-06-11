@@ -16,3 +16,5 @@ void Thorns::initializeSprite(){
 void Thorns::save(){
     //TODO
 }
+
+void Thorns::update(float dt){}
