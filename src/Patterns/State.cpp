@@ -1,4 +1,5 @@
 #include "Patterns/State.hpp"
+#include "Patterns/StateMachine.hpp"
 
 using namespace Patterns;
 
@@ -13,6 +14,10 @@ State::~State(){
 
 StateMachine* State::getStateMachine(){
     return stateMachine;
+}
+
+void State::changeCurrentState(Patterns::StateId state){
+    stateMachine->changeCurrentState(state);
 }
 
 StateId State::getId(){

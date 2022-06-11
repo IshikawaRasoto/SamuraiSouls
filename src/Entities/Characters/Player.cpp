@@ -14,11 +14,12 @@ Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerCon
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
     if(!playerControl){
-        playerControl = new Control::PlayerControl();
+        if(!playerOne){
+            this->playerControl = new PlayerControl(this, "Up", "Left", "Right", "RControl");
+        }else{
+            this->playerControl = new PlayerControl(this);
+        }
     }
-
-    playerControl->setPlayer(this);
-    this->playerControl = playerControl;
 
     initializeSprite();
 }
@@ -119,6 +120,9 @@ void Player::collide(Entities::Entity* other, sf::Vector2f intersect){
         case Type::InvisibleBlock:
             moveOnCollision(other, intersect);
             break;
+        case Type::Player:
+            moveOnCollision(other, intersect);
+            break;
         /*case Type::Goblin:
             if(isAttacking)
                 playerAtk(other, type);
@@ -194,6 +198,8 @@ void Control::PlayerControl::update(Managers::InputManager *subject){
 
     std::string key = subject->getCurrentKey();
     std::string event = subject->getCurrentEvent();
+
+    std::cout << keys.right << "\n";
 
     if(event == "pressed"){
         if(key == keys.left){

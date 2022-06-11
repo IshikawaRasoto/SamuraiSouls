@@ -95,19 +95,18 @@ FirstLevel::FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePl
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);  
 
-        
-
     this->player = player;
     this->player2 = player2;
         
     collisionManager = Managers::CollisionManager(movingEntities, staticEntities);
-
     
     inputManager->subscribe("pressed", player->getPlayerControl());
-    inputManager->subscribe("released", player->getPlayerControl());   
+    inputManager->subscribe("released", player->getPlayerControl()); 
+
     inputManager->subscribe("pressed", player2->getPlayerControl());
     inputManager->subscribe("released", player2->getPlayerControl());   
-    
+
+    inputManager->subscribe("pressed", &control);
 }
 
 FirstLevel::~FirstLevel(){}
@@ -136,7 +135,7 @@ void FirstLevel::update(float dt){
     entityList.updateAll(dt);
 
     if(player->getHP() <= 0){
-        getStateMachine()->changeCurrentState(Patterns::StateId::GameOver);
+        changeCurrentState(Patterns::StateId::GameOver);
     }
 
     collisionManager.checkCollision();

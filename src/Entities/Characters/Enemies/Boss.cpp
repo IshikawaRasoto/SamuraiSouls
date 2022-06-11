@@ -1,7 +1,7 @@
 #include "Entities/Characters/Enemies/Boss.hpp"
 using namespace Entities::Characters::Enemies;
 
-const float bossAtkTime(4.0);
+const float Boss::bossAtkTime(4.0);
 
 Boss::Boss(sf::Vector2f pos, FireBall *fireball ,Characters::Player* p1, Characters::Player* p2):
     Enemy(Type::Boss, pos, sf::Vector2f(BOSS_WIDTH, BOSSH_HEIGHT), BOSS_HP, BOSS_DMG, p1, p2),

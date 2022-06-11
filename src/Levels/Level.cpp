@@ -13,7 +13,8 @@ Level::Level(
 ):
     State(state, stateMachine),
     background(backgroundDir),
-    singlePlayer(singlePlayer)
+    singlePlayer(singlePlayer),
+    control(this)
 {
     this->inputManager = inputManager;
     this->graphicsManager = graphicsManager;
@@ -26,6 +27,10 @@ Level::~Level(){
 
     graphicsManager = nullptr;
     inputManager = nullptr;
+}
+
+void Level::handlePause(){
+    changeCurrentState(Patterns::StateId::Pause);
 }
 
 void Level::update(float dt){
@@ -41,4 +46,5 @@ void Level::render(){
     entityList.renderAll();
     graphicsManager->endDraw();
 }
+
 

@@ -37,3 +37,4 @@ void StateMachine::updateCurrentState(const float dt){
 void StateMachine::renderCurrentState(){
     states[currentState]->render();
 }
+

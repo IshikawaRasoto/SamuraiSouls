@@ -14,6 +14,8 @@ Button::Button(std::string content, sf::Vector2f position, std::string fontDir):
 
     initializeSprite();
     selected = false;
+    selectedColor = BUTTON_FONT_SELECTED_COLOR;
+    defaultColor = BUTTON_FONT_COLOR;
 }
 
 Button::~Button(){}
@@ -27,16 +29,31 @@ std::string Button::getContent(){
     return content.getValue();
 }
 
+sf::Color Button::getSelectedColor(){
+    return selectedColor;
+}
+
+sf::Color Button::getDefaultColor(){
+    return defaultColor;
+}
+
 void Button::setContent(std::string content){
     this->content.setValue(content);
 }
 
+void Button::setSelectedColor(sf::Color color){
+    selectedColor = color;
+}
+
+void Button::setDefaultColor(sf::Color color){
+    defaultColor = color;
+}
+
 void Button::update(float dt){
     if(selected){
-        //Mudar textura para selecionado
-        content.setColor(sf::Color::Black);
+        content.setColor(selectedColor);
     }else{
-        content.setColor(BUTTON_FONT_COLOR);
+        content.setColor(defaultColor);
     }    
 }
 

@@ -3,6 +3,7 @@
 #include "Levels/FirstLevel.hpp"
 #include "Menus/MainMenu.hpp"
 #include "Menus/GameOver.hpp"
+#include "Menus/Pause.hpp"
 
 #include <iostream>
 
@@ -17,6 +18,7 @@ Game::Game():
     states[Patterns::StateId::FirstLevel] = new Levels::FirstLevel(this, false);
     states[Patterns::StateId::MainMenu] = new Menus::MainMenu(this);
     states[Patterns::StateId::GameOver] = new Menus::GameOver(this);
+    states[Patterns::StateId::Pause] = new Menus::Pause(this);
 
     currentState = Patterns::StateId::MainMenu;
 

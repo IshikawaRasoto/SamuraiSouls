@@ -39,7 +39,6 @@ namespace Entities{
                 bool atkCollision;//Controle de uma colisão de ataque por ataque
                 Control::PlayerControl* playerControl;
 
-
             public:
                 Player(
                     sf::Vector2f position,

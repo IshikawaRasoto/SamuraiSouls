@@ -10,12 +10,6 @@
 
 class Game : public Patterns::StateMachine{
 
-public:
-
-    Game();
-    ~Game();
-    void execute();
-
 private:
 
     //sf::Time getElapsed();
@@ -28,8 +22,16 @@ private:
     sf::Clock clock;
     //sf::Time elapsed;
     float deltaTime;
-    
+
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;
     Managers::EventManager *eventManager;
+
+public:
+
+    Game();
+    ~Game();
+    void execute();
+
+
 };

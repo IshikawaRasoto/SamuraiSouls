@@ -32,6 +32,8 @@ public:
 
     void setStateMachine(StateMachine* stateMachine);
 
+    void changeCurrentState(Patterns::StateId state);
+
     virtual void update(const float dt) = 0;
     virtual void render() = 0; 
     virtual void reset();

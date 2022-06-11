@@ -3,6 +3,8 @@
 #include "Managers/Collision.hpp"
 #include "Managers/Input.hpp"
 #include "Managers/Graphics.hpp"
+#include "Managers/Control/LevelControl.hpp"
+
 #include "Lists/EntityList.hpp"
 
 #include "Entities/Characters/Player.hpp"
@@ -11,7 +13,6 @@
 #include "Graphics/Background.hpp"
 
 #include <time.h>
-
 #include <string>
 
 #define LEVEL_Y 0
@@ -23,6 +24,8 @@ protected:
     Managers::CollisionManager collisionManager;
     Managers::InputManager *inputManager;
     Managers::GraphicsManager *graphicsManager;
+    Managers::Control::LevelControl control;
+
     Lists::EntityList entityList;
     Entities::Characters::Player *player;
     Entities::Characters::Player *player2;
@@ -40,6 +43,8 @@ public:
         
     );
     virtual ~Level();
+
+    void handlePause();
 
     virtual void update(float dt);
     void render();

@@ -31,7 +31,7 @@ void MainMenu::execute(){
     switch (selectedButton)
     {
     case 0:
-        getStateMachine()->changeCurrentState(Patterns::StateId::FirstLevel);
+        changeCurrentState(Patterns::StateId::FirstLevel);
         break;
     case 1:
         break;
@@ -41,7 +41,7 @@ void MainMenu::execute(){
         break;
     }
 
-    setIsShowing(true);
+    setIsShowing(false);
 }
 
 void MainMenu::render(){

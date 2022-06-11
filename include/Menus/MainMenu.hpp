@@ -5,7 +5,7 @@
 #include "Menus/Menu.hpp"
 #include "Graphics/Text.hpp"
 
-#define MAIN_MENU_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
+#define MAIN_MENU_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackground.png"
 #define MAIN_MENU_TITLE_FONT_DIR "./fonts/SpecialElite.ttf"
 
 namespace Menus{

@@ -6,8 +6,7 @@
 
 #include <string>
 
-#define FIRST_LEVEL_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackGround.png"
-
+#define FIRST_LEVEL_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackground.png"
 
 namespace Levels{
 

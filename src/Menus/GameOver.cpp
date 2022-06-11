@@ -25,7 +25,7 @@ void GameOver::execute(){
     switch (selectedButton)
     {
     case 0:
-        getStateMachine()->changeCurrentState(Patterns::StateId::MainMenu);
+        changeCurrentState(Patterns::StateId::MainMenu);
         break;
     default:
         break;
