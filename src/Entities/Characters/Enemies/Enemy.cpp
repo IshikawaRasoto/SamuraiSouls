@@ -39,32 +39,6 @@ void Enemy::tryAttack(const int dmg){
     atkCD = 0.0;
 }
 
-/*void Enemy::tryAttack(const int dmg, const float timeOfAtk){
-    
-    if((getNearestPlayer()->getPosition().x - position.x) >= 0 && !getFacingLeft())
-        getNearestPlayer()->receiveDMG(dmg);
-    else if((getNearestPlayer()->getPosition().x - position.x) <= 0 && getFacingLeft())
-        getNearestPlayer()->receiveDMG(dmg);
-    setIsAttacking(true);
-    timeFromAtk = 0.0; //Utilizado na animacao
-    atkCD = 0.0;
-}*/
-
-
-
-/*void Enemy::movement(const float spX){
-
-    dx += speed.x;
-
-    if(dx >= MAX_DX){
-        setFacingLeft(true);
-        speed = {-spX, speed.y};
-    }else if(dx <= 0){
-        setFacingLeft(false);
-        speed = {spX, speed.y};
-    }
-}*/
-
 void Enemy::collide(Entity* other, sf::Vector2f intersect){
     Type type = other->getType();
     //std::cout<<"Collision Enemy"<<type<<std::endl;
@@ -78,6 +52,18 @@ void Enemy::collide(Entity* other, sf::Vector2f intersect){
             break;
         case Type::Barrel:
             moveOnCollision(other, intersect);
+            break;
+        case Type::Ground:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::MiniGround:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Gravestone:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Thorns:
+            receiveDMG(hp);
             break;
     }
 }

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace Entities::Characters;
 
-const float Player::playerAtkTime(0.48); 
+const float Player::playerAtkTime(0.96); 
 int Player::points(0);
 
 Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerControl* playerControl):
@@ -63,7 +63,7 @@ void Player::update(float dt){
 
     //Attack
     if(statusAtk(dt)){
-        animator.update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.08);
+        animator.update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.16);
     
     //Fall
     }else if(speed.y > 150.f){
@@ -136,17 +136,14 @@ void Player::collide(Entity* other, sf::Vector2f intersect){
             canJump = true;
             moveOnCollision(other, intersect);
             break;
-        /*case Type::Player:
+        case Type::MiniGround:
+            canJump = true;
             moveOnCollision(other, intersect);
             break;
-        /*case Type::Goblin:
-            if(isAttacking)
-                playerAtk(other, type);
+        case Type::Gravestone:
+            canJump = true;
+            moveOnCollision(other, intersect);
             break;
-        case Type::Skeleton:
-            if(isAttacking)
-                playerAtk(other, type);
-            break;*/
     }
 }
 
@@ -190,8 +187,6 @@ void Player::initializeSprite(){
 
 bool Player::statusAtk(const float dt){
     if(isAttacking){
-        //std::cout << "Definitely Atking" << std::endl;
-        //speed.x = 0.f;
         timeFromAtk += dt;
         if(timeFromAtk < playerAtkTime){
             return true;

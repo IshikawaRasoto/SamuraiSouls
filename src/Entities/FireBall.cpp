@@ -54,7 +54,15 @@ void FireBall::collide(Entity *other, sf::Vector2f intersect){
         case Type::Barrel:
             setIsShowing(false);
             break;
-        
+        case Type::Gravestone:
+            setIsShowing(false);
+            break;
+        case Type::Ground:
+            setIsShowing(false);
+            break;
+        case Type::MiniGround:
+            setIsShowing(false);
+            break;
         case Type::Player:
             setIsShowing(false);
             (static_cast<Characters::Character*>(other))->receiveDMG(FIREBALL_DMG);

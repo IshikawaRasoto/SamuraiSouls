@@ -182,7 +182,7 @@ void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::E
 }
 
 void FirstLevel::buildCharacters(Lists::EntityList *movingEntities){
-    Enemies::Goblin *goblin = new Enemies::Goblin({250.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player, player2);
+    Enemies::Goblin *goblin = new Enemies::Goblin({400.0f, -PAVEMENT_HEIGHT/2-GOBLIN_HEIGHT/2},player, player2);
     movingEntities->addEntity(goblin);
     entityList.addEntity(goblin);
 
@@ -226,7 +226,7 @@ void FirstLevel::buildLevel(){
 
     Entities::Characters::Player *player2 = nullptr;
     if(!singlePlayer){
-        player2 = new Entities::Characters::Player({50.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
+        player2 = new Entities::Characters::Player({30.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
         movingEntities->addEntity(player2);
         entityList.addEntity(player2);
 

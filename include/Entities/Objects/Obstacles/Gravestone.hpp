@@ -4,7 +4,7 @@
 #include "Type.hpp"
 
 #define GRAVESTONE_WIDTH 27
-#define GRAVESTONE_HEIGHT 33
+#define GRAVESTONE_HEIGHT 27
 #define GRAVESTONE_DIR "./Textures/Scenario/Cemetery/Gravestone.png"
 
 namespace Entities{

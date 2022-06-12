@@ -1,6 +1,6 @@
 #include "Levels/SecondLevel.hpp"
 
-#include "Entities/Objects/Obstacles/Box.hpp"
+#include "Entities/Objects/Obstacles/Gravestone.hpp"
 #include "Entities/Objects/Surfaces/InvisibleBlock.hpp"
 #include "Entities/Objects/Surfaces/Ground.hpp"
 #include "Entities/Objects/Surfaces/MiniGround.hpp"
@@ -8,6 +8,8 @@
 #include "Entities/Objects/Obstacles/ThornsBase.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
 #include "Entities/Characters/Enemies/Boss.hpp"
+#include "Entities/FireBall.hpp"
+
 
 #include "Levels/StructuresFactory.hpp"
 
@@ -104,24 +106,24 @@ void SecondLevel::buildFloor(Lists::EntityList *staticEntities, Lists::EntityLis
     entityList.addEntity(structure);
     i += 6;
 
-    structure = StructuresFactory<Obstacles::ThornsBase>::createFloor(3, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + THORNS_WIDTH/2.f, 30 + THORNSBASE_HEIGHT/2.f}, {THORNSBASE_WIDTH, THORNSBASE_HEIGHT});
+    structure = StructuresFactory<Obstacles::ThornsBase>::createFloor(3, {GROUND_WIDTH*((float)i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*(float)j + THORNS_WIDTH/2.f, 30 + THORNSBASE_HEIGHT/2.f}, {THORNSBASE_WIDTH, THORNSBASE_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
 
-    structure = StructuresFactory<Obstacles::Thorns>::createFloor(3, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + THORNS_WIDTH/2.f, 30 - THORNS_HEIGHT/2.f}, {THORNS_WIDTH, THORNS_HEIGHT});
+    structure = StructuresFactory<Obstacles::Thorns>::createFloor(3, {GROUND_WIDTH*((float)i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*(float)j + THORNS_WIDTH/2.f, 30 - THORNS_HEIGHT/2.f}, {THORNS_WIDTH, THORNS_HEIGHT});
     movingEntities->addEntity(structure);
     entityList.addEntity(structure);
     j += 3;
 
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*i + THORNS_WIDTH*j, 30}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 30}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
     i += 3;
 
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(6, {GROUND_WIDTH*i + THORNS_WIDTH*j, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
-    i += 6;
+    i += 3;
 
     if(rand()%2){
         structure = StructuresFactory<Obstacles::ThornsBase>::createFloor(3, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + THORNS_WIDTH/2.f, 30 + THORNSBASE_HEIGHT/2.f}, {THORNSBASE_WIDTH, THORNSBASE_HEIGHT});
@@ -132,32 +134,32 @@ void SecondLevel::buildFloor(Lists::EntityList *staticEntities, Lists::EntityLis
         movingEntities->addEntity(structure);
         entityList.addEntity(structure);
     }else{
-        structure = StructuresFactory<Surfaces::MiniGround>::createFloor(2, {GROUND_WIDTH*i + THORNS_WIDTH*j, PAVEMENT_HEIGHT/2.f - MINIGROUND_HEIGHT/2.f}, {MINIGROUND_WIDTH, MINIGROUND_HEIGHT});
+        structure = StructuresFactory<Surfaces::MiniGround>::createFloor(2, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + MINIGROUND_WIDTH/2.f, PAVEMENT_HEIGHT/2.f - MINIGROUND_HEIGHT/2.f}, {MINIGROUND_WIDTH, MINIGROUND_HEIGHT});
         staticEntities->addEntity(structure);
         entityList.addEntity(structure);
     }
 
     j+=2;
 
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(4, {GROUND_WIDTH*i + THORNS_WIDTH*j, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(4, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
     i += 4;
 
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(10, {GROUND_WIDTH*i + THORNS_WIDTH*j, 80}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(11, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 80}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
-    i += 10;
+    i += 11;
+}
 
-    structure = 
-        StructuresFactory<Surfaces::InvisibleBlock>::createWall(15,{-150.0f, -50.f}, {BLOCK_WIDTH, BLOCK_HEIGHT});
+void SecondLevel::buildStaticEntities(Lists::EntityList *staticEntities){
+    std::vector<Entities::Entity*> structure;
 
+    structure = StructuresFactory<Surfaces::InvisibleBlock>::createWall(15, {-150.f, 60.f}, {BLOCK_WIDTH, BLOCK_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
 
-    structure = 
-        StructuresFactory<Surfaces::InvisibleBlock>::createWall(15,{5000.f, -100.f}, {BLOCK_WIDTH, BLOCK_HEIGHT});
-
+    structure = StructuresFactory<Surfaces::InvisibleBlock>::createWall(15, {4200.f, 100.f}, {BLOCK_WIDTH, BLOCK_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
 }
@@ -165,12 +167,72 @@ void SecondLevel::buildFloor(Lists::EntityList *staticEntities, Lists::EntityLis
 
 void SecondLevel::buildObjects(Lists::EntityList *movingEntities){
 
+    Entities::Objects::Obstacles::Gravestone *grave = new Entities::Objects::Obstacles::Gravestone({100.f, 30-GROUND_HEIGHT/2.f});
+    movingEntities->addEntity(grave);
+    entityList.addEntity(grave);
+
+    grave = new Entities::Objects::Obstacles::Gravestone({200.f, 30-GROUND_HEIGHT/2.f});
+    movingEntities->addEntity(grave);
+    entityList.addEntity(grave);
+
+    grave = new Entities::Objects::Obstacles::Gravestone({700.f, 30-GROUND_HEIGHT/2.f});
+    movingEntities->addEntity(grave);
+    entityList.addEntity(grave);
+
+    grave = new Entities::Objects::Obstacles::Gravestone({1200.f, 30-GROUND_HEIGHT/2.f});
+    movingEntities->addEntity(grave);
+    entityList.addEntity(grave);
+
+    grave = new Entities::Objects::Obstacles::Gravestone({1900.f, -GROUND_HEIGHT/2.f});
+    movingEntities->addEntity(grave);
+    entityList.addEntity(grave);
 }
 void SecondLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
+    
+    int i = 0, n = (rand()%2) + 1;
 
+    Entities::Characters::Enemies::Skeleton *skeleton = nullptr;
+    for(i; i<n; i++){
+        skeleton = new Entities::Characters::Enemies::Skeleton({1500.f + 150.f*(float)i, 30-GROUND_HEIGHT/2.f}, player, player2);
+        movingEntities->addEntity(skeleton);
+        entityList.addEntity(skeleton);
+    }
+
+    Entities::Objects::Obstacles::Gravestone *grave = nullptr;
+        
+    for(i = 0; i < 8; i++){
+        if(rand()%2){
+            grave = new Entities::Objects::Obstacles::Gravestone({1600.f + (float) i * 300.f, -GROUND_HEIGHT/2.f});
+            movingEntities->addEntity(grave);
+            entityList.addEntity(grave);
+        }else{
+            skeleton = new Entities::Characters::Enemies::Skeleton({1600.f + 300.f*(float)i, -GROUND_HEIGHT/2.f}, player, player2);
+            movingEntities->addEntity(skeleton);
+            entityList.addEntity(skeleton);
+        }
+    }
+    
 }
 void SecondLevel::buildCharacters(Lists::EntityList *movingEntities){
-    
+    Entities::Characters::Enemies::Skeleton *skeleton = new Entities::Characters::Enemies::Skeleton({400.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    movingEntities->addEntity(skeleton);
+    entityList.addEntity(skeleton);
+
+    skeleton = new Entities::Characters::Enemies::Skeleton({600.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    movingEntities->addEntity(skeleton);
+    entityList.addEntity(skeleton);
+
+    skeleton = new Entities::Characters::Enemies::Skeleton({1000.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    movingEntities->addEntity(skeleton);
+    entityList.addEntity(skeleton);
+
+    Entities::FireBall *fireball = new Entities::FireBall({4000.f, 80-GROUND_HEIGHT/2.f});
+    movingEntities->addEntity(fireball);
+    entityList.addEntity(fireball);
+
+    Entities::Characters::Enemies::Boss *boss = new Entities::Characters::Enemies::Boss({4000.f, 80-GROUND_HEIGHT/2.f}, fireball, player, player2);
+    movingEntities->addEntity(boss);
+    entityList.addEntity(boss);
 }
 
 void SecondLevel::buildLevel(){
@@ -205,7 +267,7 @@ void SecondLevel::buildLevel(){
     this->player = player;
     this->player2 = player2;
 
-    // buildStaticEntities(staticEntities);
+    buildStaticEntities(staticEntities);
     buildFloor(staticEntities, movingEntities);
     buildObjects(movingEntities);
     buildCharacters(movingEntities);
