@@ -7,6 +7,10 @@
 #include "Entities/Objects/Surfaces/Pavement.hpp"
 #include "Entities/Characters/Enemies/Goblin.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
+#include "Entities/Objects/Props/HouseA.hpp"
+#include "Entities/Objects/Props/HouseB.hpp"
+#include "Entities/Objects/Props/HouseC.hpp"
+#include "Entities/Objects/Props/StreetLamp.hpp"
 
 #include "Levels/StructuresFactory.hpp"
 
@@ -100,9 +104,10 @@ void FirstLevel::update(float dt){
 void FirstLevel::buildObjects(Lists::EntityList *movingEntities){
     std::vector<Entities::Entity*> structure;
 
+
     //Escada de caixas
     structure = 
-        StructuresFactory<Obstacles::Box>::createStairs(2, {150.0f, -PAVEMENT_HEIGHT/2.0f}, {BOX_WIDTH, BOX_HEIGHT});
+        StructuresFactory<Obstacles::Box>::createStairs(2, {150.0f, -PAVEMENT_HEIGHT/2.f}, {BOX_WIDTH, BOX_HEIGHT});
 
     movingEntities->addEntity(structure);
     entityList.addEntity(structure);
@@ -125,6 +130,9 @@ void FirstLevel::buildObjects(Lists::EntityList *movingEntities){
 void FirstLevel::buildStaticEntities(Lists::EntityList *staticEntities){
     std::vector<Entities::Entity*> structure;
 
+
+    //Ground
+
     structure = 
         StructuresFactory<Surfaces::Pavement>::createFloor(32, {PAVEMENT_WIDTH * -2, 0}, {PAVEMENT_WIDTH, PAVEMENT_HEIGHT});
 
@@ -143,6 +151,9 @@ void FirstLevel::buildStaticEntities(Lists::EntityList *staticEntities){
 
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
+
+    
+
 }
 
 void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
@@ -154,14 +165,14 @@ void FirstLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::E
         de barris. Além disso, cada escada também tem seu tamanho definido aleatoriamente.
     */
 
-    int stairsSize = rand()%10+1;
+    int stairsSize = rand()%6+2;
 
     if(rand()%2){
         structure = 
-            StructuresFactory<Obstacles::Box>::createStairs(stairsSize, {1000.0f, -PAVEMENT_HEIGHT/2}, {BOX_WIDTH, BOX_HEIGHT});
+            StructuresFactory<Obstacles::Box>::createStairs(stairsSize, {900.0f, -PAVEMENT_HEIGHT/2}, {BOX_WIDTH, BOX_HEIGHT});
     }else{
         structure = 
-            StructuresFactory<Obstacles::Barrel>::createStairs(stairsSize, {1000.0f, -PAVEMENT_HEIGHT/2}, {BARREL_WIDTH, BARREL_HEIGHT});
+            StructuresFactory<Obstacles::Barrel>::createStairs(stairsSize, {900.0f, -PAVEMENT_HEIGHT/2}, {BARREL_WIDTH, BARREL_HEIGHT});
     }
 
     movingEntities->addEntity(structure);
@@ -207,6 +218,58 @@ void FirstLevel::buildCharacters(Lists::EntityList *movingEntities){
     entityList.addEntity(skeleton);  
 }
 
+void FirstLevel::buildHouses(Lists::EntityList *staticEntities){
+    Entities::Objects::Props::HouseA *houseA = new Entities::Objects::Props::HouseA({300.f, -PAVEMENT_HEIGHT/2.f - HOUSE_A_HEIGHT/2.f});
+    staticEntities->addEntity(houseA);
+    entityList.addEntity(houseA);
+
+    Entities::Objects::Props::HouseB *houseB = new Entities::Objects::Props::HouseB({500.f, -PAVEMENT_HEIGHT/2.f - HOUSE_B_HEIGHT/2.f});
+    staticEntities->addEntity(houseB);
+    entityList.addEntity(houseB);
+
+    houseA = new Entities::Objects::Props::HouseA({700.f, -PAVEMENT_HEIGHT/2.f - HOUSE_A_HEIGHT/2.f});
+    staticEntities->addEntity(houseA);
+    entityList.addEntity(houseA);
+
+    Entities::Objects::Props::HouseC *houseC = new Entities::Objects::Props::HouseC({1450.f, -PAVEMENT_HEIGHT/2.f - HOUSE_C_HEIGHT/2.f});
+    staticEntities->addEntity(houseC);
+    entityList.addEntity(houseC);
+    
+    houseC = new Entities::Objects::Props::HouseC({1260.f, -PAVEMENT_HEIGHT/2.f - HOUSE_C_HEIGHT/2.f});
+    staticEntities->addEntity(houseC);
+    entityList.addEntity(houseC);
+
+    houseB = new Entities::Objects::Props::HouseB({1700.f, -PAVEMENT_HEIGHT/2.f - HOUSE_B_HEIGHT/2.f});
+    staticEntities->addEntity(houseB);
+    entityList.addEntity(houseB);
+
+    houseA = new Entities::Objects::Props::HouseA({1900.f, -PAVEMENT_HEIGHT/2.f - HOUSE_A_HEIGHT/2.f});
+    staticEntities->addEntity(houseA);
+    entityList.addEntity(houseA);
+
+    houseC = new Entities::Objects::Props::HouseC({2100.f, -PAVEMENT_HEIGHT/2.f - HOUSE_C_HEIGHT/2.f});
+    staticEntities->addEntity(houseC);
+    entityList.addEntity(houseC);
+
+    houseB = new Entities::Objects::Props::HouseB({2400.f, -PAVEMENT_HEIGHT/2.f - HOUSE_B_HEIGHT/2.f});
+    staticEntities->addEntity(houseB);
+    entityList.addEntity(houseB);
+
+
+}
+
+void FirstLevel::buildStreetLamps(Lists::EntityList *staticEntities){
+     //STREETLAMPS
+
+    Entities::Objects::Props::StreetLamp *streetLamp = nullptr;
+    for(int i = -1; i < 7; i++){
+        streetLamp= new Entities::Objects::Props::StreetLamp({500.f * (float)i + 250, -PAVEMENT_HEIGHT/2.f - STREET_LAMP_HEIGHT/2.f+7}); //7 é um ajuste manual par tridimensionalizar a rua (poste na extremidade da sprite)
+        staticEntities->addEntity(streetLamp);
+        entityList.addEntity(streetLamp);
+    }
+
+}
+
 void FirstLevel::buildLevel(){
     Lists::EntityList *movingEntities = new Lists::EntityList();
     Lists::EntityList *staticEntities = new Lists::EntityList();
@@ -217,6 +280,10 @@ void FirstLevel::buildLevel(){
         Como a origin de todos os sprites é igual a metade do tamanho dos mesmos, 
         é necessário sempre trabalhar com a metade do tamanho dos sprites na hora de posicioná-los
     */
+
+    buildHouses(staticEntities);
+    buildStaticEntities(staticEntities);
+    buildObjects(movingEntities);
 
     Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, true);
     movingEntities->addEntity(player);
@@ -236,11 +303,11 @@ void FirstLevel::buildLevel(){
     this->player = player;
     this->player2 = player2;
 
-    buildStaticEntities(staticEntities);
-    buildObjects(movingEntities);
+    
     buildCharacters(movingEntities);
     buildRandomEntities(staticEntities, movingEntities);
-        
+    buildStreetLamps(staticEntities);
+    
     collisionManager.setMovingEntities(movingEntities);
     collisionManager.setStaticEntities(staticEntities);
 

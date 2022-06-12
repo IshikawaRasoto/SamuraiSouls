@@ -249,6 +249,8 @@ void SecondLevel::buildLevel(){
         é necessário sempre trabalhar com a metade do tamanho dos sprites na hora de posicioná-los
     */
 
+    buildStaticEntities(staticEntities);
+
     Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, true);
     movingEntities->addEntity(player);
     entityList.addEntity(player);
@@ -267,7 +269,7 @@ void SecondLevel::buildLevel(){
     this->player = player;
     this->player2 = player2;
 
-    buildStaticEntities(staticEntities);
+    
     buildFloor(staticEntities, movingEntities);
     buildObjects(movingEntities);
     buildCharacters(movingEntities);

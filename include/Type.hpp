@@ -12,7 +12,6 @@ enum Type{
     ThornsBase,
     Barrel,
     Wagon,
-    Statue,
     Pavement,
     Ground,
     MiniGround,
@@ -20,6 +19,14 @@ enum Type{
     Menu,
     Background,
     InvisibleBlock,
-    Hud
+    Hud,
+    HouseA,
+    HouseB,
+    HouseC,
+    StreetLamp,
+    Statue,
+    Bush,
+    TreeA,
+    TreeB
 };
 

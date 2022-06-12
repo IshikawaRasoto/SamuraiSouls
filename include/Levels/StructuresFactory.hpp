@@ -33,7 +33,7 @@ std::vector<Entities::Entity*> StructuresFactory<T>::createStairs(int size, sf::
 
     for(float i = 0; i < size; i++){
         for(float j = i; j < size; j++){
-            T *object = new T({position.x+j*objectSize.x, position.y - (objectSize.y*i + objectSize.y/2) - 500.0f});
+            T *object = new T({position.x+j*objectSize.x, position.y - (objectSize.y*i + objectSize.y/2)});
             objects.push_back(object);
         }
     }

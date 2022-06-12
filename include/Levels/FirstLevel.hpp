@@ -27,6 +27,8 @@ public:
     void buildStaticEntities(Lists::EntityList *staticEntities);
     void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
     void buildCharacters(Lists::EntityList *movingEntities);
+    void buildHouses(Lists::EntityList *staticEntities);
+    void buildStreetLamps(Lists::EntityList *staticEntities);
 
     void buildLevel();
 
