@@ -5,7 +5,7 @@
 
 #define GRAVESTONE_WIDTH 27
 #define GRAVESTONE_HEIGHT 33
-#define GRAVESTONE_DIR "./Texture/Scenario/Cemetery/Gravestone.png"
+#define GRAVESTONE_DIR "./Textures/Scenario/Cemetery/Gravestone.png"
 
 namespace Entities{
     namespace Objects{
@@ -19,9 +19,6 @@ namespace Entities{
                     ~Gravestone();
 
                     void save();
-                    void update(float dt);
-
-                    void collide(Entities::Entity* other, sf::Vector2f intersect);
             };
         }
     }

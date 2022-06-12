@@ -1,6 +1,9 @@
 #include "Managers/Input.hpp"
 #include "config.hpp"
 
+#include <iostream>
+
+
 using namespace Managers;
 
 InputManager* InputManager::instance = nullptr;
@@ -32,7 +35,12 @@ void InputManager::subscribe(std::string type, Observer<InputManager> *observer)
 }
 
 void InputManager::unsubscribe(std::string type, Observer<InputManager> *observer){
-    //TODO
+    for(auto i = observers.find(type); i != observers.end(); i++){
+        if(i->second == observer){
+            observers.erase(i);
+            return;
+        }
+    }
 }
 
 void InputManager::update(EventManager *subject){

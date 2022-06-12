@@ -11,11 +11,11 @@ FireBall::FireBall(sf::Vector2f position):
 FireBall::~FireBall(){}
 
 void FireBall::initializeSprite(){
-    animator->initializeTexture(FIREBALL_DIR, {7, 2});
+    animator.initializeTexture(FIREBALL_DIR, {7, 2});
 }
 
 void FireBall::render(){
-    animator->render();
+    animator.render();
 }
 
 void FireBall::update(float dt){
@@ -36,7 +36,7 @@ void FireBall::update(float dt){
         speed.y = 6;
 
     move({speed.x * dt , speed.y * dt});
-    animator->update(position, 0, 6, dt, getFacingLeft(), 0.3);
+    animator.update(position, 0, 6, dt, getFacingLeft(), 0.3);
 }
 
 void FireBall::save(){}

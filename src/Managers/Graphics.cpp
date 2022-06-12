@@ -30,7 +30,17 @@ sf::Texture* GraphicsManager::getTexture(std::string path){
         textures[path] = newTexture;
     }
 
-    return textures[path];
+    sf::Texture *newTexture = new sf::Texture();
+
+    //Caso não seja possível carregar a textura, retornamos apenas um ponteiro vazio.
+    if(!newTexture->loadFromFile(path)){
+        std::cout << "[GraphicsManager] Falha ao carregar uma textura a partir de \"" << path << "\".\n";
+        exit(1);
+    };
+
+    textures[path] = newTexture;
+
+    return newTexture;
 }
 
 //Funcao para retornar a fonte do path fornecido.
@@ -144,6 +154,8 @@ void GraphicsManager::clearTextures(){
         if(it.second)
             delete it.second;
     }
+
+    textures.clear();
 }
 
 void GraphicsManager::clearFonts(){
@@ -151,4 +163,6 @@ void GraphicsManager::clearFonts(){
         if(it.second)
             delete it.second;
     }
+
+    fonts.clear();
 }

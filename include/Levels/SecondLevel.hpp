@@ -12,9 +12,9 @@
 namespace Levels{
 
     class SecondLevel : public Levels::Level{
-    // private:
-    //     Graphics::Text life;
-    //     Graphics::Text points;
+    private:
+        Graphics::Text life;
+        Graphics::Text points;
     public:
 
         SecondLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer = true);
@@ -23,14 +23,15 @@ namespace Levels{
         void reset();
         void centerView();
 
-        void update(float dt);
+        void buildObjects(Lists::EntityList *movingEntities);
+        // void buildStaticEntities(Lists::EntityList *staticEntities);
+        void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
+        void buildCharacters(Lists::EntityList *movingEntities);
+        void buildFloor(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
 
-        template<class T>
-        void createStairs(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
-
-        template<class T>
-        void createWall(int size, float x, sf::Vector2u objectSize, Lists::EntityList *staticEntities);
+        void buildLevel();
         
+        void update(float dt);
     };
 
 

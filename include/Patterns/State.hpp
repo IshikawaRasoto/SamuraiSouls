@@ -21,6 +21,7 @@ protected:
 
     StateId id;
     StateMachine *stateMachine;
+    bool needReset;
 
 public:
 
@@ -30,6 +31,9 @@ public:
     StateMachine* getStateMachine();
     StateId getId();
 
+    bool getNeedReset();
+
+    void setNeedReset(bool needReset);
     void setStateMachine(StateMachine* stateMachine);
 
     void changeCurrentState(Patterns::StateId state);

@@ -3,7 +3,7 @@
 #include "Entities/Objects/Object.hpp"
 
 #define THORNS_WIDTH 32
-#define THORNS_HEIGHT 94
+#define THORNS_HEIGHT 39
 #define THORNS_DIR "./Textures/Scenario/Cemetery/Thorns.png"
 
 namespace Entities{
@@ -18,7 +18,6 @@ namespace Entities{
                     ~Thorns();
 
                     void save();
-                    void update(float dt);
             };
         }
     }

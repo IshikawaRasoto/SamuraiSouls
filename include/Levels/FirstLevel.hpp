@@ -24,9 +24,11 @@ public:
     void centerView();
     
     void buildObjects(Lists::EntityList *movingEntities);
-    void buildStaticEntites(Lists::EntityList *staticEntities);
+    void buildStaticEntities(Lists::EntityList *staticEntities);
     void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
     void buildCharacters(Lists::EntityList *movingEntities);
+
+    void buildLevel();
 
     void update(float dt);
 };

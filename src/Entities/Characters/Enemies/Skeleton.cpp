@@ -15,11 +15,11 @@ Skeleton::Skeleton(sf::Vector2f pos, Characters::Player* p1, Characters::Player*
 Skeleton::~Skeleton(){}
 
 void Skeleton::initializeSprite(){
-    animator->initializeTexture(SKELETON_DIR, sf::Vector2u(8, 4));
+    animator.initializeTexture(SKELETON_DIR, sf::Vector2u(8, 4));
 }
 
 void Skeleton::render(){
-    animator->render();
+    animator.render();
 }
 
 void Skeleton::update(float dt){
@@ -42,15 +42,15 @@ void Skeleton::update(float dt){
     if(isAttacking && timeFromAtk<=0.56){ //Tempo da animacao difere do tempo do CD de ataque
         timeFromAtk += dt;
         speed.x = 0;
-        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.07);
+        animator.update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.07);
     
     //Run
     }else if(abs(speed.x)>0.f){
-        animator->update(position, (int) EnemySprite::Run, 4, dt, getFacingLeft(), 0.2);
+        animator.update(position, (int) EnemySprite::Run, 4, dt, getFacingLeft(), 0.2);
 
     //Idle
     }else{
-        animator->update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft(), 0.3);
+        animator.update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft(), 0.3);
     }
 
     atkCD += dt;

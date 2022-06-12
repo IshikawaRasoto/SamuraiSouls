@@ -3,7 +3,7 @@
 using namespace Entities::Objects::Surfaces;
 
 Ground::Ground(sf::Vector2f position):
-    Object(Type::Pavement, position, {GROUND_WIDTH, GROUND_HEIGHT})
+    Object(Type::Ground, position, {GROUND_WIDTH, GROUND_HEIGHT})
 {
     initializeSprite();
 }
@@ -11,8 +11,10 @@ Ground::Ground(sf::Vector2f position):
 Ground::~Ground(){}
 
 void Ground::initializeSprite(){
-    animator->initializeTexture(GROUND_DIR, {1, 1});
+    animator.initializeTexture(GROUND_DIR, {1, 1});
 }
+
+void Ground::update(float dt){}
 
 
 void Ground::save(){}

@@ -21,7 +21,11 @@ Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerCon
         }
     }
 
+    std::cout << "PASS: Player Control created.\n";
+
     initializeSprite();
+
+    std::cout << "PASS: Sprite initili.\n";
 }
 
 Player::~Player(){}
@@ -53,25 +57,29 @@ void Player::update(float dt){
     speed.y += GRAVITY * dt;
     move({speed.x * dt, speed.y * dt});
 
+    if(position.y >= PLAYER_MAX_Y){
+        hp = 0;
+    }
+
     //Attack
     if(statusAtk(dt)){
-        animator->update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.08);
+        animator.update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.08);
     
     //Fall
     }else if(speed.y > 150.f){
-        animator->update(position, (int) PlayerSprite::Fall, 2, dt, getFacingLeft(), 0.3);
+        animator.update(position, (int) PlayerSprite::Fall, 2, dt, getFacingLeft(), 0.3);
     
     //Jump
     }else if(speed.y < -100.f && !canJump){
-        animator->update(position, (int) PlayerSprite::Jump, 2, dt, getFacingLeft(), 0.3);
+        animator.update(position, (int) PlayerSprite::Jump, 2, dt, getFacingLeft(), 0.3);
 
     //Run
     }else if(abs(speed.x)>0){
-        animator->update(position, (int) PlayerSprite::Run, 8, dt, getFacingLeft(), 0.2);
+        animator.update(position, (int) PlayerSprite::Run, 8, dt, getFacingLeft(), 0.2);
 
     //Idle
     }else{
-        animator->update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft(), 0.3);
+        animator.update(position, (int) PlayerSprite::Idle, 8, dt, getFacingLeft(), 0.3);
     }
 }
 
@@ -96,8 +104,8 @@ void Player::walk(Direction direction){
 }
 
 void Player::render(){
-    animator->update(position);
-    animator->render();
+    animator.update(position);
+    animator.render();
 }
 
 void Player::collide(Entity* other, sf::Vector2f intersect){
@@ -123,6 +131,10 @@ void Player::collide(Entity* other, sf::Vector2f intersect){
             break;
         case Type::Thorns:
             receiveDMG(100);
+            break;
+        case Type::Ground:
+            canJump = true;
+            moveOnCollision(other, intersect);
             break;
         /*case Type::Player:
             moveOnCollision(other, intersect);
@@ -171,9 +183,9 @@ void Player::playerAtk(Entities::Entity *other, Type t){
 
 void Player::initializeSprite(){
     if(playerOne)
-        animator->initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
+        animator.initializeTexture(MASTER_DIR, sf::Vector2u(8, 6));
     else
-        animator->initializeTexture(APPRENTICE_DIR, sf::Vector2u(8, 6));
+        animator.initializeTexture(APPRENTICE_DIR, sf::Vector2u(8, 6));
 }
 
 bool Player::statusAtk(const float dt){
@@ -202,8 +214,6 @@ void Control::PlayerControl::update(Managers::InputManager *subject){
 
     std::string key = subject->getCurrentKey();
     std::string event = subject->getCurrentEvent();
-
-    std::cout << keys.right << "\n";
 
     if(event == "pressed"){
         if(key == keys.left){

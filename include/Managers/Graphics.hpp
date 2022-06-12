@@ -19,8 +19,6 @@ private:
     void setup(const std::string &title, const sf::Vector2u &size);
     void destroy();
     void create();
-    void clearTextures();
-    void clearFonts();
 
     sf::RenderWindow window;
     sf::Vector2u size;
@@ -39,6 +37,9 @@ private:
 public:
 
     ~GraphicsManager();
+
+    void clearTextures();
+    void clearFonts();
 
     sf::Texture* getTexture(std::string path);
     sf::Font* getFont(std::string path);

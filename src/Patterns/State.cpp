@@ -6,6 +6,7 @@ using namespace Patterns;
 State::State(const StateId id, StateMachine* stateMachine){
     this->id = id;
     this->stateMachine = stateMachine;
+    needReset = false;
 }
 
 State::~State(){
@@ -14,6 +15,14 @@ State::~State(){
 
 StateMachine* State::getStateMachine(){
     return stateMachine;
+}
+
+bool State::getNeedReset(){
+    return needReset;
+}
+
+void State::setNeedReset(bool needReset){
+    this->needReset = needReset;
 }
 
 void State::changeCurrentState(Patterns::StateId state){

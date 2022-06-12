@@ -46,6 +46,10 @@ void EntityList::renderAll(){
     }
 }
 
+void EntityList::clearAll(){
+    list.clearAll();
+}
+
 Entities::Entity* EntityList::operator[](unsigned int index){
     return list[index];
 }

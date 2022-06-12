@@ -6,7 +6,7 @@
 #define GROUND_WIDTH 192
 #define GROUND_HEIGHT 111
 
-#define GROUND_DIR "./Texture/Scenario/Cemetery/Ground.png"
+#define GROUND_DIR "./Textures/Scenario/Cemetery/Ground.png"
 
 namespace Entities{
     namespace Objects{
@@ -17,6 +17,8 @@ namespace Entities{
             public:
                 Ground(sf::Vector2f position);
                 ~Ground();
+
+                void update(float dt);
 
                 void save();
             };

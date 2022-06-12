@@ -26,11 +26,15 @@ class List{
         }
 
         Node<U>* getNext(){
-            return next;
+            if(next)
+                return next;
+            return nullptr;
         }
 
         Node<U>* getPrevious(){
-            return previous;
+            if(previous)
+                return previous;
+            return nullptr;
         }
 
         U* getValue(){
@@ -38,11 +42,13 @@ class List{
         }
 
         void setNext(Node<U>* next){
-            this->next = next;
+            if(next)
+                this->next = next;
         }
 
         void setPrevious(Node<U>* previous){
-            this->previous = previous;
+            if(previous)
+                this->previous = previous;
         }
         
         void setValue(U* value){
@@ -65,6 +71,8 @@ public:
 
     bool add(T* value);
     bool remove(T* value);   
+
+    void clearAll();
     
     T* operator[](unsigned int index);
 };
@@ -78,19 +86,7 @@ List<T>::List(){
 
 template<typename T>
 List<T>::~List(){
-
-    Lists::List<T>::Node<T> *currentNode = begin;
-    List::Node<T> *aux;
-
-    while(currentNode){
-        aux = currentNode->getNext();
-        delete currentNode;
-        currentNode = aux;
-    }
-
-    begin = nullptr;
-    end = nullptr;
-    size = 0;
+    clearAll();
 }
 
 template<typename T>
@@ -173,6 +169,23 @@ T* List<T>::operator[](unsigned int index){
     }
 
     return currentNode->getValue();
+}
+
+template<typename T>
+void List<T>::clearAll(){
+    List<T>::Node<T> *currentNode = begin;
+    List::Node<T> *aux;
+
+    while(currentNode){
+        aux = currentNode->getNext();
+        delete currentNode;
+        currentNode = aux;
+    }
+
+    begin = nullptr;
+    end = nullptr;
+
+    size = 0;
 }
 
 }

@@ -5,7 +5,7 @@
 
 class Ent{
     protected:
-        Animator* animator;
+        Animator animator;
         Type t;  // Type eh equivale a int id do UML fornecido.
         sf::Vector2f position;
         sf::Vector2f size;

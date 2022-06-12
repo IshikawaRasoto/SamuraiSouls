@@ -4,7 +4,7 @@
 #include "Graphics/Text.hpp"
 
 #define PAUSE_FONT_DIR "./fonts/SpecialElite.ttf"
-#define PAUSE_BACKGROUND_DIR "./Textures/Scenario/Village/VillageBackground.png"
+#define PAUSE_BACKGROUND_DIR "./Textures/Menus/Pause.png"
 #define PAUSE_MARGIN_BUTTON 80
 
 namespace Menus{

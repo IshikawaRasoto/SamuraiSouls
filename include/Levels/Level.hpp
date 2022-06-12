@@ -17,8 +17,6 @@
 #include <time.h>
 #include <string>
 
-#define LEVEL_Y 0
-
 namespace Levels{
 
 class Level : public Patterns::State{
@@ -35,7 +33,7 @@ protected:
     Graphics::Hud hud;
     
     bool singlePlayer;
-
+    bool showing;
 public:
     Level(
         Patterns::StateMachine *stateMachine,
@@ -47,6 +45,10 @@ public:
         
     );
     virtual ~Level();
+
+    bool getShowing();
+    
+    void setShowing(bool showing);
 
     void handlePause();
 

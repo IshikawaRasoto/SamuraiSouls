@@ -14,11 +14,11 @@ Boss::Boss(sf::Vector2f pos, FireBall *fireball ,Characters::Player* p1, Charact
 Boss::~Boss(){}
 
 void Boss::initializeSprite(){
-    animator->initializeTexture(BOSS_DIR, sf::Vector2u(16,4));
+    animator.initializeTexture(BOSS_DIR, sf::Vector2u(16,4));
 }
 
 void Boss::render(){
-    animator->render();
+    animator.render();
 }
 
 void Boss::update(float dt){
@@ -43,17 +43,17 @@ void Boss::update(float dt){
         timeFromAtk += dt;
         speed.x = 0;
         if(timeFromAtk<1.12)
-            animator->update(position, (int) EnemySprite::Attack, 16, dt, getFacingLeft(), 0.07);
+            animator.update(position, (int) EnemySprite::Attack, 16, dt, getFacingLeft(), 0.07);
         else
             fire();
     
     //Run
     }else if(abs(speed.x)>0.f){
-        animator->update(position, (int) EnemySprite::Run, 9, dt, getFacingLeft(), 0.07);
+        animator.update(position, (int) EnemySprite::Run, 9, dt, getFacingLeft(), 0.07);
 
     //Idle
     }else{
-        animator->update(position, (int) EnemySprite::Idle, 9, dt, getFacingLeft(), 0.07);
+        animator.update(position, (int) EnemySprite::Idle, 9, dt, getFacingLeft(), 0.07);
     }
 
     atkCD += dt;

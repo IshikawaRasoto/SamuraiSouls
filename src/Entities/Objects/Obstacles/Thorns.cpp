@@ -10,11 +10,10 @@ Thorns::Thorns(sf::Vector2f position):
 Thorns::~Thorns(){}
 
 void Thorns::initializeSprite(){
-    animator->initializeTexture(THORNS_DIR, {1, 1});
+    animator.initializeTexture(THORNS_DIR, {1, 1});
+    animator.update(position);
 }
 
 void Thorns::save(){
     //TODO
 }
-
-void Thorns::update(float dt){}

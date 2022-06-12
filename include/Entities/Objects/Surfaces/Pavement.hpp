@@ -20,10 +20,7 @@ namespace Entities{
                 ~Pavement();
 
                 void update(float dt);
-                void collide(Entities::Entity* other, sf::Vector2f intersect);
-
                 void save();
-                void update(const float dt);
             };
         }
     }

@@ -17,7 +17,7 @@ void CollisionManager::setMovingEntities(Lists::EntityList *entities){
 }
 
 void CollisionManager::setStaticEntities(Lists::EntityList *entities){
-    this->movingEntities = entities;
+    this->staticEntities = entities;
 }
 
 CollisionManager::~CollisionManager(){}

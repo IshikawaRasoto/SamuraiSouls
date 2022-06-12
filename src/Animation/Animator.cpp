@@ -15,7 +15,7 @@ Animator::Animator(sf::Vector2f size):
 }
 
 Animator::~Animator(){
-    pGM = nullptr;
+    // std::cout << texture->getSize().x << "\n";
 }
 
 //nao esquecer de colocar as ROles depois
@@ -72,8 +72,10 @@ sf::RectangleShape* Animator::getRectangleShape(){
 }
 
 void Animator::initializeTexture(std::string path, sf::Vector2u imageCount){
+
     imgCount = imageCount;
     texture = pGM->getTexture(path);
+
     if(texture == nullptr){
         std::cout << "ERROR: Failed to load texture in Animator::initializeTexture" << std::endl;
         exit(1);

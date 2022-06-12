@@ -11,7 +11,7 @@ Statue::Statue(sf::Vector2f position):
 Statue::~Statue(){}
 
 void Statue::initializeSprite(){
-    animator->initializeTexture(STATUE_DIR, {1,1});
+    animator.initializeTexture(STATUE_DIR, {1,1});
 }
 
 void Statue::save(){}

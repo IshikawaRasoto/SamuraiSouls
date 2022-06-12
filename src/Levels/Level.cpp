@@ -16,6 +16,8 @@ Level::Level(
     control(this),
     hud()
 {
+    showing = false;
+
     this->inputManager = inputManager;
     this->graphicsManager = graphicsManager;
 }
@@ -29,14 +31,27 @@ Level::~Level(){
     inputManager = nullptr;
 }
 
+bool Level::getShowing(){
+    return showing;
+}
+
+void Level::setShowing(bool showing){
+    this->showing = showing;
+}
+
 void Level::handlePause(){
+    if(!showing) return;
+
     changeCurrentState(Patterns::StateId::Pause);
+
+    showing = false;
 }
 
 void Level::update(float dt){
+    showing = true;
+
     entityList.updateAll(dt);
     collisionManager.checkCollision();
-    render();
 }
 
 void Level::render(){

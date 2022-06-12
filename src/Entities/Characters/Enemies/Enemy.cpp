@@ -26,6 +26,7 @@ Entities::Characters::Player* Enemy::getNearestPlayer(){
         return pP1;
     else if(x1>x2 && pP2->getHP()>0 || pP1->getHP()<=0)
         return pP2;
+    return nullptr;
 }
 
 void Enemy::tryAttack(const int dmg){

@@ -14,13 +14,13 @@ Goblin::Goblin(sf::Vector2f pos, Characters::Player* p1, Characters::Player* p2)
 Goblin::~Goblin(){}
 
 void Goblin::initializeSprite(){
-    animator->initializeTexture(GOBLIN_DIR, sf::Vector2u(8, 4));
+    animator.initializeTexture(GOBLIN_DIR, sf::Vector2u(8, 4));
 }
 
 void Goblin::render(){
-    animator->update(position);
+    animator.update(position);
     //update()
-    animator->render();
+    animator.render();
 }
 
 void Goblin::update(float dt){
@@ -45,15 +45,15 @@ void Goblin::update(float dt){
     if(isAttacking && timeFromAtk<=0.56){ //Tempo da animacao difere do tempo do CD de ataque
         timeFromAtk += dt;
         speed.x = 0;
-        animator->update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.07);
+        animator.update(position, (int) EnemySprite::Attack, 8, dt, getFacingLeft(), 0.07);
     
     //Run
     }else if(abs(speed.x)>0.f){
-        animator->update(position, (int) EnemySprite::Run, 8, dt, getFacingLeft(), 0.2);
+        animator.update(position, (int) EnemySprite::Run, 8, dt, getFacingLeft(), 0.2);
 
     //Idle
     }else{
-        animator->update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft(), 0.3);
+        animator.update(position, (int) EnemySprite::Idle, 4, dt, getFacingLeft(), 0.3);
     }
 
     atkCD += dt;

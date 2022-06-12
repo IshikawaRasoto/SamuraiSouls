@@ -1,6 +1,8 @@
 #include "Game.hpp"
 
 #include "Levels/FirstLevel.hpp"
+#include "Levels/SecondLevel.hpp"
+
 #include "Menus/MainMenu.hpp"
 #include "Menus/GameOver.hpp"
 #include "Menus/Pause.hpp"
@@ -16,6 +18,7 @@ Game::Game():
 {
 
     states[Patterns::StateId::FirstLevel] = new Levels::FirstLevel(this, true);
+    states[Patterns::StateId::SecondLevel] = new Levels::SecondLevel(this, true);
     states[Patterns::StateId::MainMenu] = new Menus::MainMenu(this);
     states[Patterns::StateId::GameOver] = new Menus::GameOver(this);
     states[Patterns::StateId::Pause] = new Menus::Pause(this);

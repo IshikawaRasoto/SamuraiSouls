@@ -10,7 +10,7 @@ Wagon::Wagon(sf::Vector2f position):
 Wagon::~Wagon(){}
 
 void Wagon::initializeSprite(){
-    animator->initializeTexture(WAGON_DIR, {1,1});
+    animator.initializeTexture(WAGON_DIR, {1,1});
 }
 
 void Wagon::save(){}
@@ -20,7 +20,7 @@ void Wagon::update(float dt){
         return;
     speed.y += GRAVITY * dt;
     move({0, speed.y});
-    animator->update(position);
+    animator.update(position);
 }
 
 void Wagon::collide(Entities::Entity* other, sf::Vector2f intersect){

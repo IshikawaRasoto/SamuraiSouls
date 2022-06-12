@@ -17,6 +17,7 @@ public:
 
     void updateAll(float dt);
     void renderAll();
+    void clearAll();
 
     bool addEntity(Entities::Entity* entity);
     bool addEntity(std::vector<Entities::Entity*> entities);

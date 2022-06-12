@@ -6,7 +6,7 @@
 #include <SFML/System/Vector2.hpp>
 
 #define SKELETON_HP 150
-#define SKELETON_DMG 15
+#define SKELETON_DMG 20
 #define SKELETON_WIDTH 35 
 #define SKELETON_HEIGHT 51
 #define SKELETON_SPEED_X 50

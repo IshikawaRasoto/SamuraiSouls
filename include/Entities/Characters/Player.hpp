@@ -8,6 +8,7 @@
 #define PLAYER_SPEED_Y 400
 #define PLAYER_ATK_RANGE_X 110
 #define PLAYER_ATK_RANGE_Y 69
+#define PLAYER_MAX_Y 500
 
 enum class PlayerSprite{
     Idle = 0,

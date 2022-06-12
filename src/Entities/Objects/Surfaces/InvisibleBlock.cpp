@@ -10,7 +10,7 @@ InvisibleBlock::InvisibleBlock(sf::Vector2f position):
 InvisibleBlock::~InvisibleBlock(){}
 
 void InvisibleBlock::initializeSprite(){
-    sf::RectangleShape *body = animator->getRectangleShape();
+    sf::RectangleShape *body = animator.getRectangleShape();
     body->setFillColor(sf::Color::Transparent);
 }
 

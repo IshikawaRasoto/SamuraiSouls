@@ -49,6 +49,12 @@ void Entity::collide(Entity *other, sf::Vector2f intersect){
         case Type::InvisibleBlock:
             moveOnCollision(other, intersect);
             break;
+        case Type::ThornsBase:
+            moveOnCollision(other, intersect);
+            break;
+        case Type::Ground:
+            moveOnCollision(other, intersect);
+            break;
         case Type::Player:
             moveOnCollision(other, intersect);
             break;

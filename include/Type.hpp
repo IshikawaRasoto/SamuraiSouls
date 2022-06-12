@@ -9,6 +9,7 @@ enum Type{
     Box,
     Gravestone,
     Thorns,
+    ThornsBase,
     Barrel,
     Wagon,
     Statue,

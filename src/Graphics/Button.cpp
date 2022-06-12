@@ -22,7 +22,7 @@ Button::~Button(){}
 
 void Button::initializeSprite(){
     //TODO
-    animator->update(position);
+    animator.update(position);
 }
 
 std::string Button::getContent(){
@@ -58,8 +58,8 @@ void Button::update(float dt){
 }
 
 void Button::render(){
-    animator->update(position);
-    animator->render();
+    animator.update(position);
+    animator.render();
     content.render();
 }
 
