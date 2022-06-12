@@ -17,7 +17,7 @@ class MenuControl : public Patterns::Observer<Managers::InputManager>{
 private:
     Menus::Menu* menu;
     MenuKeys keys;
-
+    bool menuHasInput;
 public:
 
     MenuControl(
@@ -29,8 +29,11 @@ public:
 
     ~MenuControl();
 
+    bool getMenuHasInput();
     Menus::Menu* getMenu();
     
+    void setMenuHasInput(bool menuHasInput);
+
     void update(Managers::InputManager *subject);
 };
 

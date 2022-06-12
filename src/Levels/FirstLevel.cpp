@@ -77,6 +77,8 @@ void FirstLevel::reset(){
     hud.setPlayer1(nullptr);
     hud.setPlayer2(nullptr);
 
+    Player::setPts(0);
+
     buildLevel();
 }
 

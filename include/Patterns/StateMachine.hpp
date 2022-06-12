@@ -20,7 +20,7 @@ public:
     StateId getCurrentState();
     StateId getLastState();
     
-    void changeCurrentState(const StateId state);
+    virtual void changeCurrentState(const StateId state);
     void updateCurrentState(const float dt);
     void renderCurrentState();
 };

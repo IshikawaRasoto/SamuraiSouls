@@ -55,6 +55,7 @@ namespace Entities{
                 Control::PlayerControl* getPlayerControl() const;
 
                 static void addPts(const int pts);
+                static void setPts(const int pts);
                 void setAtkCollision(const bool atkCollision);
                 
                 void update(float dt);

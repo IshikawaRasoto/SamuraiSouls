@@ -32,6 +32,5 @@ public:
     Game();
     ~Game();
     void execute();
-
-
+    void changeCurrentState(const StateId state);
 };

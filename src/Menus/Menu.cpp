@@ -65,6 +65,8 @@ void Menu::selectDown(){
     buttons[selectedButton]->select(true);
 }
 
+void Menu::handleInput(std::string key){}
+
 void Menu::centerView(){
     graphicsManager->centerView({0, 0});
 }
@@ -97,11 +99,17 @@ void Managers::Control::MenuControl::update(Managers::InputManager *subject){
 
     if(event != "pressed") return;
 
-    if(key == keys.up){
-        menu->selectUp();
-    }else if(key == keys.down){
-        menu->selectDown();
-    }else if(key == keys.execute){
+    if(menuHasInput && key != keys.execute && key != "Unknown"){
+        menu->handleInput(key);
+    }else{
+        if(key == keys.up){
+            menu->selectUp();
+        }else if(key == keys.down){
+            menu->selectDown();
+        }
+    }
+
+    if(key == keys.execute){
         menu->execute();
     }
 }

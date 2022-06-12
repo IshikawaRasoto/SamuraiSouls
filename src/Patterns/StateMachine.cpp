@@ -23,18 +23,8 @@ StateId StateMachine::getLastState(){
 }
 
 void StateMachine::changeCurrentState(const StateId state){
-    if(state == StateId::MainMenu && lastState){
-        states[lastState]->reset();
-        states[lastState]->setNeedReset(false);
-    }
-
     lastState = currentState;
     currentState = state;
-
-    if(states[currentState]->getNeedReset()){
-        states[currentState]->reset();
-        states[currentState]->setNeedReset(false);
-    }
 }
 
 void StateMachine::updateCurrentState(const float dt){

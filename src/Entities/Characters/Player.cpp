@@ -49,6 +49,10 @@ void Player::addPts(const int pts){
     points += pts;
 }
 
+void Player::setPts(const int pts){
+    points = pts;
+}
+
 void Player::update(float dt){
     if(hp<=0){
         setIsShowing(false);

@@ -40,6 +40,8 @@ public:
     void selectUp();
     void selectDown();
 
+    virtual void handleInput(std::string key);
+
     void addButton(Graphics::Button* button);
 
     void centerView();

@@ -6,6 +6,7 @@
 #include "Menus/MainMenu.hpp"
 #include "Menus/GameOver.hpp"
 #include "Menus/Pause.hpp"
+#include "Menus/Leaderboard.hpp"
 
 #include <iostream>
 
@@ -22,6 +23,7 @@ Game::Game():
     states[Patterns::StateId::MainMenu] = new Menus::MainMenu(this);
     states[Patterns::StateId::GameOver] = new Menus::GameOver(this);
     states[Patterns::StateId::Pause] = new Menus::Pause(this);
+    states[Patterns::StateId::Leaderboard] = new Menus::Leaderboard(this);
 
     currentState = Patterns::StateId::MainMenu;
 
@@ -37,30 +39,36 @@ bool Game::isDone(){
     return graphicManager->isDone();
 }
 
-/*sf::Time Game::getElapsed(){
-    return elapsed;
-}*/
-
 void Game::execute(){
     while(!isDone()){
         update();
-        //restartClock();
     }
 }
 
 void Game::update(){
-    //float frametime = 1.f / 60.f;
-
-    //if(elapsed.asSeconds() < frametime) return;
 
     deltaTime = clock.restart().asSeconds();
 
     eventManager->pollEvents();
     updateCurrentState(deltaTime);
-
-    //elapsed -= sf::seconds(frametime);
 }
 
-/*void Game::restartClock(){
-    elapsed += clock.restart();
-}*/
+void Game::changeCurrentState(const StateId state){
+    if(state == StateId::MainMenu && lastState){
+        states[lastState]->reset();
+        states[lastState]->setNeedReset(false);
+    }
+
+    //Carregamos os dados da leaderboard novamente apenas se houver um gameOver.
+    if(state == StateId::GameOver){
+        states[StateId::Leaderboard]->setNeedReset(true);
+    }
+
+    lastState = currentState;
+    currentState = state;
+
+    if(states[currentState]->getNeedReset()){
+        states[currentState]->reset();
+        states[currentState]->setNeedReset(false);
+    }
+}

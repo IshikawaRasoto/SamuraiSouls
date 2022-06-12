@@ -19,10 +19,19 @@ MenuControl::MenuControl(
     }
 
     this->menu = menu;
+    menuHasInput = false;
 }
 
 MenuControl::~MenuControl(){}
 
 Menus::Menu* MenuControl::getMenu(){
     return menu;
+}
+
+bool MenuControl::getMenuHasInput(){
+    return menuHasInput;
+}
+
+void MenuControl::setMenuHasInput(bool menuHasInput){
+    this->menuHasInput = menuHasInput;
 }

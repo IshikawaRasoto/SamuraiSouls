@@ -62,7 +62,6 @@ void SecondLevel::reset(){
     }
 
     for(i = 0; i < entityList.getSize(); i++){
-        std::cout<<"Teste" << i << std::endl;
         if(entityList[i]) {
             delete entityList[i];
         }
@@ -71,13 +70,12 @@ void SecondLevel::reset(){
     player = nullptr;
     player2 = nullptr;
 
-    std::cout << "reset" << "\n";
-
     entityList.clearAll();
 
     hud.setPlayer1(nullptr);
     hud.setPlayer2(nullptr);
 
+    Player::setPts(0);
 
     buildLevel();
 }

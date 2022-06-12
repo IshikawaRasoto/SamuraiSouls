@@ -7,5 +7,6 @@
 namespace Managers{
 struct Keyboard{
     static std::map<sf::Keyboard::Key, std::string> Key;
+    static std::map<std::string, std::string> Text;
 };
 }
