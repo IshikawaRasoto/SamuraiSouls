@@ -37,6 +37,7 @@ namespace Entities{
                 bool isWalking;
                 bool canJump;
                 float timeFromAtk;
+                float atkCD;
                 bool atkCollision;//Controle de uma colisão de ataque por ataque
                 Control::PlayerControl* playerControl;
 

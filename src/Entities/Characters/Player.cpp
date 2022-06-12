@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace Entities::Characters;
 
-const float Player::playerAtkTime(0.96); 
+const float Player::playerAtkTime(0.54); 
 int Player::points(0);
 
 Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerControl* playerControl):
@@ -11,6 +11,7 @@ Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerCon
         playerOne(isPlayerOne),
         timeFromAtk(0.f),
         atkCollision(false),
+        atkCD(1.0),
         Character(Type::Player, position, sf::Vector2f(PLAYER_WIDTH, PLAYER_HEIGHT), PLAYER_HP, PLAYER_DMG)
 {
     if(!playerControl){
@@ -63,7 +64,7 @@ void Player::update(float dt){
 
     //Attack
     if(statusAtk(dt)){
-        animator.update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.16);
+        animator.update(position, (int) PlayerSprite::Attack, 6, dt, getFacingLeft(), 0.09);
     
     //Fall
     }else if(speed.y > 150.f){
@@ -148,6 +149,9 @@ void Player::collide(Entity* other, sf::Vector2f intersect){
 }
 
 void Player::playerAtk(Entities::Entity *other, Type t){
+    if(atkCD < playerAtkTime)
+        atkCollision = false;
+
     if(!isAttacking || !atkCollision)
         return;
     
@@ -155,11 +159,9 @@ void Player::playerAtk(Entities::Entity *other, Type t){
     float deltaY = other->getPosition().y - position.y;
 
     if(abs(deltaY)<PLAYER_ATK_RANGE_Y && abs(deltaX)<PLAYER_ATK_RANGE_X && isAttacking){ //69 é altura da sprite de ataque
-        std::cout << "ATK PLAYER" << std::endl;
+        atkCD = 0.f;
         atkCollision = false;
-        std::cout << (static_cast<Character*>(other))->getHP() << std::endl;
         (static_cast<Character*>(other))->receiveDMG(PLAYER_DMG);
-        std::cout << (static_cast<Character*>(other))->getHP() << std::endl;
         if((static_cast<Character*>(other))->getHP()<=0){
             switch(t){
                 case Type::Goblin:
@@ -172,7 +174,6 @@ void Player::playerAtk(Entities::Entity *other, Type t){
                     points += 500;
                     break;
             }
-            std::cout << "Points: " << points << std::endl;
         }
         
     }
@@ -188,11 +189,12 @@ void Player::initializeSprite(){
 bool Player::statusAtk(const float dt){
     if(isAttacking){
         timeFromAtk += dt;
+        atkCD += dt;
         if(timeFromAtk < playerAtkTime){
             return true;
         }
 
-        atkCollision = true;
+        //atkCollision = true;
 
         timeFromAtk = 0;
         isAttacking = false;
