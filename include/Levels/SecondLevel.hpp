@@ -28,6 +28,7 @@ namespace Levels{
         void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
         void buildCharacters(Lists::EntityList *movingEntities);
         void buildFloor(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);
+        void buildStatues(Lists::EntityList *staticEntities);
 
         void buildLevel();
         

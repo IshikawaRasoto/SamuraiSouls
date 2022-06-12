@@ -55,26 +55,22 @@ void FirstLevel::reset(){
     if(player){
         inputManager->unsubscribe("pressed", player->getPlayerControl());
         inputManager->unsubscribe("released", player->getPlayerControl());
-
-        delete player;
-        player = nullptr;
-        i++;
+       
     }
     
     if(player2){
         inputManager->unsubscribe("pressed", player2->getPlayerControl());
         inputManager->unsubscribe("released", player2->getPlayerControl());
 
-        delete player2;
-        player2 = nullptr;
-        i++;
     }
 
-    for(i; i < entityList.getSize(); i++){
+    for(i = 0; i < entityList.getSize(); i++){
         if(entityList[i]) {
             delete entityList[i];
         }
     }
+    player = nullptr;
+    player2 = nullptr;
 
     entityList.clearAll();
 

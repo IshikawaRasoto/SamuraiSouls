@@ -4,7 +4,7 @@
 
 #define TREE_B_WIDTH 166
 #define TREE_B_HEIGHT 117
-#define TREE_B_DIR "./Textures/Scenario/Village/TreeB.png"
+#define TREE_B_DIR "./Textures/Scenario/Cemetery/TreeB.png"
 
 namespace Entities{
     namespace Objects{

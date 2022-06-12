@@ -7,8 +7,13 @@
 #include "Entities/Objects/Obstacles/Thorns.hpp"
 #include "Entities/Objects/Obstacles/ThornsBase.hpp"
 #include "Entities/Characters/Enemies/Skeleton.hpp"
+#include "Entities/Characters/Enemies/Goblin.hpp"
 #include "Entities/Characters/Enemies/Boss.hpp"
 #include "Entities/FireBall.hpp"
+#include "Entities/Objects/Props/Bush.hpp"
+#include "Entities/Objects/Props/Statue.hpp"
+#include "Entities/Objects/Props/TreeA.hpp"
+#include "Entities/Objects/Props/TreeB.hpp"
 
 
 #include "Levels/StructuresFactory.hpp"
@@ -49,26 +54,22 @@ void SecondLevel::reset(){
     if(player){
         inputManager->unsubscribe("pressed", player->getPlayerControl());
         inputManager->unsubscribe("released", player->getPlayerControl());
-
-        delete player;
-        player = nullptr;
-        i++;
     }
     
     if(player2){
         inputManager->unsubscribe("pressed", player2->getPlayerControl());
         inputManager->unsubscribe("released", player2->getPlayerControl());
-
-        delete player2;
-        player2 = nullptr;
-        i++;
     }
 
-    for(i; i < entityList.getSize(); i++){
+    for(i = 0; i < entityList.getSize(); i++){
+        std::cout<<"Teste" << i << std::endl;
         if(entityList[i]) {
             delete entityList[i];
         }
     }
+
+    player = nullptr;
+    player2 = nullptr;
 
     std::cout << "reset" << "\n";
 
@@ -155,7 +156,137 @@ void SecondLevel::buildFloor(Lists::EntityList *staticEntities, Lists::EntityLis
 void SecondLevel::buildStaticEntities(Lists::EntityList *staticEntities){
     std::vector<Entities::Entity*> structure;
 
-    structure = StructuresFactory<Surfaces::InvisibleBlock>::createWall(15, {-150.f, 60.f}, {BLOCK_WIDTH, BLOCK_HEIGHT});
+    Entities::Objects::Props::Statue *statue = new Entities::Objects::Props::Statue({15.f, 30-GROUND_HEIGHT/2.f-STATUE_HEIGHT/2.f});
+    staticEntities->addEntity(statue);
+    entityList.addEntity(statue);
+
+    Entities::Objects::Props::Bush *bush = new Entities::Objects::Props::Bush({-130.f, 45-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({300.f, 45-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    Entities::Objects::Props::TreeA *treeA = new Entities::Objects::Props::TreeA({500.f, 30-GROUND_HEIGHT/2.f-TREE_A_HEIGHT/2.f});
+    staticEntities->addEntity(treeA);
+    entityList.addEntity(treeA);
+
+    Entities::Objects::Props::TreeB *treeB = new Entities::Objects::Props::TreeB({900.f, 30-GROUND_HEIGHT/2.f-TREE_B_HEIGHT/2.f});
+    staticEntities->addEntity(treeB);
+    entityList.addEntity(treeB);
+
+    bush = new Entities::Objects::Props::Bush({840.f, 45-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({1300.f, 45-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeB = new Entities::Objects::Props::TreeB({1600.f, 30-GROUND_HEIGHT/2.f-TREE_B_HEIGHT/2.f});
+    staticEntities->addEntity(treeB);
+    entityList.addEntity(treeB);
+
+    bush = new Entities::Objects::Props::Bush({1900.f, 15-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeA = new Entities::Objects::Props::TreeA({2100.f, -GROUND_HEIGHT/2.f-TREE_A_HEIGHT/2.f});
+    staticEntities->addEntity(treeA);
+    entityList.addEntity(treeA);
+
+    bush = new Entities::Objects::Props::Bush({2200.f, 15-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({2500.f, 15-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeB = new Entities::Objects::Props::TreeB({2600.f, -GROUND_HEIGHT/2.f-TREE_B_HEIGHT/2.f});
+    staticEntities->addEntity(treeB);
+    entityList.addEntity(treeB);
+
+    bush = new Entities::Objects::Props::Bush({2800.f, 15-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    statue = new Entities::Objects::Props::Statue({2950.f, -GROUND_HEIGHT/2.f-STATUE_HEIGHT/2.f});
+    staticEntities->addEntity(statue);
+    entityList.addEntity(statue);
+
+    treeB = new Entities::Objects::Props::TreeB({3300.f, 80-GROUND_HEIGHT/2.f-TREE_B_HEIGHT/2.f});
+    staticEntities->addEntity(treeB);
+    entityList.addEntity(treeB);
+
+    bush = new Entities::Objects::Props::Bush({3400.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeA = new Entities::Objects::Props::TreeA({3500.f, 80-GROUND_HEIGHT/2.f-TREE_A_HEIGHT/2.f});
+    staticEntities->addEntity(treeA);
+    entityList.addEntity(treeA);
+
+    bush = new Entities::Objects::Props::Bush({3600.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({3720.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeA = new Entities::Objects::Props::TreeA({3800.f, 80-GROUND_HEIGHT/2.f-TREE_A_HEIGHT/2.f});
+    staticEntities->addEntity(treeA);
+    entityList.addEntity(treeA);
+
+    bush = new Entities::Objects::Props::Bush({3900.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({4025.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeB = new Entities::Objects::Props::TreeB({4100.f, 80-GROUND_HEIGHT/2.f-TREE_B_HEIGHT/2.f});
+    staticEntities->addEntity(treeB);
+    entityList.addEntity(treeB);
+
+    bush = new Entities::Objects::Props::Bush({4200.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({4400.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({4325.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({4500.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeB = new Entities::Objects::Props::TreeB({4600.f, 80-GROUND_HEIGHT/2.f-TREE_B_HEIGHT/2.f});
+    staticEntities->addEntity(treeB);
+    entityList.addEntity(treeB);
+
+    bush = new Entities::Objects::Props::Bush({4750.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    bush = new Entities::Objects::Props::Bush({4875.f, 95-GROUND_HEIGHT/2.f-BUSH_HEIGHT/2.f});
+    staticEntities->addEntity(bush);
+    entityList.addEntity(bush);
+
+    treeA = new Entities::Objects::Props::TreeA({5000.f, 80-GROUND_HEIGHT/2.f-TREE_A_HEIGHT/2.f});
+    staticEntities->addEntity(treeA);
+    entityList.addEntity(treeA);
+
+    //Invisible Walls
+
+    structure = StructuresFactory<Surfaces::InvisibleBlock>::createWall(15, {-250.f, 60.f}, {BLOCK_WIDTH, BLOCK_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
 
@@ -164,65 +295,87 @@ void SecondLevel::buildStaticEntities(Lists::EntityList *staticEntities){
     entityList.addEntity(structure);
 }
 
+void SecondLevel::buildStatues(Lists::EntityList *staticEntities){
+    Entities::Objects::Props::Statue *statue = new Entities::Objects::Props::Statue({30.f, 40-GROUND_HEIGHT/2.f-STATUE_HEIGHT/2.f});
+    staticEntities->addEntity(statue);
+    entityList.addEntity(statue);
+
+    statue = new Entities::Objects::Props::Statue({1800.f, 10-GROUND_HEIGHT/2.f-STATUE_HEIGHT/2.f});
+    staticEntities->addEntity(statue);
+    entityList.addEntity(statue);
+
+    statue = new Entities::Objects::Props::Statue({2965.f, 10-GROUND_HEIGHT/2.f-STATUE_HEIGHT/2.f});
+    staticEntities->addEntity(statue);
+    entityList.addEntity(statue);
+
+}
+
 
 void SecondLevel::buildObjects(Lists::EntityList *movingEntities){
 
-    Entities::Objects::Obstacles::Gravestone *grave = new Entities::Objects::Obstacles::Gravestone({100.f, 30-GROUND_HEIGHT/2.f});
+    Entities::Objects::Obstacles::Gravestone *grave = new Entities::Objects::Obstacles::Gravestone({100.f, 30-GROUND_HEIGHT/2.f-GRAVESTONE_HEIGHT/2.f});
     movingEntities->addEntity(grave);
     entityList.addEntity(grave);
 
-    grave = new Entities::Objects::Obstacles::Gravestone({200.f, 30-GROUND_HEIGHT/2.f});
+    grave = new Entities::Objects::Obstacles::Gravestone({200.f, 30-GROUND_HEIGHT/2.f-GRAVESTONE_HEIGHT/2.f});
     movingEntities->addEntity(grave);
     entityList.addEntity(grave);
 
-    grave = new Entities::Objects::Obstacles::Gravestone({700.f, 30-GROUND_HEIGHT/2.f});
+    grave = new Entities::Objects::Obstacles::Gravestone({700.f, 30-GROUND_HEIGHT/2.f-GRAVESTONE_HEIGHT/2.f});
     movingEntities->addEntity(grave);
     entityList.addEntity(grave);
 
-    grave = new Entities::Objects::Obstacles::Gravestone({1200.f, 30-GROUND_HEIGHT/2.f});
-    movingEntities->addEntity(grave);
-    entityList.addEntity(grave);
-
-    grave = new Entities::Objects::Obstacles::Gravestone({1900.f, -GROUND_HEIGHT/2.f});
+    grave = new Entities::Objects::Obstacles::Gravestone({1200.f, 30-GROUND_HEIGHT/2.f-GRAVESTONE_HEIGHT/2.f});
     movingEntities->addEntity(grave);
     entityList.addEntity(grave);
 }
+
 void SecondLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
     
-    int i = 0, n = (rand()%2) + 1;
+    
 
     Entities::Characters::Enemies::Skeleton *skeleton = nullptr;
-    for(i; i<n; i++){
-        skeleton = new Entities::Characters::Enemies::Skeleton({1500.f + 150.f*(float)i, 30-GROUND_HEIGHT/2.f}, player, player2);
-        movingEntities->addEntity(skeleton);
-        entityList.addEntity(skeleton);
-    }
-
+    Entities::Characters::Enemies::Goblin *goblin = nullptr;
     Entities::Objects::Obstacles::Gravestone *grave = nullptr;
-        
-    for(i = 0; i < 8; i++){
-        if(rand()%2){
+
+        int i = 0, n = 1;; // n = 1, terceiro esqueleto minimo
+    for(i = 1; i < 8; i++){
+        if(n == 0){
             grave = new Entities::Objects::Obstacles::Gravestone({1600.f + (float) i * 300.f, -GROUND_HEIGHT/2.f});
             movingEntities->addEntity(grave);
             entityList.addEntity(grave);
-        }else{
+        }else if (n == 1){
             skeleton = new Entities::Characters::Enemies::Skeleton({1600.f + 300.f*(float)i, -GROUND_HEIGHT/2.f}, player, player2);
             movingEntities->addEntity(skeleton);
             entityList.addEntity(skeleton);
+        }else{
+            goblin = new Entities::Characters::Enemies::Goblin({1600.f + 300.f*(float)i, -GROUND_HEIGHT/2.f}, player, player2);
+            movingEntities->addEntity(goblin);
+            entityList.addEntity(goblin);
         }
+
+        n = rand()%3;
     }
     
 }
 void SecondLevel::buildCharacters(Lists::EntityList *movingEntities){
-    Entities::Characters::Enemies::Skeleton *skeleton = new Entities::Characters::Enemies::Skeleton({400.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    Entities::Characters::Enemies::Goblin *goblin = new Entities::Characters::Enemies::Goblin({400.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    movingEntities->addEntity(goblin);
+    entityList.addEntity(goblin);
+
+    goblin = new Entities::Characters::Enemies::Goblin({600.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    movingEntities->addEntity(goblin);
+    entityList.addEntity(goblin);
+
+    Entities::Characters::Enemies::Skeleton *skeleton = new Entities::Characters::Enemies::Skeleton({1000.f, 30-GROUND_HEIGHT/2.f}, player, player2);
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);
 
-    skeleton = new Entities::Characters::Enemies::Skeleton({600.f, 30-GROUND_HEIGHT/2.f}, player, player2);
-    movingEntities->addEntity(skeleton);
-    entityList.addEntity(skeleton);
+    goblin = new Entities::Characters::Enemies::Goblin({1500.f, -GROUND_HEIGHT/2.f}, player, player2);
+    movingEntities->addEntity(goblin);
+    entityList.addEntity(goblin);
 
-    skeleton = new Entities::Characters::Enemies::Skeleton({1000.f, 30-GROUND_HEIGHT/2.f}, player, player2);
+    skeleton = new Entities::Characters::Enemies::Skeleton({1650.f, -GROUND_HEIGHT/2.f}, player, player2);
     movingEntities->addEntity(skeleton);
     entityList.addEntity(skeleton);
 
@@ -250,8 +403,10 @@ void SecondLevel::buildLevel(){
     */
 
     buildStaticEntities(staticEntities);
+    buildFloor(staticEntities, movingEntities);
+    buildObjects(movingEntities);
 
-    Entities::Characters::Player *player = new Entities::Characters::Player({0.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, true);
+    Entities::Characters::Player *player = new Entities::Characters::Player({-100.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, true);
     movingEntities->addEntity(player);
     entityList.addEntity(player);
 
@@ -259,7 +414,7 @@ void SecondLevel::buildLevel(){
 
     Entities::Characters::Player *player2 = nullptr;
     if(!singlePlayer){
-        player2 = new Entities::Characters::Player({50.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
+        player2 = new Entities::Characters::Player({-50.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
         movingEntities->addEntity(player2);
         entityList.addEntity(player2);
 
@@ -269,11 +424,9 @@ void SecondLevel::buildLevel(){
     this->player = player;
     this->player2 = player2;
 
-    
-    buildFloor(staticEntities, movingEntities);
-    buildObjects(movingEntities);
     buildCharacters(movingEntities);
     buildRandomEntities(staticEntities, movingEntities);
+    buildStatues(staticEntities);//Tridimensionaliza as estátuas
         
     collisionManager.setMovingEntities(movingEntities);
     collisionManager.setStaticEntities(staticEntities);
