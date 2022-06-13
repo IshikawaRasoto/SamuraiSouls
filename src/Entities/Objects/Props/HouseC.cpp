@@ -13,8 +13,4 @@ void HouseC::initializeSprite(){
     animator.initializeTexture(HOUSE_C_DIR, {1, 1});
 }
 
-void HouseC::save(){
-    //TODO
-}
-
 void HouseC::update(float dt){}

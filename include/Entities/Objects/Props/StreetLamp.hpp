@@ -17,7 +17,6 @@ namespace Entities{
                     StreetLamp(sf::Vector2f position);
                     ~StreetLamp();
 
-                    void save();
                     void update(float dt);
             };
         }

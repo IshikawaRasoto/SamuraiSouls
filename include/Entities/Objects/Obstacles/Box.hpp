@@ -15,8 +15,6 @@ namespace Entities{
                 public:
                     Box(sf::Vector2f position);
                     ~Box();
-
-                    void save();
                 private:
                     void initializeSprite();
             };

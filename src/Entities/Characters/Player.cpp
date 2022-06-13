@@ -22,11 +22,7 @@ Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerCon
         }
     }
 
-    std::cout << "PASS: Player Control created.\n";
-
     initializeSprite();
-
-    std::cout << "PASS: Sprite initili.\n";
 }
 
 Player::~Player(){}
@@ -51,6 +47,10 @@ void Player::addPts(const int pts){
 
 void Player::setPts(const int pts){
     points = pts;
+}
+
+void Player::setHp(int hp){
+    this->hp = hp;
 }
 
 void Player::update(float dt){
@@ -206,9 +206,16 @@ bool Player::statusAtk(const float dt){
     return false;
 }
 
-void Player::save(){
-    //TODO
-}
+Snapshots::PlayerSnapshot* Player::save(){
+    return new Snapshots::PlayerSnapshot(
+        playerOne,
+        hp,
+        position,
+        speed,
+        getFacingLeft()
+    );
+} 
+
 
 void Control::PlayerControl::update(Managers::InputManager *subject){
     if(!player) return;

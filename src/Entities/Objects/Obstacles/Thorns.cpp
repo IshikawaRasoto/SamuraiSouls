@@ -11,9 +11,4 @@ Thorns::~Thorns(){}
 
 void Thorns::initializeSprite(){
     animator.initializeTexture(THORNS_DIR, {1, 1});
-    animator.update(position);
-}
-
-void Thorns::save(){
-    //TODO
 }

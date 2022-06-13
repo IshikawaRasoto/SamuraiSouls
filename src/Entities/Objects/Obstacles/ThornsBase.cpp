@@ -13,8 +13,5 @@ void ThornsBase::initializeSprite(){
     animator.initializeTexture(THORNSBASE_DIR, {1, 1});
 }
 
-void ThornsBase::save(){
-    //TODO
-}
 
 void ThornsBase::update(float dt){}

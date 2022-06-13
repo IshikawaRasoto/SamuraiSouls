@@ -1,4 +1,5 @@
 #include "Entities/Entity.hpp"
+#include "Snapshots/EntitySnapshot.hpp"
 
 using namespace Entities;
 
@@ -83,4 +84,13 @@ void Entity::moveOnCollision(Entity *other, sf::Vector2f intersect){
 void Entity::update(const float dt){
     speed.y += GRAVITY * dt;
     move({speed.x * dt, speed.y * dt});
+}
+
+Snapshots::EntitySnapshot* Entity::save(){
+    return new Snapshots::EntitySnapshot(
+        t,
+        position,
+        speed,
+        facingLeft
+    );
 }

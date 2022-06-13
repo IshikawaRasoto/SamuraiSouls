@@ -14,6 +14,8 @@
 
 #include "Levels/StructuresFactory.hpp"
 
+#include "Data/Level.hpp"
+
 #include <vector>
 
 using namespace Levels;
@@ -48,31 +50,32 @@ void FirstLevel::centerView(){
 }
 
 void FirstLevel::reset(){
-    int i = 0;
-
-    //A variável i evita tentar excluir duas vezes um player na entityList
-
     if(player){
         inputManager->unsubscribe("pressed", player->getPlayerControl());
         inputManager->unsubscribe("released", player->getPlayerControl());
-       
     }
     
     if(player2){
         inputManager->unsubscribe("pressed", player2->getPlayerControl());
         inputManager->unsubscribe("released", player2->getPlayerControl());
-
     }
 
-    for(i = 0; i < entityList.getSize(); i++){
+    for(int i = 0; i < entityList.getSize(); i++){
         if(entityList[i]) {
             delete entityList[i];
         }
-    }
+    } 
+
     player = nullptr;
     player2 = nullptr;
 
     entityList.clearAll();
+
+    delete collisionManager.getMovingEntities();
+    delete collisionManager.getStaticEntities();
+
+    collisionManager.setMovingEntities(nullptr);
+    collisionManager.setStaticEntities(nullptr);   
 
     hud.setPlayer1(nullptr);
     hud.setPlayer2(nullptr);
@@ -84,13 +87,13 @@ void FirstLevel::reset(){
 
 void FirstLevel::update(float dt){
     showing = true;
+    setCurrentLevel(this);
 
     entityList.updateAll(dt);
 
     if(player->getHP() <= 0){
         changeCurrentState(Patterns::StateId::GameOver);
         showing = false;
-        needReset = true;
 
         return;
     }
@@ -317,3 +320,75 @@ void FirstLevel::buildLevel(){
         inputManager->subscribe("released", player2->getPlayerControl());   
     }
 }
+
+void FirstLevel::load(){
+    Lists::EntityList *movingEntities = Data::Level::loadSnapshots(id);
+
+    if(!movingEntities){
+        return;
+    }
+
+    if(player){
+        inputManager->unsubscribe("pressed", player->getPlayerControl());
+        inputManager->unsubscribe("released", player->getPlayerControl());
+    }
+    
+    if(player2){
+        inputManager->unsubscribe("pressed", player2->getPlayerControl());
+        inputManager->unsubscribe("released", player2->getPlayerControl());
+    }
+
+    for(int i = 0; i < entityList.getSize(); i++){
+        if(entityList[i]) {
+            delete entityList[i];
+        }
+    } 
+
+    player = nullptr;
+    player2 = nullptr;
+
+    entityList.clearAll();
+
+    delete collisionManager.getMovingEntities();
+    delete collisionManager.getStaticEntities();
+
+    collisionManager.setStaticEntities(nullptr);   
+
+    Lists::EntityList *staticEntities = new Lists::EntityList();
+
+    buildStaticEntities(staticEntities);
+    buildHouses(staticEntities);
+    
+    for(int i = 0; i < movingEntities->getSize(); i++){
+        if((*movingEntities)[i]->getType() == Type::Player){
+            Characters::Player* p = static_cast<Characters::Player*>((*movingEntities)[i]);
+
+            if(p->getIsPlayerOne()){
+                player = p;
+            }else{
+                player2 = p;
+            }
+        }
+        entityList.addEntity((*movingEntities)[i]);
+    }
+
+    buildStreetLamps(staticEntities);
+
+    hud.setPlayer1(player);
+    hud.setPlayer2(player2);
+
+    collisionManager.setMovingEntities(movingEntities);
+    collisionManager.setStaticEntities(staticEntities);
+
+    if(player){
+        inputManager->subscribe("pressed", player->getPlayerControl());
+        inputManager->subscribe("released", player->getPlayerControl());
+    }
+    
+    if(player2){
+        inputManager->subscribe("pressed", player2->getPlayerControl());
+        inputManager->subscribe("released", player2->getPlayerControl());
+    }
+    
+}
+

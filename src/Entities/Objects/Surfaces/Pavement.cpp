@@ -15,6 +15,4 @@ void Pavement::initializeSprite(){
     animator.update(position);
 }
 
-void Pavement::save(){}
-
 void Pavement::update(const float dt){}

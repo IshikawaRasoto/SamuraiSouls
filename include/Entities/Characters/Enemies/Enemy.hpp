@@ -33,6 +33,9 @@ namespace Entities{
                     virtual ~Enemy();
                     Entities::Characters::Player* getNearestPlayer();
 
+                    void setPlayer1(Entities::Characters::Player* player);
+                    void setPlayer2(Entities::Characters::Player* player);
+
                     //virtual void movement(const float spX);
                     virtual void tryAttack(const int dmg);
                     //virtual void tryAttack(const int dmg, const float timeOfAtk);
@@ -41,7 +44,6 @@ namespace Entities{
 
                     virtual void update(float dt) = 0;
                     virtual void render() = 0;
-                    virtual void save() = 0;
                     
                 protected:
                     virtual void initializeSprite() = 0;

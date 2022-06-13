@@ -13,8 +13,6 @@ void Wagon::initializeSprite(){
     animator.initializeTexture(WAGON_DIR, {1,1});
 }
 
-void Wagon::save(){}
-
 void Wagon::update(float dt){
     if(!getIsShowing())
         return;

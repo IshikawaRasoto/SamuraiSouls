@@ -13,6 +13,4 @@ void Bush::initializeSprite(){
     animator.initializeTexture(BUSH_DIR, {1,1});
 }
 
-void Bush::save(){}
-
 void Bush::update(float dt){}

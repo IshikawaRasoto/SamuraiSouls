@@ -16,6 +16,15 @@ Enemy::~Enemy(){
     pP2 = nullptr;
 }
 
+
+void Enemy::setPlayer1(Entities::Characters::Player* player){
+    this->pP1 = player;
+}
+
+void Enemy::setPlayer2(Entities::Characters::Player* player){
+    this->pP2 = player;
+}
+
 Entities::Characters::Player* Enemy::getNearestPlayer(){
     int x1, x2;
     if(!pP2)

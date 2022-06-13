@@ -14,6 +14,4 @@ void InvisibleBlock::initializeSprite(){
     body->setFillColor(sf::Color::Transparent);
 }
 
-void InvisibleBlock::save(){}
-
 void InvisibleBlock::update(const float dt){}

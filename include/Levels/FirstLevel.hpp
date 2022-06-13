@@ -11,10 +11,6 @@
 namespace Levels{
 
 class FirstLevel : public Levels::Level{
-private:
-    Graphics::Text life;
-    Graphics::Text points;
-
 public:
 
     FirstLevel(Patterns::StateMachine* stateMachine, const bool singlePlayer);
@@ -33,6 +29,7 @@ public:
     void buildLevel();
 
     void update(float dt);
+    void load();
 };
 
 

@@ -12,8 +12,3 @@ Barrel::~Barrel(){}
 void Barrel::initializeSprite(){
     animator.initializeTexture(BARREL_DIR, {1,1});
 }
-
-void Barrel::save(){
-    //TODO
-}
-

@@ -13,8 +13,4 @@ void StreetLamp::initializeSprite(){
     animator.initializeTexture(STREET_LAMP_DIR, {1, 1});
 }
 
-void StreetLamp::save(){
-    //TODO
-}
-
 void StreetLamp::update(float dt){}

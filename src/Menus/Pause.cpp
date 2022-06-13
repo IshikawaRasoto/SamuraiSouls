@@ -1,5 +1,6 @@
 #include "Menus/Pause.hpp"
 #include "Graphics/Button.hpp"
+#include "Patterns/StateMachine.hpp"
 
 #include <vector>
 
@@ -10,7 +11,7 @@ Pause::Pause(StateMachine *stateMachine):
     State(Patterns::StateId::Pause, stateMachine),
     title("Game paused", {0.0f,-140.0f}, PAUSE_FONT_DIR)
 {
-    std::vector<std::string> buttonNames = {"Continuar", "Carregar", "Salvar", "Sair"};
+    std::vector<std::string> buttonNames = {"Continuar", "Salvar", "Carregar", "Sair"};
 
     for(int i = 0; i < buttonNames.size(); i++){
         addButton(new Graphics::Button(buttonNames[i], {0.0f, 0.0f + PAUSE_MARGIN_BUTTON*i}, PAUSE_FONT_DIR));
@@ -49,19 +50,26 @@ void Pause::update(const float dt){
 void Pause::execute(){
     if(!getIsShowing()) return;
 
+    Levels::Level *currentLevel = Levels::Level::getCurrentLevel();
+
     switch (selectedButton)
     {
     case 0:
         changeCurrentState(getStateMachine()->getLastState());
         break;
     case 1:
-        //Salvar
+        if(currentLevel){
+            currentLevel->save();
+        }
         break;
     case 2:
-        //Carregar
+        if(currentLevel){
+            currentLevel->load();
+        }
         break;
     case 3:
         changeCurrentState(Patterns::StateId::MainMenu);
+
         break;
     default:
         break;

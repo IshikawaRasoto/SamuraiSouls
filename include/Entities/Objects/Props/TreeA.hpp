@@ -17,7 +17,6 @@ namespace Entities{
                     TreeA(sf::Vector2f position);
                     ~TreeA();
 
-                    void save();
                     void update(float dt);
             };
         }

@@ -21,6 +21,7 @@ enum class PlayerSprite{
 
 #include "Entities/Characters/Character.hpp"
 #include "Managers/Control/PlayerControl.hpp"
+#include "Snapshots/PlayerSnapshot.hpp"
 
 #define MASTER_DIR "./Textures/Characters/Master.png"
 #define APPRENTICE_DIR "./Textures/Characters/Apprentice.png"
@@ -56,6 +57,8 @@ namespace Entities{
 
                 static void addPts(const int pts);
                 static void setPts(const int pts);
+
+                void setHp(int hp);
                 void setAtkCollision(const bool atkCollision);
                 
                 void update(float dt);
@@ -63,7 +66,7 @@ namespace Entities{
                 void jump();
                 void render();
                 void collide(Entity* other, sf::Vector2f intersect);
-                void save();
+                Snapshots::PlayerSnapshot* save();
                 void playerAtk(Entities::Entity* other, Type t);
 
                 bool statusAtk(const float dt);

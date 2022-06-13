@@ -17,7 +17,6 @@ namespace Entities{
                     HouseA(sf::Vector2f position);
                     ~HouseA();
 
-                    void save();
                     void update(float dt);
             };
         }

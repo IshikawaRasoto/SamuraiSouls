@@ -17,8 +17,6 @@ namespace Entities{
                 public:
                     Gravestone(sf::Vector2f position);
                     ~Gravestone();
-
-                    void save();
             };
         }
     }

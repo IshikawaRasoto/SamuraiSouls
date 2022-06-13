@@ -16,8 +16,6 @@ namespace Entities{
                 public:
                     ThornsBase(sf::Vector2f position);
                     ~ThornsBase();
-
-                    void save();
                     void update(float dt);
             };
         }
