@@ -35,7 +35,6 @@ namespace Entities{
                     void fire();
                     void followPlayer();
                     void render();
-                    void save();
 
                 private:
                     void initializeSprite();

@@ -19,8 +19,6 @@ namespace Entities{
                 ~Ground();
 
                 void update(float dt);
-
-                void save();
             };
         }
     }

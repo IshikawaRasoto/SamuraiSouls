@@ -13,8 +13,4 @@ void TreeB::initializeSprite(){
     animator.initializeTexture(TREE_B_DIR, {1, 1});
 }
 
-void TreeB::save(){
-    //TODO
-}
-
 void TreeB::update(float dt){}

@@ -19,8 +19,6 @@ namespace Entities{
             public:
                 Barrel(sf::Vector2f position);
                 ~Barrel();
-
-                void save();
             };
         }
     }

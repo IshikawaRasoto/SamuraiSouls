@@ -43,7 +43,7 @@ void GameOver::execute(){
     saveName();
     changeCurrentState(Patterns::StateId::MainMenu);
 
-    needReset = true;
+    reset();
     setIsShowing(false);
 }
 

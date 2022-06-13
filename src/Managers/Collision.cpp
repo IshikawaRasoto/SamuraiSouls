@@ -12,6 +12,14 @@ CollisionManager::CollisionManager(
     this->staticEntities = staticEntities;
 }
 
+Lists::EntityList* CollisionManager::getMovingEntities(){
+    return movingEntities;
+}
+
+Lists::EntityList* CollisionManager::getStaticEntities(){
+    return staticEntities;
+}
+
 void CollisionManager::setMovingEntities(Lists::EntityList *entities){
     this->movingEntities = entities;
 }

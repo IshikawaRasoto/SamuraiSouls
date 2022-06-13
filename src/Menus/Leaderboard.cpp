@@ -47,6 +47,10 @@ void Leaderboard::reset(){
 
 void Leaderboard::loadItems(){
     leaderboardItems = Data::Leaderboard::getItems();
+    if(leaderboardItems.size() == 0){
+        return;
+    }
+
     Data::Leaderboard::sort(leaderboardItems);
 
     for(int i = 0; i < leaderboardItems.size() && i < LEADERBOARD_MAX_ITEMS; i++){

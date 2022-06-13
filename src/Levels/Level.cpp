@@ -1,6 +1,11 @@
 #include "Levels/Level.hpp"
 
+#include "Snapshots/LevelSnapshot.hpp"
+#include "Data/Level.hpp"
+
 using namespace Levels;
+
+Levels::Level* Level::currentLevel = nullptr;
 
 Level::Level(
     Patterns::StateMachine *stateMachine,
@@ -35,6 +40,14 @@ bool Level::getShowing(){
     return showing;
 }
 
+Levels::Level* Level::getCurrentLevel(){
+    return currentLevel;
+}
+
+void Level::setCurrentLevel(Levels::Level *level){
+    currentLevel = level;
+}
+
 void Level::setShowing(bool showing){
     this->showing = showing;
 }
@@ -63,4 +76,29 @@ void Level::render(){
     graphicsManager->endDraw();
 }
 
+void Level::save(){
+    std::vector<Snapshots::EntitySnapshot*> snapshots;
+    Lists::EntityList *movingEntities = collisionManager.getMovingEntities();
+
+    for(int i = 0; i < movingEntities->getSize(); i++){
+        if((*movingEntities)[i]->getIsShowing()){
+            snapshots.push_back((*movingEntities)[i]->save());
+        }
+    }
+
+    Snapshots::LevelSnapshot *levelSnapshot = new Snapshots::LevelSnapshot(
+        id,
+        Entities::Characters::Player::getPts()
+    );
+
+    Data::Level::saveSnapshots(snapshots, levelSnapshot);
+
+    delete levelSnapshot;
+
+    for(auto snapshot : snapshots){
+        delete snapshot;
+    }
+}
+
+void Level::load(){}
 

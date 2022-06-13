@@ -21,6 +21,9 @@ public:
 
     ~CollisionManager();
 
+    Lists::EntityList* getMovingEntities();
+    Lists::EntityList* getStaticEntities();
+
     void setMovingEntities(Lists::EntityList *entities);
     void setStaticEntities(Lists::EntityList *entities);
     

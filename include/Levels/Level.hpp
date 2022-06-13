@@ -34,6 +34,8 @@ protected:
     
     bool singlePlayer;
     bool showing;
+    
+    static Levels::Level *currentLevel;
 public:
     Level(
         Patterns::StateMachine *stateMachine,
@@ -42,13 +44,15 @@ public:
         const bool singlePlayer,
         Managers::InputManager *inputManager = Managers::InputManager::getInstance(), 
         Managers::GraphicsManager *graphicsManager = Managers::GraphicsManager::getInstance()
-        
     );
+
     virtual ~Level();
 
     bool getShowing();
-    
+    static Levels::Level *getCurrentLevel();
+
     void setShowing(bool showing);
+    static void setCurrentLevel(Levels::Level *level);
 
     void handlePause();
 
@@ -57,6 +61,9 @@ public:
 
     virtual void reset() = 0; 
     virtual void centerView() = 0;
+
+    void save();
+    virtual void load();
 };
 
 }

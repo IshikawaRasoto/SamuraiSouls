@@ -15,6 +15,3 @@ void Ground::initializeSprite(){
 }
 
 void Ground::update(float dt){}
-
-
-void Ground::save(){}

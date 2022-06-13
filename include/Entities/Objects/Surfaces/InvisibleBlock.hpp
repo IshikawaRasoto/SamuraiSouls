@@ -17,7 +17,6 @@ namespace Entities{
                     InvisibleBlock(sf::Vector2f position);
                     ~InvisibleBlock();
 
-                    void save();
                     void update(const float dt);
             };
         }

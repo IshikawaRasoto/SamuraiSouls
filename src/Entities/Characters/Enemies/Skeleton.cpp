@@ -58,10 +58,6 @@ void Skeleton::update(float dt){
             tryAttack(SKELETON_DMG);
 }
 
-void Skeleton::save(){
-    //TODO
-}
-
 void Skeleton::movementSkeleton(){
     float deltaX = getNearestPlayer()->getPosition().x - position.x;
     if(abs(deltaX)<SKELETON_DX_MAX && abs(deltaX)>SKELETON_DX_MIN){

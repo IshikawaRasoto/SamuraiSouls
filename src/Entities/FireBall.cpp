@@ -39,8 +39,6 @@ void FireBall::update(float dt){
     animator.update(position, 0, 6, dt, getFacingLeft(), 0.3);
 }
 
-void FireBall::save(){}
-
 void FireBall::collide(Entity *other, sf::Vector2f intersect){
     Type type = other->getType();
 

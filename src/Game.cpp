@@ -54,9 +54,9 @@ void Game::update(){
 }
 
 void Game::changeCurrentState(const StateId state){
-    if(state == StateId::MainMenu && lastState){
-        states[lastState]->reset();
-        states[lastState]->setNeedReset(false);
+    if(states[state]->getNeedReset()){
+        states[state]->reset();
+        states[state]->setNeedReset(false);
     }
 
     //Carregamos os dados da leaderboard novamente apenas se houver um gameOver.
@@ -64,11 +64,10 @@ void Game::changeCurrentState(const StateId state){
         states[StateId::Leaderboard]->setNeedReset(true);
     }
 
+    if(state == StateId::MainMenu){
+        Levels::Level::getCurrentLevel()->reset();
+    }
+
     lastState = currentState;
     currentState = state;
-
-    if(states[currentState]->getNeedReset()){
-        states[currentState]->reset();
-        states[currentState]->setNeedReset(false);
-    }
 }

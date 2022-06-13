@@ -77,10 +77,6 @@ void Boss::fire(){
     timeFromAtk = 0.f;
 }
 
-void Boss::save(){
-    //TODO
-}
-
 void Boss::movementBoss(){
     float deltaX = getNearestPlayer()->getPosition().x - position.x;
     if(abs(deltaX)<BOSS_DX_MAX && abs(deltaX)>BOSS_DX_MIN){

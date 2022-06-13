@@ -13,7 +13,4 @@ void MiniGround::initializeSprite(){
     animator.initializeTexture(MINIGROUND_DIR, {1, 1});
 }
 
-
-void MiniGround::save(){}
-
 void MiniGround::update(float dt){}

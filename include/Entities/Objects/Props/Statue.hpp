@@ -19,7 +19,6 @@ namespace Entities{
                     Statue(sf::Vector2f position);
                     ~Statue();
 
-                    void save();
                     void update(float dt);
             };
         }

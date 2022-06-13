@@ -34,7 +34,7 @@ namespace Entities{
                 void setIsAttacking(const bool atk = false);
                 void receiveDMG(const int dmg);
 
-                virtual void save() = 0;
+                // virtual Snapshots::EntitySnapshot* save();
             protected:
                 virtual void initializeSprite() = 0;      
         };

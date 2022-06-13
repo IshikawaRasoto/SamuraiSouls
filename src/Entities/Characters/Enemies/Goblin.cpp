@@ -65,9 +65,6 @@ void Goblin::update(float dt){
         
 }
     //timeFromAtk+=dt;
-void Goblin::save(){
-    //TODO
-}
 
 void Goblin::movementGoblin(){
     float deltaX = getNearestPlayer()->getPosition().x - position.x;

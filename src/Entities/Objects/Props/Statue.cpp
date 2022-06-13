@@ -13,8 +13,4 @@ void Statue::initializeSprite(){
     animator.initializeTexture(STATUE_DIR, {1, 1});
 }
 
-void Statue::save(){
-    //TODO
-}
-
 void Statue::update(float dt){}

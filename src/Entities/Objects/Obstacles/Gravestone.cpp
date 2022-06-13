@@ -13,5 +13,3 @@ void Gravestone::initializeSprite(){
     animator.initializeTexture(GRAVESTONE_DIR, sf::Vector2u(1, 1));
     animator.update(position);
 }
-
-void Gravestone::save(){}

@@ -17,7 +17,6 @@ namespace Entities{
                     Bush(sf::Vector2f position);
                     ~Bush();
 
-                    void save();
                     void update(float dt);
             };
         }

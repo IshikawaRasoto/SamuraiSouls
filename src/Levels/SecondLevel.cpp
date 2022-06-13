@@ -15,8 +15,9 @@
 #include "Entities/Objects/Props/TreeA.hpp"
 #include "Entities/Objects/Props/TreeB.hpp"
 
-
 #include "Levels/StructuresFactory.hpp"
+
+#include "Data/Level.hpp"
 
 #include <vector>
 
@@ -81,12 +82,14 @@ void SecondLevel::reset(){
 }
 
 void SecondLevel::update(float dt){
+    showing = true;
+    setCurrentLevel(this);
+
     entityList.updateAll(dt);
 
     if(player->getHP() <= 0){
         changeCurrentState(Patterns::StateId::GameOver);
         showing = false;
-        needReset = true;
 
         return;
     }
@@ -96,7 +99,7 @@ void SecondLevel::update(float dt){
 }   
 
 void SecondLevel::buildFloor(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
-    int i = 0, j = 0;
+    int i = 0;
 
     std::vector<Entities::Entity*> structure;
 
@@ -105,47 +108,22 @@ void SecondLevel::buildFloor(Lists::EntityList *staticEntities, Lists::EntityLis
     entityList.addEntity(structure);
     i += 6;
 
-    structure = StructuresFactory<Obstacles::ThornsBase>::createFloor(3, {GROUND_WIDTH*((float)i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*(float)j + THORNS_WIDTH/2.f, 30 + THORNSBASE_HEIGHT/2.f}, {THORNSBASE_WIDTH, THORNSBASE_HEIGHT});
-    staticEntities->addEntity(structure);
-    entityList.addEntity(structure);
-
-    structure = StructuresFactory<Obstacles::Thorns>::createFloor(3, {GROUND_WIDTH*((float)i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*(float)j + THORNS_WIDTH/2.f, 30 - THORNS_HEIGHT/2.f}, {THORNS_WIDTH, THORNS_HEIGHT});
-    movingEntities->addEntity(structure);
-    entityList.addEntity(structure);
-    j += 3;
-
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 30}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*(float)i, 30}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
     i += 3;
 
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(3, {GROUND_WIDTH*(float)i, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
     i += 3;
 
-    if(rand()%2){
-        structure = StructuresFactory<Obstacles::ThornsBase>::createFloor(3, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + THORNS_WIDTH/2.f, 30 + THORNSBASE_HEIGHT/2.f}, {THORNSBASE_WIDTH, THORNSBASE_HEIGHT});
-        staticEntities->addEntity(structure);
-        entityList.addEntity(structure);
-
-        structure = StructuresFactory<Obstacles::Thorns>::createFloor(3, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + THORNS_WIDTH/2.f, 30 - THORNS_HEIGHT/2.f}, {THORNS_WIDTH, THORNS_HEIGHT});
-        movingEntities->addEntity(structure);
-        entityList.addEntity(structure);
-    }else{
-        structure = StructuresFactory<Surfaces::MiniGround>::createFloor(2, {GROUND_WIDTH*(i-1) + GROUND_WIDTH/2.f + THORNS_WIDTH*j + MINIGROUND_WIDTH/2.f, PAVEMENT_HEIGHT/2.f - MINIGROUND_HEIGHT/2.f}, {MINIGROUND_WIDTH, MINIGROUND_HEIGHT});
-        staticEntities->addEntity(structure);
-        entityList.addEntity(structure);
-    }
-
-    j+=2;
-
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(4, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 0}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(4, {GROUND_WIDTH*(float)i , 0}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
     i += 4;
 
-    structure = StructuresFactory<Surfaces::Ground>::createFloor(11, {GROUND_WIDTH*(float)i + THORNS_WIDTH*(float)j, 80}, {GROUND_WIDTH, GROUND_HEIGHT});
+    structure = StructuresFactory<Surfaces::Ground>::createFloor(11, {GROUND_WIDTH*(float)i , 80}, {GROUND_WIDTH, GROUND_HEIGHT});
     staticEntities->addEntity(structure);
     entityList.addEntity(structure);
     i += 11;
@@ -311,6 +289,8 @@ void SecondLevel::buildStatues(Lists::EntityList *staticEntities){
 
 void SecondLevel::buildObjects(Lists::EntityList *movingEntities){
 
+    std::vector<Entities::Entity*> structure;
+
     Entities::Objects::Obstacles::Gravestone *grave = new Entities::Objects::Obstacles::Gravestone({100.f, 30-GROUND_HEIGHT/2.f-GRAVESTONE_HEIGHT/2.f});
     movingEntities->addEntity(grave);
     entityList.addEntity(grave);
@@ -326,6 +306,10 @@ void SecondLevel::buildObjects(Lists::EntityList *movingEntities){
     grave = new Entities::Objects::Obstacles::Gravestone({1200.f, 30-GROUND_HEIGHT/2.f-GRAVESTONE_HEIGHT/2.f});
     movingEntities->addEntity(grave);
     entityList.addEntity(grave);
+
+    Entities::Objects::Obstacles::Thorns *thorns = new Entities::Objects::Obstacles::Thorns({1300.f, 30-GROUND_HEIGHT/2.f - THORNS_HEIGHT/2.f});
+    movingEntities->addEntity(thorns);
+    entityList.addEntity(thorns);
 }
 
 void SecondLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
@@ -436,4 +420,82 @@ void SecondLevel::buildLevel(){
         inputManager->subscribe("pressed", player2->getPlayerControl());
         inputManager->subscribe("released", player2->getPlayerControl());   
     }
+}
+
+void SecondLevel::load(){
+    Lists::EntityList *movingEntities = Data::Level::loadSnapshots(id);
+    Lists::EntityList *staticEntities = new Lists::EntityList();
+
+    if(!movingEntities){
+        return;
+    }
+
+    if(player){
+        inputManager->unsubscribe("pressed", player->getPlayerControl());
+        inputManager->unsubscribe("released", player->getPlayerControl());
+    }
+    
+    if(player2){
+        inputManager->unsubscribe("pressed", player2->getPlayerControl());
+        inputManager->unsubscribe("released", player2->getPlayerControl());
+    }
+
+    for(int i = 0; i < entityList.getSize(); i++){
+        std::cout << i << "\n";
+        if(entityList[i]) {
+            i != 0 ? std::cout << entityList[i-1]->getType() << "\n" : std::cout << entityList[i]->getType() << "\n";
+            delete entityList[i];
+        }
+    } 
+
+    player = nullptr;
+    player2 = nullptr;
+
+    entityList.clearAll();
+
+    if(collisionManager.getMovingEntities()){
+        delete collisionManager.getMovingEntities();
+    }
+
+    if(collisionManager.getStaticEntities()){
+        delete collisionManager.getStaticEntities();
+    }
+
+    buildFloor(staticEntities, movingEntities);
+    
+    buildStaticEntities(staticEntities);
+    
+    for(int i = 0; i < movingEntities->getSize(); i++){
+        if((*movingEntities)[i]->getType() == Type::Player){
+            Characters::Player* p = static_cast<Characters::Player*>((*movingEntities)[i]);
+
+            if(p->getIsPlayerOne()){
+                player = p;
+            }else{
+                player2 = p;
+            }
+        }
+
+        entityList.addEntity((*movingEntities)[i]);
+    }
+
+    buildStatues(staticEntities);
+
+    hud.setPlayer1(player);
+    hud.setPlayer2(player2);
+
+    collisionManager.setMovingEntities(movingEntities);
+    collisionManager.setStaticEntities(staticEntities);
+
+    if(player){
+        inputManager->subscribe("pressed", player->getPlayerControl());
+        inputManager->subscribe("released", player->getPlayerControl());
+        
+    }
+    
+    if(player2){
+        inputManager->subscribe("pressed", player2->getPlayerControl());
+        inputManager->subscribe("released", player2->getPlayerControl());
+        
+    }    
 }

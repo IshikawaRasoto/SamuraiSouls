@@ -31,6 +31,8 @@ namespace Levels{
         void buildStatues(Lists::EntityList *staticEntities);
 
         void buildLevel();
+
+        void load();
         
         void update(float dt);
     };

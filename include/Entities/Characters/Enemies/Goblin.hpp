@@ -28,7 +28,6 @@ namespace Entities{
                     ~Goblin();
                     void update(float dt);
                     void render();
-                    void save();
                     void movementGoblin();
 
                 private:

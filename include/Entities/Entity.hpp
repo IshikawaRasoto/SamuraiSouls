@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Ent/Ent.hpp"
+#include "Snapshots/EntitySnapshot.hpp"
 
 #define GRAVITY 1000.f
 
@@ -27,7 +28,7 @@ namespace Entities{
             void move(sf::Vector2f v);
 
             virtual void collide(Entity* other, sf::Vector2f intersect);
-            virtual void save() = 0;
+            virtual Snapshots::EntitySnapshot* save();
             virtual void update(const float dt);
 
         protected:

@@ -1,6 +1,6 @@
 #include "Patterns/State.hpp"
-#include "Patterns/StateMachine.hpp"
 #include "Menu.hpp"
+#include "Levels/Level.hpp"
 #include "Graphics/Text.hpp"
 
 #define PAUSE_FONT_DIR "./fonts/SpecialElite.ttf"
