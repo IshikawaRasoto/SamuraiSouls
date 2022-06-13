@@ -1,6 +1,7 @@
 #include "Menus/Pause.hpp"
 #include "Graphics/Button.hpp"
 #include "Patterns/StateMachine.hpp"
+#include "Game.hpp"
 
 #include <vector>
 
@@ -50,7 +51,7 @@ void Pause::update(const float dt){
 void Pause::execute(){
     if(!getIsShowing()) return;
 
-    Levels::Level *currentLevel = Levels::Level::getCurrentLevel();
+    Levels::Level *currentLevel = (static_cast<Game*>(stateMachine))->getCurrentLevel();
 
     switch (selectedButton)
     {

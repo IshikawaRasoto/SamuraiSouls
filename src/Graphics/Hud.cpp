@@ -37,12 +37,12 @@ void Hud::update(const float dt){
 
     position = graphicsManager->getTopLeftPosition();
 
-    int p1HP = 0, p2HP = 0;
+    int p1HP, p2HP;
 
-    p1HP = player1->getHP();
+    p1HP = player1->getHP() <= 0 ? 0 : player1->getHP();
 
     if(player2){
-        p2HP = player2->getHP();
+        p2HP = player2->getHP() <= 0 ? 0 : player2->getHP();
     }
 
     player1HP.setValue("Player 1 - HP: " + std::to_string(p1HP));

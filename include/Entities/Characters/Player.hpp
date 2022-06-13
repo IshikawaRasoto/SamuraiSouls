@@ -37,6 +37,7 @@ namespace Entities{
                 static int points;
                 bool isWalking;
                 bool canJump;
+                bool finishedLevel;
                 float timeFromAtk;
                 float atkCD;
                 bool atkCollision;//Controle de uma colisão de ataque por ataque
@@ -54,10 +55,12 @@ namespace Entities{
                 const bool getIsAtkCollision() const;
                 static const int getPts();
                 Control::PlayerControl* getPlayerControl() const;
+                bool getFinishedLevel();
 
                 static void addPts(const int pts);
                 static void setPts(const int pts);
 
+                void setFinishedLevel(bool finishedLevel);
                 void setHp(int hp);
                 void setAtkCollision(const bool atkCollision);
                 

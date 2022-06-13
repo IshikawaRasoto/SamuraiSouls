@@ -2,6 +2,7 @@
 #include "Graphics/Button.hpp"
 
 #include "config.hpp"
+#include "Game.hpp"
 
 #include <vector>
 
@@ -31,10 +32,12 @@ void MainMenu::execute(){
     switch (selectedButton)
     {
     case 0:
-        changeCurrentState(Patterns::StateId::FirstLevel);
+        (static_cast<Game*>(stateMachine))->setCurrentLevel(Patterns::StateId::FirstLevel);
+        changeCurrentState(Patterns::StateId::NewGame);
         break;
     case 1:
-        changeCurrentState(Patterns::StateId::SecondLevel);
+        (static_cast<Game*>(stateMachine))->setCurrentLevel(Patterns::StateId::SecondLevel);
+        changeCurrentState(Patterns::StateId::NewGame);
         break;
     case 2:
         changeCurrentState(Patterns::StateId::Leaderboard);

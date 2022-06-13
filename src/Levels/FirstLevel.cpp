@@ -37,11 +37,17 @@ void FirstLevel::centerView(){
     if(!player) return;
 
     sf::Vector2f viewPosition;
-
-    if(singlePlayer)
+    if(singlePlayer){
         viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
-    else
-        viewPosition.x = (player->getPosition().x + player2->getPosition().x)/2;
+    }else{
+        if(player->getHP() > 0 && player2->getHP() > 0){
+            viewPosition.x = (player->getPosition().x + player2->getPosition().x)/2;
+        }else if(player->getHP() > 0){
+            viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
+        }else if(player2->getHP() > 0){
+            viewPosition.x = player2->getPosition().x + WINDOW_SIZE_X/4;
+        }
+    }
     
     viewPosition.y = -WINDOW_SIZE_Y/2 + PAVEMENT_HEIGHT/2;
     
@@ -68,6 +74,7 @@ void FirstLevel::reset(){
 
     player = nullptr;
     player2 = nullptr;
+    singlePlayer = true;
 
     entityList.clearAll();
 
@@ -87,19 +94,26 @@ void FirstLevel::reset(){
 
 void FirstLevel::update(float dt){
     showing = true;
-    setCurrentLevel(this);
 
     entityList.updateAll(dt);
+    hud.update(dt);
 
-    if(player->getHP() <= 0){
+    if(
+        (!singlePlayer && player->getHP() <= 0 && player2->getHP() <= 0) ||
+        (singlePlayer && player->getHP() <= 0) 
+    ){
         changeCurrentState(Patterns::StateId::GameOver);
         showing = false;
 
         return;
-    }
+    } 
 
     collisionManager.checkCollision();
-    hud.update(dt);
+
+    if(player->getFinishedLevel() || (player2 && player2->getFinishedLevel())){
+        changeCurrentState(Patterns::StateId::MainMenu);
+        reset();
+    }
 }
 
 void FirstLevel::buildObjects(Lists::EntityList *movingEntities){
@@ -291,18 +305,9 @@ void FirstLevel::buildLevel(){
     entityList.addEntity(player);
 
     hud.setPlayer1(player);
-
-    Entities::Characters::Player *player2 = nullptr;
-    if(!singlePlayer){
-        player2 = new Entities::Characters::Player({30.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
-        movingEntities->addEntity(player2);
-        entityList.addEntity(player2);
-
-        hud.setPlayer2(player2);
-    }
     
     this->player = player;
-    this->player2 = player2;
+    this->player2 = nullptr;
 
     
     buildCharacters(movingEntities);
@@ -389,6 +394,26 @@ void FirstLevel::load(){
         inputManager->subscribe("pressed", player2->getPlayerControl());
         inputManager->subscribe("released", player2->getPlayerControl());
     }
-    
+}
+
+void FirstLevel::createPlayer2(){
+    player2 = new Entities::Characters::Player({30.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
+    collisionManager.getMovingEntities()->addEntity(player2);
+    entityList.addEntity(player2);
+
+    hud.setPlayer2(player2);
+
+    inputManager->subscribe("pressed", player2->getPlayerControl());
+    inputManager->subscribe("released", player2->getPlayerControl());
+
+    singlePlayer = false;
+
+    for(int i = 0; i < entityList.getSize(); i++){
+        Type entityType = entityList[i]->getType();
+
+        if(entityType == Type::Goblin || entityType == Type::Boss || entityType == Type::Skeleton){
+            (static_cast<Enemies::Enemy*>(entityList[i]))->setPlayer2(player2);
+        }
+    }
 }
 

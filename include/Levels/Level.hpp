@@ -49,10 +49,11 @@ public:
     virtual ~Level();
 
     bool getShowing();
-    static Levels::Level *getCurrentLevel();
+
+    virtual void createPlayer2();
 
     void setShowing(bool showing);
-    static void setCurrentLevel(Levels::Level *level);
+    void setSinglePlayer(bool singlePlayer);
 
     void handlePause();
 

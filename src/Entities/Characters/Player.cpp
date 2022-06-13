@@ -49,6 +49,14 @@ void Player::setPts(const int pts){
     points = pts;
 }
 
+bool Player::getFinishedLevel(){
+    return finishedLevel;
+}
+
+void Player::setFinishedLevel(bool finishedLevel){
+    this->finishedLevel = true;
+}
+
 void Player::setHp(int hp){
     this->hp = hp;
 }
@@ -149,6 +157,9 @@ void Player::collide(Entity* other, sf::Vector2f intersect){
             canJump = true;
             moveOnCollision(other, intersect);
             break;
+        case Type::Wagon:
+            finishedLevel = true;
+            break;;
     }
 }
 
@@ -219,6 +230,7 @@ Snapshots::PlayerSnapshot* Player::save(){
 
 void Control::PlayerControl::update(Managers::InputManager *subject){
     if(!player) return;
+    if(!player->getIsShowing()) return;
 
     std::string key = subject->getCurrentKey();
     std::string event = subject->getCurrentEvent();
