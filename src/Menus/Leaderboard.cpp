@@ -82,10 +82,6 @@ void Leaderboard::loadItems(){
     }
 }
 
-void Leaderboard::centerView(){
-    graphicsManager->centerView({0.0f,0.0f});
-}
-
 void Leaderboard::render(){
     graphicsManager->beginDraw();
 

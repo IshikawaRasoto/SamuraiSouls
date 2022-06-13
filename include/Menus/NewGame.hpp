@@ -19,8 +19,6 @@ public:
     NewGame(StateMachine *stateMachine);
     ~NewGame();
 
-    void centerView();
-
     void update(const float dt);
     void render();
     void execute();

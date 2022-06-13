@@ -22,6 +22,7 @@ Player::Player(sf::Vector2f position, const bool isPlayerOne, Control::PlayerCon
         }
     }
 
+    finishedLevel = false;
     initializeSprite();
 }
 
@@ -187,6 +188,7 @@ void Player::playerAtk(Entities::Entity *other, Type t){
                     break;
                 case Type::Boss:
                     points += 500;
+                    finishedLevel = true;
                     break;
             }
         }

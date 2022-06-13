@@ -32,8 +32,6 @@ public:
     Leaderboard(Patterns::StateMachine *stateMachine);
     ~Leaderboard();
 
-    void centerView();
-
     void execute();
     void update(const float dt);
     void render();

@@ -7,16 +7,16 @@
 
 #include <string>
 
-#define GAMEOVER_BACKGROUND_DIR "./Textures/Menus/GameOver.jpg"
-#define GAMEOVER_TITLE_FONT_DIR "./fonts/SpecialElite.ttf"
-#define GAMEOVER_TITLE_START_SIZE 10
-#define GAMEOVER_TITLE_MAX_SIZE 100
+#define YOUWIN_BACKGROUND_DIR "./Textures/Menus/GameOver.jpg"
+#define YOUWIN_TITLE_FONT_DIR "./fonts/SpecialElite.ttf"
+#define YOUWIN_TITLE_START_SIZE 10
+#define YOUWIN_TITLE_MAX_SIZE 100
 
-#define GAMEOVER_LEADERBOARDNAME_MAX_LENGTH 15
+#define YOUWIN_LEADERBOARDNAME_MAX_LENGTH 15
 
 namespace Menus{
 
-class GameOver : public Menu, public Patterns::State{
+class YouWin : public Menu, public Patterns::State{
 private:
     Graphics::Text title;
     Graphics::Text typeYourName;
@@ -25,11 +25,11 @@ private:
     Graphics::Text leaderboardName;
 
 public:
-    GameOver(StateMachine *stateMachine);
-    ~GameOver();
+    YouWin(StateMachine *stateMachine);
+    ~YouWin();
 
     void saveName();
-    void handleInput(std::string key);
+    void handleInput(std::string input);
 
     void render();
     void update(const float dt);

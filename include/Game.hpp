@@ -15,8 +15,6 @@ private:
     bool isDone();
     void update();
 
-    void restartClock();
-
     sf::Clock clock;
     float deltaTime;
 

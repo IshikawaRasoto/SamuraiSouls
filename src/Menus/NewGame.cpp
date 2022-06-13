@@ -53,10 +53,6 @@ void NewGame::execute(){
     setIsShowing(false);
 }
 
-void NewGame::centerView(){
-    graphicsManager->centerView({0.0f, 0.0f});
-}
-
 void NewGame::render(){
     graphicsManager->beginDraw();
     centerView();

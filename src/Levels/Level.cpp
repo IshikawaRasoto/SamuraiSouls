@@ -39,7 +39,6 @@ bool Level::getShowing(){
 }
 
 void Level::setSinglePlayer(bool singlePlayer){
-    std::cout << "Set\n";
     this->singlePlayer = singlePlayer;
 }
 
