@@ -8,6 +8,7 @@
 #include "Menus/Pause.hpp"
 #include "Menus/Leaderboard.hpp"
 #include "Menus/NewGame.hpp"
+#include "Menus/YouWin.hpp"
 
 #include <iostream>
 
@@ -26,6 +27,7 @@ Game::Game():
     states[Patterns::StateId::Pause] = new Menus::Pause(this);
     states[Patterns::StateId::Leaderboard] = new Menus::Leaderboard(this);
     states[Patterns::StateId::NewGame] = new Menus::NewGame(this);
+    states[Patterns::StateId::YouWin] = new Menus::YouWin(this);
 
     currentState = Patterns::StateId::MainMenu;
     currentLevel = nullptr;
@@ -70,9 +72,9 @@ void Game::update(){
 }
 
 void Game::changeCurrentState(const StateId state){
-    //Carregamos os dados da leaderboard novamente apenas se houver um gameOver.
-    if(state == StateId::GameOver){
-        states[StateId::Leaderboard]->setNeedReset(true);
+    //Carregamos os dados da leaderboard novamente apenas se houver um gameOver ou youWin.
+    if(lastState == StateId::GameOver || lastState == StateId::YouWin){
+        states[StateId::Leaderboard]->reset();
     }
 
     if(state == StateId::MainMenu && currentLevel){

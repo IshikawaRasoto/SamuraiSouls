@@ -13,7 +13,7 @@ MainMenu::MainMenu(StateMachine* stateMachine):
     Menu(MAIN_MENU_BACKGROUND_DIR),
     title(WINDOW_NAME, {0.0f, -150.0f}, MAIN_MENU_TITLE_FONT_DIR)
 {
-    std::vector<std::string> buttonNames = {"Level 1", "Level 2", "Leaderboard", "Credits", "Exit"};
+    std::vector<std::string> buttonNames = {"Level 1", "Level 2", "Leaderboard", "Exit"};
 
     for(float i = 0; i < buttonNames.size(); i++){
         addButton(new Graphics::Button(buttonNames[i], {0.0f, i*80}, MAIN_MENU_TITLE_FONT_DIR));
@@ -43,8 +43,6 @@ void MainMenu::execute(){
         changeCurrentState(Patterns::StateId::Leaderboard);
         break;
     case 3:
-        break;
-    case 4:
         graphicsManager->setDone(true);
     default:
         break;

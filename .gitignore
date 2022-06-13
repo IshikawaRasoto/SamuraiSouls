@@ -1,6 +1,4 @@
 ignore/
 **/*.o
 .vscode/
-leaderboard.txt
-snapshot3.txt
-snapshot4.txt
+main

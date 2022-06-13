@@ -45,7 +45,6 @@ std::vector<LeaderboardItem*> Leaderboard::getItems(){
     std::vector<LeaderboardItem*> items;
 
     if(!file.is_open()){
-        std::cout << "[Leaderboard] Erro ao abrir \"" << LEADERBOARD_FILENAME << "\", enquanto tentava obter itens.\n";
         return items;
     }
 

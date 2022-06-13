@@ -34,8 +34,6 @@ protected:
     
     bool singlePlayer;
     bool showing;
-    
-    static Levels::Level *currentLevel;
 public:
     Level(
         Patterns::StateMachine *stateMachine,
@@ -50,10 +48,10 @@ public:
 
     bool getShowing();
 
-    virtual void createPlayer2();
-
     void setShowing(bool showing);
     void setSinglePlayer(bool singlePlayer);
+
+    virtual void createPlayer2();
 
     void handlePause();
 

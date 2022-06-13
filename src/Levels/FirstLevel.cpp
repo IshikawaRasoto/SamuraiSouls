@@ -111,8 +111,8 @@ void FirstLevel::update(float dt){
     collisionManager.checkCollision();
 
     if(player->getFinishedLevel() || (player2 && player2->getFinishedLevel())){
-        changeCurrentState(Patterns::StateId::MainMenu);
-        reset();
+        changeCurrentState(Patterns::StateId::YouWin);
+        showing = false;
     }
 }
 

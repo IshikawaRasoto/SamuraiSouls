@@ -11,6 +11,7 @@ enum StateId{
     SecondLevel,
     Pause,
     NewGame,
+    YouWin,
     GameOver
 };
 

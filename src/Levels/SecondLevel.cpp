@@ -50,7 +50,6 @@ void SecondLevel::centerView(){
         }
     }
 
-
     viewPosition.y = -WINDOW_SIZE_Y/2 + GROUND_HEIGHT/2;
 
     graphicsManager->centerView(viewPosition);
@@ -108,6 +107,12 @@ void SecondLevel::update(float dt){
     } 
 
     collisionManager.checkCollision();
+
+    if(player->getFinishedLevel() || (player2 && player2->getFinishedLevel())){
+        changeCurrentState(Patterns::StateId::YouWin);
+        showing = false;
+    }
+
     hud.update(dt);
 }   
 
@@ -323,6 +328,14 @@ void SecondLevel::buildObjects(Lists::EntityList *movingEntities){
     Entities::Objects::Obstacles::Thorns *thorns = new Entities::Objects::Obstacles::Thorns({1300.f, 30-GROUND_HEIGHT/2.f - THORNS_HEIGHT/2.f});
     movingEntities->addEntity(thorns);
     entityList.addEntity(thorns);
+
+    thorns = new Entities::Objects::Obstacles::Thorns({1450.f, 30-GROUND_HEIGHT/2.f - THORNS_HEIGHT/2.f});
+    movingEntities->addEntity(thorns);
+    entityList.addEntity(thorns);
+
+    thorns = new Entities::Objects::Obstacles::Thorns({2100.f, 30-GROUND_HEIGHT/2.f - THORNS_HEIGHT/2.f});
+    movingEntities->addEntity(thorns);
+    entityList.addEntity(thorns);
 }
 
 void SecondLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities){
@@ -332,6 +345,7 @@ void SecondLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::
     Entities::Characters::Enemies::Skeleton *skeleton = nullptr;
     Entities::Characters::Enemies::Goblin *goblin = nullptr;
     Entities::Objects::Obstacles::Gravestone *grave = nullptr;
+    Entities::Objects::Obstacles::Thorns *thorns = nullptr;
 
         int i = 0, n = 1;; // n = 1, terceiro esqueleto minimo
     for(i = 1; i < 8; i++){
@@ -343,13 +357,17 @@ void SecondLevel::buildRandomEntities(Lists::EntityList *staticEntities, Lists::
             skeleton = new Entities::Characters::Enemies::Skeleton({1600.f + 300.f*(float)i, -GROUND_HEIGHT/2.f}, player, player2);
             movingEntities->addEntity(skeleton);
             entityList.addEntity(skeleton);
-        }else{
+        }else if (n==2){
             goblin = new Entities::Characters::Enemies::Goblin({1600.f + 300.f*(float)i, -GROUND_HEIGHT/2.f}, player, player2);
             movingEntities->addEntity(goblin);
             entityList.addEntity(goblin);
+        }else{
+            thorns = new Entities::Objects::Obstacles::Thorns({1600.f + (float) i * 300.f, -GROUND_HEIGHT/2.f - THORNS_HEIGHT/2.f});
+            movingEntities->addEntity(thorns);
+            entityList.addEntity(thorns);
         }
 
-        n = rand()%3;
+        n = rand()%4;
     }
     
 }
@@ -454,9 +472,7 @@ void SecondLevel::load(){
     }
 
     for(int i = 0; i < entityList.getSize(); i++){
-        std::cout << i << "\n";
         if(entityList[i]) {
-            i != 0 ? std::cout << entityList[i-1]->getType() << "\n" : std::cout << entityList[i]->getType() << "\n";
             delete entityList[i];
         }
     } 
@@ -474,9 +490,8 @@ void SecondLevel::load(){
         delete collisionManager.getStaticEntities();
     }
 
-    buildFloor(staticEntities, movingEntities);
-    
     buildStaticEntities(staticEntities);
+    buildFloor(staticEntities, movingEntities);
     
     for(int i = 0; i < movingEntities->getSize(); i++){
         if((*movingEntities)[i]->getType() == Type::Player){
