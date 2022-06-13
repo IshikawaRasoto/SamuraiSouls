@@ -5,8 +5,6 @@
 
 using namespace Levels;
 
-Levels::Level* Level::currentLevel = nullptr;
-
 Level::Level(
     Patterns::StateMachine *stateMachine,
     std::string backgroundDir,
@@ -40,17 +38,16 @@ bool Level::getShowing(){
     return showing;
 }
 
-Levels::Level* Level::getCurrentLevel(){
-    return currentLevel;
-}
-
-void Level::setCurrentLevel(Levels::Level *level){
-    currentLevel = level;
+void Level::setSinglePlayer(bool singlePlayer){
+    std::cout << "Set\n";
+    this->singlePlayer = singlePlayer;
 }
 
 void Level::setShowing(bool showing){
     this->showing = showing;
 }
+
+void Level::createPlayer2(){}
 
 void Level::handlePause(){
     if(!showing) return;

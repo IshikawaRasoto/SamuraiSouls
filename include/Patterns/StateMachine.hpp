@@ -1,7 +1,8 @@
 #pragma once
 
-#include "State.hpp"
 #include <map>
+
+#include "State.hpp"
 
 namespace Patterns{
 
@@ -10,8 +11,8 @@ protected:
 
     StateId currentState;
     StateId lastState;
-    std::map<StateId, State*> states;
 
+    std::map<StateId, State*> states;
 public:
 
     StateMachine();

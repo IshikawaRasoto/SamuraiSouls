@@ -20,6 +20,9 @@ private:
     sf::Clock clock;
     float deltaTime;
 
+    Levels::Level *currentLevel;
+    StateId currentLevelId;
+
     Managers::GraphicsManager *graphicManager;
     Managers::InputManager *inputManager;
     Managers::EventManager *eventManager;
@@ -28,6 +31,11 @@ public:
 
     Game();
     ~Game();
+
+    Levels::Level* getCurrentLevel();
+    StateId getCurrentLevelId();
+
+    void setCurrentLevel(StateId levelStateId);
 
     void execute();
     void changeCurrentState(const StateId state);

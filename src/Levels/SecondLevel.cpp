@@ -38,12 +38,22 @@ SecondLevel::~SecondLevel(){}
 
 void SecondLevel::centerView(){
     sf::Vector2f viewPosition;
-    viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
+    if(singlePlayer){
+        viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
+    }else{
+        if(player->getHP() > 0 && player2->getHP() > 0){
+            viewPosition.x = (player->getPosition().x + player2->getPosition().x)/2;
+        }else if(player->getHP() > 0){
+            viewPosition.x = player->getPosition().x + WINDOW_SIZE_X/4;
+        }else if(player2->getHP() > 0){
+            viewPosition.x = player2->getPosition().x + WINDOW_SIZE_X/4;
+        }
+    }
+
+
     viewPosition.y = -WINDOW_SIZE_Y/2 + GROUND_HEIGHT/2;
 
     graphicsManager->centerView(viewPosition);
-    // points.setPosition(viewPosition);
-    // life.setPosition({viewPosition.x, viewPosition.y + 30});
     background.setPosition(viewPosition);
 }
 
@@ -70,6 +80,7 @@ void SecondLevel::reset(){
 
     player = nullptr;
     player2 = nullptr;
+    singlePlayer = true;
 
     entityList.clearAll();
 
@@ -83,16 +94,18 @@ void SecondLevel::reset(){
 
 void SecondLevel::update(float dt){
     showing = true;
-    setCurrentLevel(this);
 
     entityList.updateAll(dt);
 
-    if(player->getHP() <= 0){
+    if(
+        (!singlePlayer && player->getHP() <= 0 && player2->getHP() <= 0) ||
+        (singlePlayer && player->getHP() <= 0) 
+    ){
         changeCurrentState(Patterns::StateId::GameOver);
         showing = false;
 
         return;
-    }
+    } 
 
     collisionManager.checkCollision();
     hud.update(dt);
@@ -498,4 +511,25 @@ void SecondLevel::load(){
         inputManager->subscribe("released", player2->getPlayerControl());
         
     }    
+}
+
+void SecondLevel::createPlayer2(){
+    player2 = new Entities::Characters::Player({30.0f, -PAVEMENT_HEIGHT/2-PLAYER_HEIGHT/2}, false);
+    collisionManager.getMovingEntities()->addEntity(player2);
+    entityList.addEntity(player2);
+
+    hud.setPlayer2(player2);
+
+    inputManager->subscribe("pressed", player2->getPlayerControl());
+    inputManager->subscribe("released", player2->getPlayerControl());
+
+    singlePlayer = false;
+
+    for(int i = 0; i < entityList.getSize(); i++){
+        Type entityType = entityList[i]->getType();
+
+        if(entityType == Type::Goblin || entityType == Type::Boss || entityType == Type::Skeleton){
+            (static_cast<Enemies::Enemy*>(entityList[i]))->setPlayer2(player2);
+        }
+    }
 }

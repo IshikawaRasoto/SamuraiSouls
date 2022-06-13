@@ -19,6 +19,8 @@ public:
     void reset();
     void centerView();
     
+    void createPlayer2();
+
     void buildObjects(Lists::EntityList *movingEntities);
     void buildStaticEntities(Lists::EntityList *staticEntities);
     void buildRandomEntities(Lists::EntityList *staticEntities, Lists::EntityList *movingEntities);

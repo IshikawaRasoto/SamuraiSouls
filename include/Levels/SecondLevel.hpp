@@ -31,6 +31,7 @@ namespace Levels{
         void buildStatues(Lists::EntityList *staticEntities);
 
         void buildLevel();
+        void createPlayer2();
 
         void load();
         
