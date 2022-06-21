@@ -1,0 +1,3 @@
+OS: Linux Mint 20.3 Cinnamon
+COMPILER: GCC 9.3.0 (Ubuntu 9.3.0-17ubuntu1~20.04)
+GRAPHICS_LIBRARY: SFML 2.5.1
