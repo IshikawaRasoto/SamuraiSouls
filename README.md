@@ -5,15 +5,22 @@ A C++ Object Oriented Game using SFML library developed for the subject "Program
 
 The First level happens in a kingdom being attacked by an evil army. The player must reach the other side of the village and get to the Wagon that will take him to the next level.
 
+<video src="https://github.com/IshikawaRasoto/SamuraiSouls/raw/main/readme/PrimeiraFase.mp4"></video>
+
 ## Second Level
 
 The Second Level is in a cemetery, where the commander of the army, a Fire Worm, is located. The player must fight his enemies, avoid the spike traps and defeat the Boss in order to end the attack of the Kingdom.
 
-
+<video src="https://github.com/IshikawaRasoto/SamuraiSouls/raw/main/readme/SegundaFase.mp4"></video>
 
 ## Features
 
 Samurai Souls has as it's features a Multiplayer Mode, Save & Load System and also High Scores of the level.
+
+<video src="https://github.com/IshikawaRasoto/SamuraiSouls/raw/main/readme/Multiplayer%26Save.mp4"></video>
+
+<video src="https://github.com/IshikawaRasoto/SamuraiSouls/raw/main/readme/HighScore.mp4"></video>
+
 
 ## UML
 
