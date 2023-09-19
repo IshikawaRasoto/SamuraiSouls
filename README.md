@@ -26,6 +26,14 @@ Samurai Souls has as it's features a Multiplayer Mode, Save & Load System and al
 
 <img src="https://github.com/IshikawaRasoto/SamuraiSouls/blob/main/UMLSamuraiSouls.png?raw=true">
 
+## Youtube 
+
+You can check a full Gameplay of Samurai::Souls on Youtube:
+
+<a ref="https://youtu.be/xvNGacwrS7o"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
+
+
+
 ## Sprite Credits
 Sprites authory do not belong to this project authors.
 
