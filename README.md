@@ -41,7 +41,7 @@ https://github.com/IshikawaRasoto/SamuraiSouls/assets/89215941/bacfe695-61f3-404
 
 You can check a full Gameplay of Samurai::Souls on Youtube:
 
-<a ref="https://youtu.be/xvNGacwrS7o"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
+<a href="https://youtu.be/xvNGacwrS7o"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white"></a>
 
 
 
@@ -56,8 +56,8 @@ All the Characters Sprites were made by [LuizMelo](https://luizmelo.itch.io).
 ## Authors
 **Rafael E. I. Rasoto**
 
-<a ref="https://github.com/IshikawaRasoto"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://github.com/IshikawaRasoto"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
 
 **Victor Taveira** 
 
-<a ref="https://github.com/ViktorTav"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+<a href="https://github.com/ViktorTav"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
